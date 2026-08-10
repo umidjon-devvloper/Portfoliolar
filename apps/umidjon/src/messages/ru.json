@@ -1,0 +1,169 @@
+{
+  "meta": {
+    "title": "Умиджон — Full Stack Web & Mobile Developer",
+    "description": "Full Stack Web & Mobile разработчик. Создаю продукты на React, Next.js, React Native, Expo и Node.js, которые решают реальные бизнес-задачи."
+  },
+  "nav": {
+    "home": "Главная",
+    "about": "Обо мне",
+    "projects": "Проекты",
+    "services": "Услуги",
+    "resume": "Резюме",
+    "contact": "Контакты",
+    "openMenu": "Открыть меню",
+    "closeMenu": "Закрыть меню"
+  },
+  "common": {
+    "toggleTheme": "Сменить тему",
+    "language": "Язык",
+    "readMore": "Подробнее",
+    "viewAll": "Смотреть все",
+    "backToProjects": "Назад к проектам",
+    "loading": "Загрузка",
+    "comingSoon": "Скоро"
+  },
+  "hero": {
+    "eyebrow": "Full Stack Web & Mobile Developer",
+    "title": "Не просто код — продукт, который даёт бизнесу результат",
+    "subtitle": "Работаю с React, Next.js, React Native, Expo и Node.js. Моя цель — не просто писать код, а создавать продукты, решающие реальные бизнес-задачи.",
+    "primaryCta": "Смотреть проекты",
+    "secondaryCta": "Связаться"
+  },
+  "about": {
+    "title": "Обо мне",
+    "shortBio": "Full Stack Web & Mobile разработчик. Работаю с React, Next.js, React Native, Expo и Node.js. Моя цель — не просто писать код, а создавать продукты, решающие реальные бизнес-задачи.",
+    "longBio": "Создаю современные сайты, веб-приложения, мобильные приложения, backend-системы, Telegram-ботов и цифровые продукты для бизнеса. Работаю во frontend, backend и mobile направлениях, а также развиваю собственные продукты и услуги с выходом на международный рынок. Программирование развивал не в теории, а через реальные проекты.",
+    "workStyleTitle": "Мой подход",
+    "workStyle": "Я не смотрю на проект только как на frontend или backend. Полностью понимаю цепочку Idea → Design → Development → Backend → Mobile/Web → Deployment → Business и реализую её максимально самостоятельно.",
+    "strengthsTitle": "Сильные стороны",
+    "goalsTitle": "Цели",
+    "partnersTitle": "Партнёры",
+    "partnersSubtitle": "Команда, с которой я работаю над проектами"
+  },
+  "strengths": {
+    "fullStackThinking": "Full-stack мышление — понимаю frontend, backend, базу данных и деплой вместе",
+    "productThinking": "Product thinking — думаю о том, какую пользу продукт принесёт бизнесу",
+    "independence": "Самостоятельность — изучаю новую технологию или API и сразу применяю на практике",
+    "fastLearning": "Быстрое обучение — осваиваю новые фреймворки и платформы прямо в проектах",
+    "entrepreneurial": "Предпринимательское мышление — превращаю технологию в услугу или продукт"
+  },
+  "goals": {
+    "international": "Работа на международном IT-рынке и проекты с зарубежными компаниями",
+    "senior": "Выход на уровень Senior Developer",
+    "ownSaas": "Создание собственных SaaS-продуктов",
+    "agency": "Развитие Umidjon Agency",
+    "digitalProducts": "Продажа digital-продуктов и шаблонов",
+    "passiveIncome": "Формирование источников пассивного дохода"
+  },
+  "skills": {
+    "title": "Технологии",
+    "frontend": "Frontend",
+    "mobile": "Mobile",
+    "backend": "Backend",
+    "authDb": "Auth и База данных",
+    "payments": "Платёжные системы",
+    "devops": "DevOps и деплой",
+    "design": "Дизайн"
+  },
+  "projects": {
+    "title": "Проекты",
+    "subtitle": "Проблема, решение и результат — каждый проект в таком порядке",
+    "featuredTitle": "Избранные проекты",
+    "filterAll": "Все",
+    "filterSaas": "SaaS",
+    "filterMobile": "Mobile",
+    "filterFullstack": "Full Stack",
+    "filterBusiness": "Бизнес",
+    "empty": "В этом разделе пока нет проектов",
+    "problem": "Проблема",
+    "solution": "Решение",
+    "stack": "Стек",
+    "result": "Результат",
+    "integrations": "Интеграции",
+    "components": "Составные части",
+    "notFound": "Проект не найден"
+  },
+  "services": {
+    "title": "Услуги",
+    "subtitle": "От идеи до деплоя — с одной командой",
+    "cta": "Запросить цену",
+    "web": {
+      "title": "Веб-сайты",
+      "description": "Корпоративные сайты, лендинги, каталоги и портфолио."
+    },
+    "webApp": {
+      "title": "Веб-приложения",
+      "description": "Админ-панели, дашборды и внутренние бизнес-системы."
+    },
+    "mobile": {
+      "title": "Мобильные приложения",
+      "description": "iOS и Android на React Native и Expo, включая публикацию в сторах."
+    },
+    "saas": {
+      "title": "SaaS-продукты",
+      "description": "Подписочная модель, мультиарендная архитектура и платёжные интеграции."
+    },
+    "bots": {
+      "title": "Telegram-боты",
+      "description": "Боты для заказов, уведомлений и автоматизации."
+    },
+    "backend": {
+      "title": "Backend и API",
+      "description": "Системы на Node.js, Express, REST и GraphQL, MongoDB."
+    },
+    "uiux": {
+      "title": "UI/UX дизайн",
+      "description": "Дизайн интерфейсов и дизайн-системы в Figma."
+    },
+    "deploy": {
+      "title": "Деплой и поддержка",
+      "description": "Vercel, Firebase, Cloudflare, домен, SSL и техническая поддержка."
+    }
+  },
+  "contact": {
+    "title": "Связаться",
+    "subtitle": "Напишите идею проекта — я отвечу",
+    "nameLabel": "Имя",
+    "namePlaceholder": "Ваше имя",
+    "emailLabel": "Email",
+    "emailPlaceholder": "email@example.com",
+    "messageLabel": "Сообщение",
+    "messagePlaceholder": "Кратко опишите ваш проект",
+    "submit": "Отправить",
+    "sending": "Отправка...",
+    "success": "Сообщение отправлено. Скоро свяжусь с вами.",
+    "error": "Не удалось отправить. Попробуйте позже.",
+    "validation": {
+      "nameRequired": "Введите имя",
+      "emailInvalid": "Введите корректный email",
+      "messageShort": "Сообщение должно содержать минимум 10 символов"
+    }
+  },
+  "resume": {
+    "title": "Резюме",
+    "subtitle": "Опыт, технологии и образование",
+    "download": "Скачать PDF",
+    "downloadUnavailable": "PDF пока не готов",
+    "educationTitle": "Образование",
+    "experienceTitle": "Опыт"
+  },
+  "cta": {
+    "title": "Есть проект?",
+    "subtitle": "Превратим идею в продукт.",
+    "button": "Связаться"
+  },
+  "footer": {
+    "rights": "Все права защищены",
+    "builtWith": "Сделано на Next.js"
+  },
+  "notFound": {
+    "title": "Страница не найдена",
+    "description": "Страница не существует или была перемещена.",
+    "back": "На главную"
+  },
+  "error": {
+    "title": "Произошла ошибка",
+    "description": "Непредвиденная ошибка. Попробуйте ещё раз.",
+    "retry": "Повторить"
+  }
+}

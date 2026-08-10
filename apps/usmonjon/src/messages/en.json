@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "title": "Usmonjon — Frontend Developer & UI/UX Designer",
+    "description": "Frontend Developer and UI/UX Designer specialising in modern, usable web interfaces."
+  },
+  "nav": {
+    "about": "About",
+    "skills": "Skills",
+    "work": "Work",
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "common": {
+    "toggleTheme": "Toggle theme",
+    "language": "Language",
+    "comingSoon": "Coming soon"
+  },
+  "hero": {
+    "role": "Frontend Developer & UI/UX Designer",
+    "titleLine1": "The interface is",
+    "titleLine2": "the first impression",
+    "subtitle": "I build modern, usable web interfaces. In partnership with Umidjon I work across a range of web projects.",
+    "cta": "View work"
+  },
+  "about": {
+    "title": "About",
+    "bio": "Frontend Developer and UI/UX Designer specialising in modern, usable web interfaces. In partnership with Umidjon I work across a range of web projects.",
+    "experienceTitle": "Experience",
+    "experience": "Working with Umidjon on websites and web applications, contributing to frontend development, UI/UX design and user interface work.",
+    "goalTitle": "Goal",
+    "goal": "Design interfaces that are beautiful, usable and modern, and grow professionally through real projects.",
+    "partnersTitle": "Team"
+  },
+  "skills": {
+    "title": "Skills",
+    "frontend": "Frontend",
+    "design": "Design",
+    "tools": "Tools"
+  },
+  "work": {
+    "title": "Work",
+    "subtitle": "Design and interface projects",
+    "empty": "Work is coming soon."
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Reach out about a project or collaboration",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "email@example.com",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Your message",
+    "submit": "Send",
+    "sending": "Sending...",
+    "success": "Message sent.",
+    "error": "Message could not be sent. Please try again later."
+  },
+  "footer": {
+    "rights": "All rights reserved"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "This page doesn't exist.",
+    "back": "Go home"
+  },
+  "error": {
+    "title": "Something went wrong",
+    "description": "An unexpected error occurred. Please try again.",
+    "retry": "Try again"
+  }
+}

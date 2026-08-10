@@ -1,0 +1,21 @@
+{
+  "name": "portfoliolar",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:umidjon": "npm run dev --workspace umidjon",
+    "dev:diyorbek": "npm run dev --workspace diyorbek",
+    "dev:usmonjon": "npm run dev --workspace usmonjon",
+    "build:umidjon": "npm run build --workspace umidjon",
+    "build:diyorbek": "npm run build --workspace diyorbek",
+    "build:usmonjon": "npm run build --workspace usmonjon",
+    "build:all": "npm run build --workspaces",
+    "lint": "npm run lint --workspaces --if-present"
+  },
+  "engines": {
+    "node": ">=20.11.0"
+  }
+}

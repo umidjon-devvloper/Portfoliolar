@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+  diyorber.site — technical "developer" direction.
+  Dark gray surfaces, monospace accents, terminal motif.
+*/
+
+:root {
+  --background: #fafafa;
+  --surface: #f2f2f2;
+  --surface-2: #e6e6e6;
+  --foreground: #16181a;
+  --muted: #5f6569;
+  --border: #dcdcdc;
+  --accent: #148f47;
+  --accent-foreground: #ffffff;
+  --amber: #a86400;
+  --ring: #148f47;
+}
+
+.dark {
+  --background: #0d0f11;
+  --surface: #141719;
+  --surface-2: #1c2022;
+  --foreground: #e6e9ea;
+  --muted: #8b9296;
+  --border: #24292c;
+  --accent: #3ddc84;
+  --accent-foreground: #08120c;
+  --amber: #f5a524;
+  --ring: #3ddc84;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-amber: var(--amber);
+  --color-ring: var(--ring);
+
+  --font-sans: var(--font-mono), ui-monospace, SFMono-Regular, monospace;
+  --font-mono: var(--font-mono), ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-mono);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: var(--accent);
+    color: var(--accent-foreground);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .scanline {
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0 3px,
+      color-mix(in srgb, var(--border) 45%, transparent) 3px 4px
+    );
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

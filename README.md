@@ -1,49 +1,49 @@
-# portfolio-umidjon
+# Portfoliolar
 
-Personal portfolio website — **umidjon.site**
+Monorepo for three personal portfolio websites.
 
-Full Stack Web & Mobile Developer / Entrepreneur.
+| App | Domain | Owner | Role |
+|-----|--------|-------|------|
+| `apps/umidjon` | umidjon.site | Umidjon | Full Stack Web & Mobile Developer + Entrepreneur |
+| `apps/diyorbek` | diyorber.site | Diyorbek | Full Stack Web Developer |
+| `apps/usmonjon` | usmonjon.site | Usmonjon | Frontend Developer & UI/UX Designer |
 
-## Status
-
-Boshlash — repository initialized, project setup in progress.
+Each app is an independent Next.js application with its own design language,
+deployed separately on Vercel from this single repository.
 
 ## Tech Stack
 
 - Next.js 15 (App Router, TypeScript, `src/`)
-- TailwindCSS v4 + shadcn/ui
-- framer-motion
-- lucide-react
-- next-themes (dark / light)
+- TailwindCSS v4 + shadcn/ui primitives
+- framer-motion, lucide-react, next-themes
 - next-intl (uz / ru / en)
 - Content: typed objects in `src/content/*`
 - Contact form: Telegram Bot API via server action
-- Deploy: Vercel + custom domain
+- npm workspaces
 
 No backend / database required.
 
-## Pages
+## Structure
 
-| Route | Description |
-|-------|-------------|
-| `/` | Hero, about, featured projects, services, CTA |
-| `/about` | Full bio, working style, strengths, goals |
-| `/projects` | All projects (filter: saas / mobile / web) |
-| `/projects/[slug]` | Problem to solution to stack to result |
-| `/services` | Agency services + pricing request CTA |
-| `/contact` | Form + social links |
-| `/resume` | CV + PDF download |
+```
+apps/
+  umidjon/     full multi-page site
+  diyorbek/    single page + anchors
+  usmonjon/    single page + anchors
+```
 
 ## Getting Started
 
 ```bash
 npm install
-npm run dev
+npm run dev:umidjon     # http://localhost:3000
+npm run dev:diyorbek    # http://localhost:3001
+npm run dev:usmonjon    # http://localhost:3002
 ```
 
 ## Environment Variables
 
-Create `.env.local`:
+Each app needs its own `.env.local`:
 
 ```
 TELEGRAM_BOT_TOKEN=
@@ -52,9 +52,13 @@ TELEGRAM_CHAT_ID=
 
 ## Deployment
 
-Vercel: import repo, add env vars, connect domain `umidjon.site`.
+Create three Vercel projects from this repository. For each one set:
 
-DNS records:
+- **Root Directory**: `apps/umidjon` (or `apps/diyorbek`, `apps/usmonjon`)
+- **Environment Variables**: as above
+- **Domain**: the matching custom domain
+
+DNS records at the registrar:
 
 - `A` -> `76.76.21.21`
 - `CNAME www` -> `cname.vercel-dns.com`

@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "title": "Usmonjon — Frontend Developer & UI/UX Designer",
+    "description": "Zamonaviy va qulay web interfeyslar yaratishga ixtisoslashgan Frontend Developer va UI/UX Designer."
+  },
+  "nav": {
+    "about": "Haqida",
+    "skills": "Ko'nikmalar",
+    "work": "Ishlar",
+    "contact": "Kontakt",
+    "openMenu": "Menyuni ochish",
+    "closeMenu": "Menyuni yopish"
+  },
+  "common": {
+    "toggleTheme": "Mavzuni almashtirish",
+    "language": "Til",
+    "comingSoon": "Tez orada"
+  },
+  "hero": {
+    "role": "Frontend Developer & UI/UX Designer",
+    "titleLine1": "Interfeys —",
+    "titleLine2": "bu birinchi taassurot",
+    "subtitle": "Zamonaviy va qulay web interfeyslar yarataman. Umidjon bilan sheriklik asosida turli web-loyihalarda ishlayman.",
+    "cta": "Ishlarni ko'rish"
+  },
+  "about": {
+    "title": "Haqida",
+    "bio": "Zamonaviy va qulay web interfeyslar yaratishga ixtisoslashgan Frontend Developer va UI/UX Designer. Umidjon bilan sheriklik asosida turli web-loyihalarda ishlayman.",
+    "experienceTitle": "Tajriba",
+    "experience": "Umidjon bilan hamkorlikda web-saytlar va web-ilovalar ustida ishlab, frontend development, UI/UX dizayn va foydalanuvchi interfeyslarini yaratishda ishtirok etaman.",
+    "goalTitle": "Maqsad",
+    "goal": "Chiroyli, qulay va zamonaviy interfeyslar yaratish hamda real loyihalar orqali professional tajribamni rivojlantirish.",
+    "partnersTitle": "Jamoa"
+  },
+  "skills": {
+    "title": "Ko'nikmalar",
+    "frontend": "Frontend",
+    "design": "Dizayn",
+    "tools": "Tools"
+  },
+  "work": {
+    "title": "Ishlar",
+    "subtitle": "Dizayn va interfeys loyihalari",
+    "empty": "Ishlar tez orada qo'shiladi."
+  },
+  "contact": {
+    "title": "Bog'lanish",
+    "subtitle": "Loyiha yoki hamkorlik bo'yicha yozing",
+    "nameLabel": "Ism",
+    "namePlaceholder": "Ismingiz",
+    "emailLabel": "Email",
+    "emailPlaceholder": "email@example.com",
+    "messageLabel": "Xabar",
+    "messagePlaceholder": "Xabaringiz",
+    "submit": "Yuborish",
+    "sending": "Yuborilmoqda...",
+    "success": "Xabar yuborildi.",
+    "error": "Xabar yuborilmadi. Keyinroq urinib ko'ring."
+  },
+  "footer": {
+    "rights": "Barcha huquqlar himoyalangan"
+  },
+  "notFound": {
+    "title": "Sahifa topilmadi",
+    "description": "Siz izlagan sahifa mavjud emas.",
+    "back": "Bosh sahifaga"
+  },
+  "error": {
+    "title": "Xatolik yuz berdi",
+    "description": "Kutilmagan xatolik. Qayta urinib ko'ring.",
+    "retry": "Qayta urinish"
+  }
+}

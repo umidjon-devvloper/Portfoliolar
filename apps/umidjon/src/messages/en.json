@@ -1,0 +1,169 @@
+{
+  "meta": {
+    "title": "Umidjon — Full Stack Web & Mobile Developer",
+    "description": "Full Stack Web & Mobile Developer building products with React, Next.js, React Native, Expo and Node.js that solve real business problems."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "services": "Services",
+    "resume": "Resume",
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "common": {
+    "toggleTheme": "Toggle theme",
+    "language": "Language",
+    "readMore": "Read more",
+    "viewAll": "View all",
+    "backToProjects": "Back to projects",
+    "loading": "Loading",
+    "comingSoon": "Coming soon"
+  },
+  "hero": {
+    "eyebrow": "Full Stack Web & Mobile Developer",
+    "title": "Not just code — products that move the business",
+    "subtitle": "I work with React, Next.js, React Native, Expo and Node.js. My goal is not simply to write code, but to build products that solve real business problems.",
+    "primaryCta": "View projects",
+    "secondaryCta": "Get in touch"
+  },
+  "about": {
+    "title": "About",
+    "shortBio": "Full Stack Web & Mobile Developer working with React, Next.js, React Native, Expo and Node.js. My goal is not simply to write code, but to build products that solve real business problems.",
+    "longBio": "I build modern websites, web applications, mobile apps, backend systems, Telegram bots and digital products for businesses. I work across frontend, backend and mobile, and I am taking my own products and services to the international market. I grew as a developer through real projects rather than theory.",
+    "workStyleTitle": "How I work",
+    "workStyle": "I don't treat a project as only frontend or only backend. I understand the full Idea → Design → Development → Backend → Mobile/Web → Deployment → Business chain and take it as far as I can on my own.",
+    "strengthsTitle": "Strengths",
+    "goalsTitle": "Goals",
+    "partnersTitle": "Partners",
+    "partnersSubtitle": "The team I build projects with"
+  },
+  "strengths": {
+    "fullStackThinking": "Full-stack thinking — I understand frontend, backend, database and deployment as one system",
+    "productThinking": "Product thinking — I consider how a product actually benefits the business",
+    "independence": "Independence — I learn a new technology or API and apply it in production",
+    "fastLearning": "Fast learning — I pick up new frameworks and platforms while shipping projects",
+    "entrepreneurial": "Entrepreneurial mindset — I turn technology into a service or a product"
+  },
+  "goals": {
+    "international": "Work in the international IT market and on projects with global companies",
+    "senior": "Reach Senior Developer level",
+    "ownSaas": "Build my own SaaS products",
+    "agency": "Grow Umidjon Agency",
+    "digitalProducts": "Sell digital products and templates",
+    "passiveIncome": "Build passive income streams"
+  },
+  "skills": {
+    "title": "Technologies",
+    "frontend": "Frontend",
+    "mobile": "Mobile",
+    "backend": "Backend",
+    "authDb": "Auth & Database",
+    "payments": "Payments",
+    "devops": "DevOps & Deploy",
+    "design": "Design"
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Problem, solution and result — every project in that order",
+    "featuredTitle": "Selected projects",
+    "filterAll": "All",
+    "filterSaas": "SaaS",
+    "filterMobile": "Mobile",
+    "filterFullstack": "Full Stack",
+    "filterBusiness": "Business",
+    "empty": "No projects in this category yet",
+    "problem": "Problem",
+    "solution": "Solution",
+    "stack": "Stack",
+    "result": "Result",
+    "integrations": "Integrations",
+    "components": "Components",
+    "notFound": "Project not found"
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "From idea to deployment — with one team",
+    "cta": "Request a quote",
+    "web": {
+      "title": "Websites",
+      "description": "Corporate sites, landing pages, catalogues and portfolios."
+    },
+    "webApp": {
+      "title": "Web applications",
+      "description": "Admin panels, dashboards and internal business systems."
+    },
+    "mobile": {
+      "title": "Mobile apps",
+      "description": "iOS and Android with React Native and Expo, including store releases."
+    },
+    "saas": {
+      "title": "SaaS products",
+      "description": "Subscription models, multi-tenant architecture and payment integrations."
+    },
+    "bots": {
+      "title": "Telegram bots",
+      "description": "Bots for orders, notifications and automation."
+    },
+    "backend": {
+      "title": "Backend & API",
+      "description": "Systems built on Node.js, Express, REST and GraphQL, MongoDB."
+    },
+    "uiux": {
+      "title": "UI/UX design",
+      "description": "Interface design and design systems in Figma."
+    },
+    "deploy": {
+      "title": "Deployment & support",
+      "description": "Vercel, Firebase, Cloudflare, domains, SSL and ongoing technical support."
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Tell me about your project — I'll reply",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "email@example.com",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Briefly describe your project",
+    "submit": "Send",
+    "sending": "Sending...",
+    "success": "Your message was sent. I'll get back to you shortly.",
+    "error": "Message could not be sent. Please try again later.",
+    "validation": {
+      "nameRequired": "Enter your name",
+      "emailInvalid": "Enter a valid email",
+      "messageShort": "Message must be at least 10 characters"
+    }
+  },
+  "resume": {
+    "title": "Resume",
+    "subtitle": "Experience, technologies and education",
+    "download": "Download PDF",
+    "downloadUnavailable": "PDF is not ready yet",
+    "educationTitle": "Education",
+    "experienceTitle": "Experience"
+  },
+  "cta": {
+    "title": "Have a project?",
+    "subtitle": "Let's turn the idea into a product.",
+    "button": "Get in touch"
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "builtWith": "Built with Next.js"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you're looking for doesn't exist or has moved.",
+    "back": "Go home"
+  },
+  "error": {
+    "title": "Something went wrong",
+    "description": "An unexpected error occurred. Please try again.",
+    "retry": "Try again"
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "meta": {
+    "title": "Umidjon — Full Stack Web & Mobile Developer",
+    "description": "Full Stack Web & Mobile Developer. React, Next.js, React Native, Expo va Node.js bilan real biznes muammolarini hal qiladigan mahsulotlar yarataman."
+  },
+  "nav": {
+    "home": "Bosh sahifa",
+    "about": "Men haqimda",
+    "projects": "Loyihalar",
+    "services": "Xizmatlar",
+    "resume": "Rezyume",
+    "contact": "Bog'lanish",
+    "openMenu": "Menyuni ochish",
+    "closeMenu": "Menyuni yopish"
+  },
+  "common": {
+    "toggleTheme": "Mavzuni almashtirish",
+    "language": "Til",
+    "readMore": "Batafsil",
+    "viewAll": "Barchasini ko'rish",
+    "backToProjects": "Loyihalarga qaytish",
+    "loading": "Yuklanmoqda",
+    "comingSoon": "Tez orada"
+  },
+  "hero": {
+    "eyebrow": "Full Stack Web & Mobile Developer",
+    "title": "Kod emas — biznesga natija beradigan mahsulot quraman",
+    "subtitle": "React, Next.js, React Native, Expo va Node.js bilan ishlayman. Maqsadim — shunchaki kod yozish emas, real biznes muammolarini texnologiya orqali hal qiladigan mahsulotlar yaratish.",
+    "primaryCta": "Loyihalarni ko'rish",
+    "secondaryCta": "Bog'lanish"
+  },
+  "about": {
+    "title": "Men haqimda",
+    "shortBio": "Full Stack Web & Mobile Developer. React, Next.js, React Native, Expo va Node.js bilan ishlayman. Maqsadim — shunchaki kod yozish emas, real biznes muammolarini texnologiya orqali hal qiladigan mahsulotlar yaratish.",
+    "longBio": "Zamonaviy web-saytlar, web-ilovalar, mobil ilovalar, backend tizimlar, Telegram botlar va biznes uchun raqamli mahsulotlar yarataman. Frontend, backend va mobile yo'nalishlarida ishlayman hamda o'z mahsulotlarim va xizmatlarimni xalqaro bozorga olib chiqishga intilaman. Dasturlashni nazariy emas, amaliy loyihalar orqali rivojlantirib kelganman.",
+    "workStyleTitle": "Ish uslubim",
+    "workStyle": "Loyihani faqat frontend yoki backend sifatida ko'rmayman. Idea → Design → Development → Backend → Mobile/Web → Deployment → Business jarayonini to'liq tushunib, imkon qadar mustaqil amalga oshiraman.",
+    "strengthsTitle": "Kuchli tomonlarim",
+    "goalsTitle": "Maqsadlarim",
+    "partnersTitle": "Hamkorlar",
+    "partnersSubtitle": "Loyihalarda birgalikda ishlaydigan jamoam"
+  },
+  "strengths": {
+    "fullStackThinking": "Full-stack fikrlash — frontend, backend, database va deploymentni birgalikda tushunaman",
+    "productThinking": "Product thinking — mahsulot biznesga qanday foyda berishini o'ylayman",
+    "independence": "Mustaqil ishlash — yangi texnologiya yoki APIni o'rganib, amalda qo'llayman",
+    "fastLearning": "Tez o'rganish — yangi framework va platformalarni loyihalar davomida o'zlashtiraman",
+    "entrepreneurial": "Entrepreneurial mindset — texnologiyani xizmat yoki mahsulotga aylantiraman"
+  },
+  "goals": {
+    "international": "Xalqaro IT bozorida ishlash va xalqaro kompaniyalar bilan loyihalar",
+    "senior": "Senior Developer darajasiga chiqish",
+    "ownSaas": "O'z SaaS mahsulotlarini yaratish",
+    "agency": "Umidjon Agency'ni rivojlantirish",
+    "digitalProducts": "Digital products va templates sotish",
+    "passiveIncome": "Passiv daromad manbalarini shakllantirish"
+  },
+  "skills": {
+    "title": "Texnologiyalar",
+    "frontend": "Frontend",
+    "mobile": "Mobile",
+    "backend": "Backend",
+    "authDb": "Auth & Database",
+    "payments": "To'lov tizimlari",
+    "devops": "DevOps & Deploy",
+    "design": "Dizayn"
+  },
+  "projects": {
+    "title": "Loyihalar",
+    "subtitle": "Muammo, yechim va natija — har bir loyiha shu tartibda",
+    "featuredTitle": "Tanlangan loyihalar",
+    "filterAll": "Barchasi",
+    "filterSaas": "SaaS",
+    "filterMobile": "Mobile",
+    "filterFullstack": "Full Stack",
+    "filterBusiness": "Biznes",
+    "empty": "Bu bo'limda hozircha loyiha yo'q",
+    "problem": "Muammo",
+    "solution": "Yechim",
+    "stack": "Stack",
+    "result": "Natija",
+    "integrations": "Integratsiyalar",
+    "components": "Tarkibiy qismlar",
+    "notFound": "Loyiha topilmadi"
+  },
+  "services": {
+    "title": "Xizmatlar",
+    "subtitle": "Idea'dan deploymentgacha — bitta jamoa bilan",
+    "cta": "Narx so'rash",
+    "web": {
+      "title": "Web saytlar",
+      "description": "Korporativ saytlar, landing sahifalar, katalog va portfolio saytlar."
+    },
+    "webApp": {
+      "title": "Web ilovalar",
+      "description": "Admin panellar, dashboardlar va ichki biznes tizimlari."
+    },
+    "mobile": {
+      "title": "Mobil ilovalar",
+      "description": "React Native va Expo asosida iOS va Android ilovalar, store'ga chiqarish bilan."
+    },
+    "saas": {
+      "title": "SaaS mahsulotlar",
+      "description": "Obuna modeli, ko'p ijarachi arxitektura va to'lov integratsiyalari."
+    },
+    "bots": {
+      "title": "Telegram botlar",
+      "description": "Buyurtma, xabarnoma va avtomatlashtirish uchun botlar."
+    },
+    "backend": {
+      "title": "Backend va API",
+      "description": "Node.js, Express, REST va GraphQL, MongoDB asosidagi tizimlar."
+    },
+    "uiux": {
+      "title": "UI/UX dizayn",
+      "description": "Figma'da interfeys dizayni va dizayn tizimlari."
+    },
+    "deploy": {
+      "title": "Deploy va qo'llab-quvvatlash",
+      "description": "Vercel, Firebase, Cloudflare, domen, SSL va texnik qo'llab-quvvatlash."
+    }
+  },
+  "contact": {
+    "title": "Bog'lanish",
+    "subtitle": "Loyiha g'oyangizni yozing — javob beraman",
+    "nameLabel": "Ism",
+    "namePlaceholder": "Ismingiz",
+    "emailLabel": "Email",
+    "emailPlaceholder": "email@example.com",
+    "messageLabel": "Xabar",
+    "messagePlaceholder": "Loyihangiz haqida qisqacha yozing",
+    "submit": "Yuborish",
+    "sending": "Yuborilmoqda...",
+    "success": "Xabaringiz yuborildi. Tez orada bog'lanaman.",
+    "error": "Xabar yuborilmadi. Iltimos, keyinroq urinib ko'ring.",
+    "validation": {
+      "nameRequired": "Ismni kiriting",
+      "emailInvalid": "To'g'ri email kiriting",
+      "messageShort": "Xabar kamida 10 ta belgidan iborat bo'lsin"
+    }
+  },
+  "resume": {
+    "title": "Rezyume",
+    "subtitle": "Tajriba, texnologiyalar va ta'lim",
+    "download": "PDF yuklab olish",
+    "downloadUnavailable": "PDF hozircha tayyor emas",
+    "educationTitle": "Ta'lim",
+    "experienceTitle": "Tajriba"
+  },
+  "cta": {
+    "title": "Loyihangiz bormi?",
+    "subtitle": "G'oyani mahsulotga aylantiramiz.",
+    "button": "Bog'lanish"
+  },
+  "footer": {
+    "rights": "Barcha huquqlar himoyalangan",
+    "builtWith": "Next.js bilan qurilgan"
+  },
+  "notFound": {
+    "title": "Sahifa topilmadi",
+    "description": "Siz izlagan sahifa mavjud emas yoki ko'chirilgan.",
+    "back": "Bosh sahifaga"
+  },
+  "error": {
+    "title": "Xatolik yuz berdi",
+    "description": "Kutilmagan xatolik. Qayta urinib ko'ring.",
+    "retry": "Qayta urinish"
+  }
+}

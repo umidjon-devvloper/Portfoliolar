@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "title": "Diyorbek — Full Stack Web Developer",
+    "description": "Full Stack Web Developer working across frontend and backend with React, Next.js, Node.js, Express and MongoDB."
+  },
+  "nav": {
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "common": {
+    "toggleTheme": "Toggle theme",
+    "language": "Language",
+    "comingSoon": "Coming soon"
+  },
+  "hero": {
+    "role": "Full Stack Web Developer",
+    "title": "Frontend, backend and API — in one pair of hands",
+    "subtitle": "I work across frontend and backend. In partnership with Umidjon I contribute to a range of web projects, building their frontend, backend and API layers.",
+    "cta": "Get in touch"
+  },
+  "about": {
+    "title": "About",
+    "bio": "Full Stack Web Developer working across frontend and backend. In partnership with Umidjon he contributes to a range of web projects, building their frontend, backend and API layers.",
+    "experienceTitle": "Experience",
+    "experience": "Working with Umidjon on websites, web applications and business projects. I take part in building frontend, backend and database integrations.",
+    "goalTitle": "Goal",
+    "goal": "Gain experience on real projects, go deeper into modern technologies and grow into a strong Full Stack Developer.",
+    "partnersTitle": "Team"
+  },
+  "skills": {
+    "title": "Skills",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "tools": "Tools"
+  },
+  "projects": {
+    "title": "Projects",
+    "empty": "Projects are coming soon.",
+    "role": "Role",
+    "stack": "Stack"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Reach out about a project or collaboration",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "email@example.com",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Your message",
+    "submit": "Send",
+    "sending": "Sending...",
+    "success": "Message sent.",
+    "error": "Message could not be sent. Please try again later."
+  },
+  "footer": {
+    "rights": "All rights reserved"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "This page doesn't exist.",
+    "back": "Go home"
+  },
+  "error": {
+    "title": "Something went wrong",
+    "description": "An unexpected error occurred. Please try again.",
+    "retry": "Try again"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "title": "Диёрбек — Full Stack Web Developer",
+    "description": "Full Stack Web разработчик, работающий с frontend и backend. React, Next.js, Node.js, Express и MongoDB."
+  },
+  "nav": {
+    "about": "Обо мне",
+    "skills": "Технологии",
+    "projects": "Проекты",
+    "contact": "Контакты",
+    "openMenu": "Открыть меню",
+    "closeMenu": "Закрыть меню"
+  },
+  "common": {
+    "toggleTheme": "Сменить тему",
+    "language": "Язык",
+    "comingSoon": "Скоро"
+  },
+  "hero": {
+    "role": "Full Stack Web Developer",
+    "title": "Frontend, backend и API — в одних руках",
+    "subtitle": "Работаю во frontend и backend направлениях. В партнёрстве с Умиджоном участвую в разных веб-проектах — разрабатываю frontend, backend и API части.",
+    "cta": "Связаться"
+  },
+  "about": {
+    "title": "Обо мне",
+    "bio": "Full Stack Web разработчик, работающий во frontend и backend направлениях. В партнёрстве с Умиджоном участвует в различных веб-проектах — разрабатывает frontend, backend и API части.",
+    "experienceTitle": "Опыт",
+    "experience": "В сотрудничестве с Умиджоном работаю над сайтами, веб-приложениями и бизнес-проектами. Участвую в создании frontend, backend и интеграций с базой данных.",
+    "goalTitle": "Цель",
+    "goal": "Набирать опыт на реальных проектах, глубже изучать современные технологии и расти как сильный Full Stack разработчик.",
+    "partnersTitle": "Команда"
+  },
+  "skills": {
+    "title": "Технологии",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "tools": "Tools"
+  },
+  "projects": {
+    "title": "Проекты",
+    "empty": "Проекты скоро появятся.",
+    "role": "Роль",
+    "stack": "Стек"
+  },
+  "contact": {
+    "title": "Связаться",
+    "subtitle": "Напишите по проекту или сотрудничеству",
+    "nameLabel": "Имя",
+    "namePlaceholder": "Ваше имя",
+    "emailLabel": "Email",
+    "emailPlaceholder": "email@example.com",
+    "messageLabel": "Сообщение",
+    "messagePlaceholder": "Ваше сообщение",
+    "submit": "Отправить",
+    "sending": "Отправка...",
+    "success": "Сообщение отправлено.",
+    "error": "Не удалось отправить. Попробуйте позже."
+  },
+  "footer": {
+    "rights": "Все права защищены"
+  },
+  "notFound": {
+    "title": "Страница не найдена",
+    "description": "Страница не существует.",
+    "back": "На главную"
+  },
+  "error": {
+    "title": "Произошла ошибка",
+    "description": "Непредвиденная ошибка. Попробуйте ещё раз.",
+    "retry": "Повторить"
+  }
+}

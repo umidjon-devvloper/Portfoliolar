@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "title": "Diyorbek — Full Stack Web Developer",
+    "description": "Frontend va backend yo'nalishlarida ishlaydigan Full Stack Web Developer. React, Next.js, Node.js, Express va MongoDB."
+  },
+  "nav": {
+    "about": "Haqida",
+    "skills": "Texnologiyalar",
+    "projects": "Loyihalar",
+    "contact": "Kontakt",
+    "openMenu": "Menyuni ochish",
+    "closeMenu": "Menyuni yopish"
+  },
+  "common": {
+    "toggleTheme": "Mavzuni almashtirish",
+    "language": "Til",
+    "comingSoon": "Tez orada"
+  },
+  "hero": {
+    "role": "Full Stack Web Developer",
+    "title": "Frontend, backend va API — bitta odam qo'lida",
+    "subtitle": "Frontend va backend yo'nalishlarida ishlayman. Umidjon bilan sheriklik asosida turli web-loyihalarda ishtirok etaman — loyihalarning frontend, backend va API qismlarini ishlab chiqaman.",
+    "cta": "Bog'lanish"
+  },
+  "about": {
+    "title": "Haqida",
+    "bio": "Frontend va backend yo'nalishlarida ishlaydigan Full Stack Web Developer. Umidjon bilan sheriklik asosida turli web-loyihalarda ishtirok etadi — loyihalarning frontend, backend va API qismlarini ishlab chiqadi.",
+    "experienceTitle": "Tajriba",
+    "experience": "Umidjon bilan hamkorlikda web-saytlar, web-ilovalar va biznes loyihalari ustida ishlayman. Frontend, backend va database integratsiyalarini yaratishda ishtirok etaman.",
+    "goalTitle": "Maqsad",
+    "goal": "Real loyihalarda tajriba oshirish, zamonaviy texnologiyalarni chuqur o'rganish va kuchli Full Stack Developer sifatida rivojlanish.",
+    "partnersTitle": "Jamoa"
+  },
+  "skills": {
+    "title": "Texnologiyalar",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "tools": "Tools"
+  },
+  "projects": {
+    "title": "Loyihalar",
+    "empty": "Loyihalar tez orada qo'shiladi.",
+    "role": "Rol",
+    "stack": "Stack"
+  },
+  "contact": {
+    "title": "Bog'lanish",
+    "subtitle": "Loyiha yoki hamkorlik bo'yicha yozing",
+    "nameLabel": "Ism",
+    "namePlaceholder": "Ismingiz",
+    "emailLabel": "Email",
+    "emailPlaceholder": "email@example.com",
+    "messageLabel": "Xabar",
+    "messagePlaceholder": "Xabaringiz",
+    "submit": "Yuborish",
+    "sending": "Yuborilmoqda...",
+    "success": "Xabar yuborildi.",
+    "error": "Xabar yuborilmadi. Keyinroq urinib ko'ring."
+  },
+  "footer": {
+    "rights": "Barcha huquqlar himoyalangan"
+  },
+  "notFound": {
+    "title": "Sahifa topilmadi",
+    "description": "Siz izlagan sahifa mavjud emas.",
+    "back": "Bosh sahifaga"
+  },
+  "error": {
+    "title": "Xatolik yuz berdi",
+    "description": "Kutilmagan xatolik. Qayta urinib ko'ring.",
+    "retry": "Qayta urinish"
+  }
+}
