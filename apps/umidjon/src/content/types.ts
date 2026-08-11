@@ -9,6 +9,7 @@ export type ProjectKind = "saas" | "mobile" | "fullstack" | "business";
 export type ProjectLink = {
   label: string;
   href: string;
+  kind: "live" | "repo" | "appStore" | "playStore";
 };
 
 export type Project = {
@@ -34,17 +35,43 @@ export type SkillGroup = {
   items: string[];
 };
 
+export type Metric = {
+  id: string;
+  value: number;
+  suffix: string;
+};
+
 export type ServiceItem = {
   id: string;
   icon: string;
+  priceFrom: number | null;
+};
+
+export type Education = {
+  institution: string;
+  field: string;
+  degree: string;
+  from: string;
+  to: string;
+};
+
+export type Location = {
+  city: string;
+  region: string;
+  country: string;
+  countryCode: string;
 };
 
 export type Contact = {
-  email: string | null;
+  email: string;
+  emailSecondary: string | null;
   telegram: string | null;
+  telegramHandle: string | null;
   phone: string | null;
+  phoneDisplay: string | null;
   github: string | null;
   linkedin: string | null;
+  instagram: string | null;
   agency: string | null;
 };
 
@@ -53,8 +80,9 @@ export type Profile = {
   fullName: string | null;
   role: string;
   secondaryRole: string;
-  education: string | null;
-  location: string | null;
+  birthDate: string | null;
+  education: Education | null;
+  location: Location | null;
   avatar: string | null;
   resumeFile: string | null;
   contact: Contact;

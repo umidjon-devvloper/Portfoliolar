@@ -5,11 +5,17 @@ export const projects: Project[] = [
     slug: "thehotelsaas",
     name: "TheHotelSaaS",
     kind: "saas",
-    year: null, // TODO
+    year: null, // TODO: no public repo found — confirm the year
     featured: true,
     cover: null, // TODO: /projects/thehotelsaas.webp
     gallery: [],
-    links: [], // TODO: live demo / repo
+    links: [
+      {
+        label: "thehotelsaas.com",
+        href: "https://thehotelsaas.com",
+        kind: "live",
+      },
+    ],
     stack: ["Next.js", "Node.js", "MongoDB", "Tailwind CSS"],
     integrations: [],
     components: [],
@@ -29,20 +35,20 @@ export const projects: Project[] = [
       en: "A complete SaaS platform for digital management, monitoring and automation of business processes.",
     },
     result: {
-      uz: "Ishlab turgan mahsulot, xalqaro bozorga chiqarish rejalashtirilgan.",
-      ru: "Работающий продукт, планируется выход на международный рынок.",
-      en: "A live product, with international market entry planned.",
+      uz: "Ishlab turgan tizim — internetda ochiq va foydalanishda.",
+      ru: "Работающая система — доступна онлайн и используется.",
+      en: "A live system — online and in use.",
     },
   },
   {
     slug: "rateradar",
     name: "RateRadar",
     kind: "saas",
-    year: null, // TODO
+    year: "2026",
     featured: true,
     cover: null, // TODO
     gallery: [],
-    links: [], // TODO
+    links: [], // no public link yet
     stack: ["Node.js", "SerpAPI", "MongoDB", "Next.js"],
     integrations: ["Google Hotels", "Booking", "Expedia", "Agoda", "SerpAPI"],
     components: [],
@@ -61,17 +67,23 @@ export const projects: Project[] = [
       ru: "Сбор цен конкурентов с OTA-платформ, их анализ и предоставление отелю полезных инсайтов.",
       en: "Collecting competitor rates from OTA platforms, analysing them and turning them into actionable insights.",
     },
-    result: null, // TODO: measurable outcome
+    result: null, // TODO
   },
   {
     slug: "sushi-time",
     name: "Sushi Time",
     kind: "fullstack",
-    year: null, // TODO
+    year: "2026",
     featured: true,
     cover: null, // TODO
     gallery: [],
-    links: [], // TODO
+    links: [
+      {
+        label: "sushitimetr.com",
+        href: "https://sushitimetr.com",
+        kind: "live",
+      },
+    ],
     stack: ["Node.js", "Express.js", "MongoDB", "React Native", "Expo", "React"],
     integrations: [],
     components: ["Backend API", "Admin panel", "Mobile application", "Web client"],
@@ -91,23 +103,30 @@ export const projects: Project[] = [
       en: "Uniting backend, admin panel, mobile app and web client into a single ecosystem.",
     },
     result: {
-      uz: "Frontend, backend, mobile va admin tizimlarini birlashtirish tajribasi.",
-      ru: "Опыт объединения frontend, backend, mobile и admin систем.",
-      en: "Hands-on experience integrating frontend, backend, mobile and admin systems.",
+      uz: "To'rt qismli tizim ishlab turibdi: API, admin panel, mobil ilova va web mijoz.",
+      ru: "Работает система из четырёх частей: API, админка, мобильное приложение и веб-клиент.",
+      en: "A four-part system in production: API, admin panel, mobile app and web client.",
     },
   },
   {
     slug: "zapchasty",
     name: "Zapchasty",
     kind: "mobile",
-    year: null, // TODO
+    year: "2026",
     featured: false,
     cover: null, // TODO
     gallery: [],
-    links: [], // TODO: App Store / Google Play
+    links: [
+      {
+        label: "zapchasty.uz",
+        href: "https://www.zapchasty.uz",
+        kind: "live",
+      },
+      // TODO: add the exact App Store / Google Play listing URLs
+    ],
     stack: ["React Native", "Expo", "EAS Build", "Node.js"],
     integrations: [],
-    components: [],
+    components: ["Mobile application", "Admin panel", "Web frontend"],
     tagline: {
       uz: "Avtomobil ehtiyot qismlari uchun mobil ilova",
       ru: "Мобильное приложение для автозапчастей",
@@ -124,21 +143,27 @@ export const projects: Project[] = [
       en: "A mobile marketplace app built with React Native / Expo.",
     },
     result: {
-      uz: "Google Play va App Store publish jarayonlari to'liq bajarilgan.",
-      ru: "Полностью пройдены процессы публикации в Google Play и App Store.",
-      en: "Full release pipeline completed on both Google Play and the App Store.",
+      uz: "Google Play va App Store'da chop etilgan — review jarayoni to'liq o'tilgan.",
+      ru: "Опубликовано в Google Play и App Store — процесс ревью полностью пройден.",
+      en: "Published on Google Play and the App Store — full review process completed.",
     },
   },
   {
     slug: "umidjon-agency",
     name: "Umidjon Agency",
     kind: "business",
-    year: null, // TODO
+    year: "2026",
     featured: false,
     cover: null, // TODO
     gallery: [],
-    links: [{ label: "umidjon.agency", href: "https://umidjon.agency" }],
-    stack: [],
+    links: [
+      {
+        label: "umidjon.agency",
+        href: "https://www.umidjon.agency",
+        kind: "live",
+      },
+    ],
+    stack: ["Next.js", "TypeScript", "Tailwind CSS"],
     integrations: [],
     components: [
       "Web saytlar",
@@ -165,13 +190,23 @@ export const projects: Project[] = [
       ru: "Весь путь от идеи до деплоя внутри одной команды.",
       en: "The whole path from idea to deployment handled by one team.",
     },
-    result: null, // TODO
+    result: {
+      uz: "12 ta tugallangan loyiha, 6 ta mijoz loyihasi — barchasi internetda ishlab turibdi.",
+      ru: "12 завершённых проектов, 6 клиентских — все работают онлайн.",
+      en: "12 completed projects, 6 of them for clients — all live online.",
+    },
   },
 ];
 
 export const featuredProjects = projects.filter((project) => project.featured);
 
-export const projectKinds = ["all", "saas", "mobile", "fullstack", "business"] as const;
+export const projectKinds = [
+  "all",
+  "saas",
+  "mobile",
+  "fullstack",
+  "business",
+] as const;
 
 export type ProjectFilter = (typeof projectKinds)[number];
 

@@ -24,10 +24,12 @@
   },
   "hero": {
     "eyebrow": "Full Stack Web & Mobile Developer",
-    "title": "Not just code — products that move the business",
     "subtitle": "I work with React, Next.js, React Native, Expo and Node.js. My goal is not simply to write code, but to build products that solve real business problems.",
     "primaryCta": "View projects",
-    "secondaryCta": "Get in touch"
+    "secondaryCta": "Get in touch",
+    "titleLead": "Not just code —",
+    "titleAccent": "products that move",
+    "titleTail": "the business"
   },
   "about": {
     "title": "About",
@@ -38,7 +40,9 @@
     "strengthsTitle": "Strengths",
     "goalsTitle": "Goals",
     "partnersTitle": "Partners",
-    "partnersSubtitle": "The team I build projects with"
+    "partnersSubtitle": "The team I build projects with",
+    "educationTitle": "Education",
+    "locationLabel": "Location"
   },
   "strengths": {
     "fullStackThinking": "Full-stack thinking — I understand frontend, backend, database and deployment as one system",
@@ -81,23 +85,40 @@
     "result": "Result",
     "integrations": "Integrations",
     "components": "Components",
-    "notFound": "Project not found"
+    "notFound": "Project not found",
+    "links": "Links",
+    "year": "Year",
+    "openSite": "Open site"
   },
   "services": {
     "title": "Services",
     "subtitle": "From idea to deployment — with one team",
     "cta": "Request a quote",
-    "web": {
-      "title": "Websites",
-      "description": "Corporate sites, landing pages, catalogues and portfolios."
+    "from": "Starting at",
+    "priceNote": "These are starting prices — the exact figure is confirmed in writing once requirements are clear.",
+    "landing": {
+      "title": "Landing page",
+      "description": "A single-page site optimised for conversion and fast loading."
     },
-    "webApp": {
-      "title": "Web applications",
-      "description": "Admin panels, dashboards and internal business systems."
+    "corporate": {
+      "title": "Corporate website",
+      "description": "A multi-page, CMS-driven solution for your company."
+    },
+    "ecommerce": {
+      "title": "Online store",
+      "description": "Payments, cart and admin panel — full control over sales."
     },
     "mobile": {
-      "title": "Mobile apps",
-      "description": "iOS and Android with React Native and Expo, including store releases."
+      "title": "Mobile app",
+      "description": "Cross-platform iOS and Android apps that feel native."
+    },
+    "backend": {
+      "title": "Backend / API",
+      "description": "Secure, scalable server infrastructure with REST/GraphQL APIs."
+    },
+    "uiux": {
+      "title": "UI/UX design",
+      "description": "Brand-level product design built around the user."
     },
     "saas": {
       "title": "SaaS products",
@@ -106,18 +127,6 @@
     "bots": {
       "title": "Telegram bots",
       "description": "Bots for orders, notifications and automation."
-    },
-    "backend": {
-      "title": "Backend & API",
-      "description": "Systems built on Node.js, Express, REST and GraphQL, MongoDB."
-    },
-    "uiux": {
-      "title": "UI/UX design",
-      "description": "Interface design and design systems in Figma."
-    },
-    "deploy": {
-      "title": "Deployment & support",
-      "description": "Vercel, Firebase, Cloudflare, domains, SSL and ongoing technical support."
     }
   },
   "contact": {
@@ -145,7 +154,8 @@
     "download": "Download PDF",
     "downloadUnavailable": "PDF is not ready yet",
     "educationTitle": "Education",
-    "experienceTitle": "Experience"
+    "experienceTitle": "Experience",
+    "printHint": "You can save this as a PDF with Ctrl+P in your browser"
   },
   "cta": {
     "title": "Have a project?",
@@ -165,5 +175,32 @@
     "title": "Something went wrong",
     "description": "An unexpected error occurred. Please try again.",
     "retry": "Try again"
+  },
+  "metrics": {
+    "projects": "Completed projects",
+    "clients": "Client projects",
+    "experience": "Years of experience",
+    "response": "Hours to reply",
+    "note": "These figures come from the Umidjon Agency portfolio — every project links to a live site, so they can be counted and checked."
+  },
+  "process": {
+    "title": "How it works",
+    "subtitle": "From idea to launch — you take part at every stage",
+    "brief": {
+      "title": "Brief and analysis",
+      "description": "We study your business, goals and competitors."
+    },
+    "design": {
+      "title": "Design and prototype",
+      "description": "A UI/UX prototype you review and approve before any code is written."
+    },
+    "development": {
+      "title": "Development",
+      "description": "Clean code, weekly demos and progress you can see in real time."
+    },
+    "launch": {
+      "title": "Launch",
+      "description": "Testing, deployment and one month of free technical support."
+    }
   }
 }

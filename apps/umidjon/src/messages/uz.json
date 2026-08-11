@@ -24,10 +24,12 @@
   },
   "hero": {
     "eyebrow": "Full Stack Web & Mobile Developer",
-    "title": "Kod emas — biznesga natija beradigan mahsulot quraman",
     "subtitle": "React, Next.js, React Native, Expo va Node.js bilan ishlayman. Maqsadim — shunchaki kod yozish emas, real biznes muammolarini texnologiya orqali hal qiladigan mahsulotlar yaratish.",
     "primaryCta": "Loyihalarni ko'rish",
-    "secondaryCta": "Bog'lanish"
+    "secondaryCta": "Bog'lanish",
+    "titleLead": "Kod emas —",
+    "titleAccent": "biznesga natija",
+    "titleTail": "beradigan mahsulot quraman"
   },
   "about": {
     "title": "Men haqimda",
@@ -38,7 +40,9 @@
     "strengthsTitle": "Kuchli tomonlarim",
     "goalsTitle": "Maqsadlarim",
     "partnersTitle": "Hamkorlar",
-    "partnersSubtitle": "Loyihalarda birgalikda ishlaydigan jamoam"
+    "partnersSubtitle": "Loyihalarda birgalikda ishlaydigan jamoam",
+    "educationTitle": "Ta'lim",
+    "locationLabel": "Joylashuv"
   },
   "strengths": {
     "fullStackThinking": "Full-stack fikrlash — frontend, backend, database va deploymentni birgalikda tushunaman",
@@ -81,23 +85,40 @@
     "result": "Natija",
     "integrations": "Integratsiyalar",
     "components": "Tarkibiy qismlar",
-    "notFound": "Loyiha topilmadi"
+    "notFound": "Loyiha topilmadi",
+    "links": "Havolalar",
+    "year": "Yil",
+    "openSite": "Saytni ochish"
   },
   "services": {
     "title": "Xizmatlar",
     "subtitle": "Idea'dan deploymentgacha — bitta jamoa bilan",
     "cta": "Narx so'rash",
-    "web": {
-      "title": "Web saytlar",
-      "description": "Korporativ saytlar, landing sahifalar, katalog va portfolio saytlar."
+    "from": "Boshlang'ich narx",
+    "priceNote": "Narxlar boshlang'ich — aniq summa talablar aniqlashgach yozma tasdiqlanadi.",
+    "landing": {
+      "title": "Landing page",
+      "description": "Konversiya uchun optimallashtirilgan, tez yuklanadigan bir sahifali sayt."
     },
-    "webApp": {
-      "title": "Web ilovalar",
-      "description": "Admin panellar, dashboardlar va ichki biznes tizimlari."
+    "corporate": {
+      "title": "Korporativ sayt",
+      "description": "Kompaniyangiz uchun ko'p sahifali, CMS bilan boshqariladigan yechim."
+    },
+    "ecommerce": {
+      "title": "Onlayn do'kon",
+      "description": "To'lov, savat, admin panel — sotuvni to'liq boshqariladigan e-commerce."
     },
     "mobile": {
-      "title": "Mobil ilovalar",
-      "description": "React Native va Expo asosida iOS va Android ilovalar, store'ga chiqarish bilan."
+      "title": "Mobil ilova",
+      "description": "iOS va Android uchun native tuyg'udagi cross-platform ilovalar."
+    },
+    "backend": {
+      "title": "Backend / API",
+      "description": "Xavfsiz, kengayadigan server infratuzilma va REST/GraphQL API."
+    },
+    "uiux": {
+      "title": "UI/UX dizayn",
+      "description": "Brend darajasidagi, foydalanuvchini o'ylab yaratilgan mahsulot dizayni."
     },
     "saas": {
       "title": "SaaS mahsulotlar",
@@ -106,18 +127,6 @@
     "bots": {
       "title": "Telegram botlar",
       "description": "Buyurtma, xabarnoma va avtomatlashtirish uchun botlar."
-    },
-    "backend": {
-      "title": "Backend va API",
-      "description": "Node.js, Express, REST va GraphQL, MongoDB asosidagi tizimlar."
-    },
-    "uiux": {
-      "title": "UI/UX dizayn",
-      "description": "Figma'da interfeys dizayni va dizayn tizimlari."
-    },
-    "deploy": {
-      "title": "Deploy va qo'llab-quvvatlash",
-      "description": "Vercel, Firebase, Cloudflare, domen, SSL va texnik qo'llab-quvvatlash."
     }
   },
   "contact": {
@@ -145,7 +154,8 @@
     "download": "PDF yuklab olish",
     "downloadUnavailable": "PDF hozircha tayyor emas",
     "educationTitle": "Ta'lim",
-    "experienceTitle": "Tajriba"
+    "experienceTitle": "Tajriba",
+    "printHint": "Brauzerda Ctrl+P bilan PDF qilib saqlashingiz mumkin"
   },
   "cta": {
     "title": "Loyihangiz bormi?",
@@ -165,5 +175,32 @@
     "title": "Xatolik yuz berdi",
     "description": "Kutilmagan xatolik. Qayta urinib ko'ring.",
     "retry": "Qayta urinish"
+  },
+  "metrics": {
+    "projects": "Tugallangan loyiha",
+    "clients": "Mijoz loyihasi",
+    "experience": "Yil tajriba",
+    "response": "Ichida javob",
+    "note": "Bu raqamlar Umidjon Agency portfoliosidan olingan — har bir loyiha ishlayotgan saytga havola qiladi, ya'ni sanab tekshirish mumkin."
+  },
+  "process": {
+    "title": "Ish jarayoni",
+    "subtitle": "G'oyadan ishga tushirishgacha — har bosqichda siz ishtirok etasiz",
+    "brief": {
+      "title": "Brief va tahlil",
+      "description": "Biznesingizni, maqsad va raqobatchilarni o'rganamiz."
+    },
+    "design": {
+      "title": "Dizayn va prototip",
+      "description": "UI/UX prototip — kod yozishdan oldin ko'rasiz va tasdiqlaysiz."
+    },
+    "development": {
+      "title": "Ishlab chiqish",
+      "description": "Toza kod, haftalik demo va real vaqtdagi progress."
+    },
+    "launch": {
+      "title": "Ishga tushirish",
+      "description": "Test, deploy va 1 oy bepul texnik yordam."
+    }
   }
 }

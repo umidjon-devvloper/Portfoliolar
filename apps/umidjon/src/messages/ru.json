@@ -24,10 +24,12 @@
   },
   "hero": {
     "eyebrow": "Full Stack Web & Mobile Developer",
-    "title": "Не просто код — продукт, который даёт бизнесу результат",
     "subtitle": "Работаю с React, Next.js, React Native, Expo и Node.js. Моя цель — не просто писать код, а создавать продукты, решающие реальные бизнес-задачи.",
     "primaryCta": "Смотреть проекты",
-    "secondaryCta": "Связаться"
+    "secondaryCta": "Связаться",
+    "titleLead": "Не просто код —",
+    "titleAccent": "продукт, который даёт",
+    "titleTail": "бизнесу результат"
   },
   "about": {
     "title": "Обо мне",
@@ -38,7 +40,9 @@
     "strengthsTitle": "Сильные стороны",
     "goalsTitle": "Цели",
     "partnersTitle": "Партнёры",
-    "partnersSubtitle": "Команда, с которой я работаю над проектами"
+    "partnersSubtitle": "Команда, с которой я работаю над проектами",
+    "educationTitle": "Образование",
+    "locationLabel": "Локация"
   },
   "strengths": {
     "fullStackThinking": "Full-stack мышление — понимаю frontend, backend, базу данных и деплой вместе",
@@ -81,23 +85,40 @@
     "result": "Результат",
     "integrations": "Интеграции",
     "components": "Составные части",
-    "notFound": "Проект не найден"
+    "notFound": "Проект не найден",
+    "links": "Ссылки",
+    "year": "Год",
+    "openSite": "Открыть сайт"
   },
   "services": {
     "title": "Услуги",
     "subtitle": "От идеи до деплоя — с одной командой",
     "cta": "Запросить цену",
-    "web": {
-      "title": "Веб-сайты",
-      "description": "Корпоративные сайты, лендинги, каталоги и портфолио."
+    "from": "Начальная цена",
+    "priceNote": "Цены начальные — точная сумма подтверждается письменно после уточнения требований.",
+    "landing": {
+      "title": "Landing page",
+      "description": "Одностраничный сайт, оптимизированный под конверсию и быструю загрузку."
     },
-    "webApp": {
-      "title": "Веб-приложения",
-      "description": "Админ-панели, дашборды и внутренние бизнес-системы."
+    "corporate": {
+      "title": "Корпоративный сайт",
+      "description": "Многостраничное решение с управлением через CMS."
+    },
+    "ecommerce": {
+      "title": "Онлайн-магазин",
+      "description": "Оплата, корзина, админ-панель — полноценное управление продажами."
     },
     "mobile": {
-      "title": "Мобильные приложения",
-      "description": "iOS и Android на React Native и Expo, включая публикацию в сторах."
+      "title": "Мобильное приложение",
+      "description": "Кроссплатформенные приложения для iOS и Android с native-ощущением."
+    },
+    "backend": {
+      "title": "Backend / API",
+      "description": "Безопасная масштабируемая серверная инфраструктура и REST/GraphQL API."
+    },
+    "uiux": {
+      "title": "UI/UX дизайн",
+      "description": "Дизайн продукта уровня бренда, продуманный под пользователя."
     },
     "saas": {
       "title": "SaaS-продукты",
@@ -106,18 +127,6 @@
     "bots": {
       "title": "Telegram-боты",
       "description": "Боты для заказов, уведомлений и автоматизации."
-    },
-    "backend": {
-      "title": "Backend и API",
-      "description": "Системы на Node.js, Express, REST и GraphQL, MongoDB."
-    },
-    "uiux": {
-      "title": "UI/UX дизайн",
-      "description": "Дизайн интерфейсов и дизайн-системы в Figma."
-    },
-    "deploy": {
-      "title": "Деплой и поддержка",
-      "description": "Vercel, Firebase, Cloudflare, домен, SSL и техническая поддержка."
     }
   },
   "contact": {
@@ -145,7 +154,8 @@
     "download": "Скачать PDF",
     "downloadUnavailable": "PDF пока не готов",
     "educationTitle": "Образование",
-    "experienceTitle": "Опыт"
+    "experienceTitle": "Опыт",
+    "printHint": "Можно сохранить в PDF через Ctrl+P в браузере"
   },
   "cta": {
     "title": "Есть проект?",
@@ -165,5 +175,32 @@
     "title": "Произошла ошибка",
     "description": "Непредвиденная ошибка. Попробуйте ещё раз.",
     "retry": "Повторить"
+  },
+  "metrics": {
+    "projects": "Завершённых проектов",
+    "clients": "Клиентских проектов",
+    "experience": "Года опыта",
+    "response": "Часов на ответ",
+    "note": "Эти цифры взяты из портфолио Umidjon Agency — каждый проект ведёт на работающий сайт, то есть их можно пересчитать."
+  },
+  "process": {
+    "title": "Процесс работы",
+    "subtitle": "От идеи до запуска — вы участвуете на каждом этапе",
+    "brief": {
+      "title": "Бриф и анализ",
+      "description": "Изучаем ваш бизнес, цели и конкурентов."
+    },
+    "design": {
+      "title": "Дизайн и прототип",
+      "description": "UI/UX прототип — вы видите и утверждаете его до написания кода."
+    },
+    "development": {
+      "title": "Разработка",
+      "description": "Чистый код, еженедельные демо и прогресс в реальном времени."
+    },
+    "launch": {
+      "title": "Запуск",
+      "description": "Тестирование, деплой и 1 месяц бесплатной техподдержки."
+    }
   }
 }

@@ -14,15 +14,19 @@ export const navItems = [
   { id: "contact", href: "/contact" },
 ] as const;
 
+/**
+ * Starting prices mirror umidjon.agency. Keep both in sync —
+ * a mismatch between the two sites reads as untrustworthy.
+ */
 export const services: ServiceItem[] = [
-  { id: "web", icon: "Globe" },
-  { id: "webApp", icon: "LayoutDashboard" },
-  { id: "mobile", icon: "Smartphone" },
-  { id: "saas", icon: "Boxes" },
-  { id: "bots", icon: "Bot" },
-  { id: "backend", icon: "Server" },
-  { id: "uiux", icon: "PenTool" },
-  { id: "deploy", icon: "Rocket" },
+  { id: "landing", icon: "Globe", priceFrom: 300 },
+  { id: "corporate", icon: "LayoutDashboard", priceFrom: 800 },
+  { id: "ecommerce", icon: "ShoppingCart", priceFrom: 1500 },
+  { id: "mobile", icon: "Smartphone", priceFrom: 2500 },
+  { id: "backend", icon: "Server", priceFrom: 600 },
+  { id: "uiux", icon: "PenTool", priceFrom: 400 },
+  { id: "saas", icon: "Boxes", priceFrom: null },
+  { id: "bots", icon: "Bot", priceFrom: null },
 ];
 
 export const partners = [

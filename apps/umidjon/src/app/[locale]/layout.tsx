@@ -7,6 +7,7 @@ import type { ReactNode } from "react";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { ThemeProvider } from "@/components/theme-provider";
+import { ScrollProgress } from "@/components/motion/scroll-progress";
 import { profile } from "@/content/profile";
 import { site } from "@/content/site";
 import { routing } from "@/i18n/routing";
@@ -46,6 +47,8 @@ export async function generateMetadata({
       template: `%s — ${profile.firstName}`,
     },
     description: t("description"),
+    authors: [{ name: profile.fullName ?? profile.firstName, url: site.url }],
+    creator: profile.fullName ?? profile.firstName,
     alternates: {
       canonical: "/",
       languages: {
@@ -60,6 +63,7 @@ export async function generateMetadata({
       title: t("title"),
       description: t("description"),
       url: site.url,
+      locale,
       images: [{ url: site.ogImage, width: 1200, height: 630 }],
     },
     twitter: {
@@ -85,18 +89,38 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
   setRequestLocale(locale);
 
   const t = await getTranslations({ locale, namespace: "meta" });
+  const { contact, location, education } = profile;
 
   const personJsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
     name: profile.fullName ?? profile.firstName,
+    givenName: profile.firstName,
     jobTitle: profile.role,
     description: t("description"),
     url: site.url,
+    image: profile.avatar,
+    email: contact.email,
+    telephone: contact.phone,
+    birthDate: profile.birthDate,
+    address: location
+      ? {
+          "@type": "PostalAddress",
+          addressLocality: location.city,
+          addressRegion: location.region,
+          addressCountry: location.countryCode,
+        }
+      : undefined,
+    alumniOf: education
+      ? { "@type": "CollegeOrUniversity", name: education.institution }
+      : undefined,
+    knowsLanguage: ["uz", "ru", "en"],
     sameAs: [
-      profile.contact.github,
-      profile.contact.linkedin,
-      profile.contact.agency,
+      contact.github,
+      contact.linkedin,
+      contact.telegram,
+      contact.instagram,
+      contact.agency,
     ].filter((item) => item !== null),
   };
 
@@ -114,6 +138,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
           disableTransitionOnChange
         >
           <NextIntlClientProvider>
+            <ScrollProgress />
             <Header />
             <main className="flex-1">{children}</main>
             <Footer />
