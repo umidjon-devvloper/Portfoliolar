@@ -65,10 +65,10 @@ function readCards(element: HTMLElement) {
   ).map((node) => {
     const rect = node.getBoundingClientRect();
     return {
-      top: rect.top - bounds.top,
-      bottom: rect.bottom - bounds.top,
-      left: rect.left - bounds.left,
-      right: rect.right - bounds.left,
+      top: Math.round(rect.top - bounds.top),
+      bottom: Math.round(rect.bottom - bounds.top),
+      left: Math.round(rect.left - bounds.left),
+      right: Math.round(rect.right - bounds.left),
     };
   });
 }
@@ -108,8 +108,8 @@ export function ProjectsSpine({ children }: { children: ReactNode }) {
       frame.current = 0;
 
       const next = readCards(element);
-      const width = element.clientWidth;
-      const height = element.clientHeight;
+      const width = Math.round(element.clientWidth);
+      const height = Math.round(element.clientHeight);
       if (next.length === 0 || width < 320) return;
 
       const nextPath = buildPath(next);
@@ -168,11 +168,15 @@ export function ProjectsSpine({ children }: { children: ReactNode }) {
     };
 
     schedule();
+
     const observer = new ResizeObserver(schedule);
     observer.observe(element);
     element
       .querySelectorAll<HTMLElement>("[data-project-card]")
       .forEach((node) => observer.observe(node));
+
+    const mutations = new MutationObserver(schedule);
+    mutations.observe(element, { childList: true, subtree: true });
 
     window.addEventListener("scroll", schedule, { passive: true });
     window.addEventListener("resize", schedule);
@@ -180,10 +184,11 @@ export function ProjectsSpine({ children }: { children: ReactNode }) {
     return () => {
       if (frame.current) cancelAnimationFrame(frame.current);
       observer.disconnect();
+      mutations.disconnect();
       window.removeEventListener("scroll", schedule);
       window.removeEventListener("resize", schedule);
     };
-  }, [path, children]);
+  }, [path]);
 
   return (
     <div ref={ref} className="relative">
