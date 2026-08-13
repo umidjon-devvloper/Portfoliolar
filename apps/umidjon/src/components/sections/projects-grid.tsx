@@ -1,9 +1,9 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { Fragment, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { Container } from "@/components/ui/container";
-import { SnakeConnector } from "@/components/motion/snake-connector";
+import { ProjectsThread } from "@/components/motion/projects-thread";
 import { projects, projectKinds, type ProjectFilter } from "@/content/projects";
 import { cn } from "@/lib/utils";
 import { ProjectCard } from "./project-row";
@@ -53,16 +53,13 @@ export function ProjectsIndex() {
       {visible.length === 0 ? (
         <p className="py-16 text-muted">{t("empty")}</p>
       ) : (
-        <ul className="flex flex-col">
-          {visible.map((project, index) => (
-            <Fragment key={project.slug}>
-              <ProjectCard project={project} index={index} />
-              {index < visible.length - 1 ? (
-                <SnakeConnector flip={index % 2 === 1} />
-              ) : null}
-            </Fragment>
-          ))}
-        </ul>
+        <ProjectsThread count={visible.length}>
+          <ul className="flex flex-col gap-16 lg:gap-28">
+            {visible.map((project, index) => (
+              <ProjectCard key={project.slug} project={project} index={index} />
+            ))}
+          </ul>
+        </ProjectsThread>
       )}
     </Container>
   );

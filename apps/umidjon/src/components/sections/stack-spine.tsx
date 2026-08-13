@@ -50,7 +50,7 @@ export function StackSpine() {
                   key={layer.id}
                   initial={{ opacity: 0, x: shouldReduceMotion ? 0 : -12 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: "-15%" }}
+                  viewport={{ margin: "-15% 0px -15% 0px" }}
                   transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                   className="row-hover group relative border-b border-border py-8 last:border-b-0 sm:py-10"
                 >

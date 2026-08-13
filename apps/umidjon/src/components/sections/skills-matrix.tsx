@@ -15,7 +15,7 @@ function SkillMeter({ skill, index }: { skill: Skill; index: number }) {
     <motion.li
       initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 14 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-8%" }}
+      viewport={{ margin: "-8% 0px -8% 0px" }}
       transition={{ duration: 0.45, delay: index * 0.04 }}
       className="card group relative rounded-xl p-4"
     >
@@ -24,7 +24,7 @@ function SkillMeter({ skill, index }: { skill: Skill; index: number }) {
           <TechIcon
             slug={skill.icon}
             fallback={skill.name}
-            className="h-4 w-4 text-muted transition-colors group-hover:text-accent-2"
+            className="h-4 w-4 opacity-70 transition-all duration-300 group-hover:scale-110 group-hover:opacity-100"
           />
         </span>
 
@@ -40,7 +40,7 @@ function SkillMeter({ skill, index }: { skill: Skill; index: number }) {
         <motion.div
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: fill }}
-          viewport={{ once: true, margin: "-8%" }}
+          viewport={{ margin: "-8% 0px -8% 0px" }}
           transition={{
             duration: shouldReduceMotion ? 0 : 0.9,
             delay: 0.15 + index * 0.04,

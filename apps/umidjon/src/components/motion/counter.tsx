@@ -3,20 +3,25 @@
 import { useInView, useReducedMotion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
-type CounterProps = {
+export function Counter({
+  value,
+  suffix = "",
+  duration = 1500,
+}: {
   value: number;
   suffix?: string;
   duration?: number;
-};
-
-export function Counter({ value, suffix = "", duration = 1400 }: CounterProps) {
+}) {
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-60px" });
+  const inView = useInView(ref, { margin: "-10% 0px -10% 0px" });
   const shouldReduceMotion = useReducedMotion();
   const [display, setDisplay] = useState(0);
 
   useEffect(() => {
-    if (!inView) return;
+    if (!inView) {
+      setDisplay(0);
+      return;
+    }
 
     if (shouldReduceMotion) {
       setDisplay(value);
@@ -30,10 +35,7 @@ export function Counter({ value, suffix = "", duration = 1400 }: CounterProps) {
       const progress = Math.min((now - start) / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
       setDisplay(Math.round(eased * value));
-
-      if (progress < 1) {
-        frame = requestAnimationFrame(tick);
-      }
+      if (progress < 1) frame = requestAnimationFrame(tick);
     };
 
     frame = requestAnimationFrame(tick);

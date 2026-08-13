@@ -9,16 +9,24 @@ function lookup(slug: string): SimpleIcon | null {
   return found ?? null;
 }
 
+function relativeLuminance(hex: string): number {
+  const value = Number.parseInt(hex, 16);
+  const r = ((value >> 16) & 255) / 255;
+  const g = ((value >> 8) & 255) / 255;
+  const b = (value & 255) / 255;
+  const channel = (c: number) =>
+    c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+  return 0.2126 * channel(r) + 0.7152 * channel(g) + 0.0722 * channel(b);
+}
+
 export function TechIcon({
   slug,
   fallback,
   className,
-  colored = false,
 }: {
   slug: string | null;
   fallback: string;
   className?: string;
-  colored?: boolean;
 }) {
   const icon = slug ? lookup(slug) : null;
 
@@ -27,7 +35,7 @@ export function TechIcon({
       <span
         aria-hidden
         className={cn(
-          "grid place-items-center rounded-md border border-border font-mono text-[0.625rem] font-semibold text-muted",
+          "grid place-items-center rounded font-mono text-[0.5625rem] font-bold text-muted",
           className,
         )}
       >
@@ -36,13 +44,17 @@ export function TechIcon({
     );
   }
 
+  const luminance = relativeLuminance(icon.hex);
+  const tooDark = luminance < 0.16;
+  const tooLight = luminance > 0.82;
+
   return (
     <svg
       role="img"
       aria-label={icon.title}
       viewBox="0 0 24 24"
-      className={className}
-      fill={colored ? `#${icon.hex}` : "currentColor"}
+      className={cn(className, (tooDark || tooLight) && "brand-neutral")}
+      style={tooDark || tooLight ? undefined : { fill: `#${icon.hex}` }}
     >
       <path d={icon.path} />
     </svg>

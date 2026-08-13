@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import { Download, Printer } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Container } from "@/components/ui/container";
-import { Badge } from "@/components/ui/badge";
+import { TechIcon } from "@/components/ui/tech-icon";
 import { buttonVariants } from "@/components/ui/button";
 import { Reveal } from "@/components/motion/reveal";
-import { profile, skillGroups } from "@/content/profile";
+import { profile } from "@/content/profile";
+import { skillCategories } from "@/content/skills";
 import { projects } from "@/content/projects";
 import type { Locale } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
@@ -143,15 +144,23 @@ export default async function ResumePage({ params }: PageProps) {
         </Reveal>
 
         <Reveal>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {skillGroups.map((group) => (
-              <div key={group.id} className="flex flex-col gap-3">
-                <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
-                  {tSkills(group.id)}
-                </h3>
+          <div className="flex flex-col gap-8">
+            {skillCategories.map((category) => (
+              <div key={category.id} className="flex flex-col gap-3">
+                <h3 className="label">{tSkills(category.id)}</h3>
                 <div className="flex flex-wrap gap-2">
-                  {group.items.map((item) => (
-                    <Badge key={item}>{item}</Badge>
+                  {category.skills.map((skill) => (
+                    <span
+                      key={skill.name}
+                      className="lift inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-xs"
+                    >
+                      <TechIcon
+                        slug={skill.icon}
+                        fallback={skill.name}
+                        className="h-3.5 w-3.5"
+                      />
+                      {skill.name}
+                    </span>
                   ))}
                 </div>
               </div>

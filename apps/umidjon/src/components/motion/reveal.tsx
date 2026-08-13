@@ -3,14 +3,21 @@
 import { motion, useReducedMotion } from "framer-motion";
 import type { ReactNode } from "react";
 
-type RevealProps = {
+const EASE = [0.16, 1, 0.3, 1] as const;
+
+export function Reveal({
+  children,
+  delay = 0,
+  y = 24,
+  className,
+  once = false,
+}: {
   children: ReactNode;
   delay?: number;
   y?: number;
   className?: string;
-};
-
-export function Reveal({ children, delay = 0, y = 20, className }: RevealProps) {
+  once?: boolean;
+}) {
   const shouldReduceMotion = useReducedMotion();
 
   return (
@@ -18,27 +25,31 @@ export function Reveal({ children, delay = 0, y = 20, className }: RevealProps) 
       className={className}
       initial={{ opacity: 0, y: shouldReduceMotion ? 0 : y }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.55, delay, ease: [0.21, 0.47, 0.32, 0.98] }}
+      viewport={{ once, margin: "-12% 0px -12% 0px" }}
+      transition={{ duration: 0.6, delay, ease: EASE }}
     >
       {children}
     </motion.div>
   );
 }
 
-type StaggerProps = {
+export function Stagger({
+  children,
+  className,
+  gap = 0.07,
+  once = false,
+}: {
   children: ReactNode;
   className?: string;
   gap?: number;
-};
-
-export function Stagger({ children, className, gap = 0.08 }: StaggerProps) {
+  once?: boolean;
+}) {
   return (
     <motion.div
       className={className}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, margin: "-80px" }}
+      viewport={{ once, margin: "-12% 0px -12% 0px" }}
       variants={{
         hidden: {},
         show: { transition: { staggerChildren: gap } },
@@ -62,10 +73,10 @@ export function StaggerItem({
     <motion.div
       className={className}
       variants={{
-        hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 18 },
+        hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 20 },
         show: { opacity: 1, y: 0 },
       }}
-      transition={{ duration: 0.5, ease: [0.21, 0.47, 0.32, 0.98] }}
+      transition={{ duration: 0.55, ease: EASE }}
     >
       {children}
     </motion.div>

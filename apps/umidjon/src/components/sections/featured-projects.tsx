@@ -1,10 +1,9 @@
 import { ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { Fragment } from "react";
 import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/motion/reveal";
-import { SnakeConnector } from "@/components/motion/snake-connector";
+import { ProjectsThread } from "@/components/motion/projects-thread";
 import { featuredProjects } from "@/content/projects";
 import { ProjectCard } from "./project-row";
 
@@ -27,16 +26,13 @@ export function FeaturedProjects() {
           </div>
         </Reveal>
 
-        <ul className="flex flex-col">
-          {featuredProjects.map((project, index) => (
-            <Fragment key={project.slug}>
-              <ProjectCard project={project} index={index} />
-              {index < featuredProjects.length - 1 ? (
-                <SnakeConnector flip={index % 2 === 1} />
-              ) : null}
-            </Fragment>
-          ))}
-        </ul>
+        <ProjectsThread count={featuredProjects.length}>
+          <ul className="flex flex-col gap-16 lg:gap-28">
+            {featuredProjects.map((project, index) => (
+              <ProjectCard key={project.slug} project={project} index={index} />
+            ))}
+          </ul>
+        </ProjectsThread>
 
         <Reveal>
           <Link
