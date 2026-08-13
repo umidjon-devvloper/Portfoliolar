@@ -24,7 +24,7 @@ export function StackSpine() {
   const height = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section className="border-y border-border bg-surface">
+    <section className="relative z-10 border-y border-border bg-surface">
       <Container className="py-24 sm:py-32 lg:py-40">
         <div className="flex flex-col gap-14 lg:gap-20">
           <div className="flex max-w-3xl flex-col gap-5">

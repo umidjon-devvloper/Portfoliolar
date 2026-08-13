@@ -8,6 +8,7 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ScrollProgress } from "@/components/motion/scroll-progress";
+import { ParticleField } from "@/components/motion/particle-field";
 import { profile } from "@/content/profile";
 import { site } from "@/content/site";
 import { routing } from "@/i18n/routing";
@@ -147,9 +148,10 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
           disableTransitionOnChange
         >
           <NextIntlClientProvider>
+            <ParticleField />
             <ScrollProgress />
             <Header />
-            <main className="flex-1">{children}</main>
+            <main className="relative z-10 flex-1">{children}</main>
             <Footer />
           </NextIntlClientProvider>
         </ThemeProvider>

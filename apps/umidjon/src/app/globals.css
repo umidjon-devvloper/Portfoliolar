@@ -65,10 +65,10 @@
 
   /* Fluid type scale — display sizes are set on the viewport, not breakpoints,
      so the hero keeps its proportions from 320px up to 1920px. */
-  --text-mega: clamp(2.75rem, 9.5vw, 8.5rem);
-  --text-display: clamp(2.25rem, 6vw, 5rem);
-  --text-title: clamp(1.75rem, 3.4vw, 3rem);
-  --text-lead: clamp(1.0625rem, 1.3vw, 1.375rem);
+  --text-mega: clamp(2.25rem, 5.2vw, 4.5rem);
+  --text-display: clamp(1.875rem, 3.6vw, 3rem);
+  --text-title: clamp(1.375rem, 2.1vw, 1.875rem);
+  --text-lead: clamp(1rem, 1.1vw, 1.1875rem);
 }
 
 @layer base {
@@ -132,8 +132,14 @@
 
   .font-display {
     font-family: var(--font-display);
-    letter-spacing: -0.03em;
-    line-height: 0.92;
+    letter-spacing: -0.02em;
+    line-height: 1.04;
+  }
+
+  /* Headline sizes need tighter leading than body-scale display text. */
+  .type-mega,
+  .type-display {
+    line-height: 1;
   }
 
   .type-mega {
@@ -178,12 +184,12 @@
     background:
       radial-gradient(
         44rem 26rem at 12% -5%,
-        rgb(var(--accent-rgb) / 0.22),
+        rgb(var(--accent-rgb) / 0.16),
         transparent 62%
       ),
       radial-gradient(
         30rem 20rem at 92% 8%,
-        rgb(var(--accent-rgb) / 0.12),
+        rgb(var(--accent-rgb) / 0.09),
         transparent 66%
       );
   }

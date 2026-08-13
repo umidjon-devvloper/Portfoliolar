@@ -12,7 +12,7 @@ export function ServicesPreview() {
   const t = useTranslations("services");
 
   return (
-    <section id="services" className="border-y border-border bg-surface">
+    <section id="services" className="relative z-10 border-y border-border bg-surface">
       <Container className="py-24 sm:py-32 lg:py-40">
         <div className="grid gap-12 lg:grid-cols-[10rem_1fr] lg:gap-16 xl:grid-cols-[14rem_1fr]">
           <div className="lg:sticky lg:top-28 lg:h-fit">

@@ -27,7 +27,7 @@ export function Footer() {
   ].filter((item) => item !== null);
 
   return (
-    <footer className="border-t border-border">
+    <footer className="relative z-10 border-t border-border bg-background">
       <Container className="flex flex-col gap-16 py-16">
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr]">
           <div className="flex flex-col gap-4">

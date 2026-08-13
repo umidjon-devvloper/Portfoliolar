@@ -57,7 +57,7 @@ export function Hero() {
       <div className="pointer-events-none absolute inset-0 wash" aria-hidden />
 
       <motion.div style={shouldReduceMotion ? undefined : { y, opacity: fade }}>
-        <Container className="relative grid min-h-[88svh] grid-cols-1 items-end gap-12 pb-16 pt-28 lg:grid-cols-[1fr_15rem] lg:gap-16 lg:pb-24 lg:pt-36">
+        <Container className="relative grid min-h-[82svh] grid-cols-1 items-end gap-12 pb-14 pt-28 lg:grid-cols-[1fr_15rem] lg:gap-16 lg:pb-20 lg:pt-32">
           <div className="flex flex-col gap-10">
             <motion.span
               initial={{ opacity: 0 }}
@@ -68,7 +68,7 @@ export function Hero() {
               {t("eyebrow")}
             </motion.span>
 
-            <h1 className="font-display type-mega max-w-[16ch]">
+            <h1 className="font-display type-mega max-w-[20ch]">
               <Headline text={t("titleLead")} delay={0.1} />{" "}
               <span className="text-accent">
                 <Headline text={t("titleAccent")} delay={0.28} />
@@ -115,15 +115,15 @@ export function Hero() {
         </Container>
       </motion.div>
 
-      <div className="relative flex items-center gap-6 border-y border-border py-4">
+      <div className="relative flex items-center border-y border-border py-4">
         <span
-          className="label ml-5 hidden shrink-0 items-center gap-2 sm:ml-8 sm:flex"
+          className="label ml-5 hidden shrink-0 items-center gap-2 border-r border-border pr-6 sm:ml-8 sm:flex"
           aria-hidden
         >
           <ArrowDown className="h-3 w-3" />
           {t("scrollHint")}
         </span>
-        <Marquee items={marqueeSkills} />
+        <Marquee items={marqueeSkills} className="pl-5 sm:pl-6" />
       </div>
     </section>
   );
