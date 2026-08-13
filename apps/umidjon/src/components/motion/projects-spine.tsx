@@ -8,7 +8,6 @@ type Pose = { x: number; y: number; angle: number; boost: number };
 const GAP = 20;
 const R = 22;
 const SAMPLES = 300;
-const HORIZONTAL_COST = 0.32;
 
 function buildPath(cards: Card[], width: number) {
   if (cards.length === 0 || width === 0) return "";
@@ -42,20 +41,24 @@ function buildPath(cards: Card[], width: number) {
   return d;
 }
 
-function lookup(times: number[], lengths: number[], t: number) {
-  if (times.length < 2) return 0;
-  const clamped = Math.max(0, Math.min(1, t));
+function lengthAtY(ys: number[], lengths: number[], target: number) {
+  if (ys.length < 2) return 0;
+
+  const first = ys[0]!;
+  const last = ys[ys.length - 1]!;
+  if (target <= first) return lengths[0]!;
+  if (target >= last) return lengths[lengths.length - 1]!;
 
   let low = 0;
-  let high = times.length - 1;
+  let high = ys.length - 1;
   while (high - low > 1) {
     const mid = (low + high) >> 1;
-    if (times[mid]! <= clamped) low = mid;
+    if (ys[mid]! <= target) low = mid;
     else high = mid;
   }
 
-  const span = times[high]! - times[low]! || 1;
-  const ratio = (clamped - times[low]!) / span;
+  const span = ys[high]! - ys[low]! || 1;
+  const ratio = (target - ys[low]!) / span;
   return lengths[low]! + (lengths[high]! - lengths[low]!) * ratio;
 }
 
@@ -63,11 +66,11 @@ export function ProjectsSpine({ children }: { children: ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
   const pathRef = useRef<SVGPathElement>(null);
   const framer = useRef<number>(0);
-  const curve = useRef<{ times: number[]; lengths: number[]; total: number }>({
-    times: [],
-    lengths: [],
-    total: 0,
-  });
+  const curve = useRef<{
+    ys: number[];
+    lengths: number[];
+    total: number;
+  }>({ ys: [], lengths: [], total: 0 });
 
   const [box, setBox] = useState({ width: 0, height: 0 });
   const [cards, setCards] = useState<Card[]>([]);
@@ -128,29 +131,17 @@ export function ProjectsSpine({ children }: { children: ReactNode }) {
     const total = node.getTotalLength();
     if (!Number.isFinite(total) || total <= 0) return;
 
-    const times: number[] = [0];
-    const lengths: number[] = [0];
-    let cost = 0;
-    let previous = node.getPointAtLength(0);
+    const ys: number[] = [];
+    const lengths: number[] = [];
 
-    for (let i = 1; i <= SAMPLES; i += 1) {
+    for (let i = 0; i <= SAMPLES; i += 1) {
       const at = (total * i) / SAMPLES;
       const point = node.getPointAtLength(at);
-      const dx = Math.abs(point.x - previous.x);
-      const dy = Math.abs(point.y - previous.y);
-      const span = Math.hypot(dx, dy) || 0.001;
-
-      cost += span * (1 - (dx / span) * (1 - HORIZONTAL_COST));
-      times.push(cost);
+      ys.push(point.y);
       lengths.push(at);
-      previous = point;
     }
 
-    curve.current = {
-      times: times.map((value) => value / (cost || 1)),
-      lengths,
-      total,
-    };
+    curve.current = { ys, lengths, total };
   }, [path]);
 
   useEffect(() => {
@@ -162,17 +153,11 @@ export function ProjectsSpine({ children }: { children: ReactNode }) {
       framer.current = 0;
 
       const rect = element.getBoundingClientRect();
-      const viewport = window.innerHeight;
-      const start = viewport * 0.75;
-      const end = viewport * 0.35;
-      const span = rect.height + (start - end);
-      const travelled = start - rect.top;
-      const t = Math.max(0, Math.min(1, travelled / (span || 1)));
-
-      const { times, lengths, total } = curve.current;
+      const { ys, lengths, total } = curve.current;
       if (total <= 0) return;
 
-      const at = lookup(times, lengths, t);
+      const focus = window.innerHeight * 0.52 - rect.top;
+      const at = lengthAtY(ys, lengths, focus);
       const point = node.getPointAtLength(at);
       const ahead = node.getPointAtLength(Math.min(at + 8, total));
       const dx = ahead.x - point.x;
