@@ -54,7 +54,7 @@ export function ProjectsIndex() {
         <p className="py-16 text-muted">{t("empty")}</p>
       ) : (
         <ProjectsSpine>
-          <ul className="flex flex-col gap-12 sm:pl-20 lg:gap-16">
+          <ul className="flex flex-col gap-16 md:gap-24 md:px-14">
             {visible.map((project, index) => (
               <ProjectCard key={project.slug} project={project} index={index} />
             ))}

@@ -27,7 +27,7 @@ export function FeaturedProjects() {
         </Reveal>
 
         <ProjectsSpine>
-          <ul className="flex flex-col gap-12 sm:pl-20 lg:gap-16">
+          <ul className="flex flex-col gap-16 md:gap-24 md:px-14">
             {featuredProjects.map((project, index) => (
               <ProjectCard key={project.slug} project={project} index={index} />
             ))}
