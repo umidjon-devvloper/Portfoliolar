@@ -67,14 +67,20 @@
     "passiveIncome": "Passiv daromad manbalarini shakllantirish"
   },
   "skills": {
-    "title": "Texnologiyalar",
+    "title": "Ishlatadigan vositalarim",
     "frontend": "Frontend",
     "mobile": "Mobile",
     "backend": "Backend",
     "authDb": "Auth & Database",
     "payments": "To'lov tizimlari",
-    "devops": "DevOps & Deploy",
-    "design": "Dizayn"
+    "devops": "DevOps",
+    "design": "Dizayn",
+    "label": "Texnologiyalar",
+    "tier": {
+      "core": "Asosiy stack",
+      "regular": "Muntazam",
+      "familiar": "Tajriba bor"
+    }
   },
   "projects": {
     "title": "Loyihalar",

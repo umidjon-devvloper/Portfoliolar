@@ -4,11 +4,11 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Container } from "@/components/ui/container";
 import { LabelledSection } from "@/components/ui/section";
-import { Badge } from "@/components/ui/badge";
 import { Reveal } from "@/components/motion/reveal";
 import { StackSpine } from "@/components/sections/stack-spine";
+import { SkillsMatrix } from "@/components/sections/skills-matrix";
 import { Cta } from "@/components/sections/cta";
-import { goalIds, profile, skillGroups, strengthIds } from "@/content/profile";
+import { goalIds, profile, strengthIds } from "@/content/profile";
 import { partners } from "@/content/site";
 
 type PageProps = {
@@ -105,7 +105,7 @@ function AboutContent() {
               {strengthIds.map((id, index) => (
                 <li
                   key={id}
-                  className="flex gap-6 border-b border-border py-5 sm:gap-10"
+                  className="row-hover flex gap-6 border-b border-border px-3 py-5 sm:gap-10"
                 >
                   <span className="label shrink-0 pt-1">
                     {String(index + 1).padStart(2, "0")}
@@ -122,25 +122,7 @@ function AboutContent() {
 
       <StackSpine />
 
-      <LabelledSection label={tSkills("title")}>
-        <Reveal>
-          <div className="flex flex-col gap-10">
-            {skillGroups.map((group) => (
-              <div
-                key={group.id}
-                className="grid gap-4 border-b border-border pb-8 sm:grid-cols-[10rem_1fr] sm:gap-8"
-              >
-                <h3 className="label pt-1">{tSkills(group.id)}</h3>
-                <div className="flex flex-wrap gap-2">
-                  {group.items.map((item) => (
-                    <Badge key={item}>{item}</Badge>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </Reveal>
-      </LabelledSection>
+      <SkillsMatrix />
 
       <LabelledSection label={t("goalsTitle")} className="bg-surface border-y border-border">
         <Reveal>
@@ -148,7 +130,7 @@ function AboutContent() {
             {goalIds.map((id, index) => (
               <li
                 key={id}
-                className="group flex items-baseline gap-6 border-b border-border py-6 sm:gap-10"
+                className="row-hover group flex items-baseline gap-6 border-b border-border px-3 py-6 sm:gap-10"
               >
                 <span className="label shrink-0">
                   {String(index + 1).padStart(2, "0")}
@@ -175,7 +157,7 @@ function AboutContent() {
                     href={partner.href}
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="group flex flex-wrap items-baseline justify-between gap-4 py-6 transition-colors hover:text-accent"
+                    className="row-hover group flex flex-wrap items-baseline justify-between gap-4 px-3 py-6 transition-colors hover:text-accent"
                   >
                     <span className="font-display text-2xl sm:text-3xl">
                       {partner.name}

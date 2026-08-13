@@ -52,19 +52,19 @@ export function StackSpine() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: "-15%" }}
                   transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                  className="group relative border-b border-border py-8 last:border-b-0 sm:py-10"
+                  className="row-hover group relative border-b border-border py-8 last:border-b-0 sm:py-10"
                 >
                   <span
                     className="absolute -left-8 top-[2.35rem] h-1.5 w-1.5 rounded-full bg-border-strong ring-4 ring-surface transition-colors duration-500 group-hover:bg-accent sm:-left-12 sm:h-[15px] sm:w-[15px] sm:border sm:border-border-strong sm:bg-surface sm:ring-0"
                     aria-hidden
                   />
 
-                  <div className="grid gap-4 sm:grid-cols-[1fr_1.4fr] sm:items-baseline sm:gap-10">
+                  <div className="relative grid gap-4 sm:grid-cols-[1fr_1.4fr] sm:items-baseline sm:gap-10">
                     <div className="flex items-baseline gap-4">
                       <span className="label shrink-0">
                         {String(index + 1).padStart(2, "0")}
                       </span>
-                      <h3 className="font-display type-title">
+                      <h3 className="font-display type-title transition-colors group-hover:text-accent-2">
                         {t(`${layer.id}.title`)}
                       </h3>
                     </div>

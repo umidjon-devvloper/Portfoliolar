@@ -67,14 +67,20 @@
     "passiveIncome": "Формирование источников пассивного дохода"
   },
   "skills": {
-    "title": "Технологии",
+    "title": "Инструменты, с которыми работаю",
     "frontend": "Frontend",
     "mobile": "Mobile",
     "backend": "Backend",
     "authDb": "Auth и База данных",
-    "payments": "Платёжные системы",
-    "devops": "DevOps и деплой",
-    "design": "Дизайн"
+    "payments": "Платежи",
+    "devops": "DevOps",
+    "design": "Дизайн",
+    "label": "Технологии",
+    "tier": {
+      "core": "Основной стек",
+      "regular": "Регулярно",
+      "familiar": "Есть опыт"
+    }
   },
   "projects": {
     "title": "Проекты",

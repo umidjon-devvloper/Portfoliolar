@@ -67,14 +67,20 @@
     "passiveIncome": "Build passive income streams"
   },
   "skills": {
-    "title": "Technologies",
+    "title": "The tools I build with",
     "frontend": "Frontend",
     "mobile": "Mobile",
     "backend": "Backend",
     "authDb": "Auth & Database",
     "payments": "Payments",
-    "devops": "DevOps & Deploy",
-    "design": "Design"
+    "devops": "DevOps",
+    "design": "Design",
+    "label": "Technologies",
+    "tier": {
+      "core": "Core stack",
+      "regular": "Regular",
+      "familiar": "Familiar"
+    }
   },
   "projects": {
     "title": "Projects",

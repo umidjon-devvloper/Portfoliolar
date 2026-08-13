@@ -56,7 +56,7 @@ export function Footer() {
               <Link
                 key={item.id}
                 href={item.href}
-                className="text-sm text-muted transition-colors hover:text-foreground"
+                className="link-underline self-start text-sm text-muted transition-colors hover:text-foreground"
               >
                 {t(item.id)}
               </Link>
@@ -71,7 +71,7 @@ export function Footer() {
                 href={social.href}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="inline-flex items-center gap-2.5 text-sm text-muted transition-colors hover:text-foreground"
+                className="lift inline-flex items-center gap-2.5 self-start text-sm text-muted transition-colors hover:text-accent-2"
               >
                 <social.icon className="h-3.5 w-3.5" />
                 {social.label}

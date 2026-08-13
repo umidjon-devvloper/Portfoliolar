@@ -54,7 +54,7 @@ export function Header() {
                 key={item.id}
                 href={item.href}
                 className={cn(
-                  "relative py-1 text-sm transition-colors",
+                  "link-underline relative py-1 text-sm transition-colors",
                   active ? "text-foreground" : "text-muted hover:text-foreground",
                 )}
               >
