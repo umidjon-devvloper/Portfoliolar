@@ -24,14 +24,11 @@ export default async function ServicesPage({ params }: PageProps) {
 
   return (
     <>
-      <Container className="flex flex-col gap-6 pb-4 pt-28 sm:pt-36">
+      <Container className="flex flex-col gap-5 pb-6 pt-28 sm:pt-32">
         <span className="label">{t("label")}</span>
-        <h1 className="font-display type-display max-w-3xl text-balance">
+        <h1 className="font-display type-mega max-w-3xl text-balance">
           {t("title")}
         </h1>
-        <p className="type-lead max-w-2xl leading-relaxed text-muted">
-          {t("subtitle")}
-        </p>
       </Container>
 
       <ServicesPreview />

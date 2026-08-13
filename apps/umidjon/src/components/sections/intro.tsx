@@ -4,10 +4,6 @@ import { Link } from "@/i18n/navigation";
 import { LabelledSection } from "@/components/ui/section";
 import { Reveal } from "@/components/motion/reveal";
 
-/**
- * A single paragraph set large. This is the "who am I" beat — it does not
- * need a skills grid next to it, the stack spine below handles that.
- */
 export function Intro() {
   const t = useTranslations("about");
   const tc = useTranslations("common");

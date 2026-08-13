@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button";
 
 const initialState: ContactState = { status: "idle", message: null };
 
-/** Underlined inputs — matches the rule-based structure of the page. */
 const fieldClass =
   "w-full border-0 border-b border-border bg-transparent px-0 py-3 text-base outline-none transition-colors placeholder:text-muted/60 focus:border-accent";
 
@@ -73,7 +72,7 @@ export function ContactForm() {
         />
       </div>
 
-      {/* honeypot — hidden from humans */}
+      {}
       <input
         type="text"
         name="company"

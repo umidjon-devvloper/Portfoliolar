@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono, Onest, Unbounded } from "next/font/google";
+import { JetBrains_Mono, Manrope, Onest } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -8,24 +8,21 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ScrollProgress } from "@/components/motion/scroll-progress";
-import { ParticleField } from "@/components/motion/particle-field";
 import { profile } from "@/content/profile";
 import { site } from "@/content/site";
 import { routing } from "@/i18n/routing";
 import "../globals.css";
 
-// Display face: wide, geometric, confident — carries the headlines.
-const unbounded = Unbounded({
+const manrope = Manrope({
   subsets: ["latin", "cyrillic"],
-  weight: ["400", "500", "600"],
-  variable: "--font-unbounded",
+  weight: ["500", "700", "800"],
+  variable: "--font-display",
   display: "swap",
 });
 
-// Body face: neutral enough to read at length, warmer than Inter.
 const onest = Onest({
   subsets: ["latin", "cyrillic"],
-  variable: "--font-onest",
+  variable: "--font-sans",
   display: "swap",
 });
 
@@ -138,7 +135,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
     <html
       lang={locale}
       suppressHydrationWarning
-      className={`${unbounded.variable} ${onest.variable} ${mono.variable}`}
+      className={`${manrope.variable} ${onest.variable} ${mono.variable}`}
     >
       <body className="flex min-h-dvh flex-col">
         <ThemeProvider
@@ -148,7 +145,6 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
           disableTransitionOnChange
         >
           <NextIntlClientProvider>
-            <ParticleField />
             <ScrollProgress />
             <Header />
             <main className="relative z-10 flex-1">{children}</main>

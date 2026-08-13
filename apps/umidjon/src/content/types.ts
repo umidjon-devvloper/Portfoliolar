@@ -44,7 +44,6 @@ export type Metric = {
 export type ServiceItem = {
   id: string;
   icon: string;
-  priceFrom: number | null;
 };
 
 export type Education = {

@@ -9,7 +9,6 @@ type CounterProps = {
   duration?: number;
 };
 
-/** Counts up from zero the first time it enters the viewport. */
 export function Counter({ value, suffix = "", duration = 1400 }: CounterProps) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
@@ -29,7 +28,6 @@ export function Counter({ value, suffix = "", duration = 1400 }: CounterProps) {
 
     const tick = (now: number) => {
       const progress = Math.min((now - start) / duration, 1);
-      // ease-out cubic
       const eased = 1 - Math.pow(1 - progress, 3);
       setDisplay(Math.round(eased * value));
 

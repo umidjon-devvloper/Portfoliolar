@@ -24,7 +24,7 @@
   },
   "hero": {
     "eyebrow": "Full Stack Web & Mobile Developer",
-    "subtitle": "I work with React, Next.js, React Native, Expo and Node.js. My goal is not simply to write code, but to build products that solve real business problems.",
+    "subtitle": "I work with React, Next.js, React Native and Node.js. Not just code — products that deliver.",
     "primaryCta": "View projects",
     "secondaryCta": "Get in touch",
     "titleLead": "Not just code —",
@@ -38,8 +38,8 @@
   },
   "about": {
     "title": "About",
-    "shortBio": "Full Stack Web & Mobile Developer working with React, Next.js, React Native, Expo and Node.js. My goal is not simply to write code, but to build products that solve real business problems.",
-    "longBio": "I build modern websites, web applications, mobile apps, backend systems, Telegram bots and digital products for businesses. I work across frontend, backend and mobile, and I am taking my own products and services to the international market. I grew as a developer through real projects rather than theory.",
+    "shortBio": "Full Stack Web & Mobile Developer. I cover the whole chain, from idea to the app stores.",
+    "longBio": "I build websites, mobile apps, backend systems and SaaS products, across frontend, backend and mobile.",
     "workStyleTitle": "How I work",
     "workStyle": "I don't treat a project as only frontend or only backend. I understand the full Idea → Design → Development → Backend → Mobile/Web → Deployment → Business chain and take it as far as I can on my own.",
     "strengthsTitle": "Strengths",
@@ -78,7 +78,7 @@
   },
   "projects": {
     "title": "Projects",
-    "subtitle": "Problem, solution and result — every project in that order",
+    "subtitle": "Every project: problem, solution, result.",
     "featuredTitle": "Selected projects",
     "filterAll": "All",
     "filterSaas": "SaaS",
@@ -101,10 +101,7 @@
   },
   "services": {
     "title": "Services",
-    "subtitle": "From idea to deployment — with one team",
-    "cta": "Request a quote",
-    "from": "Starting at",
-    "priceNote": "These are starting prices — the exact figure is confirmed in writing once requirements are clear.",
+    "subtitle": "From idea to launch",
     "landing": {
       "title": "Landing page",
       "description": "A single-page site optimised for conversion and fast loading."
@@ -138,7 +135,8 @@
       "description": "Bots for orders, notifications and automation."
     },
     "label": "Services & pricing",
-    "onRequest": "On request"
+    "agencyTitle": "See pricing",
+    "agencySubtitle": "Full price list and packages on the agency site"
   },
   "contact": {
     "title": "Contact",
@@ -195,8 +193,7 @@
     "projects": "Completed projects",
     "clients": "Client projects",
     "experience": "Years of experience",
-    "response": "Hours to reply",
-    "note": "These figures come from the Umidjon Agency portfolio — every project links to a live site, so they can be counted and checked."
+    "response": "Hours to reply"
   },
   "process": {
     "title": "How it works",
@@ -221,7 +218,7 @@
   "stack": {
     "label": "Scope",
     "title": "One chain, one person",
-    "subtitle": "I don't hand a project off in pieces. Every layer — from design through to the app stores — is mine, so nothing gets lost between them.",
+    "subtitle": "I don't hand a project off in pieces. Every layer is mine, so nothing gets lost between them.",
     "design": {
       "title": "Design",
       "description": "A Figma prototype you see and approve before any code is written."

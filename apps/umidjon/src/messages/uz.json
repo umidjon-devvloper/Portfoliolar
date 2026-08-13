@@ -24,7 +24,7 @@
   },
   "hero": {
     "eyebrow": "Full Stack Web & Mobile Developer",
-    "subtitle": "React, Next.js, React Native, Expo va Node.js bilan ishlayman. Maqsadim — shunchaki kod yozish emas, real biznes muammolarini texnologiya orqali hal qiladigan mahsulotlar yaratish.",
+    "subtitle": "React, Next.js, React Native va Node.js bilan ishlayman. Kod emas — biznesga natija beradigan mahsulot quraman.",
     "primaryCta": "Loyihalarni ko'rish",
     "secondaryCta": "Bog'lanish",
     "titleLead": "Kod emas —",
@@ -38,8 +38,8 @@
   },
   "about": {
     "title": "Men haqimda",
-    "shortBio": "Full Stack Web & Mobile Developer. React, Next.js, React Native, Expo va Node.js bilan ishlayman. Maqsadim — shunchaki kod yozish emas, real biznes muammolarini texnologiya orqali hal qiladigan mahsulotlar yaratish.",
-    "longBio": "Zamonaviy web-saytlar, web-ilovalar, mobil ilovalar, backend tizimlar, Telegram botlar va biznes uchun raqamli mahsulotlar yarataman. Frontend, backend va mobile yo'nalishlarida ishlayman hamda o'z mahsulotlarim va xizmatlarimni xalqaro bozorga olib chiqishga intilaman. Dasturlashni nazariy emas, amaliy loyihalar orqali rivojlantirib kelganman.",
+    "shortBio": "Full Stack Web & Mobile Developer. G'oyadan store'ga chiqarishgacha bo'lgan butun zanjirni o'zim yopaman.",
+    "longBio": "Web-saytlar, mobil ilovalar, backend tizimlar va SaaS mahsulotlar yarataman. Frontend, backend va mobile — uchalasida ham ishlayman.",
     "workStyleTitle": "Ish uslubim",
     "workStyle": "Loyihani faqat frontend yoki backend sifatida ko'rmayman. Idea → Design → Development → Backend → Mobile/Web → Deployment → Business jarayonini to'liq tushunib, imkon qadar mustaqil amalga oshiraman.",
     "strengthsTitle": "Kuchli tomonlarim",
@@ -78,7 +78,7 @@
   },
   "projects": {
     "title": "Loyihalar",
-    "subtitle": "Muammo, yechim va natija — har bir loyiha shu tartibda",
+    "subtitle": "Har bir loyiha: muammo, yechim, natija.",
     "featuredTitle": "Tanlangan loyihalar",
     "filterAll": "Barchasi",
     "filterSaas": "SaaS",
@@ -101,10 +101,7 @@
   },
   "services": {
     "title": "Xizmatlar",
-    "subtitle": "Idea'dan deploymentgacha — bitta jamoa bilan",
-    "cta": "Narx so'rash",
-    "from": "Boshlang'ich narx",
-    "priceNote": "Narxlar boshlang'ich — aniq summa talablar aniqlashgach yozma tasdiqlanadi.",
+    "subtitle": "G'oyadan ishga tushirishgacha",
     "landing": {
       "title": "Landing page",
       "description": "Konversiya uchun optimallashtirilgan, tez yuklanadigan bir sahifali sayt."
@@ -138,7 +135,8 @@
       "description": "Buyurtma, xabarnoma va avtomatlashtirish uchun botlar."
     },
     "label": "Xizmat va narx",
-    "onRequest": "Kelishuv asosida"
+    "agencyTitle": "Narxlarni ko'rish",
+    "agencySubtitle": "To'liq narxnoma va paketlar agentlik saytida"
   },
   "contact": {
     "title": "Bog'lanish",
@@ -195,8 +193,7 @@
     "projects": "Tugallangan loyiha",
     "clients": "Mijoz loyihasi",
     "experience": "Yil tajriba",
-    "response": "Ichida javob",
-    "note": "Bu raqamlar Umidjon Agency portfoliosidan olingan — har bir loyiha ishlayotgan saytga havola qiladi, ya'ni sanab tekshirish mumkin."
+    "response": "Ichida javob"
   },
   "process": {
     "title": "Ish jarayoni",
@@ -221,7 +218,7 @@
   "stack": {
     "label": "Qamrov",
     "title": "Bitta zanjir, bitta odam",
-    "subtitle": "Loyihani bo'lib bermayman. Dizayndan store'ga chiqarishgacha bo'lgan har bir qatlamni o'zim yopaman — shuning uchun qatlamlar orasida hech narsa yo'qolmaydi.",
+    "subtitle": "Loyihani bo'lib bermayman. Har bir qatlam o'zimda — shuning uchun oraliqda hech narsa yo'qolmaydi.",
     "design": {
       "title": "Dizayn",
       "description": "Figma'da prototip. Kod yozilgunga qadar ko'rasiz va tasdiqlaysiz."

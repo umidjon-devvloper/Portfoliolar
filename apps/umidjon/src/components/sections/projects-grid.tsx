@@ -1,12 +1,12 @@
 "use client";
 
-import { AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { useMemo, useState } from "react";
+import { Fragment, useMemo, useState } from "react";
 import { Container } from "@/components/ui/container";
+import { SnakeConnector } from "@/components/motion/snake-connector";
 import { projects, projectKinds, type ProjectFilter } from "@/content/projects";
 import { cn } from "@/lib/utils";
-import { ProjectRow } from "./project-row";
+import { ProjectCard } from "./project-row";
 
 const filterLabelKey: Record<ProjectFilter, string> = {
   all: "filterAll",
@@ -29,46 +29,41 @@ export function ProjectsIndex() {
   );
 
   return (
-    <div className="flex flex-col">
-      <Container>
-        <div className="flex flex-wrap gap-x-6 gap-y-3 pb-8" role="tablist">
-          {projectKinds.map((kind) => (
-            <button
-              key={kind}
-              type="button"
-              role="tab"
-              aria-selected={filter === kind}
-              onClick={() => setFilter(kind)}
-              className={cn(
-                "label border-b pb-1 transition-colors",
-                filter === kind
-                  ? "border-accent text-accent"
-                  : "border-transparent hover:text-foreground",
-              )}
-            >
-              {t(filterLabelKey[kind])}
-            </button>
-          ))}
-        </div>
-      </Container>
+    <Container className="flex flex-col gap-10">
+      <div className="flex flex-wrap gap-2" role="tablist">
+        {projectKinds.map((kind) => (
+          <button
+            key={kind}
+            type="button"
+            role="tab"
+            aria-selected={filter === kind}
+            onClick={() => setFilter(kind)}
+            className={cn(
+              "rounded-full border px-4 py-2 font-mono text-xs uppercase tracking-widest transition-colors",
+              filter === kind
+                ? "border-accent bg-accent text-accent-foreground"
+                : "border-border text-muted hover:border-accent hover:text-foreground",
+            )}
+          >
+            {t(filterLabelKey[kind])}
+          </button>
+        ))}
+      </div>
 
       {visible.length === 0 ? (
-        <Container>
-          <p className="py-16 text-muted">{t("empty")}</p>
-        </Container>
+        <p className="py-16 text-muted">{t("empty")}</p>
       ) : (
-        <ul className="border-t border-border">
-          <AnimatePresence mode="popLayout">
-            {visible.map((project, index) => (
-              <ProjectRow
-                key={project.slug}
-                project={project}
-                index={index}
-              />
-            ))}
-          </AnimatePresence>
+        <ul className="flex flex-col">
+          {visible.map((project, index) => (
+            <Fragment key={project.slug}>
+              <ProjectCard project={project} index={index} />
+              {index < visible.length - 1 ? (
+                <SnakeConnector flip={index % 2 === 1} />
+              ) : null}
+            </Fragment>
+          ))}
         </ul>
       )}
-    </div>
+    </Container>
   );
 }

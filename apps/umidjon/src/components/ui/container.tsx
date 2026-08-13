@@ -1,10 +1,6 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-/**
- * Wide by default — this layout leans on full-bleed rows rather than a
- * narrow centred column, so the container mostly manages gutters.
- */
 export function Container({
   children,
   className,

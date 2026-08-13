@@ -6,7 +6,6 @@ type SectionProps = {
   children: ReactNode;
   id?: string;
   className?: string;
-  /** `bleed` skips the container so a child can run edge to edge. */
   bleed?: boolean;
 };
 
@@ -18,11 +17,6 @@ export function Section({ children, id, className, bleed }: SectionProps) {
   );
 }
 
-/**
- * Two-column shell: a label that stays pinned while the content column
- * scrolls past it. The pinning is what gives the page its rhythm — it
- * tells you which part of the site you're inside without a sticky nav.
- */
 export function LabelledSection({
   label,
   children,

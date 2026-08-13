@@ -1,12 +1,8 @@
 import type { Metric, Profile, SkillGroup } from "./types";
 
-/**
- * NOTE: fields set to `null` are intentionally unknown.
- * Do not invent values — fill them in from the real source.
- */
 export const profile: Profile = {
   firstName: "Umidjon",
-  fullName: "G'afforov Umidjon", // TODO: add patronymic when known
+  fullName: "G'afforov Umidjon",
   role: "Full Stack Web & Mobile Developer",
   secondaryRole: "Entrepreneur / Founder of Umidjon Agency",
   birthDate: "2005-01-01",
@@ -24,7 +20,7 @@ export const profile: Profile = {
     countryCode: "UZ",
   },
   avatar: "https://avatars.githubusercontent.com/u/213957524?v=4",
-  resumeFile: null, // page is generated from this data; TODO: attach a real PDF
+  resumeFile: null,
   contact: {
     email: "umidjongafforov844@gmail.com",
     emailSecondary: "umidjongafforov175@gmail.com",
@@ -39,10 +35,6 @@ export const profile: Profile = {
   },
 };
 
-/**
- * Figures mirrored from umidjon.agency. Every number here must stay
- * verifiable against real work — never round upward.
- */
 export const metrics: Metric[] = [
   { id: "projects", value: 12, suffix: "" },
   { id: "clients", value: 6, suffix: "" },
@@ -133,7 +125,6 @@ export const skillGroups: SkillGroup[] = [
   },
 ];
 
-/** Headline technologies for the hero marquee. */
 export const marqueeSkills = [
   "React",
   "Next.js",

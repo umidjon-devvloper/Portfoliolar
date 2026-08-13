@@ -38,7 +38,6 @@ export async function sendMessage(
 ): Promise<ContactState> {
   const payload = parse(formData);
 
-  // Bots fill hidden fields; silently accept without sending.
   if (payload.honeypot.length > 0) {
     return { status: "success", message: null };
   }

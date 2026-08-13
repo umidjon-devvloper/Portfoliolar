@@ -4,11 +4,6 @@ import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { profile } from "@/content/profile";
 
-/**
- * Vertical meta strip on the hero's right edge: availability, local time
- * in Bukhara, and where he actually is. Small, factual, and specific —
- * it does the job a stock illustration would otherwise be doing.
- */
 export function StatusRail() {
   const t = useTranslations("hero");
   const [time, setTime] = useState<string | null>(null);
@@ -37,7 +32,6 @@ export function StatusRail() {
     {
       key: "time",
       label: t("railTime"),
-      // Rendered only after mount so server and client markup agree.
       value: time ? `${time} UTC+5` : "—",
       live: false,
     },

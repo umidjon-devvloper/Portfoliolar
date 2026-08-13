@@ -10,7 +10,6 @@ type RevealProps = {
   className?: string;
 };
 
-/** Fades content in the first time it scrolls into view. */
 export function Reveal({ children, delay = 0, y = 20, className }: RevealProps) {
   const shouldReduceMotion = useReducedMotion();
 
@@ -33,7 +32,6 @@ type StaggerProps = {
   gap?: number;
 };
 
-/** Parent that releases its Reveal-like children one after another. */
 export function Stagger({ children, className, gap = 0.08 }: StaggerProps) {
   return (
     <motion.div

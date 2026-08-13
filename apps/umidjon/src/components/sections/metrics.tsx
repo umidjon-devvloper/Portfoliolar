@@ -3,10 +3,6 @@ import { Container } from "@/components/ui/container";
 import { Counter } from "@/components/motion/counter";
 import { metrics } from "@/content/profile";
 
-/**
- * Set as a data band rather than four equal cards: numbers at display
- * size on a single rule, labels in mono underneath.
- */
 export function Metrics() {
   const t = useTranslations("metrics");
 
@@ -17,19 +13,15 @@ export function Metrics() {
           {metrics.map((metric) => (
             <div
               key={metric.id}
-              className="flex flex-col gap-2 border-l border-border pl-5"
+              className="flex flex-col gap-2 border-l border-border pl-5 transition-colors hover:border-accent"
             >
-              <dd className="font-display text-4xl sm:text-5xl lg:text-6xl">
+              <dd className="font-display text-4xl sm:text-5xl">
                 <Counter value={metric.value} suffix={metric.suffix} />
               </dd>
               <dt className="label leading-relaxed">{t(metric.id)}</dt>
             </div>
           ))}
         </dl>
-
-        <p className="mt-12 max-w-xl text-xs leading-relaxed text-muted">
-          {t("note")}
-        </p>
       </Container>
     </section>
   );

@@ -6,12 +6,6 @@ import { useRef } from "react";
 import { Container } from "@/components/ui/container";
 import { stackLayers } from "@/content/stack-layers";
 
-/**
- * Signature element. A single vertical line runs the height of the section
- * and fills with the accent as you scroll; each layer node lights up as the
- * fill passes it. The structure is the argument — one continuous line,
- * every layer on it, no gaps handed to somebody else.
- */
 export function StackSpine() {
   const t = useTranslations("stack");
   const ref = useRef<HTMLDivElement>(null);
@@ -38,12 +32,12 @@ export function StackSpine() {
           </div>
 
           <div ref={ref} className="relative pl-8 sm:pl-12">
-            {/* track */}
+            {}
             <div
               className="absolute bottom-0 left-[3px] top-0 w-px bg-border sm:left-[7px]"
               aria-hidden
             />
-            {/* fill */}
+            {}
             <motion.div
               style={shouldReduceMotion ? { height: "100%" } : { height }}
               className="absolute left-[3px] top-0 w-px bg-accent sm:left-[7px]"

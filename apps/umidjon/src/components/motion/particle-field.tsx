@@ -2,27 +2,13 @@
 
 import { useEffect, useRef } from "react";
 
-type Particle = {
-  x: number;
-  y: number;
-  vx: number;
-  vy: number;
-};
+type Particle = { x: number; y: number; vx: number; vy: number };
 
-const LINK_DISTANCE = 130;
-const CURSOR_RADIUS = 190;
-const MAX_PARTICLES = 110;
+const LINK_DISTANCE = 150;
+const CURSOR_RADIUS = 260;
+const MAX_PARTICLES = 120;
 
-/**
- * Ambient constellation behind the page: slow-drifting points that link to
- * their neighbours, and link harder to the cursor. Reads its colours from
- * the CSS custom properties so it follows the light/dark theme.
- *
- * Kept cheap on purpose — squared-distance comparisons, a particle count
- * derived from viewport area, no work while the tab is hidden, and nothing
- * at all when the visitor prefers reduced motion.
- */
-export function ParticleField() {
+export function ParticleField({ className }: { className?: string }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -32,7 +18,6 @@ export function ParticleField() {
     const context = canvas.getContext("2d", { alpha: true });
     if (!context) return;
 
-    // Narrowed once here so the closures below don't re-check nullability.
     const element: HTMLCanvasElement = canvas;
     const ctx: CanvasRenderingContext2D = context;
 
@@ -47,38 +32,37 @@ export function ParticleField() {
     let running = true;
 
     const pointer = { x: -9999, y: -9999, active: false };
-
-    // Accent colour, read live so a theme switch is picked up.
     let accent = "108, 99, 255";
+    let accent2 = "34, 211, 238";
 
-    function readAccent() {
-      const raw = getComputedStyle(document.documentElement)
-        .getPropertyValue("--accent-rgb")
-        .trim();
-      if (raw) accent = raw.replaceAll(" ", ", ");
+    function readColors() {
+      const styles = getComputedStyle(document.documentElement);
+      const a = styles.getPropertyValue("--accent-rgb").trim();
+      const b = styles.getPropertyValue("--accent-2-rgb").trim();
+      if (a) accent = a.replaceAll(" ", ", ");
+      if (b) accent2 = b.replaceAll(" ", ", ");
     }
 
     function resize() {
+      const rect = element.getBoundingClientRect();
       const ratio = Math.min(window.devicePixelRatio || 1, 2);
-      width = window.innerWidth;
-      height = window.innerHeight;
+      width = rect.width;
+      height = rect.height;
 
       element.width = width * ratio;
       element.height = height * ratio;
-      element.style.width = `${width}px`;
-      element.style.height = `${height}px`;
       ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
 
       const target = Math.min(
         MAX_PARTICLES,
-        Math.round((width * height) / 17000),
+        Math.max(28, Math.round((width * height) / 13000)),
       );
 
       particles = Array.from({ length: target }, () => ({
         x: Math.random() * width,
         y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.22,
-        vy: (Math.random() - 0.5) * 0.22,
+        vx: (Math.random() - 0.5) * 0.45,
+        vy: (Math.random() - 0.5) * 0.45,
       }));
     }
 
@@ -90,19 +74,26 @@ export function ParticleField() {
           particle.x += particle.vx;
           particle.y += particle.vy;
 
-          if (particle.x < 0) particle.x = width;
-          else if (particle.x > width) particle.x = 0;
-          if (particle.y < 0) particle.y = height;
-          else if (particle.y > height) particle.y = 0;
+          if (particle.x < -20) particle.x = width + 20;
+          else if (particle.x > width + 20) particle.x = -20;
+          if (particle.y < -20) particle.y = height + 20;
+          else if (particle.y > height + 20) particle.y = -20;
         }
 
+        const dxp = particle.x - pointer.x;
+        const dyp = particle.y - pointer.y;
+        const near =
+          pointer.active &&
+          dxp * dxp + dyp * dyp < CURSOR_RADIUS * CURSOR_RADIUS;
+
         ctx.beginPath();
-        ctx.arc(particle.x, particle.y, 1.1, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${accent}, 0.42)`;
+        ctx.arc(particle.x, particle.y, near ? 2.6 : 1.9, 0, Math.PI * 2);
+        ctx.fillStyle = near
+          ? `rgba(${accent2}, 0.95)`
+          : `rgba(${accent}, 0.6)`;
         ctx.fill();
       }
 
-      // Neighbour links.
       for (let i = 0; i < particles.length; i += 1) {
         const a = particles[i];
         if (!a) continue;
@@ -120,12 +111,11 @@ export function ParticleField() {
           ctx.beginPath();
           ctx.moveTo(a.x, a.y);
           ctx.lineTo(b.x, b.y);
-          ctx.strokeStyle = `rgba(${accent}, ${strength * 0.16})`;
+          ctx.strokeStyle = `rgba(${accent}, ${strength * 0.3})`;
           ctx.lineWidth = 1;
           ctx.stroke();
         }
 
-        // Cursor links — brighter, so the field feels attached to the pointer.
         if (!pointer.active) continue;
 
         const dxp = a.x - pointer.x;
@@ -137,26 +127,35 @@ export function ParticleField() {
         ctx.beginPath();
         ctx.moveTo(a.x, a.y);
         ctx.lineTo(pointer.x, pointer.y);
-        ctx.strokeStyle = `rgba(${accent}, ${strength * 0.5})`;
-        ctx.lineWidth = 1;
+        ctx.strokeStyle = `rgba(${accent2}, ${strength * 0.85})`;
+        ctx.lineWidth = strength * 1.6;
         ctx.stroke();
 
-        // Gentle pull toward the cursor.
         if (!reduceMotion) {
-          a.x -= dxp * 0.0016;
-          a.y -= dyp * 0.0016;
+          a.x -= dxp * 0.004;
+          a.y -= dyp * 0.004;
         }
       }
 
-      if (running && !reduceMotion) {
-        frame = requestAnimationFrame(draw);
+      if (pointer.active) {
+        ctx.beginPath();
+        ctx.arc(pointer.x, pointer.y, 3.2, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${accent2}, 0.9)`;
+        ctx.fill();
       }
+
+      if (running) frame = requestAnimationFrame(draw);
     }
 
     function onPointerMove(event: PointerEvent) {
-      pointer.x = event.clientX;
-      pointer.y = event.clientY;
-      pointer.active = true;
+      const rect = element.getBoundingClientRect();
+      pointer.x = event.clientX - rect.left;
+      pointer.y = event.clientY - rect.top;
+      pointer.active =
+        pointer.x > -60 &&
+        pointer.y > -60 &&
+        pointer.x < width + 60 &&
+        pointer.y < height + 60;
     }
 
     function onPointerLeave() {
@@ -167,23 +166,25 @@ export function ParticleField() {
       if (document.hidden) {
         running = false;
         cancelAnimationFrame(frame);
-      } else if (!reduceMotion) {
+      } else {
         running = true;
         frame = requestAnimationFrame(draw);
       }
     }
 
-    readAccent();
+    readColors();
     resize();
     draw();
 
-    const themeObserver = new MutationObserver(readAccent);
+    const themeObserver = new MutationObserver(readColors);
     themeObserver.observe(document.documentElement, {
       attributes: true,
       attributeFilter: ["class"],
     });
 
-    window.addEventListener("resize", resize);
+    const resizeObserver = new ResizeObserver(resize);
+    resizeObserver.observe(element);
+
     window.addEventListener("pointermove", onPointerMove, { passive: true });
     window.addEventListener("pointerleave", onPointerLeave);
     document.addEventListener("visibilitychange", onVisibilityChange);
@@ -192,18 +193,12 @@ export function ParticleField() {
       running = false;
       cancelAnimationFrame(frame);
       themeObserver.disconnect();
-      window.removeEventListener("resize", resize);
+      resizeObserver.disconnect();
       window.removeEventListener("pointermove", onPointerMove);
       window.removeEventListener("pointerleave", onPointerLeave);
       document.removeEventListener("visibilitychange", onVisibilityChange);
     };
   }, []);
 
-  return (
-    <canvas
-      ref={canvasRef}
-      aria-hidden
-      className="pointer-events-none fixed inset-0 z-0 h-full w-full opacity-80"
-    />
-  );
+  return <canvas ref={canvasRef} aria-hidden className={className} />;
 }

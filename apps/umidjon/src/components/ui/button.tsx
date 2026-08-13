@@ -2,10 +2,6 @@ import { cva, type VariantProps } from "class-variance-authority";
 import type { ButtonHTMLAttributes } from "react";
 import { cn } from "@/lib/utils";
 
-/**
- * Square-ish rather than pill: the rest of the page is built from straight
- * rules and hard edges, and rounded pills fought that.
- */
 export const buttonVariants = cva(
   "group/btn inline-flex items-center justify-center gap-2.5 rounded-md text-sm font-medium transition-all duration-200 disabled:pointer-events-none disabled:opacity-50",
   {

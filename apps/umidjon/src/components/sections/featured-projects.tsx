@@ -1,40 +1,52 @@
 import { ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { Fragment } from "react";
 import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/container";
+import { Reveal } from "@/components/motion/reveal";
+import { SnakeConnector } from "@/components/motion/snake-connector";
 import { featuredProjects } from "@/content/projects";
-import { ProjectRow } from "./project-row";
+import { ProjectCard } from "./project-row";
 
 export function FeaturedProjects() {
   const t = useTranslations("projects");
   const tc = useTranslations("common");
 
   return (
-    <section id="projects" className="py-24 sm:py-32 lg:py-40">
-      <Container className="flex flex-col gap-12 lg:gap-16">
-        <div className="flex flex-col gap-5">
-          <span className="label">{t("label")}</span>
-          <h2 className="font-display type-display max-w-2xl text-balance">
-            {t("featuredTitle")}
-          </h2>
-        </div>
-      </Container>
+    <section id="projects" className="relative z-10 py-24 sm:py-32">
+      <Container className="flex flex-col gap-14">
+        <Reveal>
+          <div className="flex flex-col gap-4">
+            <span className="label flex items-center gap-3">
+              <span className="h-px w-8 gradient-rule" aria-hidden />
+              {t("label")}
+            </span>
+            <h2 className="font-display type-display max-w-2xl text-balance">
+              {t("featuredTitle")}
+            </h2>
+          </div>
+        </Reveal>
 
-      {/* Rows run full-bleed so the rules read as page structure. */}
-      <ul className="mt-4 border-t border-border">
-        {featuredProjects.map((project, index) => (
-          <ProjectRow key={project.slug} project={project} index={index} />
-        ))}
-      </ul>
+        <ul className="flex flex-col">
+          {featuredProjects.map((project, index) => (
+            <Fragment key={project.slug}>
+              <ProjectCard project={project} index={index} />
+              {index < featuredProjects.length - 1 ? (
+                <SnakeConnector flip={index % 2 === 1} />
+              ) : null}
+            </Fragment>
+          ))}
+        </ul>
 
-      <Container className="mt-12">
-        <Link
-          href="/projects"
-          className="group inline-flex items-center gap-3 text-sm text-accent"
-        >
-          {tc("viewAll")}
-          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1.5" />
-        </Link>
+        <Reveal>
+          <Link
+            href="/projects"
+            className="group inline-flex items-center gap-3 text-sm text-accent"
+          >
+            {tc("viewAll")}
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1.5" />
+          </Link>
+        </Reveal>
       </Container>
     </section>
   );

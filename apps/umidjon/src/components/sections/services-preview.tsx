@@ -1,76 +1,71 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/container";
+import { Reveal, Stagger, StaggerItem } from "@/components/motion/reveal";
 import { services } from "@/content/site";
+import { profile } from "@/content/profile";
 
-/**
- * A price list, set as a list. Cards with icons made eight equal
- * boxes and buried the one thing a client is scanning for: the number.
- */
 export function ServicesPreview() {
   const t = useTranslations("services");
 
   return (
-    <section id="services" className="relative z-10 border-y border-border bg-surface">
-      <Container className="py-24 sm:py-32 lg:py-40">
-        <div className="grid gap-12 lg:grid-cols-[10rem_1fr] lg:gap-16 xl:grid-cols-[14rem_1fr]">
-          <div className="lg:sticky lg:top-28 lg:h-fit">
-            <span className="label flex items-center gap-3">
-              <span className="h-px w-6 bg-accent" aria-hidden />
-              {t("label")}
-            </span>
-          </div>
-
-          <div className="flex flex-col gap-10">
-            <h2 className="font-display type-display max-w-2xl text-balance">
-              {t("title")}
-            </h2>
-
-            <dl className="flex flex-col border-t border-border">
-              {services.map((service) => (
-                <div
-                  key={service.id}
-                  className="group grid gap-2 border-b border-border py-6 sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-10"
-                >
-                  <div className="flex flex-col gap-1.5">
-                    <dt className="text-lg font-medium transition-colors group-hover:text-accent">
-                      {t(`${service.id}.title`)}
-                    </dt>
-                    <dd className="max-w-xl text-sm leading-relaxed text-muted">
-                      {t(`${service.id}.description`)}
-                    </dd>
-                  </div>
-
-                  <dd className="font-mono text-sm text-muted sm:text-right">
-                    {service.priceFrom !== null ? (
-                      <>
-                        <span className="text-muted/70">{t("from")} </span>
-                        <span className="text-foreground">
-                          ${service.priceFrom.toLocaleString("en-US")}
-                        </span>
-                      </>
-                    ) : (
-                      <span className="text-muted/70">{t("onRequest")}</span>
-                    )}
-                  </dd>
-                </div>
-              ))}
-            </dl>
-
-            <div className="flex flex-col gap-6">
-              <p className="max-w-xl text-xs leading-relaxed text-muted">
-                {t("priceNote")}
+    <section
+      id="services"
+      className="relative z-10 border-y border-border bg-surface"
+    >
+      <Container className="py-24 sm:py-32">
+        <div className="flex flex-col gap-14">
+          <Reveal>
+            <div className="flex flex-col gap-4">
+              <span className="label flex items-center gap-3">
+                <span className="h-px w-8 gradient-rule" aria-hidden />
+                {t("label")}
+              </span>
+              <h2 className="font-display type-display max-w-2xl text-balance">
+                {t("title")}
+              </h2>
+              <p className="type-lead max-w-xl leading-relaxed text-muted">
+                {t("subtitle")}
               </p>
-              <Link
-                href="/contact"
-                className="group inline-flex items-center gap-3 self-start text-sm text-accent"
-              >
-                {t("cta")}
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1.5" />
-              </Link>
             </div>
-          </div>
+          </Reveal>
+
+          <Stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4" gap={0.06}>
+            {services.map((service) => (
+              <StaggerItem key={service.id} className="flex">
+                <div className="card flex w-full flex-col gap-3 rounded-2xl p-6">
+                  <h3 className="font-medium">{t(`${service.id}.title`)}</h3>
+                  <p className="text-sm leading-relaxed text-muted">
+                    {t(`${service.id}.description`)}
+                  </p>
+                </div>
+              </StaggerItem>
+            ))}
+          </Stagger>
+
+          {profile.contact.agency ? (
+            <Reveal>
+              <a
+                href={profile.contact.agency}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="card group flex flex-col gap-4 rounded-2xl p-8 sm:flex-row sm:items-center sm:justify-between"
+              >
+                <div className="flex flex-col gap-2">
+                  <span className="font-display type-title">
+                    {t("agencyTitle")}
+                  </span>
+                  <span className="text-sm text-muted">
+                    {t("agencySubtitle")}
+                  </span>
+                </div>
+                <span className="inline-flex items-center gap-2 text-sm text-accent">
+                  umidjon.agency
+                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                </span>
+              </a>
+            </Reveal>
+          ) : null}
         </div>
       </Container>
     </section>

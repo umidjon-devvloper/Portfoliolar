@@ -5,9 +5,9 @@ export const projects: Project[] = [
     slug: "thehotelsaas",
     name: "TheHotelSaaS",
     kind: "saas",
-    year: null, // TODO: no public repo found — confirm the year
+    year: null,
     featured: true,
-    cover: null, // TODO: /projects/thehotelsaas.webp
+    cover: null,
     gallery: [],
     links: [
       {
@@ -46,9 +46,9 @@ export const projects: Project[] = [
     kind: "saas",
     year: "2026",
     featured: true,
-    cover: null, // TODO
+    cover: null,
     gallery: [],
-    links: [], // no public link yet
+    links: [],
     stack: ["Node.js", "SerpAPI", "MongoDB", "Next.js"],
     integrations: ["Google Hotels", "Booking", "Expedia", "Agoda", "SerpAPI"],
     components: [],
@@ -67,7 +67,7 @@ export const projects: Project[] = [
       ru: "Сбор цен конкурентов с OTA-платформ, их анализ и предоставление отелю полезных инсайтов.",
       en: "Collecting competitor rates from OTA platforms, analysing them and turning them into actionable insights.",
     },
-    result: null, // TODO
+    result: null,
   },
   {
     slug: "sushi-time",
@@ -75,7 +75,7 @@ export const projects: Project[] = [
     kind: "fullstack",
     year: "2026",
     featured: true,
-    cover: null, // TODO
+    cover: null,
     gallery: [],
     links: [
       {
@@ -114,7 +114,7 @@ export const projects: Project[] = [
     kind: "mobile",
     year: "2026",
     featured: false,
-    cover: null, // TODO
+    cover: null,
     gallery: [],
     links: [
       {
@@ -122,7 +122,6 @@ export const projects: Project[] = [
         href: "https://www.zapchasty.uz",
         kind: "live",
       },
-      // TODO: add the exact App Store / Google Play listing URLs
     ],
     stack: ["React Native", "Expo", "EAS Build", "Node.js"],
     integrations: [],
@@ -154,7 +153,7 @@ export const projects: Project[] = [
     kind: "business",
     year: "2026",
     featured: false,
-    cover: null, // TODO
+    cover: null,
     gallery: [],
     links: [
       {
