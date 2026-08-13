@@ -337,6 +337,11 @@
   }
 }
 
+/*
+  Reduced motion turns off looping, decorative animation. Short hover and
+  colour transitions stay: they give feedback without causing discomfort,
+  and killing them made the whole interface feel dead.
+*/
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -351,8 +356,12 @@
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+  }
+
+  *:not(.card):not([class*="transition"]),
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
   }
 }
