@@ -221,7 +221,7 @@ export function ProjectsSpine({ children }: { children: ReactNode }) {
         height={box.height}
         viewBox={`0 0 ${box.width} ${box.height}`}
         fill="none"
-        className="pointer-events-none absolute inset-0 z-0 hidden md:block"
+        className="pointer-events-none absolute inset-0 z-20 hidden md:block"
       >
         <path
           ref={pathRef}
@@ -258,6 +258,49 @@ export function ProjectsSpine({ children }: { children: ReactNode }) {
           );
         })}
 
+        {pose && !reduced ? (
+          <g transform={`translate(${pose.x} ${pose.y}) rotate(${pose.angle})`}>
+            <ellipse
+              cx="0"
+              cy={16 + pose.boost * 14}
+              rx={3 + pose.boost * 1.6}
+              ry={11 + pose.boost * 15}
+              fill="var(--accent)"
+              opacity={0.45 + pose.boost * 0.35}
+            />
+            <ellipse
+              cx="0"
+              cy={11 + pose.boost * 7}
+              rx="2"
+              ry={6 + pose.boost * 8}
+              fill="var(--accent-2)"
+              opacity="0.9"
+            />
+            <path
+              d="M-5 0 L -9.5 8 L -5 6 Z"
+              fill="var(--accent)"
+              stroke="var(--accent)"
+              strokeWidth="1"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M5 0 L 9.5 8 L 5 6 Z"
+              fill="var(--accent)"
+              stroke="var(--accent)"
+              strokeWidth="1"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M0 -13 C 4.8 -7, 6.2 0, 5 6 L -5 6 C -6.2 0, -4.8 -7, 0 -13 Z"
+              fill="var(--background)"
+              stroke="var(--accent-2)"
+              strokeWidth="1.8"
+              strokeLinejoin="round"
+            />
+            <circle cx="0" cy="-3" r="2.4" fill="var(--accent-2)" />
+          </g>
+        ) : null}
+
         <defs>
           <linearGradient id="spine-gradient" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stopColor="var(--accent-2)" />
@@ -266,47 +309,6 @@ export function ProjectsSpine({ children }: { children: ReactNode }) {
         </defs>
       </svg>
 
-      {pose && !reduced ? (
-        <div
-          aria-hidden
-          className="pointer-events-none absolute left-0 top-0 z-30 hidden md:block"
-          style={{
-            transform: `translate(${pose.x}px, ${pose.y}px) translate(-50%, -50%) rotate(${pose.angle}deg)`,
-          }}
-        >
-          <div
-            className="absolute left-1/2 top-[14px] w-[5px] -translate-x-1/2 rounded-full bg-accent"
-            style={{
-              height: `${10 + pose.boost * 26}px`,
-              opacity: 0.55 + pose.boost * 0.45,
-            }}
-          />
-          <svg width="28" height="28" viewBox="-14 -14 28 28" fill="none">
-            <path
-              d="M-4.6 0 L -8.6 7 L -4.6 5.4 Z"
-              fill="var(--accent)"
-              stroke="var(--accent)"
-              strokeWidth="0.9"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M4.6 0 L 8.6 7 L 4.6 5.4 Z"
-              fill="var(--accent)"
-              stroke="var(--accent)"
-              strokeWidth="0.9"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M0 -11 C 4.2 -6, 5.4 0, 4.6 5.4 L -4.6 5.4 C -5.4 0, -4.2 -6, 0 -11 Z"
-              fill="var(--background)"
-              stroke="var(--accent-2)"
-              strokeWidth="1.5"
-              strokeLinejoin="round"
-            />
-            <circle cx="0" cy="-2.6" r="2.1" fill="var(--accent-2)" />
-          </svg>
-        </div>
-      ) : null}
 
       <div className="relative z-10">{children}</div>
     </div>
