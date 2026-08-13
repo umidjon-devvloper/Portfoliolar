@@ -316,6 +316,18 @@
   }
 }
 
+@keyframes flame {
+  0%,
+  100% {
+    transform: scaleY(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scaleY(0.55);
+    opacity: 0.4;
+  }
+}
+
 @keyframes shimmer {
   from {
     background-position: 200% 0;
@@ -331,7 +343,8 @@
   }
 
   .marquee-track,
-  .skeleton {
+  .skeleton,
+  [class*="animate-[flame"] {
     animation: none;
   }
 
