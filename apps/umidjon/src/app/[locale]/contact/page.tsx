@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Github, Instagram, Linkedin, Mail, Phone, Send } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { Section } from "@/components/ui/section";
-import { SectionHeading } from "@/components/ui/section-heading";
+import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/motion/reveal";
 import { ContactForm } from "@/components/sections/contact-form";
 import { profile } from "@/content/profile";
@@ -49,9 +48,7 @@ export default async function ContactPage({ params }: PageProps) {
           label: contact.phoneDisplay ?? contact.phone,
         }
       : null,
-    contact.github
-      ? { href: contact.github, icon: Github, label: "GitHub" }
-      : null,
+    contact.github ? { href: contact.github, icon: Github, label: "GitHub" } : null,
     contact.linkedin
       ? { href: contact.linkedin, icon: Linkedin, label: "LinkedIn" }
       : null,
@@ -61,33 +58,39 @@ export default async function ContactPage({ params }: PageProps) {
   ].filter((item) => item !== null);
 
   return (
-    <Section>
-      <div className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:gap-20">
-        <Reveal>
-          <div className="flex flex-col gap-8">
-            <SectionHeading title={t("title")} subtitle={t("subtitle")} />
-
-            <div className="flex flex-col gap-1">
-              {channels.map((channel) => (
-                <a
-                  key={channel.label}
-                  href={channel.href}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="group inline-flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-muted transition-colors hover:bg-surface hover:text-foreground"
-                >
-                  <channel.icon className="h-4 w-4 text-accent" />
-                  {channel.label}
-                </a>
-              ))}
-            </div>
+    <Container className="grid gap-16 pb-28 pt-28 sm:pt-36 lg:grid-cols-[1fr_1fr] lg:gap-24">
+      <Reveal>
+        <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-5">
+            <span className="label">{t("label")}</span>
+            <h1 className="font-display type-display text-balance">
+              {t("title")}
+            </h1>
+            <p className="type-lead max-w-lg leading-relaxed text-muted">
+              {t("subtitle")}
+            </p>
           </div>
-        </Reveal>
 
-        <Reveal delay={0.1}>
-          <ContactForm />
-        </Reveal>
-      </div>
-    </Section>
+          <div className="flex flex-col border-t border-border">
+            {channels.map((channel) => (
+              <a
+                key={channel.label}
+                href={channel.href}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="group flex items-center gap-4 border-b border-border py-4 text-sm text-muted transition-colors hover:text-foreground"
+              >
+                <channel.icon className="h-4 w-4 shrink-0 text-muted transition-colors group-hover:text-accent" />
+                <span className="font-mono">{channel.label}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </Reveal>
+
+      <Reveal delay={0.1}>
+        <ContactForm />
+      </Reveal>
+    </Container>
   );
 }

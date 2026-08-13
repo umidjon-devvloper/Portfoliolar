@@ -1,7 +1,6 @@
 "use client";
 
 import { AnimatePresence, motion, useScroll } from "framer-motion";
-import { Menu, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { Link, usePathname } from "@/i18n/navigation";
@@ -19,15 +18,9 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const { scrollY } = useScroll();
 
-  useEffect(() => {
-    return scrollY.on("change", (value) => setScrolled(value > 12));
-  }, [scrollY]);
+  useEffect(() => scrollY.on("change", (v) => setScrolled(v > 24)), [scrollY]);
+  useEffect(() => setOpen(false), [pathname]);
 
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
-
-  // Lock body scroll while the mobile sheet is open.
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
@@ -38,24 +31,21 @@ export function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 transition-all duration-300",
+        "fixed inset-x-0 top-0 z-50 transition-all duration-500",
         scrolled
-          ? "border-b border-border bg-background/75 backdrop-blur-xl"
-          : "border-b border-transparent bg-transparent",
+          ? "border-b border-border bg-background/80 backdrop-blur-xl"
+          : "border-b border-transparent",
       )}
     >
-      <Container className="flex h-16 items-center justify-between gap-4">
-        <Link
-          href="/"
-          className="group flex items-center gap-2 font-mono text-sm font-semibold tracking-tight"
-        >
-          {profile.firstName}
-          <span className="text-accent transition-transform group-hover:scale-125">
-            .
+      <Container className="flex h-16 items-center justify-between gap-6 sm:h-20">
+        <Link href="/" className="group flex items-baseline gap-2">
+          <span className="font-display text-base tracking-tight sm:text-lg">
+            {profile.firstName}
           </span>
+          <span className="h-1 w-1 rounded-full bg-accent transition-transform duration-300 group-hover:scale-150" />
         </Link>
 
-        <nav className="hidden items-center gap-1 md:flex">
+        <nav className="hidden items-center gap-8 md:flex">
           {navItems.map((item) => {
             const active = pathname === item.href;
 
@@ -64,24 +54,24 @@ export function Header() {
                 key={item.id}
                 href={item.href}
                 className={cn(
-                  "relative rounded-full px-3.5 py-2 text-sm transition-colors",
+                  "relative py-1 text-sm transition-colors",
                   active ? "text-foreground" : "text-muted hover:text-foreground",
                 )}
               >
+                {t(item.id)}
                 {active ? (
                   <motion.span
-                    layoutId="nav-pill"
-                    className="absolute inset-0 -z-10 rounded-full bg-surface-2"
-                    transition={{ type: "spring", stiffness: 380, damping: 32 }}
+                    layoutId="nav-underline"
+                    className="absolute -bottom-0.5 left-0 right-0 h-px bg-accent"
+                    transition={{ type: "spring", stiffness: 420, damping: 34 }}
                   />
                 ) : null}
-                {t(item.id)}
               </Link>
             );
           })}
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
           <LanguageSwitcher className="hidden sm:flex" />
           <ThemeToggle />
           <button
@@ -89,9 +79,20 @@ export function Header() {
             aria-label={open ? t("closeMenu") : t("openMenu")}
             aria-expanded={open}
             onClick={() => setOpen((value) => !value)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border text-muted transition-colors hover:text-foreground md:hidden"
+            className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 md:hidden"
           >
-            {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+            <span
+              className={cn(
+                "h-px w-5 bg-foreground transition-transform duration-300",
+                open && "translate-y-[3.5px] rotate-45",
+              )}
+            />
+            <span
+              className={cn(
+                "h-px w-5 bg-foreground transition-transform duration-300",
+                open && "-translate-y-[3.5px] -rotate-45",
+              )}
+            />
           </button>
         </div>
       </Container>
@@ -102,26 +103,30 @@ export function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.25, ease: [0.21, 0.47, 0.32, 0.98] }}
+            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
             className="overflow-hidden border-t border-border bg-background md:hidden"
           >
-            <Container className="flex flex-col gap-1 py-4">
+            <Container className="flex flex-col py-2">
               {navItems.map((item, index) => (
                 <motion.div
                   key={item.id}
-                  initial={{ opacity: 0, x: -12 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.05 + index * 0.05 }}
+                  initial={{ opacity: 0, y: -8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.06 + index * 0.05 }}
+                  className="border-b border-border last:border-b-0"
                 >
                   <Link
                     href={item.href}
-                    className="block rounded-xl px-3 py-3 text-base text-muted transition-colors hover:bg-surface hover:text-foreground"
+                    className="flex items-baseline gap-4 py-4"
                   >
-                    {t(item.id)}
+                    <span className="label">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span className="font-display text-2xl">{t(item.id)}</span>
                   </Link>
                 </motion.div>
               ))}
-              <LanguageSwitcher className="mt-3 self-start sm:hidden" />
+              <LanguageSwitcher className="my-4 self-start sm:hidden" />
             </Container>
           </motion.div>
         ) : null}

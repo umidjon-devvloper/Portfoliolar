@@ -1,14 +1,19 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-type ContainerProps = {
+/**
+ * Wide by default — this layout leans on full-bleed rows rather than a
+ * narrow centred column, so the container mostly manages gutters.
+ */
+export function Container({
+  children,
+  className,
+}: {
   children: ReactNode;
   className?: string;
-};
-
-export function Container({ children, className }: ContainerProps) {
+}) {
   return (
-    <div className={cn("mx-auto w-full max-w-6xl px-5 sm:px-8", className)}>
+    <div className={cn("mx-auto w-full max-w-[88rem] px-5 sm:px-8", className)}>
       {children}
     </div>
   );

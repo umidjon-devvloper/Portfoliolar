@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Download, Printer } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { Section } from "@/components/ui/section";
-import { SectionHeading } from "@/components/ui/section-heading";
+import { Container } from "@/components/ui/container";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { Reveal } from "@/components/motion/reveal";
@@ -34,11 +33,19 @@ export default async function ResumePage({ params }: PageProps) {
   const { education, contact } = profile;
 
   return (
-    <Section>
+    <Container className="pb-28 pt-28 sm:pt-36">
       <div className="flex flex-col gap-12">
         <Reveal>
           <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-            <SectionHeading title={t("title")} subtitle={t("subtitle")} />
+            <div className="flex flex-col gap-5">
+              <span className="label">{t("label")}</span>
+              <h1 className="font-display type-display text-balance">
+                {t("title")}
+              </h1>
+              <p className="type-lead max-w-xl leading-relaxed text-muted">
+                {t("subtitle")}
+              </p>
+            </div>
 
             {profile.resumeFile ? (
               <a
@@ -59,7 +66,7 @@ export default async function ResumePage({ params }: PageProps) {
         </Reveal>
 
         <Reveal>
-          <div className="flex flex-col gap-2 rounded-[var(--radius-card)] border border-border bg-surface p-6 sm:p-8">
+          <div className="flex flex-col gap-2 border border-border bg-surface p-6 sm:p-8">
             <span className="text-xl font-semibold">
               {profile.fullName ?? profile.firstName}
             </span>
@@ -82,7 +89,7 @@ export default async function ResumePage({ params }: PageProps) {
         {education ? (
           <Reveal>
             <div className="flex flex-col gap-3">
-              <h2 className="flex items-center gap-3 font-mono text-xs uppercase tracking-[0.2em] text-accent">
+              <h2 className="flex items-center gap-3 label !text-accent">
                 {t("educationTitle")}
                 <span className="h-px w-8 bg-accent/40" aria-hidden />
               </h2>
@@ -103,7 +110,7 @@ export default async function ResumePage({ params }: PageProps) {
 
         <Reveal>
           <div className="flex flex-col gap-6">
-            <h2 className="flex items-center gap-3 font-mono text-xs uppercase tracking-[0.2em] text-accent">
+            <h2 className="flex items-center gap-3 label !text-accent">
               {t("experienceTitle")}
               <span className="h-px w-8 bg-accent/40" aria-hidden />
             </h2>
@@ -152,6 +159,6 @@ export default async function ResumePage({ params }: PageProps) {
           </div>
         </Reveal>
       </div>
-    </Section>
+    </Container>
   );
 }

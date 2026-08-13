@@ -1,11 +1,12 @@
 "use client";
 
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { useMemo, useState } from "react";
+import { Container } from "@/components/ui/container";
 import { projects, projectKinds, type ProjectFilter } from "@/content/projects";
 import { cn } from "@/lib/utils";
-import { ProjectCard } from "./project-card";
+import { ProjectRow } from "./project-row";
 
 const filterLabelKey: Record<ProjectFilter, string> = {
   all: "filterAll",
@@ -15,10 +16,9 @@ const filterLabelKey: Record<ProjectFilter, string> = {
   business: "filterBusiness",
 };
 
-export function ProjectsGrid() {
+export function ProjectsIndex() {
   const t = useTranslations("projects");
   const [filter, setFilter] = useState<ProjectFilter>("all");
-  const shouldReduceMotion = useReducedMotion();
 
   const visible = useMemo(
     () =>
@@ -29,49 +29,45 @@ export function ProjectsGrid() {
   );
 
   return (
-    <div className="flex flex-col gap-10">
-      <div className="flex flex-wrap gap-2" role="tablist">
-        {projectKinds.map((kind) => (
-          <button
-            key={kind}
-            type="button"
-            role="tab"
-            aria-selected={filter === kind}
-            onClick={() => setFilter(kind)}
-            className={cn(
-              "rounded-full border px-4 py-2 text-sm transition-colors",
-              filter === kind
-                ? "border-accent bg-accent text-accent-foreground"
-                : "border-border text-muted hover:text-foreground",
-            )}
-          >
-            {t(filterLabelKey[kind])}
-          </button>
-        ))}
-      </div>
+    <div className="flex flex-col">
+      <Container>
+        <div className="flex flex-wrap gap-x-6 gap-y-3 pb-8" role="tablist">
+          {projectKinds.map((kind) => (
+            <button
+              key={kind}
+              type="button"
+              role="tab"
+              aria-selected={filter === kind}
+              onClick={() => setFilter(kind)}
+              className={cn(
+                "label border-b pb-1 transition-colors",
+                filter === kind
+                  ? "border-accent text-accent"
+                  : "border-transparent hover:text-foreground",
+              )}
+            >
+              {t(filterLabelKey[kind])}
+            </button>
+          ))}
+        </div>
+      </Container>
 
       {visible.length === 0 ? (
-        <p className="text-sm text-muted">{t("empty")}</p>
+        <Container>
+          <p className="py-16 text-muted">{t("empty")}</p>
+        </Container>
       ) : (
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <ul className="border-t border-border">
           <AnimatePresence mode="popLayout">
-            {visible.map((project) => (
-              <motion.div
+            {visible.map((project, index) => (
+              <ProjectRow
                 key={project.slug}
-                layout={!shouldReduceMotion}
-                initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.25 }}
-                className="flex"
-              >
-                <div className="flex w-full">
-                  <ProjectCard project={project} />
-                </div>
-              </motion.div>
+                project={project}
+                index={index}
+              />
             ))}
           </AnimatePresence>
-        </div>
+        </ul>
       )}
     </div>
   );

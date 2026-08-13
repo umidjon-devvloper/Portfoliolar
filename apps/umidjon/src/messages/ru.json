@@ -29,7 +29,12 @@
     "secondaryCta": "Связаться",
     "titleLead": "Не просто код —",
     "titleAccent": "продукт, который даёт",
-    "titleTail": "бизнесу результат"
+    "titleTail": "бизнесу результат",
+    "railStatus": "Статус",
+    "railAvailable": "Открыт к проектам",
+    "railTime": "Местное время",
+    "railBase": "Локация",
+    "scrollHint": "Вниз"
   },
   "about": {
     "title": "Обо мне",
@@ -42,7 +47,9 @@
     "partnersTitle": "Партнёры",
     "partnersSubtitle": "Команда, с которой я работаю над проектами",
     "educationTitle": "Образование",
-    "locationLabel": "Локация"
+    "locationLabel": "Локация",
+    "label": "Кто",
+    "roleLabel": "Роль"
   },
   "strengths": {
     "fullStackThinking": "Full-stack мышление — понимаю frontend, backend, базу данных и деплой вместе",
@@ -88,7 +95,9 @@
     "notFound": "Проект не найден",
     "links": "Ссылки",
     "year": "Год",
-    "openSite": "Открыть сайт"
+    "openSite": "Открыть сайт",
+    "label": "Работы",
+    "openProject": "Открыть проект"
   },
   "services": {
     "title": "Услуги",
@@ -127,7 +136,9 @@
     "bots": {
       "title": "Telegram-боты",
       "description": "Боты для заказов, уведомлений и автоматизации."
-    }
+    },
+    "label": "Услуги и цены",
+    "onRequest": "По договорённости"
   },
   "contact": {
     "title": "Связаться",
@@ -146,7 +157,8 @@
       "nameRequired": "Введите имя",
       "emailInvalid": "Введите корректный email",
       "messageShort": "Сообщение должно содержать минимум 10 символов"
-    }
+    },
+    "label": "Контакты"
   },
   "resume": {
     "title": "Резюме",
@@ -155,7 +167,8 @@
     "downloadUnavailable": "PDF пока не готов",
     "educationTitle": "Образование",
     "experienceTitle": "Опыт",
-    "printHint": "Можно сохранить в PDF через Ctrl+P в браузере"
+    "printHint": "Можно сохранить в PDF через Ctrl+P в браузере",
+    "label": "Резюме"
   },
   "cta": {
     "title": "Есть проект?",
@@ -164,7 +177,9 @@
   },
   "footer": {
     "rights": "Все права защищены",
-    "builtWith": "Сделано на Next.js"
+    "builtWith": "Next.js — сделано в Бухаре",
+    "pages": "Страницы",
+    "elsewhere": "Ещё"
   },
   "notFound": {
     "title": "Страница не найдена",
@@ -201,6 +216,31 @@
     "launch": {
       "title": "Запуск",
       "description": "Тестирование, деплой и 1 месяц бесплатной техподдержки."
+    }
+  },
+  "stack": {
+    "label": "Охват",
+    "title": "Одна цепочка, один человек",
+    "subtitle": "Я не делю проект между исполнителями. Каждый слой — от дизайна до публикации в сторах — закрываю сам, поэтому между слоями ничего не теряется.",
+    "design": {
+      "title": "Дизайн",
+      "description": "Прототип в Figma. Вы видите и утверждаете его до написания кода."
+    },
+    "frontend": {
+      "title": "Frontend",
+      "description": "Быстрый интерфейс, который не ломается на мобильных."
+    },
+    "backend": {
+      "title": "Backend",
+      "description": "API, база данных, аутентификация и бизнес-логика."
+    },
+    "mobile": {
+      "title": "Mobile",
+      "description": "Приложения для iOS и Android из одной кодовой базы."
+    },
+    "release": {
+      "title": "Запуск",
+      "description": "Деплой, домен, SSL, публикация в сторах и дальнейшая поддержка."
     }
   }
 }

@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
-import { Check, GraduationCap, MapPin } from "lucide-react";
 import Image from "next/image";
-import { Section } from "@/components/ui/section";
-import { SectionHeading } from "@/components/ui/section-heading";
+import { Container } from "@/components/ui/container";
+import { LabelledSection } from "@/components/ui/section";
 import { Badge } from "@/components/ui/badge";
-import { Reveal, Stagger, StaggerItem } from "@/components/motion/reveal";
-import { SpotlightCard } from "@/components/motion/spotlight-card";
+import { Reveal } from "@/components/motion/reveal";
+import { StackSpine } from "@/components/sections/stack-spine";
+import { Cta } from "@/components/sections/cta";
 import { goalIds, profile, skillGroups, strengthIds } from "@/content/profile";
 import { partners } from "@/content/site";
 
@@ -29,187 +29,170 @@ function AboutContent() {
   const tStrengths = useTranslations("strengths");
   const tGoals = useTranslations("goals");
   const tSkills = useTranslations("skills");
-
   const { education, location, avatar } = profile;
 
   return (
     <>
-      <Section className="border-b border-border">
-        <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
+      <Container className="pt-28 sm:pt-36">
+        <div className="grid gap-14 lg:grid-cols-[1.6fr_1fr] lg:gap-20">
           <Reveal>
             <div className="flex flex-col gap-8">
-              <SectionHeading title={t("title")} subtitle={t("shortBio")} />
-              <p className="max-w-3xl text-base leading-relaxed text-muted">
+              <span className="label">{t("label")}</span>
+              <h1 className="font-display type-mega max-w-[12ch] text-balance">
+                {profile.fullName ?? profile.firstName}
+              </h1>
+              <p className="font-display max-w-3xl text-balance text-[clamp(1.25rem,2.4vw,2rem)] leading-[1.3]">
+                {t("shortBio")}
+              </p>
+              <p className="max-w-2xl leading-relaxed text-muted">
                 {t("longBio")}
               </p>
             </div>
           </Reveal>
 
           <Reveal delay={0.1}>
-            <div className="flex flex-col gap-5 rounded-[var(--radius-card)] border border-border bg-surface p-6 sm:p-8">
+            <div className="flex flex-col gap-6 border-t border-border pt-8 lg:mt-4">
               {avatar ? (
                 <Image
                   src={avatar}
                   alt={profile.fullName ?? profile.firstName}
-                  width={72}
-                  height={72}
+                  width={96}
+                  height={96}
                   className="rounded-full border border-border"
                 />
               ) : null}
 
-              <div className="flex flex-col gap-1">
-                <span className="text-lg font-medium">
-                  {profile.fullName ?? profile.firstName}
-                </span>
-                <span className="text-sm text-muted">{profile.role}</span>
-                <span className="text-sm text-muted">
-                  {profile.secondaryRole}
-                </span>
-              </div>
-
-              {location ? (
-                <div className="flex items-start gap-3 text-sm text-muted">
-                  <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
-                  <span>
-                    {location.city}, {location.region}, {location.country}
-                  </span>
+              <dl className="flex flex-col divide-y divide-border">
+                <div className="flex flex-col gap-1 pb-4">
+                  <dt className="label">{t("roleLabel")}</dt>
+                  <dd className="text-sm">{profile.role}</dd>
+                  <dd className="text-sm text-muted">{profile.secondaryRole}</dd>
                 </div>
-              ) : null}
 
-              {education ? (
-                <div className="flex items-start gap-3 text-sm text-muted">
-                  <GraduationCap className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
-                  <span>
-                    {education.institution}
-                    <br />
-                    {education.field} · {education.degree}
-                    <br />
-                    <span className="font-mono text-xs">
+                {location ? (
+                  <div className="flex flex-col gap-1 py-4">
+                    <dt className="label">{t("locationLabel")}</dt>
+                    <dd className="text-sm text-muted">
+                      {location.city}, {location.region}, {location.country}
+                    </dd>
+                  </div>
+                ) : null}
+
+                {education ? (
+                  <div className="flex flex-col gap-1 pt-4">
+                    <dt className="label">{t("educationTitle")}</dt>
+                    <dd className="text-sm">{education.institution}</dd>
+                    <dd className="text-sm text-muted">{education.field}</dd>
+                    <dd className="font-mono text-xs text-muted">
                       {education.from}–{education.to}
-                    </span>
-                  </span>
-                </div>
-              ) : null}
+                    </dd>
+                  </div>
+                ) : null}
+              </dl>
             </div>
           </Reveal>
         </div>
-      </Section>
+      </Container>
 
-      <Section className="border-b border-border bg-surface">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
-          <Reveal>
-            <div className="flex flex-col gap-4">
-              <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-                {t("workStyleTitle")}
-              </h2>
-              <p className="text-base leading-relaxed text-muted">
-                {t("workStyle")}
-              </p>
-            </div>
-          </Reveal>
+      <LabelledSection label={t("workStyleTitle")}>
+        <Reveal>
+          <div className="flex flex-col gap-14">
+            <p className="font-display max-w-3xl text-balance text-[clamp(1.25rem,2.2vw,1.875rem)] leading-[1.35]">
+              {t("workStyle")}
+            </p>
 
-          <div className="flex flex-col gap-4">
-            <Reveal>
-              <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-                {t("strengthsTitle")}
-              </h2>
-            </Reveal>
-            <Stagger className="flex flex-col gap-3">
-              {strengthIds.map((id) => (
-                <StaggerItem key={id}>
-                  <div className="flex items-start gap-3">
-                    <Check className="mt-1 h-4 w-4 shrink-0 text-accent" />
-                    <span className="text-sm leading-relaxed text-muted">
-                      {tStrengths(id)}
-                    </span>
-                  </div>
-                </StaggerItem>
-              ))}
-            </Stagger>
-          </div>
-        </div>
-      </Section>
-
-      <Section className="border-b border-border">
-        <div className="flex flex-col gap-10">
-          <Reveal>
-            <SectionHeading title={tSkills("title")} />
-          </Reveal>
-          <Stagger
-            className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
-            gap={0.05}
-          >
-            {skillGroups.map((group) => (
-              <StaggerItem key={group.id}>
-                <div className="flex flex-col gap-3">
-                  <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-accent">
-                    {tSkills(group.id)}
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {group.items.map((item) => (
-                      <Badge key={item}>{item}</Badge>
-                    ))}
-                  </div>
-                </div>
-              </StaggerItem>
-            ))}
-          </Stagger>
-        </div>
-      </Section>
-
-      <Section className="border-b border-border bg-surface">
-        <div className="flex flex-col gap-10">
-          <Reveal>
-            <SectionHeading title={t("goalsTitle")} />
-          </Reveal>
-          <Stagger
-            className="grid gap-px overflow-hidden rounded-[var(--radius-card)] border border-border bg-border sm:grid-cols-2 lg:grid-cols-3"
-            gap={0.05}
-          >
-            {goalIds.map((id, index) => (
-              <StaggerItem key={id}>
-                <div className="flex h-full flex-col gap-3 bg-background p-6 transition-colors hover:bg-surface">
-                  <span className="font-mono text-xs text-accent">
+            <ul className="flex flex-col border-t border-border">
+              {strengthIds.map((id, index) => (
+                <li
+                  key={id}
+                  className="flex gap-6 border-b border-border py-5 sm:gap-10"
+                >
+                  <span className="label shrink-0 pt-1">
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <span className="text-sm leading-relaxed">{tGoals(id)}</span>
-                </div>
-              </StaggerItem>
-            ))}
-          </Stagger>
-        </div>
-      </Section>
+                  <span className="leading-relaxed text-muted">
+                    {tStrengths(id)}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Reveal>
+      </LabelledSection>
 
-      <Section>
-        <div className="flex flex-col gap-10">
-          <Reveal>
-            <SectionHeading
-              title={t("partnersTitle")}
-              subtitle={t("partnersSubtitle")}
-            />
-          </Reveal>
-          <Stagger className="grid gap-5 sm:grid-cols-2">
-            {partners.map((partner) => (
-              <StaggerItem key={partner.name} className="flex">
-                <SpotlightCard className="w-full rounded-[var(--radius-card)] border border-border bg-surface transition-all hover:-translate-y-1 hover:border-accent/60">
+      <StackSpine />
+
+      <LabelledSection label={tSkills("title")}>
+        <Reveal>
+          <div className="flex flex-col gap-10">
+            {skillGroups.map((group) => (
+              <div
+                key={group.id}
+                className="grid gap-4 border-b border-border pb-8 sm:grid-cols-[10rem_1fr] sm:gap-8"
+              >
+                <h3 className="label pt-1">{tSkills(group.id)}</h3>
+                <div className="flex flex-wrap gap-2">
+                  {group.items.map((item) => (
+                    <Badge key={item}>{item}</Badge>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </Reveal>
+      </LabelledSection>
+
+      <LabelledSection label={t("goalsTitle")} className="bg-surface border-y border-border">
+        <Reveal>
+          <ul className="flex flex-col border-t border-border">
+            {goalIds.map((id, index) => (
+              <li
+                key={id}
+                className="group flex items-baseline gap-6 border-b border-border py-6 sm:gap-10"
+              >
+                <span className="label shrink-0">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <span className="font-display text-xl leading-snug transition-colors group-hover:text-accent sm:text-2xl">
+                  {tGoals(id)}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </Reveal>
+      </LabelledSection>
+
+      <LabelledSection label={t("partnersTitle")}>
+        <Reveal>
+          <div className="flex flex-col gap-8">
+            <p className="type-lead max-w-xl leading-relaxed text-muted">
+              {t("partnersSubtitle")}
+            </p>
+            <ul className="flex flex-col border-t border-border">
+              {partners.map((partner) => (
+                <li key={partner.name} className="border-b border-border">
                   <a
                     href={partner.href}
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="flex flex-col gap-2 p-6"
+                    className="group flex flex-wrap items-baseline justify-between gap-4 py-6 transition-colors hover:text-accent"
                   >
-                    <span className="text-lg font-medium">{partner.name}</span>
+                    <span className="font-display text-2xl sm:text-3xl">
+                      {partner.name}
+                    </span>
                     <span className="text-sm text-muted">{partner.role}</span>
-                    <span className="font-mono text-xs text-accent">
-                      {partner.href.replace("https://", "")}
+                    <span className="font-mono text-xs text-muted transition-colors group-hover:text-accent">
+                      {partner.href.replace("https://", "")} ↗
                     </span>
                   </a>
-                </SpotlightCard>
-              </StaggerItem>
-            ))}
-          </Stagger>
-        </div>
-      </Section>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Reveal>
+      </LabelledSection>
+
+      <Cta />
     </>
   );
 }

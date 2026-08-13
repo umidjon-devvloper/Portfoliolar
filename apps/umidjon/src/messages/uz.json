@@ -29,7 +29,12 @@
     "secondaryCta": "Bog'lanish",
     "titleLead": "Kod emas —",
     "titleAccent": "biznesga natija",
-    "titleTail": "beradigan mahsulot quraman"
+    "titleTail": "beradigan mahsulot quraman",
+    "railStatus": "Holat",
+    "railAvailable": "Loyihalarga ochiq",
+    "railTime": "Mahalliy vaqt",
+    "railBase": "Joylashuv",
+    "scrollHint": "Pastga"
   },
   "about": {
     "title": "Men haqimda",
@@ -42,7 +47,9 @@
     "partnersTitle": "Hamkorlar",
     "partnersSubtitle": "Loyihalarda birgalikda ishlaydigan jamoam",
     "educationTitle": "Ta'lim",
-    "locationLabel": "Joylashuv"
+    "locationLabel": "Joylashuv",
+    "label": "Kim",
+    "roleLabel": "Lavozim"
   },
   "strengths": {
     "fullStackThinking": "Full-stack fikrlash — frontend, backend, database va deploymentni birgalikda tushunaman",
@@ -88,7 +95,9 @@
     "notFound": "Loyiha topilmadi",
     "links": "Havolalar",
     "year": "Yil",
-    "openSite": "Saytni ochish"
+    "openSite": "Saytni ochish",
+    "label": "Ishlar",
+    "openProject": "Loyihani ochish"
   },
   "services": {
     "title": "Xizmatlar",
@@ -127,7 +136,9 @@
     "bots": {
       "title": "Telegram botlar",
       "description": "Buyurtma, xabarnoma va avtomatlashtirish uchun botlar."
-    }
+    },
+    "label": "Xizmat va narx",
+    "onRequest": "Kelishuv asosida"
   },
   "contact": {
     "title": "Bog'lanish",
@@ -146,7 +157,8 @@
       "nameRequired": "Ismni kiriting",
       "emailInvalid": "To'g'ri email kiriting",
       "messageShort": "Xabar kamida 10 ta belgidan iborat bo'lsin"
-    }
+    },
+    "label": "Bog'lanish"
   },
   "resume": {
     "title": "Rezyume",
@@ -155,7 +167,8 @@
     "downloadUnavailable": "PDF hozircha tayyor emas",
     "educationTitle": "Ta'lim",
     "experienceTitle": "Tajriba",
-    "printHint": "Brauzerda Ctrl+P bilan PDF qilib saqlashingiz mumkin"
+    "printHint": "Brauzerda Ctrl+P bilan PDF qilib saqlashingiz mumkin",
+    "label": "Rezyume"
   },
   "cta": {
     "title": "Loyihangiz bormi?",
@@ -164,7 +177,9 @@
   },
   "footer": {
     "rights": "Barcha huquqlar himoyalangan",
-    "builtWith": "Next.js bilan qurilgan"
+    "builtWith": "Next.js — Buxoroda yozilgan",
+    "pages": "Sahifalar",
+    "elsewhere": "Boshqa joylarda"
   },
   "notFound": {
     "title": "Sahifa topilmadi",
@@ -201,6 +216,31 @@
     "launch": {
       "title": "Ishga tushirish",
       "description": "Test, deploy va 1 oy bepul texnik yordam."
+    }
+  },
+  "stack": {
+    "label": "Qamrov",
+    "title": "Bitta zanjir, bitta odam",
+    "subtitle": "Loyihani bo'lib bermayman. Dizayndan store'ga chiqarishgacha bo'lgan har bir qatlamni o'zim yopaman — shuning uchun qatlamlar orasida hech narsa yo'qolmaydi.",
+    "design": {
+      "title": "Dizayn",
+      "description": "Figma'da prototip. Kod yozilgunga qadar ko'rasiz va tasdiqlaysiz."
+    },
+    "frontend": {
+      "title": "Frontend",
+      "description": "Tez yuklanadigan, mobilda ham buzilmaydigan interfeys."
+    },
+    "backend": {
+      "title": "Backend",
+      "description": "API, ma'lumotlar bazasi, autentifikatsiya va biznes mantiq."
+    },
+    "mobile": {
+      "title": "Mobil",
+      "description": "iOS va Android uchun bitta kod bazasidan ilova."
+    },
+    "release": {
+      "title": "Ishga tushirish",
+      "description": "Deploy, domen, SSL, store'ga chiqarish va keyingi qo'llab-quvvatlash."
     }
   }
 }

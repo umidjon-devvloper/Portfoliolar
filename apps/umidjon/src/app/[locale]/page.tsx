@@ -1,10 +1,10 @@
 import { setRequestLocale } from "next-intl/server";
 import { Hero } from "@/components/sections/hero";
 import { Metrics } from "@/components/sections/metrics";
-import { AboutPreview } from "@/components/sections/about-preview";
+import { Intro } from "@/components/sections/intro";
+import { StackSpine } from "@/components/sections/stack-spine";
 import { FeaturedProjects } from "@/components/sections/featured-projects";
 import { ServicesPreview } from "@/components/sections/services-preview";
-import { Process } from "@/components/sections/process";
 import { Cta } from "@/components/sections/cta";
 
 type PageProps = {
@@ -19,10 +19,10 @@ export default async function HomePage({ params }: PageProps) {
     <>
       <Hero />
       <Metrics />
-      <AboutPreview />
+      <Intro />
+      <StackSpine />
       <FeaturedProjects />
       <ServicesPreview />
-      <Process />
       <Cta />
     </>
   );

@@ -29,7 +29,12 @@
     "secondaryCta": "Get in touch",
     "titleLead": "Not just code —",
     "titleAccent": "products that move",
-    "titleTail": "the business"
+    "titleTail": "the business",
+    "railStatus": "Status",
+    "railAvailable": "Open to projects",
+    "railTime": "Local time",
+    "railBase": "Based in",
+    "scrollHint": "Scroll"
   },
   "about": {
     "title": "About",
@@ -42,7 +47,9 @@
     "partnersTitle": "Partners",
     "partnersSubtitle": "The team I build projects with",
     "educationTitle": "Education",
-    "locationLabel": "Location"
+    "locationLabel": "Location",
+    "label": "Who",
+    "roleLabel": "Role"
   },
   "strengths": {
     "fullStackThinking": "Full-stack thinking — I understand frontend, backend, database and deployment as one system",
@@ -88,7 +95,9 @@
     "notFound": "Project not found",
     "links": "Links",
     "year": "Year",
-    "openSite": "Open site"
+    "openSite": "Open site",
+    "label": "Work",
+    "openProject": "Open project"
   },
   "services": {
     "title": "Services",
@@ -127,7 +136,9 @@
     "bots": {
       "title": "Telegram bots",
       "description": "Bots for orders, notifications and automation."
-    }
+    },
+    "label": "Services & pricing",
+    "onRequest": "On request"
   },
   "contact": {
     "title": "Contact",
@@ -146,7 +157,8 @@
       "nameRequired": "Enter your name",
       "emailInvalid": "Enter a valid email",
       "messageShort": "Message must be at least 10 characters"
-    }
+    },
+    "label": "Contact"
   },
   "resume": {
     "title": "Resume",
@@ -155,7 +167,8 @@
     "downloadUnavailable": "PDF is not ready yet",
     "educationTitle": "Education",
     "experienceTitle": "Experience",
-    "printHint": "You can save this as a PDF with Ctrl+P in your browser"
+    "printHint": "You can save this as a PDF with Ctrl+P in your browser",
+    "label": "Resume"
   },
   "cta": {
     "title": "Have a project?",
@@ -164,7 +177,9 @@
   },
   "footer": {
     "rights": "All rights reserved",
-    "builtWith": "Built with Next.js"
+    "builtWith": "Next.js — built in Bukhara",
+    "pages": "Pages",
+    "elsewhere": "Elsewhere"
   },
   "notFound": {
     "title": "Page not found",
@@ -201,6 +216,31 @@
     "launch": {
       "title": "Launch",
       "description": "Testing, deployment and one month of free technical support."
+    }
+  },
+  "stack": {
+    "label": "Scope",
+    "title": "One chain, one person",
+    "subtitle": "I don't hand a project off in pieces. Every layer — from design through to the app stores — is mine, so nothing gets lost between them.",
+    "design": {
+      "title": "Design",
+      "description": "A Figma prototype you see and approve before any code is written."
+    },
+    "frontend": {
+      "title": "Frontend",
+      "description": "An interface that loads fast and holds up on a phone."
+    },
+    "backend": {
+      "title": "Backend",
+      "description": "APIs, database, authentication and business logic."
+    },
+    "mobile": {
+      "title": "Mobile",
+      "description": "iOS and Android apps from a single codebase."
+    },
+    "release": {
+      "title": "Release",
+      "description": "Deployment, domain, SSL, store submission and support afterwards."
     }
   }
 }

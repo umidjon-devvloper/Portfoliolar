@@ -1,25 +1,21 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { Section } from "@/components/ui/section";
+import { Container } from "@/components/ui/container";
 import { buttonVariants } from "@/components/ui/button";
 
 export default function NotFound() {
   const t = useTranslations("notFound");
 
   return (
-    <Section className="flex min-h-[60vh] items-center">
-      <div className="flex flex-col items-start gap-6">
-        <span className="font-mono text-6xl font-semibold text-accent sm:text-8xl">
-          404
-        </span>
-        <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-          {t("title")}
-        </h1>
-        <p className="max-w-md text-muted">{t("description")}</p>
-        <Link href="/" className={buttonVariants({ size: "lg" })}>
-          {t("back")}
-        </Link>
-      </div>
-    </Section>
+    <Container className="flex min-h-[70svh] flex-col justify-center gap-8 py-28">
+      <span className="font-display type-mega text-accent">404</span>
+      <h1 className="font-display type-display text-balance">{t("title")}</h1>
+      <p className="type-lead max-w-md leading-relaxed text-muted">
+        {t("description")}
+      </p>
+      <Link href="/" className={`${buttonVariants({ size: "lg" })} self-start`}>
+        {t("back")}
+      </Link>
+    </Container>
   );
 }

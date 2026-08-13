@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { JetBrains_Mono, Onest, Unbounded } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -13,9 +13,18 @@ import { site } from "@/content/site";
 import { routing } from "@/i18n/routing";
 import "../globals.css";
 
-const inter = Inter({
+// Display face: wide, geometric, confident — carries the headlines.
+const unbounded = Unbounded({
   subsets: ["latin", "cyrillic"],
-  variable: "--font-inter",
+  weight: ["400", "500", "600"],
+  variable: "--font-unbounded",
+  display: "swap",
+});
+
+// Body face: neutral enough to read at length, warmer than Inter.
+const onest = Onest({
+  subsets: ["latin", "cyrillic"],
+  variable: "--font-onest",
   display: "swap",
 });
 
@@ -128,7 +137,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
     <html
       lang={locale}
       suppressHydrationWarning
-      className={`${inter.variable} ${mono.variable}`}
+      className={`${unbounded.variable} ${onest.variable} ${mono.variable}`}
     >
       <body className="flex min-h-dvh flex-col">
         <ThemeProvider
