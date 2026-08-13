@@ -29,7 +29,7 @@ export const partners = [
   {
     name: "Diyorbek",
     role: "Full Stack Web Developer",
-    href: "https://diyorber.site",
+    href: "https://diyorbek.site",
   },
   {
     name: "Usmonjon",

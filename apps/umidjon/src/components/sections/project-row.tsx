@@ -25,6 +25,7 @@ export function ProjectCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ margin: "-10% 0px -10% 0px" }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      data-project-card
       className="relative"
     >
       <Link

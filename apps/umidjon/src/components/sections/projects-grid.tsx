@@ -53,8 +53,8 @@ export function ProjectsIndex() {
       {visible.length === 0 ? (
         <p className="py-16 text-muted">{t("empty")}</p>
       ) : (
-        <ProjectsThread count={visible.length}>
-          <ul className="flex flex-col gap-16 lg:gap-28">
+        <ProjectsThread>
+          <ul className="flex flex-col gap-16 lg:gap-32 lg:px-16">
             {visible.map((project, index) => (
               <ProjectCard key={project.slug} project={project} index={index} />
             ))}

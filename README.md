@@ -5,7 +5,7 @@ Monorepo for three personal portfolio websites.
 | App | Domain | Owner | Role |
 |-----|--------|-------|------|
 | `apps/umidjon` | umidjon.site | Umidjon | Full Stack Web & Mobile Developer + Entrepreneur |
-| `apps/diyorbek` | diyorber.site | Diyorbek | Full Stack Web Developer |
+| `apps/diyorbek` | diyorbek.site | Diyorbek | Full Stack Web Developer |
 | `apps/usmonjon` | usmonjon.site | Usmonjon | Frontend Developer & UI/UX Designer |
 
 Each app is an independent Next.js application with its own design language,

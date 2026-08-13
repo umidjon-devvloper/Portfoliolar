@@ -26,8 +26,8 @@ export function FeaturedProjects() {
           </div>
         </Reveal>
 
-        <ProjectsThread count={featuredProjects.length}>
-          <ul className="flex flex-col gap-16 lg:gap-28">
+        <ProjectsThread>
+          <ul className="flex flex-col gap-16 lg:gap-32 lg:px-16">
             {featuredProjects.map((project, index) => (
               <ProjectCard key={project.slug} project={project} index={index} />
             ))}

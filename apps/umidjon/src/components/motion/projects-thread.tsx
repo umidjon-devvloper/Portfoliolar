@@ -1,69 +1,111 @@
 "use client";
 
 import { motion, useReducedMotion, useScroll, useSpring } from "framer-motion";
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 
-function buildPath(width: number, height: number, count: number) {
-  if (count < 2 || height <= 0) return "";
+type Box = { top: number; height: number };
 
-  const left = width * 0.06;
-  const right = width * 0.94;
-  const step = height / count;
-  const commands: string[] = [`M ${right} 0`];
+const LANE = 20;
+const GAP = 20;
+const RADIUS = 24;
 
-  for (let i = 0; i < count; i += 1) {
-    const yStart = step * i;
-    const yEnd = step * (i + 1);
-    const goingLeft = i % 2 === 0;
-    const from = goingLeft ? right : left;
-    const to = goingLeft ? left : right;
-    const mid = (yStart + yEnd) / 2;
+function buildPath(width: number, height: number, cards: Box[]) {
+  if (width <= 0 || cards.length === 0) return "";
 
-    commands.push(
-      `C ${from} ${mid - step * 0.1}, ${to} ${mid + step * 0.1}, ${to} ${yEnd}`,
-    );
-  }
+  const xLeft = LANE;
+  const xRight = width - LANE;
 
-  return commands.join(" ");
+  let lane = xRight;
+  let commands = `M ${lane} 0`;
+
+  cards.forEach((card, index) => {
+    const wrapLeft = index % 2 === 0;
+    const side = wrapLeft ? xLeft : xRight;
+    const entry = wrapLeft ? xRight : xLeft;
+
+    const top = card.top - GAP;
+    const bottom = card.top + card.height + GAP;
+
+    if (lane !== entry) {
+      const midpoint = (lane + entry) / 2;
+      const yFrom = index === 0 ? 0 : cards[index - 1]!.top + cards[index - 1]!.height + GAP + RADIUS;
+      const yTo = top - RADIUS;
+      const control = yFrom + (yTo - yFrom) / 2;
+      commands += ` C ${lane} ${control}, ${entry} ${control}, ${entry} ${yTo}`;
+      void midpoint;
+    } else {
+      commands += ` L ${entry} ${top - RADIUS}`;
+    }
+
+    const toSide = wrapLeft ? -1 : 1;
+
+    commands += ` Q ${entry} ${top}, ${entry + toSide * RADIUS} ${top}`;
+    commands += ` L ${side - toSide * RADIUS} ${top}`;
+    commands += ` Q ${side} ${top}, ${side} ${top + RADIUS}`;
+    commands += ` L ${side} ${bottom - RADIUS}`;
+    commands += ` Q ${side} ${bottom}, ${side - toSide * RADIUS} ${bottom}`;
+    commands += ` L ${entry + toSide * RADIUS} ${bottom}`;
+    commands += ` Q ${entry} ${bottom}, ${entry} ${bottom + RADIUS}`;
+
+    lane = entry;
+  });
+
+  commands += ` L ${lane} ${height}`;
+
+  return commands;
 }
 
-export function ProjectsThread({
-  count,
-  children,
-}: {
-  count: number;
-  children: ReactNode;
-}) {
+export function ProjectsThread({ children }: { children: ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
   const shouldReduceMotion = useReducedMotion();
   const [box, setBox] = useState({ width: 0, height: 0 });
+  const [cards, setCards] = useState<Box[]>([]);
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start 85%", "end 60%"],
+    offset: ["start 80%", "end 65%"],
   });
   const progress = useSpring(scrollYProgress, {
-    stiffness: 80,
-    damping: 28,
+    stiffness: 70,
+    damping: 26,
     restDelta: 0.001,
   });
 
-  useEffect(() => {
+  const measure = useCallback(() => {
     const element = ref.current;
     if (!element) return;
 
-    const observer = new ResizeObserver(() => {
-      setBox({ width: element.offsetWidth, height: element.offsetHeight });
+    const bounds = element.getBoundingClientRect();
+    const next: Box[] = Array.from(
+      element.querySelectorAll<HTMLElement>("[data-project-card]"),
+    ).map((node) => {
+      const rect = node.getBoundingClientRect();
+      return { top: rect.top - bounds.top, height: rect.height };
     });
-    observer.observe(element);
-    return () => observer.disconnect();
+
+    setBox({ width: element.offsetWidth, height: element.offsetHeight });
+    setCards(next);
   }, []);
 
-  const path = buildPath(box.width, box.height, count);
+  useEffect(() => {
+    measure();
+    const element = ref.current;
+    if (!element) return;
+
+    const observer = new ResizeObserver(measure);
+    observer.observe(element);
+    element
+      .querySelectorAll<HTMLElement>("[data-project-card]")
+      .forEach((node) => observer.observe(node));
+
+    return () => observer.disconnect();
+  }, [measure, children]);
+
+  const path = buildPath(box.width, box.height, cards);
 
   return (
     <div ref={ref} className="relative">
-      {box.width > 0 && path ? (
+      {path ? (
         <svg
           aria-hidden
           width={box.width}
@@ -77,12 +119,14 @@ export function ProjectsThread({
             stroke="var(--border)"
             strokeWidth="1"
             strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <motion.path
             d={path}
             stroke="url(#thread-gradient)"
-            strokeWidth="1.75"
+            strokeWidth="2"
             strokeLinecap="round"
+            strokeLinejoin="round"
             style={
               shouldReduceMotion ? { pathLength: 1 } : { pathLength: progress }
             }

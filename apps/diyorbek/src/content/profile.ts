@@ -43,8 +43,8 @@ export const skillGroups: SkillGroup[] = [
 export const projects: Project[] = [];
 
 export const site = {
-  domain: "diyorber.site",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://diyorber.site",
+  domain: "diyorbek.site",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://diyorbek.site",
   ogImage: "/og.png",
 };
 
