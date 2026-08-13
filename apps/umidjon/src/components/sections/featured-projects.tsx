@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/motion/reveal";
-import { ProjectsThread } from "@/components/motion/projects-thread";
+import { ProjectsSpine } from "@/components/motion/projects-spine";
 import { featuredProjects } from "@/content/projects";
 import { ProjectCard } from "./project-row";
 
@@ -26,13 +26,13 @@ export function FeaturedProjects() {
           </div>
         </Reveal>
 
-        <ProjectsThread>
-          <ul className="flex flex-col gap-16 lg:gap-32 lg:px-16">
+        <ProjectsSpine>
+          <ul className="flex flex-col gap-12 sm:pl-20 lg:gap-16">
             {featuredProjects.map((project, index) => (
               <ProjectCard key={project.slug} project={project} index={index} />
             ))}
           </ul>
-        </ProjectsThread>
+        </ProjectsSpine>
 
         <Reveal>
           <Link

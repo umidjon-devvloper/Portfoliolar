@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { useMemo, useState } from "react";
 import { Container } from "@/components/ui/container";
-import { ProjectsThread } from "@/components/motion/projects-thread";
+import { ProjectsSpine } from "@/components/motion/projects-spine";
 import { projects, projectKinds, type ProjectFilter } from "@/content/projects";
 import { cn } from "@/lib/utils";
 import { ProjectCard } from "./project-row";
@@ -53,13 +53,13 @@ export function ProjectsIndex() {
       {visible.length === 0 ? (
         <p className="py-16 text-muted">{t("empty")}</p>
       ) : (
-        <ProjectsThread>
-          <ul className="flex flex-col gap-16 lg:gap-32 lg:px-16">
+        <ProjectsSpine>
+          <ul className="flex flex-col gap-12 sm:pl-20 lg:gap-16">
             {visible.map((project, index) => (
               <ProjectCard key={project.slug} project={project} index={index} />
             ))}
           </ul>
-        </ProjectsThread>
+        </ProjectsSpine>
       )}
     </Container>
   );
