@@ -1,113 +1,88 @@
 "use client";
 
-import {
-  motion,
-  useMotionValue,
-  useMotionValueEvent,
-  useReducedMotion,
-  useScroll,
-  useSpring,
-  useTransform,
-} from "framer-motion";
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 
 type Card = { top: number; bottom: number; left: number; right: number };
+type Pose = { x: number; y: number; angle: number; boost: number };
 
-const GAP = 18;
+const GAP = 20;
 const R = 22;
-const SAMPLES = 320;
-const HORIZONTAL_COST = 0.3;
+const SAMPLES = 300;
+const HORIZONTAL_COST = 0.32;
 
-function buildPath(cards: Card[]) {
-  if (cards.length === 0) return "";
+function buildPath(cards: Card[], width: number) {
+  if (cards.length === 0 || width === 0) return "";
 
   const laneLeft = Math.min(...cards.map((card) => card.left)) - GAP;
   const laneRight = Math.max(...cards.map((card) => card.right)) + GAP;
 
-  let d = `M ${laneLeft} ${cards[0]!.top - GAP - R}`;
+  let lane = laneLeft;
+  let d = `M ${lane} ${cards[0]!.top - GAP}`;
 
   cards.forEach((card, index) => {
-    const top = card.top - GAP;
-    const bottom = card.bottom + GAP;
+    const turn = card.bottom + GAP;
+    const isLast = index === cards.length - 1;
 
-    d += ` L ${laneLeft} ${top - R}`;
-    d += ` Q ${laneLeft} ${top}, ${laneLeft + R} ${top}`;
-    d += ` L ${laneRight - R} ${top}`;
-    d += ` Q ${laneRight} ${top}, ${laneRight} ${top + R}`;
-    d += ` L ${laneRight} ${bottom - R}`;
-    d += ` Q ${laneRight} ${bottom}, ${laneRight - R} ${bottom}`;
-    d += ` L ${laneLeft + R} ${bottom}`;
-    d += ` Q ${laneLeft} ${bottom}, ${laneLeft} ${bottom + R}`;
+    if (isLast) {
+      d += ` L ${lane} ${turn}`;
+      return;
+    }
 
-    const next = cards[index + 1];
-    d += ` L ${laneLeft} ${next ? next.top - GAP - R : bottom + R + 16}`;
+    const next = lane === laneLeft ? laneRight : laneLeft;
+    const direction = next > lane ? 1 : -1;
+
+    d += ` L ${lane} ${turn - R}`;
+    d += ` Q ${lane} ${turn}, ${lane + direction * R} ${turn}`;
+    d += ` L ${next - direction * R} ${turn}`;
+    d += ` Q ${next} ${turn}, ${next} ${turn + R}`;
+
+    lane = next;
   });
 
   return d;
 }
 
-function RocketMark() {
-  return (
-    <svg width="30" height="30" viewBox="-15 -15 30 30" fill="none" aria-hidden>
-      <path
-        d="M-4.6 0 L -8.6 7 L -4.6 5.4 Z"
-        fill="var(--accent)"
-        stroke="var(--accent)"
-        strokeWidth="0.9"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M4.6 0 L 8.6 7 L 4.6 5.4 Z"
-        fill="var(--accent)"
-        stroke="var(--accent)"
-        strokeWidth="0.9"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M0 -11 C 4.2 -6, 5.4 0, 4.6 5.4 L -4.6 5.4 C -5.4 0, -4.2 -6, 0 -11 Z"
-        fill="var(--background)"
-        stroke="var(--accent-2)"
-        strokeWidth="1.5"
-        strokeLinejoin="round"
-      />
-      <circle cx="0" cy="-2.6" r="2.1" fill="var(--accent-2)" />
-    </svg>
-  );
+function lookup(times: number[], lengths: number[], t: number) {
+  if (times.length < 2) return 0;
+  const clamped = Math.max(0, Math.min(1, t));
+
+  let low = 0;
+  let high = times.length - 1;
+  while (high - low > 1) {
+    const mid = (low + high) >> 1;
+    if (times[mid]! <= clamped) low = mid;
+    else high = mid;
+  }
+
+  const span = times[high]! - times[low]! || 1;
+  const ratio = (clamped - times[low]!) / span;
+  return lengths[low]! + (lengths[high]! - lengths[low]!) * ratio;
 }
 
 export function ProjectsSpine({ children }: { children: ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
   const pathRef = useRef<SVGPathElement>(null);
-  const shouldReduceMotion = useReducedMotion();
+  const framer = useRef<number>(0);
+  const curve = useRef<{ times: number[]; lengths: number[]; total: number }>({
+    times: [],
+    lengths: [],
+    total: 0,
+  });
 
   const [box, setBox] = useState({ width: 0, height: 0 });
   const [cards, setCards] = useState<Card[]>([]);
-  const [stops, setStops] = useState<{ time: number[]; length: number[] }>({
-    time: [0, 1],
-    length: [0, 0],
-  });
+  const [pose, setPose] = useState<Pose | null>(null);
+  const [drawn, setDrawn] = useState(0);
   const [passed, setPassed] = useState(0);
+  const [reduced, setReduced] = useState(false);
 
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-  const rotate = useMotionValue(180);
-  const boost = useMotionValue(0);
-
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start 72%", "end 58%"],
-  });
-  const progress = useSpring(scrollYProgress, {
-    stiffness: 66,
-    damping: 22,
-    restDelta: 0.0004,
-  });
-  const distance = useTransform(progress, stops.time, stops.length);
-  const drawn = useTransform(
-    distance,
-    [0, Math.max(stops.length[stops.length.length - 1] ?? 1, 1)],
-    [0, 1],
-  );
+  useEffect(() => {
+    const query = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setReduced(query.matches);
+    const onChange = () => setReduced(query.matches);
+    query.addEventListener("change", onChange);
+    return () => query.removeEventListener("change", onChange);
+  }, []);
 
   const measure = useCallback(() => {
     const element = ref.current;
@@ -144,7 +119,7 @@ export function ProjectsSpine({ children }: { children: ReactNode }) {
     return () => observer.disconnect();
   }, [measure, children]);
 
-  const path = buildPath(cards);
+  const path = buildPath(cards, box.width);
 
   useEffect(() => {
     const node = pathRef.current;
@@ -153,8 +128,8 @@ export function ProjectsSpine({ children }: { children: ReactNode }) {
     const total = node.getTotalLength();
     if (!Number.isFinite(total) || total <= 0) return;
 
-    const time: number[] = [0];
-    const length: number[] = [0];
+    const times: number[] = [0];
+    const lengths: number[] = [0];
     let cost = 0;
     let previous = node.getPointAtLength(0);
 
@@ -163,46 +138,72 @@ export function ProjectsSpine({ children }: { children: ReactNode }) {
       const point = node.getPointAtLength(at);
       const dx = Math.abs(point.x - previous.x);
       const dy = Math.abs(point.y - previous.y);
-      const span = Math.hypot(dx, dy) || 0.0001;
-      const horizontal = dx / span;
+      const span = Math.hypot(dx, dy) || 0.001;
 
-      cost += span * (1 - horizontal * (1 - HORIZONTAL_COST));
-      time.push(cost);
-      length.push(at);
+      cost += span * (1 - (dx / span) * (1 - HORIZONTAL_COST));
+      times.push(cost);
+      lengths.push(at);
       previous = point;
     }
 
-    const normalised = time.map((value) => value / cost);
-    normalised[normalised.length - 1] = 1;
-    setStops({ time: normalised, length });
+    curve.current = {
+      times: times.map((value) => value / (cost || 1)),
+      lengths,
+      total,
+    };
   }, [path]);
 
-  useMotionValueEvent(distance, "change", (value) => {
+  useEffect(() => {
+    const element = ref.current;
     const node = pathRef.current;
-    if (!node) return;
+    if (!element || !node || !path) return;
 
-    const total = node.getTotalLength();
-    const at = Math.max(0, Math.min(value, total));
-    const point = node.getPointAtLength(at);
-    const ahead = node.getPointAtLength(Math.min(at + 6, total));
+    const update = () => {
+      framer.current = 0;
 
-    const dx = ahead.x - point.x;
-    const dy = ahead.y - point.y;
+      const rect = element.getBoundingClientRect();
+      const viewport = window.innerHeight;
+      const start = viewport * 0.75;
+      const end = viewport * 0.35;
+      const span = rect.height + (start - end);
+      const travelled = start - rect.top;
+      const t = Math.max(0, Math.min(1, travelled / (span || 1)));
 
-    x.set(point.x);
-    y.set(point.y);
+      const { times, lengths, total } = curve.current;
+      if (total <= 0) return;
 
-    if (dx !== 0 || dy !== 0) {
-      rotate.set((Math.atan2(dy, dx) * 180) / Math.PI + 90);
-      boost.set(Math.abs(dx) / (Math.hypot(dx, dy) || 1));
-    }
+      const at = lookup(times, lengths, t);
+      const point = node.getPointAtLength(at);
+      const ahead = node.getPointAtLength(Math.min(at + 8, total));
+      const dx = ahead.x - point.x;
+      const dy = ahead.y - point.y;
+      const magnitude = Math.hypot(dx, dy) || 1;
 
-    const count = cards.filter((card) => card.top + 24 <= point.y).length;
-    setPassed((current) => (current === count ? current : count));
-  });
+      setPose({
+        x: point.x,
+        y: point.y,
+        angle: (Math.atan2(dy, dx) * 180) / Math.PI + 90,
+        boost: Math.abs(dx) / magnitude,
+      });
+      setDrawn(at / total);
+      setPassed(cards.filter((card) => card.top + 32 <= point.y).length);
+    };
 
-  const flameScale = useTransform(boost, [0, 1], [1, 2.6]);
-  const flameOpacity = useTransform(boost, [0, 1], [0.75, 1]);
+    const schedule = () => {
+      if (framer.current) return;
+      framer.current = requestAnimationFrame(update);
+    };
+
+    update();
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+
+    return () => {
+      if (framer.current) cancelAnimationFrame(framer.current);
+      window.removeEventListener("scroll", schedule);
+      window.removeEventListener("resize", schedule);
+    };
+  }, [path, cards]);
 
   if (cards.length === 0) {
     return (
@@ -230,24 +231,24 @@ export function ProjectsSpine({ children }: { children: ReactNode }) {
           strokeLinecap="round"
           strokeLinejoin="round"
         />
-        <motion.path
+        <path
           d={path}
           stroke="url(#spine-gradient)"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          style={shouldReduceMotion ? { pathLength: 1 } : { pathLength: drawn }}
+          pathLength={1}
+          strokeDasharray={1}
+          strokeDashoffset={reduced ? 0 : 1 - drawn}
         />
 
         {cards.map((card, index) => {
           const lit = index < passed;
-          const midpoint = (card.top + card.bottom) / 2;
-
           return (
             <circle
               key={`${card.top}-${index}`}
               cx={card.left - GAP}
-              cy={midpoint}
+              cy={(card.top + card.bottom) / 2}
               r={lit ? 5.5 : 4}
               fill="var(--background)"
               stroke={lit ? "var(--accent-2)" : "var(--border-strong)"}
@@ -265,19 +266,47 @@ export function ProjectsSpine({ children }: { children: ReactNode }) {
         </defs>
       </svg>
 
-      {shouldReduceMotion ? null : (
-        <motion.div
+      {pose && !reduced ? (
+        <div
           aria-hidden
-          style={{ x, y, rotate }}
-          className="pointer-events-none absolute left-0 top-0 z-20 hidden -translate-x-1/2 -translate-y-1/2 md:block"
+          className="pointer-events-none absolute left-0 top-0 z-30 hidden md:block"
+          style={{
+            transform: `translate(${pose.x}px, ${pose.y}px) translate(-50%, -50%) rotate(${pose.angle}deg)`,
+          }}
         >
-          <motion.span
-            style={{ scaleY: flameScale, opacity: flameOpacity }}
-            className="absolute left-1/2 top-[19px] block h-3 w-1.5 origin-top -translate-x-1/2 rounded-full bg-accent blur-[0.5px]"
+          <div
+            className="absolute left-1/2 top-[14px] w-[5px] -translate-x-1/2 rounded-full bg-accent"
+            style={{
+              height: `${10 + pose.boost * 26}px`,
+              opacity: 0.55 + pose.boost * 0.45,
+            }}
           />
-          <RocketMark />
-        </motion.div>
-      )}
+          <svg width="28" height="28" viewBox="-14 -14 28 28" fill="none">
+            <path
+              d="M-4.6 0 L -8.6 7 L -4.6 5.4 Z"
+              fill="var(--accent)"
+              stroke="var(--accent)"
+              strokeWidth="0.9"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M4.6 0 L 8.6 7 L 4.6 5.4 Z"
+              fill="var(--accent)"
+              stroke="var(--accent)"
+              strokeWidth="0.9"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M0 -11 C 4.2 -6, 5.4 0, 4.6 5.4 L -4.6 5.4 C -5.4 0, -4.2 -6, 0 -11 Z"
+              fill="var(--background)"
+              stroke="var(--accent-2)"
+              strokeWidth="1.5"
+              strokeLinejoin="round"
+            />
+            <circle cx="0" cy="-2.6" r="2.1" fill="var(--accent-2)" />
+          </svg>
+        </div>
+      ) : null}
 
       <div className="relative z-10">{children}</div>
     </div>
