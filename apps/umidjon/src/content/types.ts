@@ -4,7 +4,12 @@ export type LocalizedText = {
   en: string;
 };
 
-export type ProjectKind = "saas" | "mobile" | "fullstack" | "business";
+export type ProjectKind =
+  | "saas"
+  | "mobile"
+  | "web"
+  | "ecommerce"
+  | "business";
 
 export type ProjectLink = {
   label: string;
@@ -27,6 +32,7 @@ export type Project = {
   components: string[];
   links: ProjectLink[];
   cover: string | null;
+  client: string | null;
   gallery: string[];
 };
 

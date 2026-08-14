@@ -87,10 +87,6 @@
     "subtitle": "Every project: problem, solution, result.",
     "featuredTitle": "Selected projects",
     "filterAll": "All",
-    "filterSaas": "SaaS",
-    "filterMobile": "Mobile",
-    "filterFullstack": "Full Stack",
-    "filterBusiness": "Business",
     "empty": "No projects in this category yet",
     "problem": "Problem",
     "solution": "Solution",
@@ -103,7 +99,14 @@
     "year": "Year",
     "openSite": "Open site",
     "label": "Work",
-    "openProject": "Open project"
+    "openProject": "Open project",
+    "kind": {
+      "saas": "SaaS",
+      "web": "Website",
+      "ecommerce": "E-commerce",
+      "mobile": "Mobile app",
+      "business": "Business"
+    }
   },
   "services": {
     "title": "Services",

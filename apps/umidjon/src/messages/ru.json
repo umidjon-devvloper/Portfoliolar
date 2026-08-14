@@ -87,10 +87,6 @@
     "subtitle": "Каждый проект: проблема, решение, результат.",
     "featuredTitle": "Избранные проекты",
     "filterAll": "Все",
-    "filterSaas": "SaaS",
-    "filterMobile": "Mobile",
-    "filterFullstack": "Full Stack",
-    "filterBusiness": "Бизнес",
     "empty": "В этом разделе пока нет проектов",
     "problem": "Проблема",
     "solution": "Решение",
@@ -103,7 +99,14 @@
     "year": "Год",
     "openSite": "Открыть сайт",
     "label": "Работы",
-    "openProject": "Открыть проект"
+    "openProject": "Открыть проект",
+    "kind": {
+      "saas": "SaaS",
+      "web": "Веб-сайт",
+      "ecommerce": "Интернет-магазин",
+      "mobile": "Мобильное приложение",
+      "business": "Бизнес"
+    }
   },
   "services": {
     "title": "Услуги",

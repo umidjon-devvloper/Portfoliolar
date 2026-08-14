@@ -87,10 +87,6 @@
     "subtitle": "Har bir loyiha: muammo, yechim, natija.",
     "featuredTitle": "Tanlangan loyihalar",
     "filterAll": "Barchasi",
-    "filterSaas": "SaaS",
-    "filterMobile": "Mobile",
-    "filterFullstack": "Full Stack",
-    "filterBusiness": "Biznes",
     "empty": "Bu bo'limda hozircha loyiha yo'q",
     "problem": "Muammo",
     "solution": "Yechim",
@@ -103,7 +99,14 @@
     "year": "Yil",
     "openSite": "Saytni ochish",
     "label": "Ishlar",
-    "openProject": "Loyihani ochish"
+    "openProject": "Loyihani ochish",
+    "kind": {
+      "saas": "SaaS",
+      "web": "Web sayt",
+      "ecommerce": "Onlayn do'kon",
+      "mobile": "Mobil ilova",
+      "business": "Biznes"
+    }
   },
   "services": {
     "title": "Xizmatlar",

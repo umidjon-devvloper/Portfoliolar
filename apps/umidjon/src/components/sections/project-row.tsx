@@ -1,6 +1,3 @@
-"use client";
-
-import { motion, useReducedMotion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
@@ -11,87 +8,85 @@ import type { Project } from "@/content/types";
 export function ProjectCard({
   project,
   index,
+  priority = false,
 }: {
   project: Project;
   index: number;
+  priority?: boolean;
 }) {
   const locale = useLocale() as Locale;
   const t = useTranslations("projects");
-  const shouldReduceMotion = useReducedMotion();
 
   return (
-    <motion.li
-      initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 28 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ margin: "-10% 0px -10% 0px" }}
-      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      data-project-card
-      className="relative"
-    >
+    <li className="stagger-item" style={{ transitionDelay: `${Math.min(index, 6) * 70}ms` }}>
       <Link
         href={`/projects/${project.slug}`}
-        className="card group grid overflow-hidden rounded-2xl md:grid-cols-[1.1fr_1fr]"
+        className="card group flex h-full flex-col overflow-hidden rounded-2xl"
       >
-        <div className="relative aspect-[16/10] overflow-hidden bg-surface-2 md:aspect-auto md:min-h-[19rem]">
+        <div className="relative aspect-[16/10] overflow-hidden bg-surface-2">
           {project.cover ? (
             <Image
               src={project.cover}
               alt={project.name}
               fill
-              sizes="(min-width: 768px) 45vw, 100vw"
-              quality={82}
+              sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+              quality={80}
+              priority={priority}
               className="object-cover transition-transform duration-700 group-hover:scale-[1.05]"
             />
           ) : (
-            <div className="absolute inset-0 grid place-items-center">
-              <span className="font-display text-2xl text-border-strong">
+            <div className="absolute inset-0 grid place-items-center px-6 text-center">
+              <span className="font-display text-lg text-border-strong sm:text-xl">
                 {project.name}
               </span>
             </div>
           )}
-          <span className="absolute left-4 top-4 label rounded-full border border-border bg-background/70 px-3 py-1 backdrop-blur">
+
+          <span className="absolute left-3 top-3 label rounded-full border border-border bg-background/80 px-2.5 py-1 backdrop-blur-sm">
             {String(index + 1).padStart(2, "0")}
           </span>
         </div>
 
-        <div className="flex flex-col justify-between gap-6 p-6 sm:p-8">
-          <div className="flex flex-col gap-3">
-            <div className="flex items-start justify-between gap-4">
-              <h3 className="font-display type-title">{project.name}</h3>
-              <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-border text-muted transition-colors group-hover:border-accent group-hover:bg-accent group-hover:text-accent-foreground">
-                <ArrowUpRight className="h-4 w-4" />
-              </span>
-            </div>
-            <p className="leading-relaxed text-muted">
-              {project.tagline[locale]}
-            </p>
+        <div className="flex flex-1 flex-col gap-3 p-5">
+          <div className="flex items-start justify-between gap-3">
+            <h3 className="font-display type-title leading-tight">
+              {project.name}
+            </h3>
+            <span className="mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-full border border-border text-muted transition-colors group-hover:border-accent group-hover:bg-accent group-hover:text-accent-foreground">
+              <ArrowUpRight className="h-3.5 w-3.5" />
+            </span>
           </div>
 
-          <div className="flex flex-col gap-4">
-            {project.stack.length > 0 ? (
-              <div className="flex flex-wrap gap-2">
-                {project.stack.slice(0, 5).map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-full border border-border px-2.5 py-1 font-mono text-[0.6875rem] text-muted"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-            ) : null}
+          <p className="text-sm leading-relaxed text-muted">
+            {project.tagline[locale]}
+          </p>
 
-            <div className="flex items-center justify-between border-t border-border pt-4">
-              <span className="label">{t("openProject")}</span>
-              {project.year ? (
-                <span className="font-mono text-xs text-muted">
-                  {project.year}
+          {project.stack.length > 0 ? (
+            <div className="flex flex-wrap gap-1.5">
+              {project.stack.slice(0, 3).map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-border px-2 py-0.5 font-mono text-[0.625rem] text-muted"
+                >
+                  {item}
+                </span>
+              ))}
+              {project.stack.length > 3 ? (
+                <span className="rounded-full border border-border px-2 py-0.5 font-mono text-[0.625rem] text-muted">
+                  +{project.stack.length - 3}
                 </span>
               ) : null}
             </div>
+          ) : null}
+
+          <div className="mt-auto flex items-center justify-between border-t border-border pt-3">
+            <span className="label">{t(`kind.${project.kind}`)}</span>
+            <span className="font-mono text-xs text-muted">
+              {project.client ?? project.year ?? ""}
+            </span>
           </div>
         </div>
       </Link>
-    </motion.li>
+    </li>
   );
 }

@@ -1,94 +1,76 @@
 "use client";
 
-import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { useRef } from "react";
 import { Container } from "@/components/ui/container";
+import { useInView } from "@/lib/use-in-view";
 import { stackLayers } from "@/content/stack-layers";
 
 export function StackSpine() {
   const t = useTranslations("stack");
-  const ref = useRef<HTMLDivElement>(null);
-  const shouldReduceMotion = useReducedMotion();
-
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start 75%", "end 55%"],
-  });
-  const height = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const { ref, inView } = useInView<HTMLDivElement>("-5% 0px -5% 0px");
 
   return (
-    <section className="relative z-10 border-y border-border bg-surface">
-      <Container className="py-24 sm:py-32 lg:py-40">
-        <div className="flex flex-col gap-14 lg:gap-20">
-          <div className="flex max-w-3xl flex-col gap-5">
-            <span className="label">{t("label")}</span>
-            <h2 className="font-display type-display text-balance">
-              {t("title")}
-            </h2>
-            <p className="type-lead leading-relaxed text-muted">
-              {t("subtitle")}
-            </p>
-          </div>
+    <section className="border-b border-border py-20 sm:py-28">
+      <Container className="flex flex-col gap-10 sm:gap-14">
+        <div className="flex max-w-3xl flex-col gap-3">
+          <span className="label flex items-center gap-3">
+            <span className="h-px w-8 gradient-rule" aria-hidden />
+            {t("label")}
+          </span>
+          <h2 className="font-display type-display text-balance">
+            {t("title")}
+          </h2>
+          <p className="type-lead leading-relaxed text-muted">{t("subtitle")}</p>
+        </div>
 
-          <div ref={ref} className="relative pl-8 sm:pl-12">
-            {}
-            <div
-              className="absolute bottom-0 left-[3px] top-0 w-px bg-border sm:left-[7px]"
-              aria-hidden
-            />
-            {}
-            <motion.div
-              style={shouldReduceMotion ? { height: "100%" } : { height }}
-              className="absolute left-[3px] top-0 w-px bg-accent sm:left-[7px]"
-              aria-hidden
-            />
+        <div
+          ref={ref}
+          data-show={inView ? "true" : "false"}
+          className="stagger relative pl-7 sm:pl-10"
+        >
+          <span
+            aria-hidden
+            className="spine absolute bottom-0 left-[3px] top-0 w-px sm:left-[5px]"
+          />
 
-            <ol className="flex flex-col">
-              {stackLayers.map((layer, index) => (
-                <motion.li
-                  key={layer.id}
-                  initial={{ opacity: 0, x: shouldReduceMotion ? 0 : -12 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ margin: "-15% 0px -15% 0px" }}
-                  transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                  className="row-hover group relative border-b border-border py-8 last:border-b-0 sm:py-10"
-                >
-                  <span
-                    className="absolute -left-8 top-[2.35rem] h-1.5 w-1.5 rounded-full bg-border-strong ring-4 ring-surface transition-colors duration-500 group-hover:bg-accent sm:-left-12 sm:h-[15px] sm:w-[15px] sm:border sm:border-border-strong sm:bg-surface sm:ring-0"
-                    aria-hidden
-                  />
+          <ol className="flex flex-col">
+            {stackLayers.map((layer, index) => (
+              <li
+                key={layer.id}
+                className="stagger-item group relative border-b border-border py-6 last:border-b-0 sm:py-7"
+                style={{ transitionDelay: `${index * 80}ms` }}
+              >
+                <span
+                  aria-hidden
+                  className="absolute -left-7 top-8 h-2 w-2 rounded-full border-2 border-border-strong bg-background transition-colors duration-500 group-hover:border-accent-2 sm:-left-10"
+                />
 
-                  <div className="relative grid gap-4 sm:grid-cols-[1fr_1.4fr] sm:items-baseline sm:gap-10">
-                    <div className="flex items-baseline gap-4">
-                      <span className="label shrink-0">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-                      <h3 className="font-display type-title transition-colors group-hover:text-accent-2">
-                        {t(`${layer.id}.title`)}
-                      </h3>
-                    </div>
+                <div className="grid gap-3 sm:grid-cols-[minmax(0,1fr)_1.5fr] sm:items-baseline sm:gap-8">
+                  <div className="flex items-baseline gap-3">
+                    <span className="label shrink-0">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <h3 className="font-display type-title transition-colors group-hover:text-accent-2">
+                      {t(`${layer.id}.title`)}
+                    </h3>
+                  </div>
 
-                    <div className="flex flex-col gap-3">
-                      <p className="leading-relaxed text-muted">
-                        {t(`${layer.id}.description`)}
-                      </p>
-                      <div className="flex flex-wrap gap-x-4 gap-y-1">
-                        {layer.tools.map((tool) => (
-                          <span
-                            key={tool}
-                            className="font-mono text-xs text-muted"
-                          >
-                            {tool}
-                          </span>
-                        ))}
-                      </div>
+                  <div className="flex flex-col gap-2">
+                    <p className="text-sm leading-relaxed text-muted sm:text-base">
+                      {t(`${layer.id}.description`)}
+                    </p>
+                    <div className="flex flex-wrap gap-x-3 gap-y-1">
+                      {layer.tools.map((tool) => (
+                        <span key={tool} className="font-mono text-xs text-muted">
+                          {tool}
+                        </span>
+                      ))}
                     </div>
                   </div>
-                </motion.li>
-              ))}
-            </ol>
-          </div>
+                </div>
+              </li>
+            ))}
+          </ol>
         </div>
       </Container>
     </section>

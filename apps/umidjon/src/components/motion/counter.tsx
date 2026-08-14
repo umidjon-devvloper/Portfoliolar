@@ -1,20 +1,18 @@
 "use client";
 
-import { useInView, useReducedMotion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
+import { useInView } from "@/lib/use-in-view";
 
 export function Counter({
   value,
   suffix = "",
-  duration = 1500,
+  duration = 1200,
 }: {
   value: number;
   suffix?: string;
   duration?: number;
 }) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { margin: "-10% 0px -10% 0px" });
-  const shouldReduceMotion = useReducedMotion();
+  const { ref, inView } = useInView<HTMLSpanElement>();
   const [display, setDisplay] = useState(0);
 
   useEffect(() => {
@@ -23,7 +21,7 @@ export function Counter({
       return;
     }
 
-    if (shouldReduceMotion) {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       setDisplay(value);
       return;
     }
@@ -33,14 +31,13 @@ export function Counter({
 
     const tick = (now: number) => {
       const progress = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setDisplay(Math.round(eased * value));
+      setDisplay(Math.round((1 - Math.pow(1 - progress, 3)) * value));
       if (progress < 1) frame = requestAnimationFrame(tick);
     };
 
     frame = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(frame);
-  }, [inView, value, duration, shouldReduceMotion]);
+  }, [inView, value, duration]);
 
   return (
     <span ref={ref} className="tabular-nums">

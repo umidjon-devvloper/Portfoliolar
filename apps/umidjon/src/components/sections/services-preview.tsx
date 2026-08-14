@@ -30,9 +30,9 @@ export function ServicesPreview() {
             </div>
           </Reveal>
 
-          <Stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4" gap={0.06}>
-            {services.map((service) => (
-              <StaggerItem key={service.id} className="flex">
+          <Stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {services.map((service, index) => (
+              <StaggerItem key={service.id} index={index} className="flex">
                 <div className="card flex w-full flex-col gap-3 rounded-2xl p-6">
                   <h3 className="font-medium">{t(`${service.id}.title`)}</h3>
                   <p className="text-sm leading-relaxed text-muted">
