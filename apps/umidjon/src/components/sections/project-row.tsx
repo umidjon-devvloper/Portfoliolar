@@ -39,7 +39,8 @@ export function ProjectCard({
               alt={project.name}
               fill
               sizes="(min-width: 768px) 45vw, 100vw"
-              className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+              quality={82}
+              className="object-cover transition-transform duration-700 group-hover:scale-[1.05]"
             />
           ) : (
             <div className="absolute inset-0 grid place-items-center">

@@ -75,7 +75,8 @@ export const projects: Project[] = [
     kind: "fullstack",
     year: "2026",
     featured: true,
-    cover: null,
+    cover:
+      "https://vjuubkjgs6.ufs.sh/f/ATnCuPXyY61iGtwWFzCgKshzbFy4nfRVW8wJLrAx6IimUM9e",
     gallery: [],
     links: [
       {
@@ -113,8 +114,9 @@ export const projects: Project[] = [
     name: "Zapchasty",
     kind: "mobile",
     year: "2026",
-    featured: false,
-    cover: null,
+    featured: true,
+    cover:
+      "https://vjuubkjgs6.ufs.sh/f/ATnCuPXyY61itvP4Op7lcRD4YAzEN6SPXovQgifU1IG20bBt",
     gallery: [],
     links: [
       {

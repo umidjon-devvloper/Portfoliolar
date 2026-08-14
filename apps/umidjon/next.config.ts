@@ -13,6 +13,16 @@ const nextConfig: NextConfig = {
         hostname: "avatars.githubusercontent.com",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "vjuubkjgs6.ufs.sh",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "wsrv.nl",
+        pathname: "/**",
+      },
     ],
   },
   experimental: {
