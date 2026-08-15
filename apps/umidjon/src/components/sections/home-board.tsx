@@ -45,7 +45,7 @@ export function HomeBoard() {
   );
 
   return (
-    <div className="grid gap-4 px-5 py-6 sm:px-7 lg:pl-12 lg:pr-8 xl:grid-cols-[minmax(0,1fr)_23rem] xl:pl-16 xl:pr-12">
+    <div className="grid items-stretch gap-4 px-5 py-6 sm:px-7 lg:pl-12 lg:pr-8 xl:grid-cols-[minmax(0,1fr)_23rem] xl:pl-16 xl:pr-12">
       <div className="flex flex-col gap-4">
         <Reveal>
           <div className="flex flex-wrap items-center justify-between gap-3">
@@ -74,7 +74,7 @@ export function HomeBoard() {
         </Stagger>
       </div>
 
-      <aside className="flex flex-col gap-4">
+      <aside className="flex min-h-full flex-col gap-4">
         <Reveal>
           <Card hover={false} className="overflow-hidden">
             <div className="grid grid-cols-2">
@@ -130,8 +130,8 @@ export function HomeBoard() {
           </Card>
         </Reveal>
 
-        <Reveal delay={120}>
-          <Card hover={false} className="relative flex flex-col gap-3 overflow-hidden p-4">
+        <Reveal delay={120} className="flex flex-1 flex-col">
+          <Card hover={false} className="relative flex h-full flex-col gap-3 overflow-hidden p-4">
             <span className="pointer-events-none absolute inset-0 glow" aria-hidden />
             <span className="relative text-[0.6875rem] font-semibold uppercase tracking-[0.1em] text-muted">
               {tcta("railTitle")}
@@ -139,7 +139,7 @@ export function HomeBoard() {
             <p className="relative text-sm text-muted">{tcta("subtitle")}</p>
             <Link
               href="/contact"
-              className={`${buttonVariants({ size: "sm" })} relative w-fit`}
+              className={`${buttonVariants({ size: "sm" })} relative mt-auto w-fit`}
             >
               {tcta("button")}
               <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover/btn:translate-x-1" />

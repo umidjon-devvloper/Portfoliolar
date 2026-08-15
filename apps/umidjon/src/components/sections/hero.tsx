@@ -6,6 +6,14 @@ import { buttonVariants } from "@/components/ui/button";
 import { profile } from "@/content/profile";
 import { HeroBackdrop } from "./hero-backdrop";
 
+/**
+ * Feathers all four edges so the photograph dissolves into the panel
+ * rather than sitting in a visible rectangle. Kept inline: as a utility
+ * class it was not surviving into the built stylesheet.
+ */
+const PORTRAIT_MASK =
+  "radial-gradient(70% 62% at 50% 44%, #000 45%, rgba(0,0,0,0.55) 72%, transparent 100%)";
+
 const codeLines = [
   { text: "const developer = {", accent: false },
   { text: '  name: "Umidjon",', accent: true },
@@ -22,7 +30,7 @@ export function Hero() {
   return (
     <section className="relative isolate border-b border-border lg:h-[33rem]">
       <div
-        className="pointer-events-none absolute inset-y-0 right-0 hidden w-[34rem] lg:block xl:w-[40rem]"
+        className="pointer-events-none absolute inset-y-0 left-1/2 hidden w-[38rem] -translate-x-1/2 lg:block"
         aria-hidden
       >
         <HeroBackdrop />
@@ -30,16 +38,20 @@ export function Hero() {
 
       {profile.avatar ? (
         <div
-          className="pointer-events-none absolute bottom-0 hidden lg:right-[15rem] lg:block lg:h-[88%] lg:w-[19rem] xl:right-[19rem] xl:w-[22rem]"
+          className="pointer-events-none absolute bottom-0 left-1/2 hidden h-[92%] w-[20rem] -translate-x-1/2 lg:block xl:w-[23rem]"
           aria-hidden
+          style={{
+            WebkitMaskImage: PORTRAIT_MASK,
+            maskImage: PORTRAIT_MASK,
+          }}
         >
           <Image
             src={profile.avatar}
             alt=""
             fill
             priority
-            sizes="22rem"
-            className="portrait-mask object-contain object-bottom"
+            sizes="23rem"
+            className="object-contain object-bottom"
           />
         </div>
       ) : null}

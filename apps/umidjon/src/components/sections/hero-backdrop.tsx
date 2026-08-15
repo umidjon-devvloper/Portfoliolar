@@ -12,7 +12,7 @@ export function HeroBackdrop() {
       className="pointer-events-none absolute inset-0 h-full w-full"
     >
       <defs>
-        <radialGradient id="hero-spot" cx="52%" cy="34%" r="52%">
+        <radialGradient id="hero-spot" cx="50%" cy="38%" r="55%">
           <stop offset="0%" stopColor="var(--accent)" stopOpacity="0.26" />
           <stop offset="100%" stopColor="var(--accent)" stopOpacity="0" />
         </radialGradient>
@@ -32,12 +32,13 @@ export function HeroBackdrop() {
           <feColorMatrix type="saturate" values="0" />
         </filter>
 
+        <radialGradient id="hero-fade-grad" cx="50%" cy="48%" r="58%">
+          <stop offset="0%" stopColor="#fff" />
+          <stop offset="62%" stopColor="#777" />
+          <stop offset="100%" stopColor="#000" />
+        </radialGradient>
+
         <mask id="hero-fade">
-          <linearGradient id="hero-fade-grad" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stopColor="#000" />
-            <stop offset="38%" stopColor="#888" />
-            <stop offset="100%" stopColor="#fff" />
-          </linearGradient>
           <rect width="600" height="560" fill="url(#hero-fade-grad)" />
         </mask>
       </defs>

@@ -261,19 +261,6 @@
   }
 
   /* Portrait bleeds to the panel edges and dissolves into the page. */
-  .portrait-mask {
-    -webkit-mask-image: radial-gradient(
-      82% 78% at 50% 42%,
-      #000 62%,
-      transparent 100%
-    );
-    mask-image: radial-gradient(
-      82% 78% at 50% 42%,
-      #000 62%,
-      transparent 100%
-    );
-  }
-
   .glow {
     background: radial-gradient(
       60% 60% at 50% 40%,
