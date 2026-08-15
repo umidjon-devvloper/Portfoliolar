@@ -399,22 +399,26 @@
     "fullstack": {
       "period": "2025-may — hozir",
       "title": "Full-Stack Developer",
-      "description": "Mijozlar uchun kengayadigan web va mobil ilovalar quraman."
+      "description": "Mijozlar uchun kengayadigan web va mobil ilovalar quraman.",
+      "shortPeriod": "2025 – hozir"
     },
     "freelance": {
       "period": "2023-may — 2025-aprel",
       "title": "Freelance Developer",
-      "description": "Turli mijozlar bilan web va mobil loyihalarda ishladim."
+      "description": "Turli mijozlar bilan web va mobil loyihalarda ishladim.",
+      "shortPeriod": "2023 – 2025"
     },
     "frontend": {
       "period": "2022-yanvar — 2023-aprel",
       "title": "Frontend Developer",
-      "description": "Zamonaviy texnologiyalar bilan moslashuvchan interfeyslar yaratdim."
+      "description": "Zamonaviy texnologiyalar bilan moslashuvchan interfeyslar yaratdim.",
+      "shortPeriod": "2022 – 2023"
     },
     "junior": {
       "period": "2021-iyun — 2021-dekabr",
       "title": "Junior Developer",
-      "description": "Dasturlash yo'lini boshlab, web development asoslarini o'zlashtirdim."
+      "description": "Dasturlash yo'lini boshlab, web development asoslarini o'zlashtirdim.",
+      "shortPeriod": "2021 – 2022"
     }
   }
 }

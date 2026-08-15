@@ -399,22 +399,26 @@
     "fullstack": {
       "period": "May 2025 — present",
       "title": "Full-Stack Developer",
-      "description": "Building scalable web and mobile applications for clients."
+      "description": "Building scalable web and mobile applications for clients.",
+      "shortPeriod": "2025 – Present"
     },
     "freelance": {
       "period": "May 2023 — April 2025",
       "title": "Freelance Developer",
-      "description": "Worked with clients on web and mobile projects."
+      "description": "Worked with clients on web and mobile projects.",
+      "shortPeriod": "2023 – 2025"
     },
     "frontend": {
       "period": "January 2022 — April 2023",
       "title": "Frontend Developer",
-      "description": "Built responsive interfaces with modern technologies."
+      "description": "Built responsive interfaces with modern technologies.",
+      "shortPeriod": "2022 – 2023"
     },
     "junior": {
       "period": "June 2021 — December 2021",
       "title": "Junior Developer",
-      "description": "Started out in development and learned the fundamentals of the web."
+      "description": "Started out in development and learned the fundamentals of the web.",
+      "shortPeriod": "2021 – 2022"
     }
   }
 }

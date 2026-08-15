@@ -6,41 +6,13 @@ import { Card } from "@/components/ui/card";
 import { profile } from "@/content/profile";
 import { HeroBackdrop } from "./hero-backdrop";
 
-/** Signature drawn as a path so it needs no script font. */
-function Signature() {
-  return (
-    <svg
-      viewBox="0 0 240 64"
-      fill="none"
-      role="img"
-      aria-label={profile.fullName ?? profile.firstName}
-      className="h-12 w-40 text-accent"
-    >
-      <path
-        d="M12 16 C 10 34, 16 48, 26 46 C 36 44, 38 26, 34 18 C 32 40, 40 50, 50 46 C 58 42, 60 30, 56 26 C 54 38, 62 46, 72 42 C 80 38, 78 28, 74 30 C 70 34, 76 44, 88 40 C 96 37, 100 28, 98 24 C 96 36, 104 44, 116 40 C 126 36, 130 24, 126 20 C 122 30, 128 44, 142 42 C 156 40, 168 26, 176 18 C 168 34, 172 48, 186 44 C 198 40, 206 28, 210 20"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M186 52 C 196 48, 210 46, 224 48"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        opacity="0.7"
-      />
-    </svg>
-  );
-}
-
 export function AboutHero() {
   const t = useTranslations("about");
 
   return (
     <section className="relative isolate border-b border-border lg:h-[30rem]">
       <div
-        className="pointer-events-none absolute inset-y-0 left-[62%] hidden w-[38rem] -translate-x-1/2 lg:block"
+        className="pointer-events-none absolute inset-y-0 left-[56%] hidden w-[40rem] -translate-x-1/2 lg:block"
         aria-hidden
       >
         <HeroBackdrop />
@@ -48,7 +20,7 @@ export function AboutHero() {
 
       {profile.avatar ? (
         <div
-          className="pointer-events-none absolute bottom-0 left-[62%] hidden h-[98%] w-[30rem] -translate-x-1/2 lg:block xl:w-[34rem]"
+          className="pointer-events-none absolute bottom-0 left-[55%] hidden h-[98%] w-[32rem] -translate-x-1/2 lg:block xl:left-[56%] xl:w-[36rem]"
           aria-hidden
         >
           <Image
@@ -62,22 +34,21 @@ export function AboutHero() {
         </div>
       ) : null}
 
-      <div className="relative grid gap-8 px-5 py-8 sm:px-7 lg:h-full lg:grid-cols-[minmax(0,26rem)_1fr_18rem] lg:items-center lg:gap-10 lg:py-0 lg:pl-12 lg:pr-8 xl:pl-16 xl:pr-12">
-        <div className="flex flex-col gap-5">
+      <div className="relative grid gap-8 px-5 py-8 sm:px-7 lg:h-full lg:grid-cols-[minmax(0,24rem)_1fr_19rem] lg:items-center lg:gap-8 lg:py-0 lg:pl-12 lg:pr-8 xl:pl-16 xl:pr-12">
+        <div className="flex flex-col">
           <Breadcrumb current={t("breadcrumb")} />
 
-          <div className="flex flex-col gap-2">
-            <span className="eyebrow">{t("eyebrow")}</span>
-            <h1 className="type-page">
-              {t("headingLead")} <span className="text-accent">{t("headingAccent")}</span>.
-            </h1>
-          </div>
+          <span className="eyebrow mt-5">{t("eyebrow")}</span>
 
-          <p className="text-sm leading-relaxed text-muted sm:text-base">
+          <h1 className="type-page mt-2.5">
+            {t("headingLead")} <span className="text-accent">{t("headingAccent")}</span>.
+          </h1>
+
+          <p className="mt-4 max-w-md text-sm leading-relaxed text-muted sm:text-base">
             {t("shortBio")}
           </p>
 
-          <div className="flex flex-col gap-2 text-sm text-muted">
+          <div className="mt-6 flex flex-col gap-2.5 text-sm text-muted">
             {profile.location ? (
               <span className="inline-flex items-center gap-2">
                 <MapPin className="h-4 w-4 text-accent" />
@@ -90,7 +61,7 @@ export function AboutHero() {
             </span>
           </div>
 
-          <Signature />
+          <span className="signature mt-6">{profile.firstName}</span>
         </div>
 
         {/* Portrait occupies this column on desktop */}

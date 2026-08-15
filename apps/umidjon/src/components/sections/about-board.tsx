@@ -1,4 +1,4 @@
-import { ArrowRight, Box, Clock, Code, Quote, Smile } from "lucide-react";
+import { ArrowRight, Box, Clock, Code, Smile } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Card } from "@/components/ui/card";
@@ -17,7 +17,6 @@ const statIcon = {
   response: Clock,
 } as const;
 
-/** Three groups shown as icon grids, matching the design's Skills & Tools. */
 const toolGroups = [
   {
     id: "frontend",
@@ -33,6 +32,15 @@ const toolGroups = [
   },
 ];
 
+function ColumnHeading({ children }: { children: string }) {
+  return (
+    <div className="flex flex-col gap-3">
+      <h2 className="text-sm font-bold uppercase tracking-[0.14em]">{children}</h2>
+      <span className="rule-taper" aria-hidden />
+    </div>
+  );
+}
+
 export function AboutBoard() {
   const t = useTranslations("about");
   const te = useTranslations("experience");
@@ -47,34 +55,65 @@ export function AboutBoard() {
   );
 
   return (
-    <div className="grid gap-8 px-5 py-10 sm:px-7 lg:pl-12 lg:pr-8 xl:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_20rem] xl:gap-10 xl:pl-16 xl:pr-12">
-      {/* My journey */}
-      <section className="flex flex-col gap-5">
+    <div className="relative grid gap-10 px-5 py-10 sm:px-7 lg:pl-12 lg:pr-8 xl:grid-cols-3 xl:gap-12 xl:pl-16 xl:pr-12">
+      {/* Hairlines between the three columns */}
+      <span
+        className="column-rule pointer-events-none absolute inset-y-10 left-[calc(33.333%-1.5rem)] hidden w-px xl:block"
+        aria-hidden
+      />
+      <span
+        className="column-rule pointer-events-none absolute inset-y-10 left-[calc(66.666%-0.75rem)] hidden w-px xl:block"
+        aria-hidden
+      />
+
+      {/* My journey — periods in their own column, as in the design */}
+      <section className="flex flex-col gap-6">
         <Reveal>
-          <h2 className="eyebrow border-b border-border pb-2.5">
-            {t("journeyTitle")}
-          </h2>
+          <ColumnHeading>{t("journeyTitle")}</ColumnHeading>
         </Reveal>
 
         <Stagger>
-          <ol className="relative flex flex-col gap-6 border-l border-border pl-5">
+          <ol className="flex flex-col">
             {roles.map((role, index) => (
               <StaggerItem key={role.id} index={index}>
-                <li className="relative">
-                  <span
-                    className="absolute -left-[1.6rem] top-1.5 h-2 w-2 rounded-full bg-accent ring-4 ring-background"
-                    aria-hidden
-                  />
-                  <div className="flex flex-col gap-1">
-                    <div className="flex flex-wrap items-baseline gap-x-3">
-                      <span className="text-sm text-accent">
-                        {te(`${role.id}.period`)}
-                      </span>
-                      <h3 className="font-semibold">{te(`${role.id}.title`)}</h3>
+                <li className="grid grid-cols-[auto_1fr] gap-x-4">
+                  {/* period rail */}
+                  <div className="relative flex items-start gap-3 pr-1">
+                    <span className="relative flex w-2 justify-center">
+                      <span
+                        className="absolute inset-y-0 w-px bg-border"
+                        aria-hidden
+                      />
+                      <span
+                        className="relative mt-1.5 h-2 w-2 rounded-full bg-accent ring-4 ring-background"
+                        aria-hidden
+                      />
+                    </span>
+                    <span className="w-[6.5rem] text-right text-sm text-accent">
+                      {te(`${role.id}.shortPeriod`)}
+                    </span>
+                  </div>
+
+                  {/* content rail */}
+                  <div className="relative flex gap-4 pb-8">
+                    <span className="relative flex w-1.5 shrink-0 justify-center">
+                      <span
+                        className="absolute inset-y-0 w-px bg-border"
+                        aria-hidden
+                      />
+                      <span
+                        className="relative mt-1.5 h-1.5 w-1.5 rounded-full bg-accent ring-4 ring-background"
+                        aria-hidden
+                      />
+                    </span>
+                    <div className="flex flex-col gap-1.5">
+                      <h3 className="font-semibold leading-none">
+                        {te(`${role.id}.title`)}
+                      </h3>
+                      <p className="text-xs leading-relaxed text-muted">
+                        {te(`${role.id}.description`)}
+                      </p>
                     </div>
-                    <p className="text-xs leading-relaxed text-muted">
-                      {te(`${role.id}.description`)}
-                    </p>
                   </div>
                 </li>
               </StaggerItem>
@@ -83,41 +122,45 @@ export function AboutBoard() {
         </Stagger>
 
         <Reveal delay={120}>
-          <Card hover={false} className="flex gap-3 p-4">
-            <Quote className="h-5 w-5 shrink-0 text-accent" strokeWidth={1.5} />
-            <div className="flex flex-col gap-2">
-              <p className="text-sm leading-relaxed">{t("quote")}</p>
-              <span className="text-xs text-muted">— {t("quoteAuthor")}</span>
-            </div>
+          <Card hover={false} className="relative overflow-hidden p-5">
+            <span
+              className="pointer-events-none absolute -bottom-6 -right-2 select-none font-serif text-[7rem] leading-none text-accent opacity-[0.07]"
+              aria-hidden
+            >
+              &rdquo;
+            </span>
+            <span className="block font-serif text-3xl leading-none text-accent">
+              &ldquo;
+            </span>
+            <p className="mt-2 text-sm leading-relaxed">{t("quote")}</p>
+            <p className="mt-3 text-right text-xs text-muted">— {t("quoteAuthor")}</p>
           </Card>
         </Reveal>
       </section>
 
-      {/* Skills & tools */}
-      <section className="flex flex-col gap-5">
+      {/* Skills & tools — plain icon grids, no frames */}
+      <section className="flex flex-col gap-6">
         <Reveal>
-          <h2 className="eyebrow border-b border-border pb-2.5">
-            {t("toolsTitle")}
-          </h2>
+          <ColumnHeading>{t("toolsTitle")}</ColumnHeading>
         </Reveal>
 
-        <Stagger className="flex flex-col gap-5">
+        <Stagger className="flex flex-1 flex-col justify-between gap-7">
           {toolGroups.map((group, groupIndex) => (
-            <div key={group.id} className="flex flex-col gap-3">
+            <div key={group.id} className="flex flex-col gap-4">
               <h3 className="text-sm font-medium text-accent">{ts(group.id)}</h3>
-              <ul className="grid grid-cols-5 gap-2">
+              <ul className="grid grid-cols-5 gap-x-2 gap-y-4">
                 {group.names.map((name, index) => (
                   <li
                     key={name}
-                    className="stagger-item tile flex flex-col items-center gap-1.5 rounded-[var(--radius-sm)] border border-border px-1 py-2.5"
+                    className="stagger-item group flex flex-col items-center gap-2"
                     style={{ transitionDelay: `${(groupIndex * 5 + index) * 30}ms` }}
                   >
                     <TechIcon
                       slug={lookup.get(name) ?? null}
                       fallback={name}
-                      className="h-5 w-5"
+                      className="h-7 w-7 transition-transform duration-300 group-hover:scale-110"
                     />
-                    <span className="w-full truncate text-center text-[0.5625rem] text-muted">
+                    <span className="w-full truncate text-center text-[0.625rem] text-muted">
                       {name}
                     </span>
                   </li>
@@ -129,11 +172,9 @@ export function AboutBoard() {
       </section>
 
       {/* Some numbers */}
-      <section className="flex flex-col gap-5">
+      <section className="flex flex-col gap-6">
         <Reveal>
-          <h2 className="eyebrow border-b border-border pb-2.5">
-            {t("numbersTitle")}
-          </h2>
+          <ColumnHeading>{t("numbersTitle")}</ColumnHeading>
         </Reveal>
 
         <Stagger>
@@ -143,7 +184,7 @@ export function AboutBoard() {
 
               return (
                 <StaggerItem key={metric.id} index={index}>
-                  <Card className="flex h-full flex-col gap-2 p-4">
+                  <Card className="flex h-full flex-col gap-2.5 p-4">
                     <span className="grid h-8 w-8 place-items-center rounded-[var(--radius-sm)] bg-accent-soft text-accent">
                       <Icon className="h-4 w-4" strokeWidth={1.5} />
                     </span>
