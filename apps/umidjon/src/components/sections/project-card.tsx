@@ -21,10 +21,10 @@ export function ProjectCard({
 
   return (
     <li
-      className="stagger-item"
+      className="stagger-item flex"
       style={{ transitionDelay: `${Math.min(index, 6) * 55}ms` }}
     >
-      <Link href={`/work/${project.slug}`} className="block h-full">
+      <Link href={`/work/${project.slug}`} className="block w-full">
         <Card className="group flex h-full flex-col gap-3.5 p-3.5">
           <div className="relative aspect-[16/10] overflow-hidden rounded-[var(--radius-sm)] bg-surface-2">
             {project.cover ? (

@@ -13,7 +13,7 @@ export function WhatIDo() {
   const t = useTranslations("whatIDo");
 
   return (
-    <section className="flex flex-col gap-5 border-t border-border pt-6">
+    <section className="flex h-full flex-col gap-5">
       <Reveal>
         <span className="text-[0.6875rem] font-semibold uppercase tracking-[0.1em] text-muted">
           {t("title")}
