@@ -13,7 +13,7 @@ export function WhatIDo() {
   const t = useTranslations("whatIDo");
 
   return (
-    <section className="flex flex-col gap-4 pt-2">
+    <section className="flex flex-col gap-5 border-t border-border pt-6">
       <Reveal>
         <span className="text-[0.6875rem] font-semibold uppercase tracking-[0.1em] text-muted">
           {t("title")}
@@ -21,7 +21,7 @@ export function WhatIDo() {
       </Reveal>
 
       <Stagger>
-        <div className="grid gap-5 sm:grid-cols-3 sm:gap-6">
+        <div className="grid gap-6 sm:grid-cols-3 sm:gap-8">
           {pillars.map((pillar, index) => (
             <StaggerItem key={pillar.id} index={index}>
               <div className="flex gap-3">

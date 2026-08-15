@@ -1,4 +1,4 @@
-import { ArrowRight, Boxes, Clock, Code, Smile, Trophy } from "lucide-react";
+import { ArrowRight, Box, Clock, Code, Smile } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Card } from "@/components/ui/card";
@@ -28,18 +28,17 @@ const strip = [
 const statIcon = {
   projects: Code,
   clients: Smile,
-  experience: Boxes,
+  experience: Box,
   response: Clock,
 } as const;
 
-/** Hand-drawn curl pointing at the button, as in the design. */
 function Squiggle() {
   return (
     <svg
       aria-hidden
       viewBox="0 0 120 80"
       fill="none"
-      className="pointer-events-none absolute bottom-3 right-3 h-16 w-24 text-accent opacity-80"
+      className="pointer-events-none absolute bottom-4 right-4 h-16 w-24 text-accent opacity-80"
     >
       <path
         d="M112 6 C 96 4, 70 18, 74 40 C 78 62, 106 58, 100 40 C 94 22, 60 30, 46 46 C 34 60, 24 66, 10 70"
@@ -72,39 +71,39 @@ export function HomeBoard() {
   );
 
   return (
-    <div className="grid gap-4 px-5 py-6 sm:px-7 lg:pl-12 lg:pr-8 xl:grid-cols-[minmax(0,1fr)_23rem] xl:pl-16 xl:pr-12">
-      {/* Left column: header row, cards, closing pillars */}
-      <div className="flex flex-col gap-4">
-        <Reveal>
-          <div className="flex h-5 items-center justify-between gap-3">
-            <span className="eyebrow">{t("featuredEyebrow")}</span>
-            <Link
-              href="/work"
-              className="group inline-flex items-center gap-2 text-[0.6875rem] uppercase tracking-[0.1em] text-muted transition-colors hover:text-accent"
-            >
-              {tc("viewAll")}
-              <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </div>
-        </Reveal>
+    <div className="grid gap-6 px-5 py-8 sm:px-7 lg:pl-12 lg:pr-8 xl:grid-cols-[minmax(0,1fr)_23rem] xl:pl-16 xl:pr-12">
+      <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-4">
+          <Reveal>
+            <div className="flex h-5 items-center justify-between gap-3">
+              <span className="eyebrow">{t("featuredEyebrow")}</span>
+              <Link
+                href="/work"
+                className="group inline-flex items-center gap-2 text-[0.6875rem] uppercase tracking-[0.1em] text-muted transition-colors hover:text-accent"
+              >
+                {tc("viewAll")}
+                <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1.5" />
+              </Link>
+            </div>
+          </Reveal>
 
-        <Stagger>
-          <ul className="grid gap-3 sm:grid-cols-2 2xl:grid-cols-4">
-            {featuredProjects.map((project, index) => (
-              <ProjectCard
-                key={project.slug}
-                project={project}
-                index={index}
-                priority={index < 2}
-              />
-            ))}
-          </ul>
-        </Stagger>
+          <Stagger>
+            <ul className="grid gap-4 sm:grid-cols-2 2xl:grid-cols-4">
+              {featuredProjects.map((project, index) => (
+                <ProjectCard
+                  key={project.slug}
+                  project={project}
+                  index={index}
+                  priority={index < 2}
+                />
+              ))}
+            </ul>
+          </Stagger>
+        </div>
 
         <WhatIDo />
       </div>
 
-      {/* Right rail: starts level with the cards (spacer matches the header row) */}
       <aside className="flex flex-col gap-4">
         <div className="hidden h-5 xl:block" aria-hidden />
 
@@ -117,13 +116,13 @@ export function HomeBoard() {
                 return (
                   <div
                     key={metric.id}
-                    className={`flex items-center gap-3 p-4 ${
+                    className={`stat-cell flex items-center gap-3.5 px-5 py-5 ${
                       index % 2 === 0 ? "border-r border-border" : ""
                     } ${index < 2 ? "border-b border-border" : ""}`}
                   >
-                    <Icon className="h-6 w-6 shrink-0 text-accent" strokeWidth={1.5} />
+                    <Icon className="stat-icon h-6 w-6 shrink-0 text-accent" strokeWidth={1.5} />
                     <div className="flex min-w-0 flex-col leading-tight">
-                      <span className="text-xl font-extrabold tracking-tight">
+                      <span className="text-[1.375rem] font-extrabold tracking-tight">
                         <Counter value={metric.value} suffix={metric.suffix} />
                       </span>
                       <span className="truncate text-[0.6875rem] text-muted">
@@ -137,17 +136,17 @@ export function HomeBoard() {
           </Card>
         </Reveal>
 
-        <Reveal delay={60}>
-          <Card hover={false} className="flex flex-col gap-3 p-4">
+        <Reveal delay={80}>
+          <Card hover={false} className="flex flex-col gap-3.5 p-5">
             <span className="text-[0.6875rem] font-semibold uppercase tracking-[0.1em] text-muted">
               {ts("stripTitle")}
             </span>
-            <ul className="grid grid-cols-5 gap-2">
+            <ul className="grid grid-cols-5 gap-2.5">
               {strip.map((name) => (
                 <li
                   key={name}
                   title={name}
-                  className="flex flex-col items-center gap-1.5 rounded-[var(--radius-sm)] border border-border px-1 py-2 transition-colors hover:border-accent"
+                  className="tile flex flex-col items-center gap-1.5 rounded-[var(--radius-sm)] border border-border px-1 py-2.5"
                 >
                   <TechIcon
                     slug={lookup.get(name) ?? null}
@@ -163,8 +162,8 @@ export function HomeBoard() {
           </Card>
         </Reveal>
 
-        <Reveal delay={120} className="flex flex-1 flex-col">
-          <Card hover={false} className="relative flex h-full flex-col gap-3 overflow-hidden p-4">
+        <Reveal delay={160} className="flex flex-1 flex-col">
+          <Card hover={false} className="relative flex h-full flex-col gap-3 overflow-hidden p-5">
             <span className="text-[0.6875rem] font-semibold uppercase tracking-[0.1em] text-accent">
               {tcta("railTitle")}
             </span>
@@ -174,7 +173,7 @@ export function HomeBoard() {
               className={`${buttonVariants({ size: "sm" })} mt-auto w-fit`}
             >
               {tcta("railButton")}
-              <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover/btn:translate-x-1" />
+              <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover/btn:translate-x-1.5" />
             </Link>
             <Squiggle />
           </Card>

@@ -48,7 +48,7 @@ export function Hero() {
             className="absolute inset-0"
             style={{
               background:
-                "radial-gradient(68% 60% at 50% 46%, transparent 40%, color-mix(in srgb, var(--background) 55%, transparent) 68%, var(--background) 100%)",
+                "radial-gradient(60% 56% at 50% 46%, transparent 30%, color-mix(in srgb, var(--background) 60%, transparent) 62%, var(--background) 96%)",
             }}
           />
           <span
@@ -118,7 +118,7 @@ export function Hero() {
 
       {/* Floats over the portrait, as in the design. */}
       <div className="enter relative mt-6 flex flex-col gap-3 px-5 sm:px-7 lg:absolute lg:right-8 lg:top-[8.5rem] lg:mt-0 lg:w-[22.5rem] lg:px-0 xl:right-12">
-        <div className="overflow-hidden rounded-[var(--radius-card)] border border-border bg-surface/95 shadow-[var(--shadow-card)] backdrop-blur">
+        <div className="card overflow-hidden bg-surface/95 backdrop-blur transition-transform duration-500 hover:-translate-y-1">
           <div className="flex items-center gap-2 border-b border-border px-4 py-2.5">
             <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
             <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
@@ -141,7 +141,7 @@ export function Hero() {
           </pre>
         </div>
 
-        <div className="flex items-center gap-3 rounded-[var(--radius-card)] border border-border bg-surface/95 px-4 py-3 backdrop-blur">
+        <div className="card flex items-center gap-3 bg-surface/95 px-4 py-3 backdrop-blur transition-transform duration-500 hover:-translate-y-1">
           <span className="relative flex h-2.5 w-2.5 shrink-0">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
             <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400" />

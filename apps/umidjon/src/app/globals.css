@@ -162,14 +162,43 @@
     border-radius: var(--radius-card);
     box-shadow: var(--shadow-card);
     transition:
-      border-color 0.3s ease,
-      box-shadow 0.3s ease,
-      transform 0.3s ease;
+      border-color 0.35s ease,
+      box-shadow 0.35s ease,
+      transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .card-hover:hover {
-    border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+    border-color: color-mix(in srgb, var(--accent) 60%, transparent);
     box-shadow: var(--shadow-card-hover);
+    transform: translateY(-6px);
+  }
+
+  .stat-cell {
+    transition: background-color 0.3s ease;
+  }
+
+  .stat-cell:hover {
+    background-color: var(--surface-2);
+  }
+
+  .stat-cell:hover .stat-icon {
+    transform: scale(1.12);
+  }
+
+  .stat-icon {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .tile {
+    transition:
+      border-color 0.3s ease,
+      transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+      background-color 0.3s ease;
+  }
+
+  .tile:hover {
+    border-color: var(--accent);
+    background-color: var(--surface-2);
     transform: translateY(-3px);
   }
 
@@ -200,10 +229,10 @@
   /* Scroll reveals. One IntersectionObserver per block, CSS does the rest. */
   .reveal {
     opacity: 0;
-    transform: translateY(16px);
+    transform: translateY(24px);
     transition:
-      opacity 0.5s ease,
-      transform 0.5s ease;
+      opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .reveal[data-show="true"] {
@@ -213,10 +242,10 @@
 
   .stagger-item {
     opacity: 0;
-    transform: translateY(14px);
+    transform: translateY(22px) scale(0.98);
     transition:
-      opacity 0.45s ease,
-      transform 0.45s ease;
+      opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .stagger[data-show="true"] .stagger-item {
@@ -237,7 +266,7 @@
 
   .enter {
     opacity: 0;
-    animation: enter 0.6s ease forwards;
+    animation: enter 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
   .skeleton {
@@ -273,7 +302,7 @@
 @keyframes enter {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
