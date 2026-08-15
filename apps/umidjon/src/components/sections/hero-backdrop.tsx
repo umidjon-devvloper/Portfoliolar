@@ -13,13 +13,13 @@ export function HeroBackdrop() {
     >
       <defs>
         <radialGradient id="hero-spot" cx="50%" cy="38%" r="55%">
-          <stop offset="0%" stopColor="var(--accent)" stopOpacity="0.26" />
+          <stop offset="0%" stopColor="var(--accent)" stopOpacity="0.18" />
           <stop offset="100%" stopColor="var(--accent)" stopOpacity="0" />
         </radialGradient>
 
         <linearGradient id="hero-sweep" x1="0" y1="1" x2="1" y2="0">
           <stop offset="0%" stopColor="var(--accent)" stopOpacity="0" />
-          <stop offset="45%" stopColor="var(--accent)" stopOpacity="0.55" />
+          <stop offset="45%" stopColor="var(--accent)" stopOpacity="0.28" />
           <stop offset="100%" stopColor="var(--accent)" stopOpacity="0" />
         </linearGradient>
 
@@ -67,7 +67,7 @@ export function HeroBackdrop() {
           width="600"
           height="560"
           filter="url(#hero-grain)"
-          opacity="0.09"
+          opacity="0.06"
         />
       </g>
     </svg>

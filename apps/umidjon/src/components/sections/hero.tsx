@@ -22,7 +22,7 @@ export function Hero() {
   return (
     <section className="relative isolate border-b border-border lg:h-[33rem]">
       <div
-        className="pointer-events-none absolute inset-y-0 left-1/2 hidden w-[38rem] -translate-x-1/2 lg:block"
+        className="pointer-events-none absolute inset-y-0 left-[46%] hidden w-[40rem] -translate-x-1/2 lg:block xl:left-[47%]"
         aria-hidden
       >
         <HeroBackdrop />
@@ -30,7 +30,7 @@ export function Hero() {
 
       {profile.avatar ? (
         <div
-          className="pointer-events-none absolute bottom-0 left-1/2 hidden h-[92%] w-[20rem] -translate-x-1/2 lg:block xl:w-[23rem]"
+          className="pointer-events-none absolute bottom-0 left-[46%] hidden h-[96%] w-[30rem] -translate-x-1/2 lg:block xl:left-[47%] xl:w-[34rem]"
           aria-hidden
         >
           <Image
@@ -38,25 +38,8 @@ export function Hero() {
             alt=""
             fill
             priority
-            sizes="23rem"
+            sizes="34rem"
             className="object-contain object-bottom"
-          />
-          {/* Overlay painted in the page background colour: solid at the
-              edges, clear in the middle. Same visual result as a mask,
-              but a plain background — nothing for a browser to drop. */}
-          <span
-            className="absolute inset-0"
-            style={{
-              background:
-                "radial-gradient(60% 56% at 50% 46%, transparent 30%, color-mix(in srgb, var(--background) 60%, transparent) 62%, var(--background) 96%)",
-            }}
-          />
-          <span
-            className="absolute inset-x-0 bottom-0 h-1/3"
-            style={{
-              background:
-                "linear-gradient(to bottom, transparent, var(--background))",
-            }}
           />
         </div>
       ) : null}
@@ -103,14 +86,14 @@ export function Hero() {
         </div>
 
         {profile.avatar ? (
-          <div className="relative aspect-[5/4] overflow-hidden rounded-[var(--radius-card)] border border-border bg-surface-2 lg:hidden">
+          <div className="relative mx-auto aspect-[19/20] w-full max-w-sm lg:hidden">
             <Image
               src={profile.avatar}
               alt={profile.fullName ?? profile.firstName}
               fill
               priority
-              sizes="100vw"
-              className="object-cover object-[60%_15%]"
+              sizes="(min-width: 640px) 24rem, 100vw"
+              className="object-contain object-bottom"
             />
           </div>
         ) : null}
