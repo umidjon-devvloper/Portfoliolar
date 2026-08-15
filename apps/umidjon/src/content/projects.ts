@@ -48,6 +48,7 @@ export const projects: Project[] = [
     year: "2026",
     client: null,
     featured: true,
+    // TODO: swap to "/images/projects/sushi-time.webp" once the file is in public/
     cover:
       "https://vjuubkjgs6.ufs.sh/f/ATnCuPXyY61iGtwWFzCgKshzbFy4nfRVW8wJLrAx6IimUM9e",
     gallery: [],
@@ -85,6 +86,7 @@ export const projects: Project[] = [
     year: "2026",
     client: null,
     featured: true,
+    // TODO: swap to "/images/projects/zapchasty.webp" once the file is in public/
     cover:
       "https://vjuubkjgs6.ufs.sh/f/ATnCuPXyY61itvP4Op7lcRD4YAzEN6SPXovQgifU1IG20bBt",
     gallery: [],

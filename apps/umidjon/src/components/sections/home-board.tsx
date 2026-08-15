@@ -171,7 +171,7 @@ export function HomeBoard() {
 
       {/* Divider — spans both columns */}
       <div
-        className="my-6 h-px w-full bg-border xl:col-span-2 xl:row-start-2 xl:my-0 xl:mb-6"
+        className="my-8 h-px w-full bg-border-strong opacity-70 xl:col-span-2 xl:row-start-2 xl:my-0 xl:mb-8 xl:mt-8"
         aria-hidden
       />
 
