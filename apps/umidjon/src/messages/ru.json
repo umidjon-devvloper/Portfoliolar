@@ -154,7 +154,11 @@
     "caseStudy": "Подробнее",
     "liveDemo": "Открыть сайт",
     "backToWork": "Назад к работам",
-    "featuredBadge": "Избранный проект"
+    "featuredBadge": "Избранный проект",
+    "view": {
+      "grid": "Сетка",
+      "list": "Список"
+    }
   },
   "services": {
     "title": "Услуги",

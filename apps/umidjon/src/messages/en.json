@@ -154,7 +154,11 @@
     "caseStudy": "Case study",
     "liveDemo": "Live demo",
     "backToWork": "Back to work",
-    "featuredBadge": "Featured project"
+    "featuredBadge": "Featured project",
+    "view": {
+      "grid": "Grid view",
+      "list": "List view"
+    }
   },
   "services": {
     "title": "Services",

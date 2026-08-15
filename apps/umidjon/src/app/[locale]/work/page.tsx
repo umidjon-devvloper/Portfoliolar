@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Container } from "@/components/ui/container";
-import { Breadcrumb } from "@/components/ui/breadcrumb";
-import { PageHeading } from "@/components/ui/section-header";
+import { PageHeader } from "@/components/ui/page-header";
 import { CtaBanner } from "@/components/ui/cta-banner";
+import { WorkVisual } from "@/components/sections/work-visual";
 import { WorkIndex } from "@/components/sections/work-index";
 
 type PageProps = { params: Promise<{ locale: string }> };
@@ -21,10 +21,16 @@ export default async function WorkPage({ params }: PageProps) {
 
   return (
     <>
-      <Container className="flex flex-col gap-3.5 py-8 sm:py-10">
-        <Breadcrumb current={t("breadcrumb")} />
-        <PageHeading lead={t("headingLead")} accent={t("headingAccent")} />
-        <p className="max-w-xl leading-relaxed text-muted">{t("subtitle")}</p>
+      <Container className="border-b border-border py-8 sm:py-10">
+        <PageHeader
+          breadcrumb={t("breadcrumb")}
+          index="03"
+          lead={t("headingLead")}
+          accent={t("headingAccent")}
+          description={t("subtitle")}
+          caret
+          visual={<WorkVisual />}
+        />
       </Container>
 
       <WorkIndex />

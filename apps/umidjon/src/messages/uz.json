@@ -154,7 +154,11 @@
     "caseStudy": "Batafsil",
     "liveDemo": "Saytni ochish",
     "backToWork": "Ishlarga qaytish",
-    "featuredBadge": "Tanlangan loyiha"
+    "featuredBadge": "Tanlangan loyiha",
+    "view": {
+      "grid": "Panjara ko'rinishi",
+      "list": "Ro'yxat ko'rinishi"
+    }
   },
   "services": {
     "title": "Xizmatlar",
