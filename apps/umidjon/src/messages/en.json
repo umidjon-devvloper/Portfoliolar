@@ -75,7 +75,11 @@
     "journeyTitle": "My journey",
     "numbersTitle": "Some numbers",
     "quote": "The best way to predict the future is to build it.",
-    "quoteAuthor": "Alan Kay"
+    "quoteAuthor": "Alan Kay",
+    "birthValue": "1 January 2005",
+    "educationValue": "Bukhara State University (2022–2026)",
+    "toolsTitle": "Skills & tools",
+    "agencyNote": "My agency site"
   },
   "strengths": {
     "fullStackThinking": "Full-stack thinking — I understand frontend, backend, database and deployment as one system",

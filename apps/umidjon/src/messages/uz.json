@@ -75,7 +75,11 @@
     "journeyTitle": "Mening yo'lim",
     "numbersTitle": "Raqamlarda",
     "quote": "Kelajakni bashorat qilishning eng yaxshi yo'li — uni qurish.",
-    "quoteAuthor": "Alan Kay"
+    "quoteAuthor": "Alan Kay",
+    "birthValue": "1-yanvar, 2005",
+    "educationValue": "Buxoro Davlat Universiteti (2022–2026)",
+    "toolsTitle": "Ko'nikma va vositalar",
+    "agencyNote": "Agentlik saytim"
   },
   "strengths": {
     "fullStackThinking": "Full-stack fikrlash — frontend, backend, database va deploymentni birgalikda tushunaman",
