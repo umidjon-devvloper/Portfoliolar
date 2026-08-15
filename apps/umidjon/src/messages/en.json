@@ -42,7 +42,8 @@
     "scrollHint": "Scroll",
     "greeting": "Hello, I'm",
     "available": "Available for freelance work",
-    "availableBadge": "Available for new opportunities"
+    "availableBadge": "Available for new opportunities",
+    "availableNote": "Let's build something together!"
   },
   "about": {
     "title": "About",
@@ -259,7 +260,8 @@
   "cta": {
     "title": "Have a project in mind?",
     "subtitle": "Let's work together and build something great.",
-    "button": "Start a conversation"
+    "button": "Start a conversation",
+    "railTitle": "Let's work together"
   },
   "footer": {
     "rights": "All rights reserved.",

@@ -24,9 +24,9 @@ export function Sidebar() {
   ].filter((item) => item !== null);
 
   return (
-    <aside className="fixed inset-y-0 left-0 z-40 hidden w-[var(--sidebar)] flex-col justify-between border-r border-border bg-surface px-4 py-7 lg:flex">
+    <aside className="fixed inset-y-0 left-0 z-40 hidden w-[var(--sidebar)] flex-col justify-between border-r border-border bg-surface px-3 py-6 lg:flex">
       <div className="flex flex-col gap-9">
-        <Link href="/" className="px-2 text-3xl font-extrabold tracking-tight">
+        <Link href="/" className="px-3 text-[2rem] font-extrabold leading-none tracking-tight">
           U<span className="text-accent">.</span>
         </Link>
 
@@ -41,17 +41,17 @@ export function Sidebar() {
                 href={item.href}
                 aria-current={active ? "page" : undefined}
                 className={cn(
-                  "relative flex items-center gap-3 rounded-[var(--radius-sm)] px-3 py-2.5 text-sm transition-colors",
+                  "relative flex items-center gap-2.5 rounded-[var(--radius-sm)] px-3 py-2.5 text-[0.8125rem] transition-colors",
                   active
-                    ? "bg-accent-soft text-accent"
+                    ? "bg-accent-soft font-medium text-accent"
                     : "text-muted hover:bg-surface-2 hover:text-foreground",
                 )}
               >
                 {active ? (
-                  <span className="absolute inset-y-1.5 -left-4 w-0.5 rounded-r bg-accent" />
+                  <span className="absolute inset-y-1.5 -left-3 w-[3px] rounded-r bg-accent" />
                 ) : null}
                 <Icon className="h-4 w-4 shrink-0" />
-                <span className="truncate">{t(item.id)}</span>
+                <span>{t(item.id)}</span>
               </Link>
             );
           })}
@@ -59,7 +59,7 @@ export function Sidebar() {
       </div>
 
       <div className="flex flex-col gap-5">
-        <p className="px-2 text-xs leading-relaxed text-muted">{tc("sidebarNote")}</p>
+        <p className="px-3 text-[0.6875rem] leading-relaxed text-muted">{tc("sidebarNote")}</p>
 
         <Link
           href="/contact"
@@ -69,7 +69,7 @@ export function Sidebar() {
           <icons.ArrowUpRight className="h-3.5 w-3.5" />
         </Link>
 
-        <div className="flex flex-wrap gap-3 px-2">
+        <div className="flex flex-wrap gap-3 px-3">
           {socials.map((social) => (
             <a
               key={social.label}

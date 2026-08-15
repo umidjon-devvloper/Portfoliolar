@@ -42,7 +42,8 @@
     "scrollHint": "Pastga",
     "greeting": "Salom, men",
     "available": "Freelance ishlarga ochiq",
-    "availableBadge": "Yangi imkoniyatlarga ochiq"
+    "availableBadge": "Yangi imkoniyatlarga ochiq",
+    "availableNote": "Keling, birga zo'r narsa quramiz!"
   },
   "about": {
     "title": "Men haqimda",
@@ -259,7 +260,8 @@
   "cta": {
     "title": "Loyiha g'oyangiz bormi?",
     "subtitle": "Keling, birga zo'r narsa quramiz.",
-    "button": "Suhbatni boshlash"
+    "button": "Suhbatni boshlash",
+    "railTitle": "Birga ishlaymiz"
   },
   "footer": {
     "rights": "Barcha huquqlar himoyalangan.",

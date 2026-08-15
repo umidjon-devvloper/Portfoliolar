@@ -67,7 +67,7 @@ export default async function AboutPage({ params }: PageProps) {
 
   return (
     <>
-      <Container className="flex flex-col gap-4 py-8 sm:py-12">
+      <Container className="flex flex-col gap-3.5 py-8 sm:py-10">
         <Breadcrumb current={t("breadcrumb")} />
         <PageHeading lead={t("headingLead")} accent={t("headingAccent")} />
       </Container>

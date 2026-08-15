@@ -2,41 +2,53 @@ import { ArrowRight, CircleCheck, Download, MapPin } from "lucide-react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { Container } from "@/components/ui/container";
-import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
 import { buttonVariants } from "@/components/ui/button";
 import { profile } from "@/content/profile";
 
 const codeLines = [
-  { text: "const developer = {", tone: "plain" },
-  { text: '  name: "Umidjon",', tone: "value" },
-  { text: '  role: "Full-Stack Developer",', tone: "value" },
-  { text: '  passion: "Building digital products",', tone: "value" },
-  { text: '  skills: ["Next.js", "React", "Node.js"],', tone: "value" },
-  { text: '  focus: "Performance & User Experience"', tone: "value" },
-  { text: "};", tone: "plain" },
-] as const;
+  { text: "const developer = {", accent: false },
+  { text: '  name: "Umidjon",', accent: true },
+  { text: '  role: "Full-Stack Developer",', accent: true },
+  { text: '  passion: "Building digital products",', accent: true },
+  { text: '  skills: ["Next.js", "React", "Node.js"],', accent: true },
+  { text: '  focus: "Performance & User Experience"', accent: true },
+  { text: "};", accent: false },
+];
 
 export function Hero() {
   const t = useTranslations("hero");
 
   return (
-    <section className="relative overflow-hidden border-b border-border">
-      <div className="pointer-events-none absolute inset-0 glow" aria-hidden />
+    <section className="relative border-b border-border">
+      {/* Portrait sits behind the copy on desktop, edge to edge. */}
+      {profile.avatar ? (
+        <div
+          className="pointer-events-none absolute inset-y-0 right-0 hidden w-[62%] lg:block"
+          aria-hidden
+        >
+          <Image
+            src={profile.avatar}
+            alt=""
+            fill
+            priority
+            sizes="62vw"
+            className="portrait-mask object-cover object-[center_18%]"
+          />
+        </div>
+      ) : null}
 
-      <Container className="relative grid gap-10 py-10 sm:py-14 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-12">
+      <div className="relative grid gap-8 px-5 py-10 sm:px-7 lg:grid-cols-[minmax(0,30rem)_1fr] lg:items-center lg:gap-10 lg:py-16 xl:px-10">
         <div className="enter flex flex-col gap-5">
           <span className="text-sm text-muted">👋 {t("greeting")}</span>
 
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-0.5">
             <h1 className="type-hero">{profile.firstName}</h1>
             <p className="type-section font-bold">
               Full-Stack <span className="text-accent">Developer</span>
             </p>
           </div>
 
-          <p className="max-w-md leading-relaxed text-muted">{t("subtitle")}</p>
+          <p className="max-w-sm leading-relaxed text-muted">{t("subtitle")}</p>
 
           <div className="flex flex-wrap gap-3">
             <Link href="/work" className={buttonVariants({ size: "lg" })}>
@@ -66,30 +78,22 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="enter flex flex-col gap-4" style={{ animationDelay: "120ms" }}>
-          <div className="relative overflow-hidden rounded-[var(--radius-card)] border border-border bg-surface-2">
-            {profile.avatar ? (
-              <Image
-                src={profile.avatar}
-                alt={profile.fullName ?? profile.firstName}
-                width={640}
-                height={640}
-                priority
-                sizes="(min-width: 1024px) 40vw, 100vw"
-                className="aspect-[4/3] w-full object-cover object-top"
-              />
-            ) : (
-              <div className="aspect-[4/3] w-full" />
-            )}
-
-            <div className="absolute bottom-3 left-3">
-              <Badge tone="live" className="bg-surface/90 backdrop-blur">
-                {t("availableBadge")}
-              </Badge>
-            </div>
+        {/* Mobile portrait: no bleed, a plain framed image. */}
+        {profile.avatar ? (
+          <div className="relative aspect-[5/4] overflow-hidden rounded-[var(--radius-card)] border border-border bg-surface-2 lg:hidden">
+            <Image
+              src={profile.avatar}
+              alt={profile.fullName ?? profile.firstName}
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover object-[center_15%]"
+            />
           </div>
+        ) : null}
 
-          <Card hover={false} className="hidden overflow-hidden p-0 sm:block">
+        <div className="enter flex flex-col gap-3 lg:ml-auto lg:w-[26rem]" style={{ animationDelay: "120ms" }}>
+          <div className="overflow-hidden rounded-[var(--radius-card)] border border-border bg-surface/95 shadow-[var(--shadow-card)] backdrop-blur">
             <div className="flex items-center gap-2 border-b border-border px-4 py-2.5">
               <span className="h-2.5 w-2.5 rounded-full bg-red-400/80" />
               <span className="h-2.5 w-2.5 rounded-full bg-amber-400/80" />
@@ -103,16 +107,27 @@ export function Hero() {
                 {codeLines.map((line, index) => (
                   <div key={line.text} className="flex gap-3">
                     <span className="select-none text-muted/50">{index + 1}</span>
-                    <span className={line.tone === "value" ? "text-accent" : ""}>
+                    <span className={line.accent ? "text-accent" : ""}>
                       {line.text}
                     </span>
                   </div>
                 ))}
               </code>
             </pre>
-          </Card>
+          </div>
+
+          <div className="flex items-center gap-3 rounded-[var(--radius-card)] border border-border bg-surface/95 px-4 py-3 backdrop-blur">
+            <span className="relative flex h-2 w-2 shrink-0">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-70" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
+            </span>
+            <div className="flex flex-col">
+              <span className="text-sm font-semibold">{t("availableBadge")}</span>
+              <span className="text-xs text-muted">{t("availableNote")}</span>
+            </div>
+          </div>
         </div>
-      </Container>
+      </div>
     </section>
   );
 }

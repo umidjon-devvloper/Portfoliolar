@@ -4,7 +4,6 @@ import { TechIcon } from "@/components/ui/tech-icon";
 import { Reveal, Stagger } from "@/components/motion/reveal";
 import { skillCategories } from "@/content/skills";
 
-/** The core stack only — one row of marks, no scrolling ticker. */
 const featured = [
   "Next.js",
   "React",
@@ -28,26 +27,28 @@ export function TechStrip() {
   );
 
   return (
-    <section className="border-b border-border py-12 sm:py-16">
-      <Container className="flex flex-col gap-7">
+    <section className="border-y border-border py-10">
+      <Container className="flex flex-col gap-5">
         <Reveal>
-          <SectionTitle title={t("stripTitle")} />
+          <span className="eyebrow">{t("stripTitle")}</span>
         </Reveal>
 
         <Stagger>
-          <ul className="grid grid-cols-3 gap-3 sm:grid-cols-5">
+          <ul className="grid grid-cols-3 gap-3 sm:grid-cols-5 lg:grid-cols-10">
             {featured.map((name, index) => (
               <li
                 key={name}
-                className="stagger-item card card-hover flex flex-col items-center gap-2 p-4"
-                style={{ transitionDelay: `${index * 40}ms` }}
+                className="stagger-item card card-hover flex flex-col items-center gap-2 p-3"
+                style={{ transitionDelay: `${index * 35}ms` }}
               >
                 <TechIcon
                   slug={lookup.get(name) ?? null}
                   fallback={name}
-                  className="h-6 w-6"
+                  className="h-5 w-5"
                 />
-                <span className="text-center text-[0.6875rem] text-muted">{name}</span>
+                <span className="w-full truncate text-center text-[0.625rem] text-muted">
+                  {name}
+                </span>
               </li>
             ))}
           </ul>
@@ -55,8 +56,4 @@ export function TechStrip() {
       </Container>
     </section>
   );
-}
-
-function SectionTitle({ title }: { title: string }) {
-  return <h2 className="type-section text-balance">{title}</h2>;
 }

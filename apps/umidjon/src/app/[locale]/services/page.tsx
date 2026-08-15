@@ -104,7 +104,7 @@ export default async function ServicesPage({ params }: PageProps) {
 
   return (
     <>
-      <Container className="flex flex-col gap-4 py-8 sm:py-12">
+      <Container className="flex flex-col gap-3.5 py-8 sm:py-10">
         <Breadcrumb current={t("breadcrumb")} />
         <PageHeading lead={t("headingLead")} accent={t("headingAccent")} />
         <p className="max-w-xl leading-relaxed text-muted">{t("pageSubtitle")}</p>
@@ -134,7 +134,7 @@ export default async function ServicesPage({ params }: PageProps) {
         ) : null}
       </Container>
 
-      <Container className="py-12 sm:py-16">
+      <Container className="py-10 sm:py-14">
         <CtaBanner />
       </Container>
     </>

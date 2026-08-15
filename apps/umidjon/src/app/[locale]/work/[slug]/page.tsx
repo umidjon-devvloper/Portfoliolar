@@ -168,7 +168,7 @@ export default async function ProjectPage({ params }: PageProps) {
         </Card>
       </Container>
 
-      <Container className="py-12 sm:py-16">
+      <Container className="py-10 sm:py-14">
         <CtaBanner />
       </Container>
     </>

@@ -1,11 +1,7 @@
 import { setRequestLocale } from "next-intl/server";
 import { Hero } from "@/components/sections/hero";
-import { FeaturedWork } from "@/components/sections/featured-work";
-import { TechStrip } from "@/components/sections/tech-strip";
-import { StatsRow } from "@/components/sections/stats-row";
+import { HomeBoard } from "@/components/sections/home-board";
 import { WhatIDo } from "@/components/sections/what-i-do";
-import { Container } from "@/components/ui/container";
-import { CtaBanner } from "@/components/ui/cta-banner";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -16,13 +12,8 @@ export default async function HomePage({ params }: PageProps) {
   return (
     <>
       <Hero />
-      <FeaturedWork />
-      <TechStrip />
-      <StatsRow />
+      <HomeBoard />
       <WhatIDo />
-      <Container className="py-12 sm:py-16">
-        <CtaBanner />
-      </Container>
     </>
   );
 }
