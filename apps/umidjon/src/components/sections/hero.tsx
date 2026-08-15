@@ -22,21 +22,22 @@ export function Hero() {
     <section className="relative isolate border-b border-border lg:h-[33rem]">
       {profile.avatar ? (
         <div
-          className="pointer-events-none absolute inset-y-0 right-0 hidden w-[34rem] xl:w-[40rem] lg:block"
+          className="pointer-events-none absolute inset-y-0 right-0 hidden w-[30rem] lg:block xl:w-[34rem]"
           aria-hidden
         >
+          <span className="absolute inset-0 brush" />
           <Image
             src={profile.avatar}
             alt=""
             fill
             priority
-            sizes="40rem"
-            className="portrait-mask object-cover object-[60%_20%]"
+            sizes="34rem"
+            className="portrait-mask object-cover object-[58%_10%]"
           />
         </div>
       ) : null}
 
-      <div className="relative flex h-full flex-col justify-center gap-6 px-5 py-10 sm:px-7 lg:max-w-[34rem] lg:py-0 xl:px-10">
+      <div className="relative flex h-full flex-col justify-center gap-5 px-5 py-10 sm:px-7 lg:max-w-[36rem] lg:py-0 lg:pl-12 xl:pl-16">
         <span className="text-sm text-muted">👋 {t("greeting")}</span>
 
         <div className="enter flex flex-col gap-1">
@@ -92,7 +93,7 @@ export function Hero() {
       </div>
 
       {/* Floats over the portrait, as in the design. */}
-      <div className="enter relative mt-6 flex flex-col gap-3 px-5 sm:px-7 lg:absolute lg:right-6 lg:top-24 lg:mt-0 lg:w-[23rem] lg:px-0 xl:right-10">
+      <div className="enter relative mt-6 flex flex-col gap-3 px-5 sm:px-7 lg:absolute lg:right-8 lg:top-[8.5rem] lg:mt-0 lg:w-[22.5rem] lg:px-0 xl:right-12">
         <div className="overflow-hidden rounded-[var(--radius-card)] border border-border bg-surface/95 shadow-[var(--shadow-card)] backdrop-blur">
           <div className="flex items-center gap-2 border-b border-border px-4 py-2.5">
             <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />

@@ -45,7 +45,7 @@ export function HomeBoard() {
   );
 
   return (
-    <div className="grid gap-4 px-5 py-6 sm:px-7 xl:grid-cols-[minmax(0,1fr)_24rem] xl:px-10">
+    <div className="grid gap-4 px-5 py-6 sm:px-7 lg:pl-12 lg:pr-8 xl:grid-cols-[minmax(0,1fr)_23rem] xl:pl-16 xl:pr-12">
       <div className="flex flex-col gap-4">
         <Reveal>
           <div className="flex flex-wrap items-center justify-between gap-3">

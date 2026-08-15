@@ -45,17 +45,10 @@ export function ProjectCard({
           </div>
 
           <div className="flex flex-1 flex-col gap-1.5 px-1">
-            <div className="flex items-baseline justify-between gap-2">
-              <h3 className="text-sm font-bold tracking-tight">{project.name}</h3>
-              {project.year ? (
-                <span className="text-[0.625rem] text-muted">{project.year}</span>
-              ) : null}
-            </div>
+            <h3 className="text-sm font-bold tracking-tight">{project.name}</h3>
 
-            <p className="text-[0.6875rem] text-accent">{project.tagline[locale]}</p>
-
-            <p className="line-clamp-3 text-xs leading-relaxed text-muted">
-              {project.solution[locale]}
+            <p className="line-clamp-3 text-[0.6875rem] leading-relaxed text-muted">
+              {project.tagline[locale]} — {project.solution[locale]}
             </p>
 
             {project.stack.length > 0 ? (
