@@ -55,17 +55,7 @@ export function AboutBoard() {
   );
 
   return (
-    <div className="relative grid gap-10 px-5 py-10 sm:px-7 lg:pl-12 lg:pr-8 xl:grid-cols-3 xl:gap-12 xl:pl-16 xl:pr-12">
-      {/* Hairlines between the three columns */}
-      <span
-        className="column-rule pointer-events-none absolute inset-y-10 left-[calc(33.333%-1.5rem)] hidden w-px xl:block"
-        aria-hidden
-      />
-      <span
-        className="column-rule pointer-events-none absolute inset-y-10 left-[calc(66.666%-0.75rem)] hidden w-px xl:block"
-        aria-hidden
-      />
-
+    <div className="grid gap-10 px-5 py-10 sm:px-7 lg:pl-12 lg:pr-8 xl:grid-cols-3 xl:gap-12 xl:pl-16 xl:pr-12">
       {/* My journey — periods in their own column, as in the design */}
       <section className="flex flex-col gap-6">
         <Reveal>
@@ -74,50 +64,50 @@ export function AboutBoard() {
 
         <Stagger>
           <ol className="flex flex-col">
-            {roles.map((role, index) => (
-              <StaggerItem key={role.id} index={index}>
-                <li className="grid grid-cols-[auto_1fr] gap-x-4">
-                  {/* period rail */}
-                  <div className="relative flex items-start gap-3 pr-1">
-                    <span className="relative flex w-2 justify-center">
+            {roles.map((role, index) => {
+              const last = index === roles.length - 1;
+
+              return (
+                <StaggerItem key={role.id} index={index}>
+                  <li className="grid grid-cols-[0.5rem_6.5rem_0.375rem_1fr] items-start gap-x-3">
+                    {/* period node */}
+                    <span className="relative flex h-full justify-center">
+                      {!last ? (
+                        <span className="absolute inset-y-0 top-2 w-px bg-border" aria-hidden />
+                      ) : null}
                       <span
-                        className="absolute inset-y-0 w-px bg-border"
-                        aria-hidden
-                      />
-                      <span
-                        className="relative mt-1.5 h-2 w-2 rounded-full bg-accent ring-4 ring-background"
+                        className="relative mt-1.5 h-2 w-2 rounded-full bg-accent"
                         aria-hidden
                       />
                     </span>
-                    <span className="w-[6.5rem] text-right text-sm text-accent">
+
+                    <span className="text-right text-sm leading-6 text-accent">
                       {te(`${role.id}.shortPeriod`)}
                     </span>
-                  </div>
 
-                  {/* content rail */}
-                  <div className="relative flex gap-4 pb-8">
-                    <span className="relative flex w-1.5 shrink-0 justify-center">
+                    {/* content node */}
+                    <span className="relative flex h-full justify-center">
+                      {!last ? (
+                        <span className="absolute inset-y-0 top-2 w-px bg-border" aria-hidden />
+                      ) : null}
                       <span
-                        className="absolute inset-y-0 w-px bg-border"
-                        aria-hidden
-                      />
-                      <span
-                        className="relative mt-1.5 h-1.5 w-1.5 rounded-full bg-accent ring-4 ring-background"
+                        className="relative mt-2 h-1.5 w-1.5 rounded-full bg-accent"
                         aria-hidden
                       />
                     </span>
-                    <div className="flex flex-col gap-1.5">
-                      <h3 className="font-semibold leading-none">
+
+                    <div className="flex flex-col gap-1.5 pb-8">
+                      <h3 className="font-semibold leading-6">
                         {te(`${role.id}.title`)}
                       </h3>
                       <p className="text-xs leading-relaxed text-muted">
                         {te(`${role.id}.description`)}
                       </p>
                     </div>
-                  </div>
-                </li>
-              </StaggerItem>
-            ))}
+                  </li>
+                </StaggerItem>
+              );
+            })}
           </ol>
         </Stagger>
 
@@ -139,12 +129,12 @@ export function AboutBoard() {
       </section>
 
       {/* Skills & tools — plain icon grids, no frames */}
-      <section className="flex flex-col gap-6">
+      <section className="col-divider flex flex-col gap-6">
         <Reveal>
           <ColumnHeading>{t("toolsTitle")}</ColumnHeading>
         </Reveal>
 
-        <Stagger className="flex flex-1 flex-col justify-between gap-7">
+        <Stagger className="flex flex-col gap-7">
           {toolGroups.map((group, groupIndex) => (
             <div key={group.id} className="flex flex-col gap-4">
               <h3 className="text-sm font-medium text-accent">{ts(group.id)}</h3>
@@ -172,7 +162,7 @@ export function AboutBoard() {
       </section>
 
       {/* Some numbers */}
-      <section className="flex flex-col gap-6">
+      <section className="col-divider flex flex-col gap-6">
         <Reveal>
           <ColumnHeading>{t("numbersTitle")}</ColumnHeading>
         </Reveal>

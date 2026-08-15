@@ -12,7 +12,7 @@ export function AboutHero() {
   return (
     <section className="relative isolate border-b border-border lg:h-[30rem]">
       <div
-        className="pointer-events-none absolute inset-y-0 left-[56%] hidden w-[40rem] -translate-x-1/2 lg:block"
+        className="pointer-events-none absolute inset-y-0 left-[50%] hidden w-[40rem] -translate-x-1/2 lg:block"
         aria-hidden
       >
         <HeroBackdrop />
@@ -20,7 +20,7 @@ export function AboutHero() {
 
       {profile.avatar ? (
         <div
-          className="pointer-events-none absolute bottom-0 left-[55%] hidden h-[98%] w-[32rem] -translate-x-1/2 lg:block xl:left-[56%] xl:w-[36rem]"
+          className="pointer-events-none absolute bottom-0 left-[49%] hidden h-[98%] w-[32rem] -translate-x-1/2 lg:block xl:left-[50%] xl:w-[36rem]"
           aria-hidden
         >
           <Image

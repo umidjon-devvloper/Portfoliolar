@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Caveat, Inter, JetBrains_Mono } from "next/font/google";
+import { Great_Vibes, Inter, JetBrains_Mono } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -20,9 +20,9 @@ const inter = Inter({
   display: "swap",
 });
 
-const signature = Caveat({
+const signature = Great_Vibes({
   subsets: ["latin"],
-  weight: ["600"],
+  weight: ["400"],
   variable: "--font-signature",
   display: "swap",
 });
