@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { buttonVariants } from "@/components/ui/button";
 import { profile } from "@/content/profile";
+import { HeroBackdrop } from "./hero-backdrop";
 
 const codeLines = [
   { text: "const developer = {", accent: false },
@@ -20,19 +21,25 @@ export function Hero() {
 
   return (
     <section className="relative isolate border-b border-border lg:h-[33rem]">
+      <div
+        className="pointer-events-none absolute inset-y-0 right-0 hidden w-[34rem] lg:block xl:w-[40rem]"
+        aria-hidden
+      >
+        <HeroBackdrop />
+      </div>
+
       {profile.avatar ? (
         <div
-          className="pointer-events-none absolute inset-y-0 right-0 hidden w-[30rem] lg:block xl:w-[34rem]"
+          className="pointer-events-none absolute bottom-0 hidden lg:right-[15rem] lg:block lg:h-[88%] lg:w-[19rem] xl:right-[19rem] xl:w-[22rem]"
           aria-hidden
         >
-          <span className="absolute inset-0 brush" />
           <Image
             src={profile.avatar}
             alt=""
             fill
             priority
-            sizes="34rem"
-            className="portrait-mask object-cover object-[58%_10%]"
+            sizes="22rem"
+            className="portrait-mask object-contain object-bottom"
           />
         </div>
       ) : null}
