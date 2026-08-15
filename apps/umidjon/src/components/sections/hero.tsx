@@ -22,7 +22,7 @@ export function Hero() {
   return (
     <section className="relative isolate border-b border-border lg:h-[33rem]">
       <div
-        className="pointer-events-none absolute inset-y-0 left-[46%] hidden w-[40rem] -translate-x-1/2 lg:block xl:left-[47%]"
+        className="pointer-events-none absolute inset-y-0 left-[45%] hidden w-[42rem] -translate-x-1/2 lg:block xl:left-[46%]"
         aria-hidden
       >
         <HeroBackdrop />
@@ -30,7 +30,7 @@ export function Hero() {
 
       {profile.avatar ? (
         <div
-          className="pointer-events-none absolute bottom-0 left-[46%] hidden h-[96%] w-[30rem] -translate-x-1/2 lg:block xl:left-[47%] xl:w-[34rem]"
+          className="pointer-events-none absolute bottom-0 left-[45%] hidden h-[98%] w-[34rem] -translate-x-1/2 lg:block xl:left-[46%] xl:w-[38rem]"
           aria-hidden
         >
           <Image
@@ -38,7 +38,7 @@ export function Hero() {
             alt=""
             fill
             priority
-            sizes="34rem"
+            sizes="38rem"
             className="object-contain object-bottom"
           />
         </div>
@@ -86,7 +86,7 @@ export function Hero() {
         </div>
 
         {profile.avatar ? (
-          <div className="relative mx-auto aspect-[19/20] w-full max-w-sm lg:hidden">
+          <div className="relative mx-auto aspect-[109/100] w-full max-w-sm lg:hidden">
             <Image
               src={profile.avatar}
               alt={profile.fullName ?? profile.firstName}
