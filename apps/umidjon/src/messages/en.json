@@ -11,7 +11,10 @@
     "resume": "Resume",
     "contact": "Contact",
     "openMenu": "Open menu",
-    "closeMenu": "Close menu"
+    "closeMenu": "Close menu",
+    "work": "Work",
+    "skills": "Skills",
+    "experience": "Experience"
   },
   "common": {
     "toggleTheme": "Toggle theme",
@@ -20,13 +23,15 @@
     "viewAll": "View all",
     "backToProjects": "Back to projects",
     "loading": "Loading",
-    "comingSoon": "Coming soon"
+    "comingSoon": "Coming soon",
+    "letsTalk": "Let's talk",
+    "sidebarNote": "Let's build something amazing together."
   },
   "hero": {
     "eyebrow": "Full Stack Web & Mobile Developer",
-    "subtitle": "I work with React, Next.js, React Native and Node.js. Not just code — products that deliver.",
-    "primaryCta": "View projects",
-    "secondaryCta": "Get in touch",
+    "subtitle": "I build modern web and mobile products that are fast, scalable and user-friendly.",
+    "primaryCta": "View my work",
+    "secondaryCta": "Download CV",
     "titleLead": "Not just code —",
     "titleAccent": "products that move",
     "titleTail": "the business",
@@ -34,14 +39,17 @@
     "railAvailable": "Open to projects",
     "railTime": "Local time",
     "railBase": "Based in",
-    "scrollHint": "Scroll"
+    "scrollHint": "Scroll",
+    "greeting": "Hello, I'm",
+    "available": "Available for freelance work",
+    "availableBadge": "Available for new opportunities"
   },
   "about": {
     "title": "About",
-    "shortBio": "Full Stack Web & Mobile Developer. I cover the whole chain, from idea to the app stores.",
-    "longBio": "I build websites, mobile apps, backend systems and SaaS products, across frontend, backend and mobile.",
+    "shortBio": "I'm Umidjon, a Full-Stack Developer who enjoys turning ideas into real digital products.",
+    "longBio": "I build websites, mobile apps, backend systems and SaaS products, working across frontend, backend and mobile.",
     "workStyleTitle": "How I work",
-    "workStyle": "I don't treat a project as only frontend or only backend. I understand the full Idea → Design → Development → Backend → Mobile/Web → Deployment → Business chain and take it as far as I can on my own.",
+    "workStyle": "I don't treat a project as only frontend or only backend. I cover the whole chain, from idea through to the app stores.",
     "strengthsTitle": "Strengths",
     "goalsTitle": "Goals",
     "partnersTitle": "Partners",
@@ -49,7 +57,18 @@
     "educationTitle": "Education",
     "locationLabel": "Location",
     "label": "Who",
-    "roleLabel": "Role"
+    "roleLabel": "Role",
+    "pageTitle": "About",
+    "breadcrumb": "About",
+    "headingLead": "About",
+    "headingAccent": "me",
+    "birth": "Birth",
+    "education": "Education",
+    "languages": "Languages",
+    "languagesValue": "Uzbek (native) · Russian · English",
+    "location": "Location",
+    "focus": "Focus",
+    "focusValue": "Building products · Solving problems · Learning"
   },
   "strengths": {
     "fullStackThinking": "Full-stack thinking — I understand frontend, backend, database and deployment as one system",
@@ -80,12 +99,19 @@
       "core": "Core stack",
       "regular": "Regular",
       "familiar": "Familiar"
-    }
+    },
+    "pageTitle": "Skills",
+    "breadcrumb": "Skills",
+    "headingLead": "My",
+    "headingAccent": "skills",
+    "pageSubtitle": "The technologies I use to build fast, scalable digital products.",
+    "stripTitle": "Technologies I work with",
+    "allSkills": "All skills"
   },
   "projects": {
-    "title": "Projects",
-    "subtitle": "Every project: problem, solution, result.",
-    "featuredTitle": "Selected projects",
+    "title": "Work",
+    "subtitle": "Every project was built to solve a real problem.",
+    "featuredTitle": "Recent projects",
     "filterAll": "All",
     "empty": "No projects in this category yet",
     "problem": "Problem",
@@ -106,7 +132,16 @@
       "ecommerce": "E-commerce",
       "mobile": "Mobile app",
       "business": "Business"
-    }
+    },
+    "breadcrumb": "Work",
+    "headingLead": "My",
+    "headingAccent": "work",
+    "featuredEyebrow": "Featured work",
+    "client": "Client",
+    "caseStudy": "Case study",
+    "liveDemo": "Live demo",
+    "backToWork": "Back to work",
+    "featuredBadge": "Featured project"
   },
   "services": {
     "title": "Services",
@@ -124,20 +159,20 @@
       "description": "Payments, cart and admin panel — full control over sales."
     },
     "mobile": {
-      "title": "Mobile app",
-      "description": "Cross-platform iOS and Android apps that feel native."
+      "title": "Mobile app development",
+      "description": "Cross-platform apps for iOS and Android."
     },
     "backend": {
-      "title": "Backend / API",
-      "description": "Secure, scalable server infrastructure with REST/GraphQL APIs."
+      "title": "Backend development",
+      "description": "Secure, scalable backend systems and APIs."
     },
     "uiux": {
       "title": "UI/UX design",
-      "description": "Brand-level product design built around the user."
+      "description": "Clean, modern and user-centred product design."
     },
     "saas": {
-      "title": "SaaS products",
-      "description": "Subscription models, multi-tenant architecture and payment integrations."
+      "title": "SaaS development",
+      "description": "End-to-end SaaS with subscription, billing and multi-tenancy."
     },
     "bots": {
       "title": "Telegram bots",
@@ -145,7 +180,21 @@
     },
     "label": "Services & pricing",
     "agencyTitle": "See pricing",
-    "agencySubtitle": "Full price list and packages on the agency site"
+    "agencySubtitle": "Full price list on the agency site",
+    "pageTitle": "Services",
+    "breadcrumb": "Services",
+    "headingLead": "Services I",
+    "headingAccent": "provide",
+    "pageSubtitle": "I help startups and businesses turn ideas into scalable digital products.",
+    "learnMore": "Learn more",
+    "web": {
+      "title": "Web development",
+      "description": "Modern, responsive and fast websites and web applications."
+    },
+    "seo": {
+      "title": "Performance & SEO",
+      "description": "Speed, performance and search visibility."
+    }
   },
   "contact": {
     "title": "Contact",
@@ -165,7 +214,37 @@
       "emailInvalid": "Enter a valid email",
       "messageShort": "Message must be at least 10 characters"
     },
-    "label": "Contact"
+    "label": "Contact",
+    "pageTitle": "Contact",
+    "breadcrumb": "Contact",
+    "headingLead": "Let's",
+    "headingAccent": "connect",
+    "pageSubtitle": "Have a project in mind, or just want to say hello? I'd love to hear from you.",
+    "formTitle": "Send me a message",
+    "email": "Email",
+    "phone": "Phone",
+    "telegram": "Telegram",
+    "location": "Location",
+    "emailNote": "Send me an email",
+    "phoneNote": "Mon–Fri, 10:00–19:00",
+    "telegramNote": "Let's chat",
+    "locationNote": "Available worldwide",
+    "mapTitle": "Where I work",
+    "privacy": "Your information is safe with me.",
+    "subjectLabel": "Subject",
+    "subjectPlaceholder": "Subject",
+    "fast": {
+      "title": "Fast response",
+      "description": "I usually reply within 24 hours."
+    },
+    "open": {
+      "title": "Open to opportunities",
+      "description": "Available for freelance and full-time projects."
+    },
+    "hours": {
+      "title": "Working hours",
+      "description": "Mon–Fri, 10:00–19:00 (GMT+5)."
+    }
   },
   "resume": {
     "title": "Resume",
@@ -178,20 +257,26 @@
     "label": "Resume"
   },
   "cta": {
-    "title": "Have a project?",
-    "subtitle": "Let's turn the idea into a product.",
-    "button": "Get in touch"
+    "title": "Have a project in mind?",
+    "subtitle": "Let's work together and build something great.",
+    "button": "Start a conversation"
   },
   "footer": {
-    "rights": "All rights reserved",
+    "rights": "All rights reserved.",
     "builtWith": "Next.js — built in Bukhara",
     "pages": "Pages",
-    "elsewhere": "Elsewhere"
+    "elsewhere": "Elsewhere",
+    "tagline": "Building digital products that solve real problems."
   },
   "notFound": {
     "title": "Page not found",
-    "description": "The page you're looking for doesn't exist or has moved.",
-    "back": "Go home"
+    "description": "Looks like you've taken a wrong turn in the code. This page doesn't exist or has been moved.",
+    "back": "Go home",
+    "oops": "Oops!",
+    "home": "Go back home",
+    "work": "View my work",
+    "hint": "Don't worry — even the best developers sometimes get lost in the final build. 🚀",
+    "quickLinks": "You might want to go to"
   },
   "error": {
     "title": "Something went wrong",
@@ -205,7 +290,7 @@
     "response": "Hours to reply"
   },
   "process": {
-    "title": "How it works",
+    "title": "Simple. Transparent. Effective.",
     "subtitle": "From idea to launch — you take part at every stage",
     "brief": {
       "title": "Brief and analysis",
@@ -222,6 +307,27 @@
     "launch": {
       "title": "Launch",
       "description": "Testing, deployment and one month of free technical support."
+    },
+    "eyebrow": "My process",
+    "discuss": {
+      "title": "Discuss",
+      "description": "We discuss your idea, requirements and goals."
+    },
+    "plan": {
+      "title": "Plan",
+      "description": "I plan the features, timeline and technology stack."
+    },
+    "build": {
+      "title": "Build",
+      "description": "I build your product with clean, scalable code."
+    },
+    "deliver": {
+      "title": "Deliver",
+      "description": "Tested, optimised and delivered to you."
+    },
+    "support": {
+      "title": "Support",
+      "description": "Ongoing support and future improvements."
     }
   },
   "stack": {
@@ -247,6 +353,51 @@
     "release": {
       "title": "Release",
       "description": "Deployment, domain, SSL, store submission and support afterwards."
+    }
+  },
+  "whatIDo": {
+    "title": "What I do",
+    "build": {
+      "title": "Build",
+      "description": "Clean, scalable solutions built with modern technologies."
+    },
+    "solve": {
+      "title": "Solve",
+      "description": "I solve real problems and turn ideas into working products."
+    },
+    "deliver": {
+      "title": "Deliver",
+      "description": "Focused on performance, user experience and real value."
+    }
+  },
+  "experience": {
+    "pageTitle": "Experience",
+    "breadcrumb": "Experience",
+    "headingLead": "My",
+    "headingAccent": "experience",
+    "pageSubtitle": "A path of growth, building products and delivering real value.",
+    "timelineTitle": "Work experience",
+    "current": "Current",
+    "independent": "Independent",
+    "fullstack": {
+      "period": "May 2025 — present",
+      "title": "Full-Stack Developer",
+      "description": "Building scalable web and mobile applications for clients."
+    },
+    "freelance": {
+      "period": "May 2023 — April 2025",
+      "title": "Freelance Developer",
+      "description": "Worked with clients on web and mobile projects."
+    },
+    "frontend": {
+      "period": "January 2022 — April 2023",
+      "title": "Frontend Developer",
+      "description": "Built responsive interfaces with modern technologies."
+    },
+    "junior": {
+      "period": "June 2021 — December 2021",
+      "title": "Junior Developer",
+      "description": "Started out in development and learned the fundamentals of the web."
     }
   }
 }

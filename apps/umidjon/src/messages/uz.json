@@ -9,9 +9,12 @@
     "projects": "Loyihalar",
     "services": "Xizmatlar",
     "resume": "Rezyume",
-    "contact": "Bog'lanish",
+    "contact": "Aloqa",
     "openMenu": "Menyuni ochish",
-    "closeMenu": "Menyuni yopish"
+    "closeMenu": "Menyuni yopish",
+    "work": "Ishlar",
+    "skills": "Ko'nikmalar",
+    "experience": "Tajriba"
   },
   "common": {
     "toggleTheme": "Mavzuni almashtirish",
@@ -20,13 +23,15 @@
     "viewAll": "Barchasini ko'rish",
     "backToProjects": "Loyihalarga qaytish",
     "loading": "Yuklanmoqda",
-    "comingSoon": "Tez orada"
+    "comingSoon": "Tez orada",
+    "letsTalk": "Gaplashamiz",
+    "sidebarNote": "Keling, birga zo'r narsa quramiz."
   },
   "hero": {
     "eyebrow": "Full Stack Web & Mobile Developer",
-    "subtitle": "React, Next.js, React Native va Node.js bilan ishlayman. Kod emas — biznesga natija beradigan mahsulot quraman.",
-    "primaryCta": "Loyihalarni ko'rish",
-    "secondaryCta": "Bog'lanish",
+    "subtitle": "Tez, kengayadigan va qulay web hamda mobil mahsulotlar quraman.",
+    "primaryCta": "Ishlarimni ko'rish",
+    "secondaryCta": "CV yuklab olish",
     "titleLead": "Kod emas —",
     "titleAccent": "biznesga natija",
     "titleTail": "beradigan mahsulot quraman",
@@ -34,14 +39,17 @@
     "railAvailable": "Loyihalarga ochiq",
     "railTime": "Mahalliy vaqt",
     "railBase": "Joylashuv",
-    "scrollHint": "Pastga"
+    "scrollHint": "Pastga",
+    "greeting": "Salom, men",
+    "available": "Freelance ishlarga ochiq",
+    "availableBadge": "Yangi imkoniyatlarga ochiq"
   },
   "about": {
     "title": "Men haqimda",
-    "shortBio": "Full Stack Web & Mobile Developer. G'oyadan store'ga chiqarishgacha bo'lgan butun zanjirni o'zim yopaman.",
+    "shortBio": "Men Umidjon — g'oyani real raqamli mahsulotga aylantirishni yoqtiradigan Full-Stack Developer.",
     "longBio": "Web-saytlar, mobil ilovalar, backend tizimlar va SaaS mahsulotlar yarataman. Frontend, backend va mobile — uchalasida ham ishlayman.",
     "workStyleTitle": "Ish uslubim",
-    "workStyle": "Loyihani faqat frontend yoki backend sifatida ko'rmayman. Idea → Design → Development → Backend → Mobile/Web → Deployment → Business jarayonini to'liq tushunib, imkon qadar mustaqil amalga oshiraman.",
+    "workStyle": "Loyihani faqat frontend yoki backend sifatida ko'rmayman. G'oyadan store'ga chiqarishgacha bo'lgan butun zanjirni o'zim yopaman.",
     "strengthsTitle": "Kuchli tomonlarim",
     "goalsTitle": "Maqsadlarim",
     "partnersTitle": "Hamkorlar",
@@ -49,7 +57,18 @@
     "educationTitle": "Ta'lim",
     "locationLabel": "Joylashuv",
     "label": "Kim",
-    "roleLabel": "Lavozim"
+    "roleLabel": "Lavozim",
+    "pageTitle": "Men haqimda",
+    "breadcrumb": "Men haqimda",
+    "headingLead": "Men",
+    "headingAccent": "haqimda",
+    "birth": "Tug'ilgan sana",
+    "education": "Ta'lim",
+    "languages": "Tillar",
+    "languagesValue": "O'zbek (ona tili) · Rus · Ingliz",
+    "location": "Joylashuv",
+    "focus": "Yo'nalish",
+    "focusValue": "Mahsulot qurish · Muammo yechish · O'rganish"
   },
   "strengths": {
     "fullStackThinking": "Full-stack fikrlash — frontend, backend, database va deploymentni birgalikda tushunaman",
@@ -80,12 +99,19 @@
       "core": "Asosiy stack",
       "regular": "Muntazam",
       "familiar": "Tajriba bor"
-    }
+    },
+    "pageTitle": "Ko'nikmalar",
+    "breadcrumb": "Ko'nikmalar",
+    "headingLead": "Mening",
+    "headingAccent": "ko'nikmalarim",
+    "pageSubtitle": "Kengayadigan va tez raqamli mahsulotlar qurish uchun ishlatadigan texnologiyalarim.",
+    "stripTitle": "Ishlatadigan texnologiyalarim",
+    "allSkills": "Barchasi"
   },
   "projects": {
-    "title": "Loyihalar",
-    "subtitle": "Har bir loyiha: muammo, yechim, natija.",
-    "featuredTitle": "Tanlangan loyihalar",
+    "title": "Ishlar",
+    "subtitle": "Har bir loyiha real muammoni hal qilish uchun qilingan.",
+    "featuredTitle": "So'nggi loyihalar",
     "filterAll": "Barchasi",
     "empty": "Bu bo'limda hozircha loyiha yo'q",
     "problem": "Muammo",
@@ -106,7 +132,16 @@
       "ecommerce": "Onlayn do'kon",
       "mobile": "Mobil ilova",
       "business": "Biznes"
-    }
+    },
+    "breadcrumb": "Ishlar",
+    "headingLead": "Mening",
+    "headingAccent": "ishlarim",
+    "featuredEyebrow": "Tanlangan ishlar",
+    "client": "Mijoz",
+    "caseStudy": "Batafsil",
+    "liveDemo": "Saytni ochish",
+    "backToWork": "Ishlarga qaytish",
+    "featuredBadge": "Tanlangan loyiha"
   },
   "services": {
     "title": "Xizmatlar",
@@ -124,20 +159,20 @@
       "description": "To'lov, savat, admin panel — sotuvni to'liq boshqariladigan e-commerce."
     },
     "mobile": {
-      "title": "Mobil ilova",
-      "description": "iOS va Android uchun native tuyg'udagi cross-platform ilovalar."
+      "title": "Mobil ilovalar",
+      "description": "iOS va Android uchun cross-platform ilovalar."
     },
     "backend": {
-      "title": "Backend / API",
-      "description": "Xavfsiz, kengayadigan server infratuzilma va REST/GraphQL API."
+      "title": "Backend development",
+      "description": "Xavfsiz, kengayadigan backend tizimlar va API'lar."
     },
     "uiux": {
       "title": "UI/UX dizayn",
-      "description": "Brend darajasidagi, foydalanuvchini o'ylab yaratilgan mahsulot dizayni."
+      "description": "Toza, zamonaviy va foydalanuvchini o'ylab qilingan dizayn."
     },
     "saas": {
-      "title": "SaaS mahsulotlar",
-      "description": "Obuna modeli, ko'p ijarachi arxitektura va to'lov integratsiyalari."
+      "title": "SaaS development",
+      "description": "Obuna, billing va ko'p ijarachi arxitekturali SaaS yechimlar."
     },
     "bots": {
       "title": "Telegram botlar",
@@ -145,7 +180,21 @@
     },
     "label": "Xizmat va narx",
     "agencyTitle": "Narxlarni ko'rish",
-    "agencySubtitle": "To'liq narxnoma va paketlar agentlik saytida"
+    "agencySubtitle": "To'liq narxnoma agentlik saytida",
+    "pageTitle": "Xizmatlar",
+    "breadcrumb": "Xizmatlar",
+    "headingLead": "Men taklif qiladigan",
+    "headingAccent": "xizmatlar",
+    "pageSubtitle": "Startaplar va bizneslarga g'oyani kengayadigan raqamli mahsulotga aylantirishda yordam beraman.",
+    "learnMore": "Batafsil",
+    "web": {
+      "title": "Web development",
+      "description": "Zamonaviy, moslashuvchan va tez saytlar hamda web ilovalar."
+    },
+    "seo": {
+      "title": "Unumdorlik va SEO",
+      "description": "Tezlik, unumdorlik va qidiruvda ko'rinishni yaxshilash."
+    }
   },
   "contact": {
     "title": "Bog'lanish",
@@ -165,7 +214,37 @@
       "emailInvalid": "To'g'ri email kiriting",
       "messageShort": "Xabar kamida 10 ta belgidan iborat bo'lsin"
     },
-    "label": "Bog'lanish"
+    "label": "Bog'lanish",
+    "pageTitle": "Aloqa",
+    "breadcrumb": "Aloqa",
+    "headingLead": "Keling,",
+    "headingAccent": "bog'lanamiz",
+    "pageSubtitle": "Loyiha g'oyangiz bormi yoki shunchaki salom aytmoqchimisiz? Yozing.",
+    "formTitle": "Xabar yuborish",
+    "email": "Email",
+    "phone": "Telefon",
+    "telegram": "Telegram",
+    "location": "Joylashuv",
+    "emailNote": "Email yozing",
+    "phoneNote": "Du–Ju, 10:00–19:00",
+    "telegramNote": "Tez javob",
+    "locationNote": "Butun dunyo bo'ylab ishlayman",
+    "mapTitle": "Qayerda ishlayman",
+    "privacy": "Ma'lumotlaringiz xavfsiz saqlanadi.",
+    "subjectLabel": "Mavzu",
+    "subjectPlaceholder": "Mavzu",
+    "fast": {
+      "title": "Tez javob",
+      "description": "Odatda 24 soat ichida javob beraman."
+    },
+    "open": {
+      "title": "Ochiqman",
+      "description": "Freelance va doimiy ish takliflariga ochiqman."
+    },
+    "hours": {
+      "title": "Ish vaqti",
+      "description": "Dushanba–Juma, 10:00–19:00 (GMT+5)."
+    }
   },
   "resume": {
     "title": "Rezyume",
@@ -178,20 +257,26 @@
     "label": "Rezyume"
   },
   "cta": {
-    "title": "Loyihangiz bormi?",
-    "subtitle": "G'oyani mahsulotga aylantiramiz.",
-    "button": "Bog'lanish"
+    "title": "Loyiha g'oyangiz bormi?",
+    "subtitle": "Keling, birga zo'r narsa quramiz.",
+    "button": "Suhbatni boshlash"
   },
   "footer": {
-    "rights": "Barcha huquqlar himoyalangan",
+    "rights": "Barcha huquqlar himoyalangan.",
     "builtWith": "Next.js — Buxoroda yozilgan",
     "pages": "Sahifalar",
-    "elsewhere": "Boshqa joylarda"
+    "elsewhere": "Boshqa joylarda",
+    "tagline": "Real muammolarni hal qiladigan raqamli mahsulotlar quraman."
   },
   "notFound": {
     "title": "Sahifa topilmadi",
-    "description": "Siz izlagan sahifa mavjud emas yoki ko'chirilgan.",
-    "back": "Bosh sahifaga"
+    "description": "Kodda noto'g'ri burilish qilgandirsiz. Bu sahifa mavjud emas yoki ko'chirilgan.",
+    "back": "Bosh sahifaga",
+    "oops": "Voy!",
+    "home": "Bosh sahifaga",
+    "work": "Ishlarni ko'rish",
+    "hint": "Xavotir olmang — eng yaxshi dasturchilar ham ba'zan build ichida adashadi. 🚀",
+    "quickLinks": "Balki shu kerakdir"
   },
   "error": {
     "title": "Xatolik yuz berdi",
@@ -205,7 +290,7 @@
     "response": "Ichida javob"
   },
   "process": {
-    "title": "Ish jarayoni",
+    "title": "Oddiy. Shaffof. Samarali.",
     "subtitle": "G'oyadan ishga tushirishgacha — har bosqichda siz ishtirok etasiz",
     "brief": {
       "title": "Brief va tahlil",
@@ -222,6 +307,27 @@
     "launch": {
       "title": "Ishga tushirish",
       "description": "Test, deploy va 1 oy bepul texnik yordam."
+    },
+    "eyebrow": "Ish jarayonim",
+    "discuss": {
+      "title": "Muhokama",
+      "description": "G'oya, talab va maqsadlarni muhokama qilamiz."
+    },
+    "plan": {
+      "title": "Reja",
+      "description": "Funksiyalar, muddat va texnologiyalarni rejalashtiraman."
+    },
+    "build": {
+      "title": "Qurish",
+      "description": "Toza va kengayadigan kod bilan mahsulotni quraman."
+    },
+    "deliver": {
+      "title": "Yetkazish",
+      "description": "Test qilinib, optimallashtirilib topshiriladi."
+    },
+    "support": {
+      "title": "Qo'llab-quvvatlash",
+      "description": "Ishga tushgandan keyingi yordam va yangilanishlar."
     }
   },
   "stack": {
@@ -247,6 +353,51 @@
     "release": {
       "title": "Ishga tushirish",
       "description": "Deploy, domen, SSL, store'ga chiqarish va keyingi qo'llab-quvvatlash."
+    }
+  },
+  "whatIDo": {
+    "title": "Nima qilaman",
+    "build": {
+      "title": "Quraman",
+      "description": "Zamonaviy texnologiyalar bilan toza va kengayadigan yechimlar."
+    },
+    "solve": {
+      "title": "Hal qilaman",
+      "description": "Real muammolarni yechib, g'oyani ishlaydigan mahsulotga aylantiraman."
+    },
+    "deliver": {
+      "title": "Yetkazaman",
+      "description": "Unumdorlik, foydalanuvchi tajribasi va real natijaga e'tibor."
+    }
+  },
+  "experience": {
+    "pageTitle": "Tajriba",
+    "breadcrumb": "Tajriba",
+    "headingLead": "Mening",
+    "headingAccent": "tajribam",
+    "pageSubtitle": "O'sish, mahsulot qurish va real natija yetkazish yo'li.",
+    "timelineTitle": "Ish tajribasi",
+    "current": "Hozir",
+    "independent": "Mustaqil",
+    "fullstack": {
+      "period": "2025-may — hozir",
+      "title": "Full-Stack Developer",
+      "description": "Mijozlar uchun kengayadigan web va mobil ilovalar quraman."
+    },
+    "freelance": {
+      "period": "2023-may — 2025-aprel",
+      "title": "Freelance Developer",
+      "description": "Turli mijozlar bilan web va mobil loyihalarda ishladim."
+    },
+    "frontend": {
+      "period": "2022-yanvar — 2023-aprel",
+      "title": "Frontend Developer",
+      "description": "Zamonaviy texnologiyalar bilan moslashuvchan interfeyslar yaratdim."
+    },
+    "junior": {
+      "period": "2021-iyun — 2021-dekabr",
+      "title": "Junior Developer",
+      "description": "Dasturlash yo'lini boshlab, web development asoslarini o'zlashtirdim."
     }
   }
 }

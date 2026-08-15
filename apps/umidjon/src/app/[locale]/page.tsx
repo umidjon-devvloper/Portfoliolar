@@ -1,16 +1,13 @@
 import { setRequestLocale } from "next-intl/server";
 import { Hero } from "@/components/sections/hero";
-import { Metrics } from "@/components/sections/metrics";
-import { Intro } from "@/components/sections/intro";
-import { StackSpine } from "@/components/sections/stack-spine";
-import { SkillsMatrix } from "@/components/sections/skills-matrix";
-import { FeaturedProjects } from "@/components/sections/featured-projects";
-import { ServicesPreview } from "@/components/sections/services-preview";
-import { Cta } from "@/components/sections/cta";
+import { FeaturedWork } from "@/components/sections/featured-work";
+import { TechStrip } from "@/components/sections/tech-strip";
+import { StatsRow } from "@/components/sections/stats-row";
+import { WhatIDo } from "@/components/sections/what-i-do";
+import { Container } from "@/components/ui/container";
+import { CtaBanner } from "@/components/ui/cta-banner";
 
-type PageProps = {
-  params: Promise<{ locale: string }>;
-};
+type PageProps = { params: Promise<{ locale: string }> };
 
 export default async function HomePage({ params }: PageProps) {
   const { locale } = await params;
@@ -19,13 +16,13 @@ export default async function HomePage({ params }: PageProps) {
   return (
     <>
       <Hero />
-      <Metrics />
-      <Intro />
-      <StackSpine />
-      <SkillsMatrix />
-      <FeaturedProjects />
-      <ServicesPreview />
-      <Cta />
+      <FeaturedWork />
+      <TechStrip />
+      <StatsRow />
+      <WhatIDo />
+      <Container className="py-12 sm:py-16">
+        <CtaBanner />
+      </Container>
     </>
   );
 }

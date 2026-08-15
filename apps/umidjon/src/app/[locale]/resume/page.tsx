@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Download, Printer } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Container } from "@/components/ui/container";
+import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { TechIcon } from "@/components/ui/tech-icon";
 import { buttonVariants } from "@/components/ui/button";
 import { Reveal } from "@/components/motion/reveal";
@@ -39,7 +40,7 @@ export default async function ResumePage({ params }: PageProps) {
         <Reveal>
           <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             <div className="flex flex-col gap-5">
-              <span className="label">{t("label")}</span>
+              <span className="eyebrow">{t("label")}</span>
               <h1 className="font-display type-display text-balance">
                 {t("title")}
               </h1>
@@ -90,7 +91,7 @@ export default async function ResumePage({ params }: PageProps) {
         {education ? (
           <Reveal>
             <div className="flex flex-col gap-3">
-              <h2 className="flex items-center gap-3 label !text-accent">
+              <h2 className="flex items-center gap-3 eyebrow">
                 {t("educationTitle")}
                 <span className="h-px w-8 bg-accent/40" aria-hidden />
               </h2>
@@ -111,7 +112,7 @@ export default async function ResumePage({ params }: PageProps) {
 
         <Reveal>
           <div className="flex flex-col gap-6">
-            <h2 className="flex items-center gap-3 label !text-accent">
+            <h2 className="flex items-center gap-3 eyebrow">
               {t("experienceTitle")}
               <span className="h-px w-8 bg-accent/40" aria-hidden />
             </h2>
@@ -147,7 +148,7 @@ export default async function ResumePage({ params }: PageProps) {
           <div className="flex flex-col gap-8">
             {skillCategories.map((category) => (
               <div key={category.id} className="flex flex-col gap-3">
-                <h3 className="label">{tSkills(category.id)}</h3>
+                <h3 className="eyebrow">{tSkills(category.id)}</h3>
                 <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill) => (
                     <span

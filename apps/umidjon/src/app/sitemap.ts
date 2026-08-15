@@ -6,7 +6,9 @@ import { routing } from "@/i18n/routing";
 const staticPaths = [
   "",
   "/about",
-  "/projects",
+  "/work",
+  "/skills",
+  "/experience",
   "/services",
   "/resume",
   "/contact",
@@ -30,7 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     for (const project of projects) {
       entries.push({
-        url: `${site.url}${prefix}/projects/${project.slug}`,
+        url: `${site.url}${prefix}/work/${project.slug}`,
         lastModified: now,
         changeFrequency: "monthly",
         priority: 0.6,

@@ -1,16 +1,16 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-export function Container({
+export function Card({
   children,
   className,
+  hover = true,
 }: {
   children: ReactNode;
   className?: string;
+  hover?: boolean;
 }) {
   return (
-    <div className={cn("mx-auto w-full max-w-[76rem] px-5 sm:px-8", className)}>
-      {children}
-    </div>
+    <div className={cn("card", hover && "card-hover", className)}>{children}</div>
   );
 }

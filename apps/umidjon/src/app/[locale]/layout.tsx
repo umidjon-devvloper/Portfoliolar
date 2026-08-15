@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono, Manrope } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
-import { Header } from "@/components/layout/header";
+import { Sidebar } from "@/components/layout/sidebar";
+import { TopBar } from "@/components/layout/top-bar";
+import { BottomNav } from "@/components/layout/bottom-nav";
 import { Footer } from "@/components/layout/footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { profile } from "@/content/profile";
@@ -12,9 +14,8 @@ import { site } from "@/content/site";
 import { routing } from "@/i18n/routing";
 import "../globals.css";
 
-const manrope = Manrope({
+const inter = Inter({
   subsets: ["latin", "cyrillic"],
-  weight: ["400", "500", "700", "800"],
   variable: "--font-sans",
   display: "swap",
 });
@@ -128,9 +129,9 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
     <html
       lang={locale}
       suppressHydrationWarning
-      className={`${manrope.variable} ${mono.variable}`}
+      className={`${inter.variable} ${mono.variable}`}
     >
-      <body className="flex min-h-dvh flex-col">
+      <body className="min-h-dvh">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
@@ -138,9 +139,13 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
           disableTransitionOnChange
         >
           <NextIntlClientProvider>
-            <Header />
-            <main className="relative z-10 flex-1">{children}</main>
-            <Footer />
+            <Sidebar />
+            <div className="flex min-h-dvh flex-col lg:pl-[var(--sidebar)]">
+              <TopBar />
+              <main className="flex-1 pb-20 lg:pb-0">{children}</main>
+              <Footer />
+            </div>
+            <BottomNav />
           </NextIntlClientProvider>
         </ThemeProvider>
         <script
