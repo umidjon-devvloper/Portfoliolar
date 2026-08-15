@@ -69,7 +69,13 @@
     "languagesValue": "O'zbek (ona tili) · Rus · Ingliz",
     "location": "Joylashuv",
     "focus": "Yo'nalish",
-    "focusValue": "Mahsulot qurish · Muammo yechish · O'rganish"
+    "focusValue": "Mahsulot qurish · Muammo yechish · O'rganish",
+    "eyebrow": "Tanishib olaylik",
+    "availability": "Butun dunyo bo'ylab freelance ishlarga ochiq",
+    "journeyTitle": "Mening yo'lim",
+    "numbersTitle": "Raqamlarda",
+    "quote": "Kelajakni bashorat qilishning eng yaxshi yo'li — uni qurish.",
+    "quoteAuthor": "Alan Kay"
   },
   "strengths": {
     "fullStackThinking": "Full-stack fikrlash — frontend, backend, database va deploymentni birgalikda tushunaman",
@@ -107,7 +113,9 @@
     "headingAccent": "ko'nikmalarim",
     "pageSubtitle": "Kengayadigan va tez raqamli mahsulotlar qurish uchun ishlatadigan texnologiyalarim.",
     "stripTitle": "Ishlatadigan texnologiyalarim",
-    "allSkills": "Barchasi"
+    "allSkills": "Barchasi",
+    "toolsTitle": "Ko'nikma va vositalar",
+    "tools": "Vositalar"
   },
   "projects": {
     "title": "Ishlar",
@@ -263,7 +271,8 @@
     "button": "Suhbatni boshlash",
     "railTitle": "Birga ishlaymiz",
     "railSubtitle": "Loyiha g'oyangiz bormi? Yordam berishga tayyorman.",
-    "railButton": "Bog'lanish"
+    "railButton": "Bog'lanish",
+    "aboutTitle": "Keling, birga zo'r narsa quramiz!"
   },
   "footer": {
     "rights": "Barcha huquqlar himoyalangan.",

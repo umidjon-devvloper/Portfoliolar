@@ -69,7 +69,13 @@
     "languagesValue": "Uzbek (native) · Russian · English",
     "location": "Location",
     "focus": "Focus",
-    "focusValue": "Building products · Solving problems · Learning"
+    "focusValue": "Building products · Solving problems · Learning",
+    "eyebrow": "Get to know me",
+    "availability": "Available for freelance work worldwide",
+    "journeyTitle": "My journey",
+    "numbersTitle": "Some numbers",
+    "quote": "The best way to predict the future is to build it.",
+    "quoteAuthor": "Alan Kay"
   },
   "strengths": {
     "fullStackThinking": "Full-stack thinking — I understand frontend, backend, database and deployment as one system",
@@ -107,7 +113,9 @@
     "headingAccent": "skills",
     "pageSubtitle": "The technologies I use to build fast, scalable digital products.",
     "stripTitle": "Technologies I work with",
-    "allSkills": "All skills"
+    "allSkills": "All skills",
+    "toolsTitle": "Skills & tools",
+    "tools": "Tools"
   },
   "projects": {
     "title": "Work",
@@ -263,7 +271,8 @@
     "button": "Start a conversation",
     "railTitle": "Let's work together",
     "railSubtitle": "Have a project in mind? I'm ready to help you.",
-    "railButton": "Contact me"
+    "railButton": "Contact me",
+    "aboutTitle": "Let's build something amazing together!"
   },
   "footer": {
     "rights": "All rights reserved.",
