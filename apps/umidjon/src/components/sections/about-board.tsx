@@ -55,14 +55,14 @@ export function AboutBoard() {
   );
 
   return (
-    <div className="grid gap-10 px-5 py-10 sm:px-7 lg:pl-12 lg:pr-8 xl:grid-cols-3 xl:gap-12 xl:pl-16 xl:pr-12">
+    <div className="grid items-stretch gap-10 px-5 py-10 sm:px-7 lg:pl-12 lg:pr-8 xl:grid-cols-3 xl:gap-12 xl:pl-16 xl:pr-12">
       {/* My journey — periods in their own column, as in the design */}
       <section className="flex flex-col gap-6">
         <Reveal>
           <ColumnHeading>{t("journeyTitle")}</ColumnHeading>
         </Reveal>
 
-        <Stagger>
+        <Stagger className="shrink-0">
           <ol className="flex flex-col">
             {roles.map((role, index) => {
               const last = index === roles.length - 1;
@@ -111,7 +111,7 @@ export function AboutBoard() {
           </ol>
         </Stagger>
 
-        <Reveal delay={120}>
+        <Reveal delay={120} className="mt-auto">
           <Card hover={false} className="relative overflow-hidden p-5">
             <span
               className="pointer-events-none absolute -bottom-6 -right-2 select-none font-serif text-[7rem] leading-none text-accent opacity-[0.07]"
@@ -134,7 +134,7 @@ export function AboutBoard() {
           <ColumnHeading>{t("toolsTitle")}</ColumnHeading>
         </Reveal>
 
-        <Stagger className="flex flex-col gap-7">
+        <Stagger className="flex flex-1 flex-col justify-between gap-8">
           {toolGroups.map((group, groupIndex) => (
             <div key={group.id} className="flex flex-col gap-4">
               <h3 className="text-sm font-medium text-accent">{ts(group.id)}</h3>
@@ -167,7 +167,7 @@ export function AboutBoard() {
           <ColumnHeading>{t("numbersTitle")}</ColumnHeading>
         </Reveal>
 
-        <Stagger>
+        <Stagger className="shrink-0">
           <div className="grid grid-cols-2 gap-3">
             {metrics.map((metric, index) => {
               const Icon = statIcon[metric.id as keyof typeof statIcon] ?? Code;
@@ -208,7 +208,7 @@ export function AboutBoard() {
         </Reveal>
 
         {profile.contact.agency ? (
-          <Reveal delay={180}>
+          <Reveal delay={180} className="mt-auto">
             <a
               href={profile.contact.agency}
               target="_blank"
