@@ -12,14 +12,14 @@ export function WhatIDo() {
   const t = useTranslations("whatIDo");
 
   return (
-    <section className="border-t border-border px-5 py-10 sm:px-7 xl:px-10">
+    <section className="border-t border-border px-5 py-8 sm:px-7 xl:px-10">
       <div className="flex flex-col gap-6">
         <Reveal>
           <span className="eyebrow">{t("title")}</span>
         </Reveal>
 
         <Stagger>
-          <div className="grid gap-6 sm:grid-cols-3 sm:gap-10">
+          <div className="grid gap-6 sm:grid-cols-3 sm:gap-8 xl:max-w-[calc(100%-25rem)]">
             {pillars.map((pillar, index) => (
               <StaggerItem key={pillar.id} index={index}>
                 <div className="flex gap-3">

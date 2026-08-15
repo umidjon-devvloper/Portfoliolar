@@ -28,7 +28,7 @@ export function TopBar() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 flex h-16 items-center justify-between gap-3 border-b border-border bg-background/90 px-5 backdrop-blur-lg sm:px-8 lg:h-14 lg:justify-end">
+      <header className="sticky top-0 z-40 flex h-16 items-center justify-between gap-3 border-b border-border bg-background/90 px-5 backdrop-blur-lg sm:px-7 lg:absolute lg:inset-x-0 lg:h-auto lg:justify-end lg:border-0 lg:bg-transparent lg:px-6 lg:py-4 lg:backdrop-blur-none xl:px-10">
         <Link href="/" className="text-2xl font-extrabold tracking-tight lg:hidden">
           U<span className="text-accent">.</span>
         </Link>

@@ -19,7 +19,7 @@ export const profile: Profile = {
     country: "O'zbekiston",
     countryCode: "UZ",
   },
-  avatar: "https://avatars.githubusercontent.com/u/213957524?v=4",
+  avatar: "https://avatars.githubusercontent.com/u/213957524?v=4&s=800",
   resumeFile: null,
   contact: {
     email: "umidjongafforov844@gmail.com",

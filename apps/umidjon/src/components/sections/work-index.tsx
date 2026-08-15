@@ -116,7 +116,7 @@ export function WorkIndex() {
       )}
 
       {rest.length > 0 ? (
-        <ul className="stagger grid gap-4 sm:grid-cols-2 lg:grid-cols-3" data-show="true">
+        <ul className="stagger grid gap-3 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4" data-show="true">
           {rest.map((project, index) => (
             <ProjectCard key={project.slug} project={project} index={index} />
           ))}
