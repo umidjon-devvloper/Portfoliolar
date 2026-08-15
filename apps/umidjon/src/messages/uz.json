@@ -261,7 +261,9 @@
     "title": "Loyiha g'oyangiz bormi?",
     "subtitle": "Keling, birga zo'r narsa quramiz.",
     "button": "Suhbatni boshlash",
-    "railTitle": "Birga ishlaymiz"
+    "railTitle": "Birga ishlaymiz",
+    "railSubtitle": "Loyiha g'oyangiz bormi? Yordam berishga tayyorman.",
+    "railButton": "Bog'lanish"
   },
   "footer": {
     "rights": "Barcha huquqlar himoyalangan.",

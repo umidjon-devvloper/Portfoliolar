@@ -1,43 +1,45 @@
-import { Rocket, Send, Wrench } from "lucide-react";
+import { Box, Code, Send } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/reveal";
 
 const pillars = [
-  { id: "build", icon: Wrench },
-  { id: "solve", icon: Rocket },
+  { id: "build", icon: Box },
+  { id: "solve", icon: Code },
   { id: "deliver", icon: Send },
 ];
 
+/** Closing row under the project cards; the rail's CTA sits beside it. */
 export function WhatIDo() {
   const t = useTranslations("whatIDo");
 
   return (
-    <section className="border-t border-border px-5 py-8 sm:px-7 lg:pl-12 lg:pr-8 xl:pl-16 xl:pr-12">
-      <div className="flex flex-col gap-6">
-        <Reveal>
-          <span className="eyebrow">{t("title")}</span>
-        </Reveal>
+    <section className="flex flex-col gap-4 pt-2">
+      <Reveal>
+        <span className="text-[0.6875rem] font-semibold uppercase tracking-[0.1em] text-muted">
+          {t("title")}
+        </span>
+      </Reveal>
 
-        <Stagger>
-          <div className="grid gap-6 sm:grid-cols-3 sm:gap-8 xl:max-w-[calc(100%-25rem)]">
-            {pillars.map((pillar, index) => (
-              <StaggerItem key={pillar.id} index={index}>
-                <div className="flex gap-3">
-                  <span className="grid h-9 w-9 shrink-0 place-items-center rounded-[var(--radius-sm)] bg-accent-soft text-accent">
-                    <pillar.icon className="h-4 w-4" />
-                  </span>
-                  <div className="flex flex-col gap-1">
-                    <h3 className="font-semibold">{t(`${pillar.id}.title`)}</h3>
-                    <p className="text-sm leading-relaxed text-muted">
-                      {t(`${pillar.id}.description`)}
-                    </p>
-                  </div>
+      <Stagger>
+        <div className="grid gap-5 sm:grid-cols-3 sm:gap-6">
+          {pillars.map((pillar, index) => (
+            <StaggerItem key={pillar.id} index={index}>
+              <div className="flex gap-3">
+                <pillar.icon
+                  className="mt-0.5 h-5 w-5 shrink-0 text-accent"
+                  strokeWidth={1.5}
+                />
+                <div className="flex flex-col gap-1">
+                  <h3 className="text-sm font-semibold">{t(`${pillar.id}.title`)}</h3>
+                  <p className="text-xs leading-relaxed text-muted">
+                    {t(`${pillar.id}.description`)}
+                  </p>
                 </div>
-              </StaggerItem>
-            ))}
-          </div>
-        </Stagger>
-      </div>
+              </div>
+            </StaggerItem>
+          ))}
+        </div>
+      </Stagger>
     </section>
   );
 }

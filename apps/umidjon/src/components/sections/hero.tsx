@@ -6,14 +6,6 @@ import { buttonVariants } from "@/components/ui/button";
 import { profile } from "@/content/profile";
 import { HeroBackdrop } from "./hero-backdrop";
 
-/**
- * Feathers all four edges so the photograph dissolves into the panel
- * rather than sitting in a visible rectangle. Kept inline: as a utility
- * class it was not surviving into the built stylesheet.
- */
-const PORTRAIT_MASK =
-  "radial-gradient(70% 62% at 50% 44%, #000 45%, rgba(0,0,0,0.55) 72%, transparent 100%)";
-
 const codeLines = [
   { text: "const developer = {", accent: false },
   { text: '  name: "Umidjon",', accent: true },
@@ -40,10 +32,6 @@ export function Hero() {
         <div
           className="pointer-events-none absolute bottom-0 left-1/2 hidden h-[92%] w-[20rem] -translate-x-1/2 lg:block xl:w-[23rem]"
           aria-hidden
-          style={{
-            WebkitMaskImage: PORTRAIT_MASK,
-            maskImage: PORTRAIT_MASK,
-          }}
         >
           <Image
             src={profile.avatar}
@@ -52,6 +40,23 @@ export function Hero() {
             priority
             sizes="23rem"
             className="object-contain object-bottom"
+          />
+          {/* Overlay painted in the page background colour: solid at the
+              edges, clear in the middle. Same visual result as a mask,
+              but a plain background — nothing for a browser to drop. */}
+          <span
+            className="absolute inset-0"
+            style={{
+              background:
+                "radial-gradient(68% 60% at 50% 46%, transparent 40%, color-mix(in srgb, var(--background) 55%, transparent) 68%, var(--background) 100%)",
+            }}
+          />
+          <span
+            className="absolute inset-x-0 bottom-0 h-1/3"
+            style={{
+              background:
+                "linear-gradient(to bottom, transparent, var(--background))",
+            }}
           />
         </div>
       ) : null}
@@ -137,9 +142,9 @@ export function Hero() {
         </div>
 
         <div className="flex items-center gap-3 rounded-[var(--radius-card)] border border-border bg-surface/95 px-4 py-3 backdrop-blur">
-          <span className="relative flex h-2 w-2 shrink-0">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-70" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
+          <span className="relative flex h-2.5 w-2.5 shrink-0">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
+            <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400" />
           </span>
           <div className="flex flex-col leading-snug">
             <span className="text-sm font-semibold">{t("availableBadge")}</span>

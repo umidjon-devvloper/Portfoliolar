@@ -261,7 +261,9 @@
     "title": "Have a project in mind?",
     "subtitle": "Let's work together and build something great.",
     "button": "Start a conversation",
-    "railTitle": "Let's work together"
+    "railTitle": "Let's work together",
+    "railSubtitle": "Have a project in mind? I'm ready to help you.",
+    "railButton": "Contact me"
   },
   "footer": {
     "rights": "All rights reserved.",

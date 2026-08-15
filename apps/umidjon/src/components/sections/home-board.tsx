@@ -10,6 +10,7 @@ import { featuredProjects } from "@/content/projects";
 import { metrics } from "@/content/profile";
 import { skillCategories } from "@/content/skills";
 import { ProjectCard } from "./project-card";
+import { WhatIDo } from "./what-i-do";
 
 const strip = [
   "Next.js",
@@ -25,11 +26,37 @@ const strip = [
 ];
 
 const statIcon = {
-  projects: Boxes,
+  projects: Code,
   clients: Smile,
-  experience: Trophy,
+  experience: Boxes,
   response: Clock,
 } as const;
+
+/** Hand-drawn curl pointing at the button, as in the design. */
+function Squiggle() {
+  return (
+    <svg
+      aria-hidden
+      viewBox="0 0 120 80"
+      fill="none"
+      className="pointer-events-none absolute bottom-3 right-3 h-16 w-24 text-accent opacity-80"
+    >
+      <path
+        d="M112 6 C 96 4, 70 18, 74 40 C 78 62, 106 58, 100 40 C 94 22, 60 30, 46 46 C 34 60, 24 66, 10 70"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+      />
+      <path
+        d="M20 60 L 10 70 L 24 72"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
 
 export function HomeBoard() {
   const t = useTranslations("projects");
@@ -45,10 +72,11 @@ export function HomeBoard() {
   );
 
   return (
-    <div className="grid items-stretch gap-4 px-5 py-6 sm:px-7 lg:pl-12 lg:pr-8 xl:grid-cols-[minmax(0,1fr)_23rem] xl:pl-16 xl:pr-12">
+    <div className="grid gap-4 px-5 py-6 sm:px-7 lg:pl-12 lg:pr-8 xl:grid-cols-[minmax(0,1fr)_23rem] xl:pl-16 xl:pr-12">
+      {/* Left column: header row, cards, closing pillars */}
       <div className="flex flex-col gap-4">
         <Reveal>
-          <div className="flex flex-wrap items-center justify-between gap-3">
+          <div className="flex h-5 items-center justify-between gap-3">
             <span className="eyebrow">{t("featuredEyebrow")}</span>
             <Link
               href="/work"
@@ -72,9 +100,14 @@ export function HomeBoard() {
             ))}
           </ul>
         </Stagger>
+
+        <WhatIDo />
       </div>
 
-      <aside className="flex min-h-full flex-col gap-4">
+      {/* Right rail: starts level with the cards (spacer matches the header row) */}
+      <aside className="flex flex-col gap-4">
+        <div className="hidden h-5 xl:block" aria-hidden />
+
         <Reveal>
           <Card hover={false} className="overflow-hidden">
             <div className="grid grid-cols-2">
@@ -88,7 +121,7 @@ export function HomeBoard() {
                       index % 2 === 0 ? "border-r border-border" : ""
                     } ${index < 2 ? "border-b border-border" : ""}`}
                   >
-                    <Icon className="h-5 w-5 shrink-0 text-accent" />
+                    <Icon className="h-6 w-6 shrink-0 text-accent" strokeWidth={1.5} />
                     <div className="flex min-w-0 flex-col leading-tight">
                       <span className="text-xl font-extrabold tracking-tight">
                         <Counter value={metric.value} suffix={metric.suffix} />
@@ -132,18 +165,18 @@ export function HomeBoard() {
 
         <Reveal delay={120} className="flex flex-1 flex-col">
           <Card hover={false} className="relative flex h-full flex-col gap-3 overflow-hidden p-4">
-            <span className="pointer-events-none absolute inset-0 glow" aria-hidden />
-            <span className="relative text-[0.6875rem] font-semibold uppercase tracking-[0.1em] text-muted">
+            <span className="text-[0.6875rem] font-semibold uppercase tracking-[0.1em] text-accent">
               {tcta("railTitle")}
             </span>
-            <p className="relative text-sm text-muted">{tcta("subtitle")}</p>
+            <p className="max-w-[16rem] text-sm text-muted">{tcta("railSubtitle")}</p>
             <Link
               href="/contact"
-              className={`${buttonVariants({ size: "sm" })} relative mt-auto w-fit`}
+              className={`${buttonVariants({ size: "sm" })} mt-auto w-fit`}
             >
-              {tcta("button")}
+              {tcta("railButton")}
               <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover/btn:translate-x-1" />
             </Link>
+            <Squiggle />
           </Card>
         </Reveal>
       </aside>
