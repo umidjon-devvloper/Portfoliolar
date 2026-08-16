@@ -283,7 +283,14 @@
       "title": "Ish vaqti",
       "description": "Dushanba–Juma, 10:00–19:00 (GMT+5)."
     },
-    "eyebrow": "Bog'lanamiz"
+    "eyebrow": "Bog'lanamiz",
+    "channelsTitle": "Aloqa kanallari",
+    "socialsTitle": "Ijtimoiy tarmoqlar",
+    "formEyebrow": "Xabar",
+    "formNote": "Formani to'ldiring — xabar to'g'ridan-to'g'ri Telegramga tushadi.",
+    "mapEyebrow": "Joylashuv",
+    "mapNote": "Masofadan ishlayman — vaqt mintaqasi GMT+5.",
+    "optional": "ixtiyoriy"
   },
   "resume": {
     "title": "Rezyume",

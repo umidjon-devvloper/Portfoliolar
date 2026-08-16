@@ -283,7 +283,14 @@
       "title": "Working hours",
       "description": "Mon–Fri, 10:00–19:00 (GMT+5)."
     },
-    "eyebrow": "Let's connect"
+    "eyebrow": "Let's connect",
+    "channelsTitle": "Contact channels",
+    "socialsTitle": "Social profiles",
+    "formEyebrow": "Message",
+    "formNote": "Fill in the form — it lands straight in my Telegram.",
+    "mapEyebrow": "Location",
+    "mapNote": "I work remotely — time zone GMT+5.",
+    "optional": "optional"
   },
   "resume": {
     "title": "Resume",

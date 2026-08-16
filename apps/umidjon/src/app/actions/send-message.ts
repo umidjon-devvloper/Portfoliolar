@@ -8,6 +8,7 @@ export type ContactState = {
 type ContactPayload = {
   name: string;
   email: string;
+  subject: string;
   message: string;
   honeypot: string;
 };
@@ -16,6 +17,7 @@ function parse(formData: FormData): ContactPayload {
   return {
     name: String(formData.get("name") ?? "").trim(),
     email: String(formData.get("email") ?? "").trim(),
+    subject: String(formData.get("subject") ?? "").trim(),
     message: String(formData.get("message") ?? "").trim(),
     honeypot: String(formData.get("company") ?? "").trim(),
   };
@@ -63,9 +65,12 @@ export async function sendMessage(
     "",
     `<b>Name:</b> ${escapeHtml(payload.name)}`,
     `<b>Email:</b> ${escapeHtml(payload.email)}`,
+    payload.subject ? `<b>Subject:</b> ${escapeHtml(payload.subject)}` : null,
     "",
     escapeHtml(payload.message),
-  ].join("\n");
+  ]
+    .filter((line): line is string => line !== null)
+    .join("\n");
 
   try {
     const response = await fetch(

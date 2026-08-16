@@ -283,7 +283,14 @@
       "title": "Часы работы",
       "description": "Пн–Пт, 10:00–19:00 (GMT+5)."
     },
-    "eyebrow": "Свяжемся"
+    "eyebrow": "Свяжемся",
+    "channelsTitle": "Каналы связи",
+    "socialsTitle": "Соцсети",
+    "formEyebrow": "Сообщение",
+    "formNote": "Заполните форму — сообщение придёт напрямую в Telegram.",
+    "mapEyebrow": "Локация",
+    "mapNote": "Работаю удалённо — часовой пояс GMT+5.",
+    "optional": "необязательно"
   },
   "resume": {
     "title": "Резюме",
