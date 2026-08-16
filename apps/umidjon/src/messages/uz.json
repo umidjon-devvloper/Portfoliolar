@@ -119,7 +119,28 @@
     "stripTitle": "Ishlatadigan texnologiyalarim",
     "allSkills": "Barchasi",
     "toolsTitle": "Ko'nikma va vositalar",
-    "tools": "Vositalar"
+    "tools": "Vositalar",
+    "eyebrow": "Mening tajribam",
+    "technicalTitle": "Texnik ko'nikmalar",
+    "toolStripTitle": "Ishlatadigan vositalarim",
+    "pillars": {
+      "stack": {
+        "title": "Zamonaviy stack",
+        "description": "Bugungi texnologiyalar va yaxshi amaliyotlar"
+      },
+      "architecture": {
+        "title": "Toza arxitektura",
+        "description": "Qo'llab-quvvatlanadigan va kengayadigan kod"
+      },
+      "performance": {
+        "title": "Unumdorlikka e'tibor",
+        "description": "Tez, optimallashtirilgan va ishonchli ilovalar"
+      },
+      "learning": {
+        "title": "Doimiy o'rganish",
+        "description": "Har kuni yangi narsa o'rganib boraman"
+      }
+    }
   },
   "projects": {
     "title": "Ishlar",
@@ -280,7 +301,10 @@
     "railTitle": "Birga ishlaymiz",
     "railSubtitle": "Loyiha g'oyangiz bormi? Yordam berishga tayyorman.",
     "railButton": "Bog'lanish",
-    "aboutTitle": "Keling, birga zo'r narsa quramiz!"
+    "aboutTitle": "Keling, birga zo'r narsa quramiz!",
+    "skillsTitle": "Keling, birga zo'r narsa quramiz!",
+    "skillsSubtitle": "Yangi imkoniyat va qiziqarli loyihalarga ochiqman.",
+    "skillsButton": "Birga ishlaymiz"
   },
   "footer": {
     "rights": "Barcha huquqlar himoyalangan.",

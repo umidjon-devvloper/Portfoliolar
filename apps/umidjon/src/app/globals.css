@@ -73,7 +73,7 @@
   --text-section: clamp(1.375rem, 2.1vw, 2rem);
   --text-body: clamp(0.9375rem, 0.9vw, 1.0625rem);
 
-  --sidebar: 11rem;
+  --sidebar: 12rem;
 }
 
 @layer base {

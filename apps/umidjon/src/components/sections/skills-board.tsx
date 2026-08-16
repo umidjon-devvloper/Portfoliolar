@@ -1,25 +1,80 @@
 "use client";
 
+import {
+  BookOpen,
+  Cloud,
+  Code,
+  Cpu,
+  Database,
+  Gauge,
+  GraduationCap,
+  MonitorSmartphone,
+  Rocket,
+  Server,
+  Smartphone,
+  Star,
+  Zap,
+} from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useMemo, useState } from "react";
-import { Container } from "@/components/ui/container";
+import { Link } from "@/i18n/navigation";
 import { Card } from "@/components/ui/card";
 import { TechIcon } from "@/components/ui/tech-icon";
+import { Counter } from "@/components/motion/counter";
+import { buttonVariants } from "@/components/ui/button";
 import { useInView } from "@/lib/use-in-view";
 import { skillCategories, tierWeight, type Skill } from "@/content/skills";
+import { metrics } from "@/content/profile";
 import { cn } from "@/lib/utils";
+
+const categoryIcon: Record<string, typeof Code> = {
+  frontend: MonitorSmartphone,
+  backend: Server,
+  authDb: Database,
+  mobile: Smartphone,
+  devops: Cloud,
+  payments: Code,
+  design: Star,
+};
+
+const pillars = [
+  { id: "stack", icon: Cpu },
+  { id: "architecture", icon: GraduationCap },
+  { id: "performance", icon: Gauge },
+  { id: "learning", icon: BookOpen },
+];
+
+const statIcon = {
+  projects: Code,
+  clients: Star,
+  experience: Rocket,
+  response: BookOpen,
+} as const;
+
+const toolStrip = [
+  "Git",
+  "GitHub",
+  "Vercel",
+  "Figma",
+  "Firebase",
+  "Expo",
+  "Netlify",
+  "Cloudflare",
+  "MongoDB",
+  "Stripe",
+];
 
 function SkillRow({ skill }: { skill: Skill }) {
   const t = useTranslations("skills");
   const fill = skill.level !== null ? skill.level / 100 : tierWeight[skill.tier];
 
   return (
-    <li className="stagger-item flex items-center gap-3">
-      <TechIcon slug={skill.icon} fallback={skill.name} className="h-4 w-4 shrink-0" />
+    <li className="stagger-item grid grid-cols-[1.25rem_1fr_auto] items-center gap-3">
+      <TechIcon slug={skill.icon} fallback={skill.name} className="h-5 w-5" />
 
-      <div className="flex min-w-0 flex-1 flex-col gap-1.5">
-        <span className="truncate text-sm">{skill.name}</span>
-        <span className="h-1 overflow-hidden rounded-full bg-border">
+      <div className="flex min-w-0 flex-col gap-1.5">
+        <span className="truncate text-[0.8125rem]">{skill.name}</span>
+        <span className="h-[3px] overflow-hidden rounded-full bg-border">
           <span
             className="meter block h-full w-full rounded-full"
             style={{ "--meter": String(fill) } as React.CSSProperties}
@@ -27,7 +82,7 @@ function SkillRow({ skill }: { skill: Skill }) {
         </span>
       </div>
 
-      <span className="w-10 shrink-0 text-right text-xs tabular-nums text-muted">
+      <span className="w-9 text-right text-[0.6875rem] tabular-nums text-muted">
         {skill.level !== null ? `${skill.level}%` : t(`tier.${skill.tier}`)}
       </span>
     </li>
@@ -36,6 +91,8 @@ function SkillRow({ skill }: { skill: Skill }) {
 
 export function SkillsBoard() {
   const t = useTranslations("skills");
+  const tm = useTranslations("metrics");
+  const tcta = useTranslations("cta");
   const { ref, inView } = useInView<HTMLDivElement>("-5% 0px -5% 0px");
   const [filter, setFilter] = useState("all");
 
@@ -49,49 +106,164 @@ export function SkillsBoard() {
       ? skillCategories
       : skillCategories.filter((category) => category.id === filter);
 
+  const lookup = new Map(
+    skillCategories.flatMap((category) =>
+      category.skills.map((skill) => [skill.name, skill.icon] as const),
+    ),
+  );
+
   return (
-    <Container className="flex flex-col gap-6">
-      <div
-        className="-mx-5 flex gap-2 overflow-x-auto px-5 pb-1 sm:mx-0 sm:flex-wrap sm:px-0"
-        role="tablist"
-      >
-        {filters.map((id) => (
-          <button
-            key={id}
-            type="button"
-            role="tab"
-            aria-selected={filter === id}
-            onClick={() => setFilter(id)}
+    <div className="flex flex-col gap-5">
+      {/* Four principles */}
+      <Card hover={false} className="grid divide-y divide-border sm:grid-cols-2 sm:divide-y-0 lg:grid-cols-4">
+        {pillars.map((pillar, index) => (
+          <div
+            key={pillar.id}
             className={cn(
-              "shrink-0 rounded-[var(--radius-btn)] px-4 py-2 text-[0.8125rem] font-medium transition-colors",
-              filter === id
-                ? "bg-accent text-accent-foreground"
-                : "text-muted hover:bg-surface-2 hover:text-foreground",
+              "flex items-start gap-3 p-5",
+              index > 0 && "lg:border-l lg:border-border",
+              index === 1 && "sm:border-l sm:border-border",
+              index === 3 && "sm:border-l sm:border-border",
+              index === 2 && "sm:border-t sm:border-border lg:border-t-0",
+              index === 3 && "sm:border-t sm:border-border lg:border-t-0",
             )}
           >
-            {id === "all" ? t("allSkills") : t(id)}
-          </button>
+            <pillar.icon className="h-6 w-6 shrink-0 text-accent" strokeWidth={1.4} />
+            <div className="flex flex-col gap-1">
+              <h3 className="text-[0.8125rem] font-semibold">
+                {t(`pillars.${pillar.id}.title`)}
+              </h3>
+              <p className="text-[0.6875rem] leading-relaxed text-muted">
+                {t(`pillars.${pillar.id}.description`)}
+              </p>
+            </div>
+          </div>
         ))}
-      </div>
+      </Card>
 
-      <div
-        ref={ref}
-        data-show={inView ? "true" : "false"}
-        className="stagger grid gap-4 lg:grid-cols-3"
-      >
-        {visible.map((category) => (
-          <Card key={category.id} className="flex flex-col gap-4 p-5">
-            <h2 className="text-sm font-bold uppercase tracking-wider">
-              {t(category.id)}
-            </h2>
-            <ul className="flex flex-col gap-3.5">
-              {category.skills.map((skill) => (
-                <SkillRow key={`${category.id}-${skill.name}`} skill={skill} />
-              ))}
-            </ul>
-          </Card>
-        ))}
-      </div>
-    </Container>
+      {/* Technical skills — one frame around filters and every category */}
+      <Card hover={false} className="flex flex-col gap-5 p-5 sm:p-6">
+        <h2 className="text-[0.8125rem] font-bold uppercase tracking-[0.14em]">
+          {t("technicalTitle")}
+        </h2>
+
+        <div
+          className="-mx-1 flex gap-1.5 overflow-x-auto px-1 pb-1 sm:mx-0 sm:flex-wrap sm:px-0"
+          role="tablist"
+        >
+          {filters.map((id) => (
+            <button
+              key={id}
+              type="button"
+              role="tab"
+              aria-selected={filter === id}
+              onClick={() => setFilter(id)}
+              className={cn(
+                "shrink-0 rounded-[var(--radius-btn)] px-4 py-2 text-[0.8125rem] font-medium transition-colors",
+                filter === id
+                  ? "bg-accent text-accent-foreground"
+                  : "text-muted hover:bg-surface-2 hover:text-foreground",
+              )}
+            >
+              {id === "all" ? t("allSkills") : t(id)}
+            </button>
+          ))}
+        </div>
+
+        <div
+          ref={ref}
+          data-show={inView ? "true" : "false"}
+          className="stagger grid gap-4 md:grid-cols-2 xl:grid-cols-3"
+        >
+          {visible.map((category) => {
+            const Icon = categoryIcon[category.id] ?? Code;
+
+            return (
+              <div
+                key={category.id}
+                className="flex flex-col gap-4 rounded-[var(--radius-card)] border border-border bg-background/40 p-5"
+              >
+                <div className="flex items-center gap-2.5">
+                  <Icon className="h-5 w-5 text-accent" strokeWidth={1.5} />
+                  <h3 className="text-[0.8125rem] font-bold uppercase tracking-[0.1em]">
+                    {t(category.id)}
+                  </h3>
+                </div>
+
+                <ul className="flex flex-col gap-3.5">
+                  {category.skills.map((skill) => (
+                    <SkillRow key={`${category.id}-${skill.name}`} skill={skill} />
+                  ))}
+                </ul>
+              </div>
+            );
+          })}
+        </div>
+      </Card>
+
+      {/* Tool strip */}
+      <Card hover={false} className="flex flex-col gap-5 p-5 sm:p-6">
+        <h2 className="text-[0.8125rem] font-bold uppercase tracking-[0.14em]">
+          {t("toolStripTitle")}
+        </h2>
+        <ul className="grid grid-cols-5 gap-4 sm:grid-cols-10">
+          {toolStrip.map((name) => (
+            <li key={name} className="group flex flex-col items-center gap-2">
+              <TechIcon
+                slug={lookup.get(name) ?? null}
+                fallback={name}
+                className="h-7 w-7 transition-transform duration-300 group-hover:scale-110"
+              />
+              <span className="w-full truncate text-center text-[0.625rem] text-muted">
+                {name}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </Card>
+
+      {/* Numbers */}
+      <Card hover={false} className="grid divide-y divide-border sm:grid-cols-2 sm:divide-y-0 lg:grid-cols-4">
+        {metrics.map((metric, index) => {
+          const Icon = statIcon[metric.id as keyof typeof statIcon] ?? Code;
+
+          return (
+            <div
+              key={metric.id}
+              className={cn(
+                "stat-cell flex items-center gap-4 p-5",
+                index > 0 && "lg:border-l lg:border-border",
+              )}
+            >
+              <Icon className="stat-icon h-7 w-7 shrink-0 text-accent" strokeWidth={1.3} />
+              <div className="flex flex-col leading-tight">
+                <span className="text-2xl font-extrabold tracking-tight">
+                  <Counter value={metric.value} suffix={metric.suffix} />
+                </span>
+                <span className="text-[0.6875rem] text-muted">{tm(metric.id)}</span>
+              </div>
+            </div>
+          );
+        })}
+      </Card>
+
+      {/* Closing prompt */}
+      <Card hover={false} className="relative flex flex-col items-start gap-4 overflow-hidden p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
+        <span className="pointer-events-none absolute inset-0 glow" aria-hidden />
+        <div className="relative flex items-center gap-4">
+          <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-accent-soft text-accent">
+            <Zap className="h-5 w-5" />
+          </span>
+          <div className="flex flex-col">
+            <span className="font-semibold">{tcta("skillsTitle")}</span>
+            <span className="text-sm text-muted">{tcta("skillsSubtitle")}</span>
+          </div>
+        </div>
+
+        <Link href="/contact" className={`${buttonVariants({ size: "md" })} relative`}>
+          {tcta("skillsButton")}
+        </Link>
+      </Card>
+    </div>
   );
 }

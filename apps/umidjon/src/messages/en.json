@@ -119,7 +119,28 @@
     "stripTitle": "Technologies I work with",
     "allSkills": "All skills",
     "toolsTitle": "Skills & tools",
-    "tools": "Tools"
+    "tools": "Tools",
+    "eyebrow": "My expertise",
+    "technicalTitle": "Technical skills",
+    "toolStripTitle": "Tools & technologies I work with",
+    "pillars": {
+      "stack": {
+        "title": "Modern tech stack",
+        "description": "Up-to-date technologies and best practices"
+      },
+      "architecture": {
+        "title": "Clean architecture",
+        "description": "Maintainable and scalable code"
+      },
+      "performance": {
+        "title": "Performance focused",
+        "description": "Fast, optimised and reliable applications"
+      },
+      "learning": {
+        "title": "Continuous learning",
+        "description": "Always learning and improving every day"
+      }
+    }
   },
   "projects": {
     "title": "Work",
@@ -280,7 +301,10 @@
     "railTitle": "Let's work together",
     "railSubtitle": "Have a project in mind? I'm ready to help you.",
     "railButton": "Contact me",
-    "aboutTitle": "Let's build something amazing together!"
+    "aboutTitle": "Let's build something amazing together!",
+    "skillsTitle": "Let's build something great together!",
+    "skillsSubtitle": "I'm available for new opportunities and exciting projects.",
+    "skillsButton": "Let's work together"
   },
   "footer": {
     "rights": "All rights reserved.",
