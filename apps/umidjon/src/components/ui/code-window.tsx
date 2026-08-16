@@ -90,7 +90,7 @@ export function CodeWindow({
         ) : null}
       </div>
 
-      <pre className="overflow-x-auto px-4 py-3.5 font-mono text-[0.75rem] leading-[1.85]">
+      <pre className="overflow-hidden px-4 py-3.5 font-mono text-[0.6875rem] leading-[1.8]">
         <code>
           {lines.map((line, index) => {
             const rendered: Token[] = [];
@@ -105,8 +105,8 @@ export function CodeWindow({
             const done = budget > 0 || typed >= total;
 
             return (
-              <div key={index} className="flex gap-3.5">
-                <span className="w-3 shrink-0 select-none text-right text-muted/40">
+              <div key={index} className="flex gap-3">
+                <span className="w-2.5 shrink-0 select-none text-right text-muted/40">
                   {index + 1}
                 </span>
                 <span className="whitespace-pre">

@@ -21,7 +21,7 @@ export default async function SkillsPage({ params }: PageProps) {
 
   return (
     <>
-      <Container className="border-b border-border py-8 sm:py-10">
+      <Container className="border-b border-border py-10 sm:py-12">
         <PageHeader
           breadcrumb={t("breadcrumb")}
           index="04"
@@ -39,7 +39,7 @@ export default async function SkillsPage({ params }: PageProps) {
         />
       </Container>
 
-      <Container className="py-8">
+      <Container className="py-10 sm:py-12">
         <SkillsBoard />
       </Container>
     </>

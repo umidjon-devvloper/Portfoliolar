@@ -32,7 +32,7 @@ export function PageHeader({
   return (
     <div
       className={cn(
-        "grid items-center gap-8 lg:grid-cols-[minmax(0,30rem)_1fr]",
+        "grid items-center gap-10 lg:grid-cols-[minmax(0,30rem)_1fr] lg:gap-14",
         className,
       )}
     >
@@ -50,7 +50,7 @@ export function PageHeader({
           </span>
         ) : null}
 
-        <h1 className="type-page mt-2.5">
+        <h1 className="type-page mt-3">
           {lead} <span className="text-accent">{accent}</span>
           {caret ? (
             <span className="ml-1 inline-block h-[0.62em] w-[0.34em] translate-y-[0.04em] bg-accent align-baseline" />
@@ -61,16 +61,16 @@ export function PageHeader({
 
         {description ? (
           <>
-            <p className="mt-4 max-w-md text-sm leading-[1.75] text-muted sm:text-[0.9375rem]">
+            <p className="mt-5 max-w-[34ch] text-sm leading-[1.7] text-muted sm:text-[0.9375rem]">
               {description}
             </p>
-            <span className="mt-5 h-[3px] w-14 rounded-full bg-accent" aria-hidden />
+            <span className="mt-6 h-[3px] w-16 rounded-full bg-accent" aria-hidden />
           </>
         ) : null}
       </div>
 
       {visual ? (
-        <div className="hidden h-[16.5rem] justify-self-end lg:block lg:w-[34rem]">
+        <div className="hidden h-[17.5rem] justify-self-end lg:block lg:w-[36rem]">
           {visual}
         </div>
       ) : null}

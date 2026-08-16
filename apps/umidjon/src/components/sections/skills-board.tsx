@@ -119,7 +119,7 @@ export function SkillsBoard() {
   );
 
   return (
-    <div className="flex flex-col gap-5">
+    <div className="flex flex-col gap-8">
       {/* Four principles */}
       <Principles
         items={pillars.map((pillar) => ({
@@ -131,7 +131,7 @@ export function SkillsBoard() {
       />
 
       {/* Technical skills — one frame around filters and every category */}
-      <Card hover={false} className="flex flex-col gap-5 p-5 sm:p-6">
+      <Card hover={false} className="flex flex-col gap-6 p-6 sm:p-7">
         <h2 className="text-[0.8125rem] font-bold uppercase tracking-[0.14em]">
           {t("technicalTitle")}
         </h2>
@@ -162,7 +162,7 @@ export function SkillsBoard() {
         <div
           ref={ref}
           data-show={inView ? "true" : "false"}
-          className="stagger grid gap-4 md:grid-cols-2 xl:grid-cols-3"
+          className="stagger grid gap-5 md:grid-cols-2 xl:grid-cols-3"
         >
           {visible.map((category) => {
             const Icon = categoryIcon[category.id] ?? Code;
@@ -170,7 +170,7 @@ export function SkillsBoard() {
             return (
               <div
                 key={category.id}
-                className="group flex flex-col gap-4 rounded-[var(--radius-card)] border border-border bg-background/40 p-5 transition-colors duration-300 hover:border-accent/50"
+                className="group flex flex-col gap-5 rounded-[var(--radius-card)] border border-border bg-background/40 p-5 transition-colors duration-300 hover:border-accent/50"
               >
                 <div className="flex items-center gap-2.5">
                   <Icon className="h-5 w-5 text-accent" strokeWidth={1.5} />
@@ -179,7 +179,7 @@ export function SkillsBoard() {
                   </h3>
                 </div>
 
-                <ul className="flex flex-col gap-3.5">
+                <ul className="flex flex-col gap-4">
                   {category.skills.map((skill) => (
                     <SkillRow key={`${category.id}-${skill.name}`} skill={skill} />
                   ))}
@@ -191,7 +191,7 @@ export function SkillsBoard() {
       </Card>
 
       {/* Tool strip */}
-      <Card hover={false} className="flex flex-col gap-5 p-5 sm:p-6">
+      <Card hover={false} className="flex flex-col gap-6 p-6 sm:p-7">
         <h2 className="text-[0.8125rem] font-bold uppercase tracking-[0.14em]">
           {t("toolStripTitle")}
         </h2>

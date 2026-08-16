@@ -46,7 +46,7 @@ export function SkillsVisual() {
 
       <CodeWindow
         lines={developerSnippet}
-        className="absolute left-[6%] top-[4%] w-[94%]"
+        className="absolute left-1/2 top-1/2 w-[85%] -translate-x-1/2 -translate-y-1/2"
       />
     </div>
   );
