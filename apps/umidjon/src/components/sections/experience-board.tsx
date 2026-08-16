@@ -27,13 +27,16 @@ export function ExperienceBoard() {
   return (
     <div className="grid gap-6 lg:grid-cols-[minmax(0,19rem)_1fr] lg:gap-8">
       {/* Timeline: no panel behind it, one continuous rail */}
-      <ol className="flex flex-col">
+      <ol className="flex h-full flex-col">
         {roles.map((item, index) => {
           const selected = item.id === active;
           const last = index === roles.length - 1;
 
           return (
-            <li key={item.id} className="grid grid-cols-[0.75rem_1fr] gap-x-4">
+            <li
+              key={item.id}
+              className="group grid flex-1 grid-cols-[0.75rem_1fr] gap-x-4"
+            >
               <span className="relative flex justify-center">
                 {!last ? (
                   <span
@@ -45,8 +48,8 @@ export function ExperienceBoard() {
                   className={cn(
                     "relative mt-2.5 h-3 w-3 rounded-full border-2 transition-all duration-300",
                     selected
-                      ? "border-accent bg-accent"
-                      : "border-border-strong bg-background",
+                      ? "scale-125 border-accent bg-accent"
+                      : "border-border-strong bg-background group-hover:scale-125 group-hover:border-accent group-hover:bg-accent/40",
                   )}
                   aria-hidden
                 />
@@ -57,8 +60,8 @@ export function ExperienceBoard() {
                 onClick={() => setActive(item.id)}
                 aria-pressed={selected}
                 className={cn(
-                  "-ml-3 mb-4 flex flex-col items-start gap-1 rounded-[var(--radius-sm)] px-3 py-2 text-left transition-colors duration-300",
-                  selected ? "bg-surface" : "hover:bg-surface/60",
+                  "-ml-3 mb-4 flex h-fit origin-left flex-col items-start gap-1 rounded-[var(--radius-sm)] px-3 py-2.5 text-left transition-all duration-300 group-hover:scale-[1.03]",
+                  selected ? "bg-surface" : "group-hover:bg-surface/70",
                 )}
               >
                 <span
