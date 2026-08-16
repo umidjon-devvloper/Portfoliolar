@@ -103,11 +103,6 @@
     "backend": "Backend",
     "devops": "DevOps & Tools",
     "label": "Technologies",
-    "tier": {
-      "core": "Core stack",
-      "regular": "Regular",
-      "familiar": "Familiar"
-    },
     "pageTitle": "Skills",
     "breadcrumb": "Skills",
     "headingLead": "My",
@@ -139,7 +134,8 @@
       }
     },
     "database": "Database",
-    "others": "Others"
+    "others": "Others",
+    "payments": "Payments"
   },
   "projects": {
     "title": "Work",

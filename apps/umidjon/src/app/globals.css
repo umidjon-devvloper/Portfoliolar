@@ -311,15 +311,15 @@
     transform: none;
   }
 
-  .meter {
-    background: var(--accent);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .stagger[data-show="true"] .meter {
-    transform: scaleX(var(--meter, 1));
+  .logo-mark {
+    -webkit-mask-image: url("/images/brand/mark.png");
+    mask-image: url("/images/brand/mark.png");
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
   }
 
   .enter {

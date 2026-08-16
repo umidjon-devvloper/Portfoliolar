@@ -9,6 +9,7 @@ import { navItems } from "@/content/nav";
 import { LanguageSwitcher } from "./language-switcher";
 import { ThemeToggle } from "./theme-toggle";
 import { cn } from "@/lib/utils";
+import { LogoMark } from "@/components/ui/logo-mark";
 
 type IconName = keyof typeof icons;
 
@@ -29,8 +30,8 @@ export function TopBar() {
   return (
     <>
       <header className="sticky top-0 z-40 flex h-16 items-center justify-between gap-3 border-b border-border bg-background/90 px-5 backdrop-blur-lg sm:px-7 lg:absolute lg:inset-x-0 lg:h-auto lg:justify-end lg:border-0 lg:bg-transparent lg:px-6 lg:py-4 lg:backdrop-blur-none xl:px-10">
-        <Link href="/" className="text-2xl font-extrabold tracking-tight lg:hidden">
-          U<span className="text-accent">.</span>
+        <Link href="/" className="lg:hidden" aria-label="Umidjon">
+          <LogoMark className="h-7 w-7" />
         </Link>
 
         <div className="flex items-center gap-2 sm:gap-3">
@@ -64,9 +65,7 @@ export function TopBar() {
         )}
       >
         <div className="flex h-16 items-center justify-between px-5 sm:px-8">
-          <span className="text-2xl font-extrabold tracking-tight">
-            U<span className="text-accent">.</span>
-          </span>
+          <LogoMark className="h-7 w-7" />
           <button
             type="button"
             aria-label={t("closeMenu")}

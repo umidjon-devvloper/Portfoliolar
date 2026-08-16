@@ -3,6 +3,7 @@ import { Link } from "@/i18n/navigation";
 import { navItems } from "@/content/nav";
 import { site } from "@/content/site";
 import { Container } from "@/components/ui/container";
+import { LogoMark } from "@/components/ui/logo-mark";
 
 export function Footer() {
   const t = useTranslations("nav");
@@ -12,9 +13,7 @@ export function Footer() {
     <footer className="border-t border-border">
       <Container className="flex flex-col gap-6 py-8 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex items-center gap-4">
-          <span className="text-2xl font-extrabold tracking-tight">
-            U<span className="text-accent">.</span>
-          </span>
+          <LogoMark className="h-7 w-7" />
           <p className="max-w-[16rem] text-xs leading-relaxed text-muted">
             {tf("tagline")}
           </p>

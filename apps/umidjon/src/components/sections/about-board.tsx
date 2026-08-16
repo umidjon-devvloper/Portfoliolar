@@ -20,15 +20,56 @@ const statIcon = {
 const toolGroups = [
   {
     id: "frontend",
-    names: ["React", "Next.js", "TypeScript", "Tailwind CSS", "React Native"],
+    names: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "JavaScript",
+      "Tailwind CSS",
+      "HTML5 / CSS3",
+      "shadcn/ui",
+      "Vite",
+      "Framer Motion",
+      "Material UI",
+    ],
   },
   {
     id: "backend",
-    names: ["Node.js", "Express.js", "MongoDB", "Firebase", "GraphQL"],
+    names: [
+      "Node.js",
+      "Express.js",
+      "REST API",
+      "GraphQL",
+      "Auth / JWT",
+      "MongoDB",
+      "Mongoose",
+      "Firebase",
+      "Firestore",
+      "Redis",
+    ],
+  },
+  {
+    id: "mobile",
+    names: ["React Native", "Expo", "Expo EAS", "App Store", "Google Play"],
   },
   {
     id: "tools",
-    names: ["Git", "GitHub", "Vercel", "Figma", "Expo"],
+    names: [
+      "Git",
+      "GitHub",
+      "Vercel",
+      "Netlify",
+      "Cloudflare",
+      "Firebase Hosting",
+      "GitLab",
+      "Figma",
+      "Adobe XD",
+      "UI/UX",
+    ],
+  },
+  {
+    id: "payments",
+    names: ["Payme", "Click", "Atmos", "Visa"],
   },
 ];
 

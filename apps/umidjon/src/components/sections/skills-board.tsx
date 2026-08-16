@@ -4,6 +4,7 @@ import {
   BookOpen,
   CircleEllipsis,
   Cloud,
+  CreditCard,
   Code,
   Cpu,
   Database,
@@ -25,7 +26,7 @@ import { TechIcon } from "@/components/ui/tech-icon";
 import { Counter } from "@/components/motion/counter";
 import { buttonVariants } from "@/components/ui/button";
 import { useInView } from "@/lib/use-in-view";
-import { skillCategories, tierWeight, type Skill } from "@/content/skills";
+import { skillCategories, type Skill } from "@/content/skills";
 import { metrics } from "@/content/profile";
 import { cn } from "@/lib/utils";
 
@@ -35,6 +36,7 @@ const categoryIcon: Record<string, typeof Code> = {
   database: Database,
   mobile: Smartphone,
   devops: Cloud,
+  payments: CreditCard,
   others: CircleEllipsis,
 };
 
@@ -62,35 +64,18 @@ const toolStrip = [
   "Netlify",
   "Cloudflare",
   "MongoDB",
-  "Stripe",
+  "Payme",
 ];
 
 function SkillRow({ skill }: { skill: Skill }) {
-  const t = useTranslations("skills");
-  const fill = skill.level !== null ? skill.level / 100 : tierWeight[skill.tier];
-
   return (
-    <li className="stagger-item flex items-center gap-3">
+    <li className="stagger-item flex items-center gap-2.5 rounded-[var(--radius-btn)] border border-border bg-surface px-3 py-2 transition-colors duration-300 hover:border-accent/50">
       <TechIcon
         slug={skill.icon}
         fallback={skill.name}
-        className="h-[18px] w-[18px] shrink-0"
+        className="h-[16px] w-[16px] shrink-0"
       />
-      <span className="w-[6.5rem] shrink-0 truncate text-[0.8125rem]">
-        {skill.name}
-      </span>
-
-      <div className="flex min-w-0 flex-1 flex-col items-end gap-1">
-        <span className="text-[0.6875rem] tabular-nums leading-none text-muted">
-          {skill.level !== null ? `${skill.level}%` : t(`tier.${skill.tier}`)}
-        </span>
-        <span className="h-[3px] w-full overflow-hidden rounded-full bg-border">
-          <span
-            className="meter block h-full w-full rounded-full"
-            style={{ "--meter": String(fill) } as React.CSSProperties}
-          />
-        </span>
-      </div>
+      <span className="truncate text-[0.8125rem]">{skill.name}</span>
     </li>
   );
 }
@@ -179,7 +164,7 @@ export function SkillsBoard() {
                   </h3>
                 </div>
 
-                <ul className="flex flex-col gap-4">
+                <ul className="flex flex-wrap gap-2">
                   {category.skills.map((skill) => (
                     <SkillRow key={`${category.id}-${skill.name}`} skill={skill} />
                   ))}

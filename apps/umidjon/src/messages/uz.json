@@ -103,11 +103,6 @@
     "backend": "Backend",
     "devops": "DevOps va vositalar",
     "label": "Texnologiyalar",
-    "tier": {
-      "core": "Asosiy stack",
-      "regular": "Muntazam",
-      "familiar": "Tajriba bor"
-    },
     "pageTitle": "Ko'nikmalar",
     "breadcrumb": "Ko'nikmalar",
     "headingLead": "Mening",
@@ -139,7 +134,8 @@
       }
     },
     "database": "Ma'lumotlar bazasi",
-    "others": "Boshqalar"
+    "others": "Boshqalar",
+    "payments": "To'lov tizimlari"
   },
   "projects": {
     "title": "Ishlar",

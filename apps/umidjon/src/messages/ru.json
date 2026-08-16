@@ -103,11 +103,6 @@
     "backend": "Backend",
     "devops": "DevOps и инструменты",
     "label": "Технологии",
-    "tier": {
-      "core": "Основной стек",
-      "regular": "Регулярно",
-      "familiar": "Есть опыт"
-    },
     "pageTitle": "Навыки",
     "breadcrumb": "Навыки",
     "headingLead": "Мои",
@@ -139,7 +134,8 @@
       }
     },
     "database": "База данных",
-    "others": "Другое"
+    "others": "Другое",
+    "payments": "Платёжные системы"
   },
   "projects": {
     "title": "Работы",

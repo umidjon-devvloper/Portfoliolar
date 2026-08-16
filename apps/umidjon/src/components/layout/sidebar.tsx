@@ -7,6 +7,7 @@ import { Link, usePathname } from "@/i18n/navigation";
 import { navItems } from "@/content/nav";
 import { profile } from "@/content/profile";
 import { cn } from "@/lib/utils";
+import { LogoMark } from "@/components/ui/logo-mark";
 
 type IconName = keyof typeof icons;
 
@@ -26,8 +27,8 @@ export function Sidebar() {
   return (
     <aside className="fixed inset-y-0 left-0 z-40 hidden w-[var(--sidebar)] flex-col justify-between border-r border-border bg-surface py-6 lg:flex">
       <div className="flex flex-col gap-8">
-        <Link href="/" className="px-5 text-[1.875rem] font-extrabold leading-none tracking-tight">
-          U<span className="text-accent">.</span>
+        <Link href="/" className="px-5" aria-label="Umidjon">
+          <LogoMark className="h-9 w-9" />
         </Link>
 
         <nav className="flex flex-col gap-0.5">

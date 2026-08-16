@@ -1,11 +1,6 @@
-export type SkillLevel = number | null;
-
-/** TODO: levels came from the design mock-up — confirm before launch. */
 export type Skill = {
   name: string;
   icon: string | null;
-  level: SkillLevel;
-  tier: "core" | "regular" | "familiar";
 };
 
 export type SkillCategory = {
@@ -19,86 +14,86 @@ export const skillCategories: SkillCategory[] = [
     id: "frontend",
     icon: "MonitorSmartphone",
     skills: [
-      { name: "React", icon: "react", level: 95, tier: "core" },
-      { name: "Next.js", icon: "nextdotjs", level: 95, tier: "core" },
-      { name: "TypeScript", icon: "typescript", level: 90, tier: "core" },
-      { name: "Tailwind CSS", icon: "tailwindcss", level: 90, tier: "core" },
-      { name: "HTML5 / CSS3", icon: "html5", level: 95, tier: "core" },
-      { name: "JavaScript", icon: "javascript", level: 90, tier: "core" },
-      { name: "Framer Motion", icon: "framer", level: 85, tier: "regular" },
-      { name: "shadcn/ui", icon: "shadcnui", level: 85, tier: "regular" },
-      { name: "Vite", icon: "vite", level: 85, tier: "regular" },
-      { name: "Material UI", icon: "mui", level: 75, tier: "familiar" },
+      { name: "React", icon: "react" },
+      { name: "Next.js", icon: "nextdotjs" },
+      { name: "TypeScript", icon: "typescript" },
+      { name: "Tailwind CSS", icon: "tailwindcss" },
+      { name: "HTML5 / CSS3", icon: "html5" },
+      { name: "JavaScript", icon: "javascript" },
+      { name: "Framer Motion", icon: "framer" },
+      { name: "shadcn/ui", icon: "shadcnui" },
+      { name: "Vite", icon: "vite" },
+      { name: "Material UI", icon: "mui" },
     ],
   },
   {
     id: "backend",
     icon: "Server",
     skills: [
-      { name: "Node.js", icon: "nodedotjs", level: 95, tier: "core" },
-      { name: "Express.js", icon: "express", level: 90, tier: "core" },
-      { name: "REST API", icon: null, level: 95, tier: "core" },
-      { name: "Server Actions", icon: "nextdotjs", level: 90, tier: "core" },
-      { name: "Auth / JWT", icon: null, level: 85, tier: "regular" },
-      { name: "GraphQL", icon: "graphql", level: 80, tier: "familiar" },
+      { name: "Node.js", icon: "nodedotjs" },
+      { name: "Express.js", icon: "express" },
+      { name: "REST API", icon: null },
+      { name: "Server Actions", icon: "nextdotjs" },
+      { name: "Auth / JWT", icon: null },
+      { name: "GraphQL", icon: "graphql" },
     ],
   },
   {
     id: "database",
     icon: "Database",
     skills: [
-      { name: "MongoDB", icon: "mongodb", level: 90, tier: "core" },
-      { name: "Mongoose", icon: "mongoose", level: 85, tier: "regular" },
-      { name: "MongoDB Atlas", icon: "mongodb", level: 85, tier: "regular" },
-      { name: "Firebase", icon: "firebase", level: 80, tier: "regular" },
-      { name: "Firestore", icon: "firebase", level: 80, tier: "regular" },
-      { name: "Redis", icon: "redis", level: 75, tier: "familiar" },
+      { name: "MongoDB", icon: "mongodb" },
+      { name: "Mongoose", icon: "mongoose" },
+      { name: "MongoDB Atlas", icon: "mongodb" },
+      { name: "Firebase", icon: "firebase" },
+      { name: "Firestore", icon: "firebase" },
+      { name: "Redis", icon: "redis" },
     ],
   },
   {
     id: "mobile",
     icon: "Smartphone",
     skills: [
-      { name: "React Native", icon: "react", level: 90, tier: "core" },
-      { name: "Expo", icon: "expo", level: 90, tier: "core" },
-      { name: "Expo EAS", icon: "expo", level: 85, tier: "regular" },
-      { name: "EAS Build", icon: "expo", level: 85, tier: "regular" },
-      { name: "App Store", icon: "appstore", level: 85, tier: "regular" },
-      { name: "Google Play", icon: "googleplay", level: 85, tier: "regular" },
+      { name: "React Native", icon: "react" },
+      { name: "Expo", icon: "expo" },
+      { name: "Expo EAS", icon: "expo" },
+      { name: "EAS Build", icon: "expo" },
+      { name: "App Store", icon: "appstore" },
+      { name: "Google Play", icon: "googleplay" },
     ],
   },
   {
     id: "devops",
     icon: "Cloud",
     skills: [
-      { name: "Git", icon: "git", level: 95, tier: "core" },
-      { name: "GitHub", icon: "github", level: 95, tier: "core" },
-      { name: "Vercel", icon: "vercel", level: 90, tier: "core" },
-      { name: "Cloudflare", icon: "cloudflare", level: 80, tier: "regular" },
-      { name: "Netlify", icon: "netlify", level: 80, tier: "regular" },
-      { name: "Firebase Hosting", icon: "firebase", level: 80, tier: "regular" },
-      { name: "GitLab", icon: "gitlab", level: 75, tier: "familiar" },
+      { name: "Git", icon: "git" },
+      { name: "GitHub", icon: "github" },
+      { name: "Vercel", icon: "vercel" },
+      { name: "Cloudflare", icon: "cloudflare" },
+      { name: "Netlify", icon: "netlify" },
+      { name: "Firebase Hosting", icon: "firebase" },
+      { name: "GitLab", icon: "gitlab" },
+    ],
+  },
+  {
+    /* TODO: only the four below are confirmed integrations. Stripe,
+       Apple Pay and Google Pay came from the mock-up — confirm or drop. */
+    id: "payments",
+    icon: "CreditCard",
+    skills: [
+      { name: "Payme", icon: null },
+      { name: "Click", icon: null },
+      { name: "Atmos", icon: null },
+      { name: "Visa", icon: "visa" },
     ],
   },
   {
     id: "others",
     icon: "CircleEllipsis",
     skills: [
-      { name: "Figma", icon: "figma", level: 85, tier: "core" },
-      { name: "UI/UX", icon: null, level: 85, tier: "regular" },
-      { name: "Stripe", icon: "stripe", level: 85, tier: "regular" },
-      { name: "Payme", icon: null, level: 85, tier: "regular" },
-      { name: "Adobe XD", icon: null, level: 70, tier: "familiar" },
-      { name: "Apple Pay", icon: "applepay", level: 75, tier: "familiar" },
-      { name: "Google Pay", icon: "googlepay", level: 75, tier: "familiar" },
+      { name: "Figma", icon: "figma" },
+      { name: "UI/UX", icon: null },
+      { name: "Adobe XD", icon: null },
     ],
   },
 ];
-
-export const tierOrder = ["core", "regular", "familiar"] as const;
-
-export const tierWeight: Record<Skill["tier"], number> = {
-  core: 1,
-  regular: 0.68,
-  familiar: 0.4,
-};
