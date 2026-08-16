@@ -4,6 +4,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Container } from "@/components/ui/container";
 import { PageHeader } from "@/components/ui/page-header";
 import { Card } from "@/components/ui/card";
+import { CodeWindow } from "@/components/ui/code-window";
 import { buttonVariants } from "@/components/ui/button";
 import { ContactForm } from "@/components/sections/contact-form";
 import {
@@ -12,7 +13,8 @@ import {
 } from "@/components/sections/contact-channels";
 import { WorldMap } from "@/components/sections/world-map";
 import { Reveal } from "@/components/motion/reveal";
-import { profile } from "@/content/profile";
+import { buildContactSnippet } from "@/content/code-sample";
+import { metrics, profile } from "@/content/profile";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -36,6 +38,7 @@ export default async function ContactPage({ params }: PageProps) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "contact" });
+  const response = metrics.find((metric) => metric.id === "response");
 
   const channels: Channel[] = [
     {
@@ -80,7 +83,7 @@ export default async function ContactPage({ params }: PageProps) {
       id: "availability",
       icon: "clock",
       label: t("availabilityLabel"),
-      value: t("hours.description"),
+      value: t("availabilityValue"),
       href: null,
       copy: null,
     },
@@ -88,17 +91,16 @@ export default async function ContactPage({ params }: PageProps) {
 
   return (
     <>
-      <Container className="relative overflow-hidden border-b border-border py-10 sm:py-12">
-        <PlaneDecor />
-
-        <div className="relative grid gap-10 lg:grid-cols-[1fr_minmax(0,28rem)] lg:gap-12">
-          <div className="flex flex-col gap-10">
+      <Container className="border-b border-border py-10 sm:py-12">
+        <div className="grid gap-10 lg:grid-cols-[1fr_minmax(0,28rem)] lg:gap-12">
+          <div className="flex max-w-[38rem] flex-col gap-10">
             <PageHeader
-              className="lg:grid-cols-1"
+              className="max-w-[32rem] lg:grid-cols-1"
               breadcrumb={t("breadcrumb")}
               index="07"
               lead={t("headingLead")}
               accent={t("headingAccent")}
+              suffix=""
               description={t("pageSubtitle")}
             />
 
@@ -122,6 +124,24 @@ export default async function ContactPage({ params }: PageProps) {
                 </div>
               ))}
             </div>
+
+            <Reveal className="hidden lg:block">
+              <CodeWindow
+                filename="contact.js"
+                className="max-w-[26rem]"
+                lines={buildContactSnippet({
+                  name: profile.firstName,
+                  telegram: contact.telegramHandle,
+                  location: location
+                    ? `${location.city}, ${location.countryCode}`
+                    : null,
+                  replyWithin: response
+                    ? `${response.value}${response.suffix}`
+                    : null,
+                  status: "open",
+                })}
+              />
+            </Reveal>
           </div>
 
           <Reveal delay={80}>
@@ -190,51 +210,5 @@ export default async function ContactPage({ params }: PageProps) {
         </Reveal>
       </Container>
     </>
-  );
-}
-
-/* Paper plane and dot field from the design, decoration only. */
-function PlaneDecor() {
-  return (
-    <svg
-      viewBox="0 0 360 200"
-      fill="none"
-      aria-hidden
-      className="pointer-events-none absolute -right-6 -top-8 hidden h-[13rem] w-[22rem] xl:block"
-    >
-      <defs>
-        <pattern id="plane-dots" width="9" height="9" patternUnits="userSpaceOnUse">
-          <circle cx="1.6" cy="1.6" r="1.2" fill="var(--accent)" opacity="0.5" />
-        </pattern>
-
-        <radialGradient id="plane-glow" cx="72%" cy="34%" r="46%">
-          <stop offset="0%" stopColor="var(--accent)" stopOpacity="0.22" />
-          <stop offset="100%" stopColor="var(--accent)" stopOpacity="0" />
-        </radialGradient>
-      </defs>
-
-      <rect width="360" height="200" fill="url(#plane-glow)" />
-      <rect x="10" y="18" width="120" height="66" fill="url(#plane-dots)" opacity="0.7" />
-
-      <path
-        d="M40 168 C 130 150, 210 110, 268 58"
-        stroke="var(--accent)"
-        strokeWidth="1.3"
-        strokeDasharray="5 6"
-        opacity="0.6"
-        strokeLinecap="round"
-      />
-
-      <g
-        stroke="var(--accent)"
-        strokeWidth="1.6"
-        strokeLinejoin="round"
-        strokeLinecap="round"
-        fill="none"
-      >
-        <path d="M276 60 L 330 26 L 312 84 L 296 68 Z" />
-        <path d="M276 60 L 296 68 L 330 26" />
-      </g>
-    </svg>
   );
 }

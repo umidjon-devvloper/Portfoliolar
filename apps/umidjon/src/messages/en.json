@@ -303,7 +303,8 @@
     "ctaTitle": "Have a project in mind?",
     "ctaAccent": "I'd love to hear about it.",
     "ctaText": "Whether you have a clear idea or just want to explore possibilities, I'm here to help you turn it into reality.",
-    "ctaButton": "Let's start a conversation"
+    "ctaButton": "Let's start a conversation",
+    "availabilityValue": "Mon–Fri, 10:00–19:00 (GMT+5)"
   },
   "resume": {
     "title": "Resume",

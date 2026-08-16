@@ -303,7 +303,8 @@
     "ctaTitle": "Loyiha g'oyangiz bormi?",
     "ctaAccent": "Eshitishni istardim.",
     "ctaText": "Aniq g'oya bo'lsa ham, shunchaki imkoniyatlarni ko'rmoqchi bo'lsangiz ham — uni haqiqatga aylantirishga yordam beraman.",
-    "ctaButton": "Suhbatni boshlaymiz"
+    "ctaButton": "Suhbatni boshlaymiz",
+    "availabilityValue": "Du–Ju, 10:00–19:00 (GMT+5)"
   },
   "resume": {
     "title": "Rezyume",

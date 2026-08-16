@@ -102,6 +102,46 @@ export const developerSnippet: CodeLine[] = [
   [{ text: "};", tone: "pn" }],
 ];
 
+/** Contact header block, built from the same profile data the cards use. */
+export function buildContactSnippet(values: {
+  name: string;
+  telegram: string | null;
+  location: string | null;
+  replyWithin: string | null;
+  status: string;
+}): CodeLine[] {
+  const entry = (key: string, value: string): CodeLine => [
+    { text: `  ${key}`, tone: "pr" },
+    { text: ": ", tone: "pn" },
+    { text: `'${value}'`, tone: "st" },
+    { text: ",", tone: "pn" },
+  ];
+
+  /* Unknown values are dropped rather than printed empty. */
+  const rows: CodeLine[] = (
+    [
+      /* The address is too long for this window, so the card carries it. */
+      ["name", values.name],
+      ["telegram", values.telegram],
+      ["location", values.location],
+      ["replyWithin", values.replyWithin],
+      ["status", values.status],
+    ] as const
+  )
+    .filter(([, value]) => Boolean(value))
+    .map(([key, value]) => entry(key, value as string));
+
+  return [
+    [
+      { text: "const", tone: "kw" },
+      { text: " contact", tone: "fn" },
+      { text: " = {", tone: "pn" },
+    ],
+    ...rows,
+    [{ text: "};", tone: "pn" }],
+  ];
+}
+
 type ExperienceValues = {
   since: string;
   roles: number;
