@@ -137,7 +137,7 @@ export function AboutBoard() {
         <Stagger className="flex flex-1 flex-col justify-between gap-8">
           {toolGroups.map((group, groupIndex) => (
             <div key={group.id} className="flex flex-col gap-4">
-              <h3 className="text-sm font-medium text-accent">{ts(group.id)}</h3>
+              <h3 className="text-sm font-medium text-accent">{ts(group.id === "tools" ? "devops" : group.id)}</h3>
               <ul className="grid grid-cols-5 gap-x-2 gap-y-4">
                 {group.names.map((name, index) => (
                   <li

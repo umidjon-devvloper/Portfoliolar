@@ -2,6 +2,7 @@
 
 import {
   BookOpen,
+  CircleEllipsis,
   Cloud,
   Code,
   Cpu,
@@ -30,11 +31,10 @@ import { cn } from "@/lib/utils";
 const categoryIcon: Record<string, typeof Code> = {
   frontend: MonitorSmartphone,
   backend: Server,
-  authDb: Database,
+  database: Database,
   mobile: Smartphone,
   devops: Cloud,
-  payments: Code,
-  design: Star,
+  others: CircleEllipsis,
 };
 
 const pillars = [
@@ -69,22 +69,27 @@ function SkillRow({ skill }: { skill: Skill }) {
   const fill = skill.level !== null ? skill.level / 100 : tierWeight[skill.tier];
 
   return (
-    <li className="stagger-item grid grid-cols-[1.25rem_1fr_auto] items-center gap-3">
-      <TechIcon slug={skill.icon} fallback={skill.name} className="h-5 w-5" />
+    <li className="stagger-item flex items-center gap-3">
+      <TechIcon
+        slug={skill.icon}
+        fallback={skill.name}
+        className="h-[18px] w-[18px] shrink-0"
+      />
+      <span className="w-[6.5rem] shrink-0 truncate text-[0.8125rem]">
+        {skill.name}
+      </span>
 
-      <div className="flex min-w-0 flex-col gap-1.5">
-        <span className="truncate text-[0.8125rem]">{skill.name}</span>
-        <span className="h-[3px] overflow-hidden rounded-full bg-border">
+      <div className="flex min-w-0 flex-1 flex-col items-end gap-1">
+        <span className="text-[0.6875rem] tabular-nums leading-none text-muted">
+          {skill.level !== null ? `${skill.level}%` : t(`tier.${skill.tier}`)}
+        </span>
+        <span className="h-[3px] w-full overflow-hidden rounded-full bg-border">
           <span
             className="meter block h-full w-full rounded-full"
             style={{ "--meter": String(fill) } as React.CSSProperties}
           />
         </span>
       </div>
-
-      <span className="w-9 text-right text-[0.6875rem] tabular-nums text-muted">
-        {skill.level !== null ? `${skill.level}%` : t(`tier.${skill.tier}`)}
-      </span>
     </li>
   );
 }

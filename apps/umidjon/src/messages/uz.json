@@ -101,10 +101,7 @@
     "frontend": "Frontend",
     "mobile": "Mobile",
     "backend": "Backend",
-    "authDb": "Auth & Database",
-    "payments": "To'lov tizimlari",
-    "devops": "DevOps",
-    "design": "Dizayn",
+    "devops": "DevOps va vositalar",
     "label": "Texnologiyalar",
     "tier": {
       "core": "Asosiy stack",
@@ -114,7 +111,7 @@
     "pageTitle": "Ko'nikmalar",
     "breadcrumb": "Ko'nikmalar",
     "headingLead": "Mening",
-    "headingAccent": "ko'nikmalarim",
+    "headingAccent": "Ko'nikmalarim",
     "pageSubtitle": "Kengayadigan va tez raqamli mahsulotlar qurish uchun ishlatadigan texnologiyalarim.",
     "stripTitle": "Ishlatadigan texnologiyalarim",
     "allSkills": "Barchasi",
@@ -125,22 +122,24 @@
     "toolStripTitle": "Ishlatadigan vositalarim",
     "pillars": {
       "stack": {
-        "title": "Zamonaviy stack",
-        "description": "Bugungi texnologiyalar va yaxshi amaliyotlar"
+        "title": "Zamonaviy tech stack",
+        "description": "Bugungi texnologiyalar va yaxshi amaliyotlardan foydalanaman"
       },
       "architecture": {
         "title": "Toza arxitektura",
-        "description": "Qo'llab-quvvatlanadigan va kengayadigan kod"
+        "description": "Qo'llab-quvvatlanadigan va kengayadigan kod yozaman"
       },
       "performance": {
         "title": "Unumdorlikka e'tibor",
-        "description": "Tez, optimallashtirilgan va ishonchli ilovalar"
+        "description": "Tez, optimallashtirilgan va ishonchli ilovalar quraman"
       },
       "learning": {
         "title": "Doimiy o'rganish",
-        "description": "Har kuni yangi narsa o'rganib boraman"
+        "description": "Har kuni o'rganib va o'sib boraman"
       }
-    }
+    },
+    "database": "Ma'lumotlar bazasi",
+    "others": "Boshqalar"
   },
   "projects": {
     "title": "Ishlar",

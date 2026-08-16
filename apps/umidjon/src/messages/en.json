@@ -101,10 +101,7 @@
     "frontend": "Frontend",
     "mobile": "Mobile",
     "backend": "Backend",
-    "authDb": "Auth & Database",
-    "payments": "Payments",
-    "devops": "DevOps",
-    "design": "Design",
+    "devops": "DevOps & Tools",
     "label": "Technologies",
     "tier": {
       "core": "Core stack",
@@ -114,10 +111,10 @@
     "pageTitle": "Skills",
     "breadcrumb": "Skills",
     "headingLead": "My",
-    "headingAccent": "skills",
+    "headingAccent": "Skills",
     "pageSubtitle": "The technologies I use to build fast, scalable digital products.",
     "stripTitle": "Technologies I work with",
-    "allSkills": "All skills",
+    "allSkills": "All Skills",
     "toolsTitle": "Skills & tools",
     "tools": "Tools",
     "eyebrow": "My expertise",
@@ -125,22 +122,24 @@
     "toolStripTitle": "Tools & technologies I work with",
     "pillars": {
       "stack": {
-        "title": "Modern tech stack",
-        "description": "Up-to-date technologies and best practices"
+        "title": "Modern Tech Stack",
+        "description": "Using up-to-date technologies and best practices"
       },
       "architecture": {
-        "title": "Clean architecture",
-        "description": "Maintainable and scalable code"
+        "title": "Clean Architecture",
+        "description": "Writing maintainable and scalable code"
       },
       "performance": {
-        "title": "Performance focused",
-        "description": "Fast, optimised and reliable applications"
+        "title": "Performance Focused",
+        "description": "Building fast, optimized and reliable applications"
       },
       "learning": {
-        "title": "Continuous learning",
+        "title": "Continuous Learning",
         "description": "Always learning and improving every day"
       }
-    }
+    },
+    "database": "Database",
+    "others": "Others"
   },
   "projects": {
     "title": "Work",

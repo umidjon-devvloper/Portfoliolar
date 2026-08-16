@@ -24,7 +24,7 @@ export default async function SkillsPage({ params }: PageProps) {
       <Container className="border-b border-border py-8 sm:py-10">
         <PageHeader
           breadcrumb={t("breadcrumb")}
-          index="04"
+          eyebrow={t("eyebrow")}
           lead={t("headingLead")}
           accent={t("headingAccent")}
           description={t("pageSubtitle")}
