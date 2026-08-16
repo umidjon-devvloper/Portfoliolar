@@ -311,6 +311,15 @@
     transform: none;
   }
 
+  .world-dots {
+    -webkit-mask-image: url("/images/pages/world-dots.svg");
+    mask-image: url("/images/pages/world-dots.svg");
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+  }
+
   .logo-mark {
     -webkit-mask-image: url("/images/brand/mark.png");
     mask-image: url("/images/brand/mark.png");
