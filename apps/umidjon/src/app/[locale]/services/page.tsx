@@ -29,36 +29,36 @@ function ServiceGrid() {
 
   return (
     <Stagger>
-      <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {services.map((service, index) => {
           const Icon = icons[service.icon as IconName] as icons.LucideIcon;
 
           return (
             <StaggerItem key={service.id} index={index} className="flex">
-              <Card className="group flex w-full flex-col gap-5 bg-surface-2 p-6 sm:p-7">
+              <Card className="group flex w-full flex-col gap-6 bg-surface-2 p-7 sm:p-8">
                 <div className="flex items-start justify-between gap-4">
                   <span className="grid h-12 w-12 shrink-0 place-items-center rounded-[var(--radius-btn)] bg-accent-soft text-accent transition-transform duration-300 group-hover:scale-110">
                     <Icon className="h-5 w-5" strokeWidth={1.6} />
                   </span>
-                  <span className="font-mono text-[0.6875rem] text-muted">
+                  <span className="font-mono text-[0.75rem] text-muted">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <h2 className="text-[1.0625rem] font-bold tracking-tight transition-colors group-hover:text-accent">
+                  <h2 className="text-[1.1875rem] font-bold tracking-tight transition-colors group-hover:text-accent">
                     {t(`${service.id}.title`)}
                   </h2>
-                  <p className="text-sm leading-[1.75] text-muted">
+                  <p className="text-[0.9375rem] leading-[1.8] text-muted">
                     {t(`${service.id}.description`)}
                   </p>
                 </div>
 
-                <ul className="flex flex-col gap-2.5 border-t border-border pt-5">
+                <ul className="flex flex-col gap-3">
                   {service.points.map((point) => (
-                    <li key={point} className="flex items-start gap-2.5 text-[0.8125rem]">
-                      <span className="mt-0.5 grid h-4 w-4 shrink-0 place-items-center rounded-full bg-accent-soft text-accent">
-                        <Check className="h-2.5 w-2.5" strokeWidth={3} />
+                    <li key={point} className="flex items-start gap-3 text-[0.875rem]">
+                      <span className="mt-1 grid h-[18px] w-[18px] shrink-0 place-items-center rounded-full bg-accent-soft text-accent">
+                        <Check className="h-3 w-3" strokeWidth={3} />
                       </span>
                       <span className="text-muted">{point}</span>
                     </li>
@@ -67,7 +67,7 @@ function ServiceGrid() {
 
                 <Link
                   href="/contact"
-                  className="group/link mt-auto inline-flex items-center gap-2 pt-2 text-[0.8125rem] font-medium text-accent"
+                  className="group/link mt-auto inline-flex items-center gap-2 pt-3 text-[0.875rem] font-medium text-accent"
                 >
                   {t("learnMore")}
                   <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover/link:translate-x-1.5" />
@@ -166,7 +166,7 @@ export default async function ServicesPage({ params }: PageProps) {
                 <CodeVisual
                   filename="services.js"
                   lines={buildServicesSnippet({
-                    offers: ["web", "mobile", "saas"],
+                    offers: services.map((service) => service.id),
                     from: "Next.js + Node.js",
                     delivery: "Idea to launch",
                   })}

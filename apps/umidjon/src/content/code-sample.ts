@@ -157,16 +157,33 @@ export function buildServicesSnippet(values: {
   from: string;
   delivery: string;
 }): CodeLine[] {
-  const list: CodeLine = [
-    { text: "  offers", tone: "pr" },
-    { text: ": [", tone: "pn" },
-  ];
+  /* Three per line so the window stays narrow. */
+  const rows: CodeLine[] = [];
+  const perRow = 3;
 
-  values.offers.forEach((item, index) => {
-    list.push({ text: `'${item}'`, tone: "st" });
-    if (index < values.offers.length - 1) list.push({ text: ", ", tone: "pn" });
-  });
-  list.push({ text: "],", tone: "pn" });
+  for (let start = 0; start < values.offers.length; start += perRow) {
+    const chunk = values.offers.slice(start, start + perRow);
+    const row: CodeLine =
+      start === 0
+        ? [
+            { text: "  offers", tone: "pr" },
+            { text: ": [", tone: "pn" },
+          ]
+        : [{ text: "            ", tone: "pn" }];
+
+    chunk.forEach((item, index) => {
+      row.push({ text: `'${item}'`, tone: "st" });
+      if (start + index < values.offers.length - 1) {
+        row.push({ text: ", ", tone: "pn" });
+      }
+    });
+
+    if (start + perRow >= values.offers.length) {
+      row.push({ text: "],", tone: "pn" });
+    }
+
+    rows.push(row);
+  }
 
   return [
     [
@@ -174,7 +191,7 @@ export function buildServicesSnippet(values: {
       { text: " services", tone: "fn" },
       { text: " = {", tone: "pn" },
     ],
-    list,
+    ...rows,
     [
       { text: "  stack", tone: "pr" },
       { text: ": ", tone: "pn" },
