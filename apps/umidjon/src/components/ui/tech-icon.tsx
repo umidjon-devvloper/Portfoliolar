@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   siApplepay,
   siAppstore,
@@ -28,6 +29,7 @@ import {
   siTailwindcss,
   siTypescript,
   siVercel,
+  siVisa,
   siVite,
   siFramer,
 } from "simple-icons";
@@ -66,6 +68,7 @@ const icons: Record<string, SimpleIcon> = {
   tailwindcss: siTailwindcss,
   typescript: siTypescript,
   vercel: siVercel,
+  visa: siVisa,
   vite: siVite,
 };
 
@@ -89,6 +92,20 @@ export function TechIcon({
   fallback: string;
   className?: string;
 }) {
+  /* A slug that looks like a path is a brand file we host ourselves —
+     local payment systems have no entry in simple-icons. */
+  if (slug?.startsWith("/")) {
+    return (
+      <Image
+        src={slug}
+        alt={fallback}
+        width={24}
+        height={24}
+        className={cn("object-contain", className)}
+      />
+    );
+  }
+
   const icon = slug ? icons[slug] : undefined;
 
   if (!icon) {
@@ -96,7 +113,7 @@ export function TechIcon({
       <span
         aria-hidden
         className={cn(
-          "grid place-items-center font-mono text-[0.5625rem] font-bold text-muted",
+          "grid place-items-center rounded-[var(--radius-sm)] bg-accent-soft font-mono text-[0.5625rem] font-bold text-accent",
           className,
         )}
       >

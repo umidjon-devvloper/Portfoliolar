@@ -203,7 +203,7 @@ export function WorkIndex() {
             </div>
           </div>
 
-          <div className="relative order-first aspect-[16/10] bg-surface-2 lg:order-last lg:aspect-auto lg:min-h-[22rem]">
+          <div className="relative order-first aspect-[16/10] bg-surface-2 lg:order-last lg:aspect-auto lg:min-h-[27rem] xl:min-h-[30rem]">
             <Cover project={lead} priority sizes="(min-width: 1024px) 55vw, 100vw" />
           </div>
         </Card>

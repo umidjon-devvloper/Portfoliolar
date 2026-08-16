@@ -77,7 +77,9 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     /* TODO: only the four below are confirmed integrations. Stripe,
-       Apple Pay and Google Pay came from the mock-up — confirm or drop. */
+       Apple Pay and Google Pay came from the mock-up — confirm or drop.
+       Payme, Click and Atmos have no simple-icons entry; drop their
+       brand files in public/images/brands/ and point icon at the path. */
     id: "payments",
     icon: "CreditCard",
     skills: [
