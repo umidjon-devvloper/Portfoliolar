@@ -2,7 +2,8 @@ import { CircleCheck, MapPin } from "lucide-react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
-import { Card } from "@/components/ui/card";
+import { CodeWindow } from "@/components/ui/code-window";
+import { buildAboutSnippet } from "@/content/code-sample";
 import { profile } from "@/content/profile";
 import { HeroBackdrop } from "./hero-backdrop";
 
@@ -34,7 +35,7 @@ export function AboutHero() {
         </div>
       ) : null}
 
-      <div className="relative grid gap-8 px-5 py-8 sm:px-7 lg:h-full lg:grid-cols-[minmax(0,24rem)_1fr_19rem] lg:items-center lg:gap-8 lg:py-0 lg:pl-12 lg:pr-8 xl:pl-16 xl:pr-12">
+      <div className="relative grid gap-8 px-5 py-8 sm:px-7 lg:h-full lg:grid-cols-[minmax(0,22rem)_1fr_24rem] lg:items-center lg:gap-8 lg:py-0 lg:pl-12 lg:pr-8 xl:pl-16 xl:pr-12">
         <div className="flex flex-col">
           <Breadcrumb current={t("breadcrumb")} />
 
@@ -82,38 +83,20 @@ export function AboutHero() {
           </div>
         ) : null}
 
-        <Card hover={false} className="divide-y divide-border lg:bg-surface/90 lg:backdrop-blur">
-          <Fact label={t("birth")} value={t("birthValue")} />
-          <Fact label={t("education")} value={t("educationValue")} />
-          <Fact label={t("languages")} value={t("languagesValue")} multiline />
-          <Fact label={t("focus")} value={t("focusValue")} multiline />
-        </Card>
+        <CodeWindow
+          filename="umidjon.js"
+          lines={buildAboutSnippet({
+            birth: t("birthValue"),
+            education: t("educationValue"),
+            location: profile.location
+              ? `${profile.location.city}, ${profile.location.country}`
+              : "",
+            languages: t("languagesValue").split(" · "),
+            focus: t("focusValue").split(" · "),
+          })}
+        />
       </div>
     </section>
   );
 }
 
-function Fact({
-  label,
-  value,
-  multiline = false,
-}: {
-  label: string;
-  value: string;
-  multiline?: boolean;
-}) {
-  return (
-    <div className="flex flex-col gap-0.5 px-4 py-3">
-      <span className="text-[0.6875rem] text-muted">{label}</span>
-      {multiline ? (
-        <span className="flex flex-col text-sm leading-snug">
-          {value.split(" · ").map((line) => (
-            <span key={line}>{line}</span>
-          ))}
-        </span>
-      ) : (
-        <span className="text-sm leading-snug">{value}</span>
-      )}
-    </div>
-  );
-}

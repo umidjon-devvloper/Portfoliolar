@@ -4,17 +4,9 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { buttonVariants } from "@/components/ui/button";
 import { profile } from "@/content/profile";
+import { CodeWindow } from "@/components/ui/code-window";
+import { developerSnippet } from "@/content/code-sample";
 import { HeroBackdrop } from "./hero-backdrop";
-
-const codeLines = [
-  { text: "const developer = {", accent: false },
-  { text: '  name: "Umidjon",', accent: true },
-  { text: '  role: "Full-Stack Developer",', accent: true },
-  { text: '  passion: "Building digital products",', accent: true },
-  { text: '  skills: ["Next.js", "React", "Node.js"],', accent: true },
-  { text: '  focus: "Performance & User Experience"', accent: true },
-  { text: "};", accent: false },
-];
 
 export function Hero() {
   const t = useTranslations("hero");
@@ -101,30 +93,9 @@ export function Hero() {
 
       {/* Floats over the portrait, as in the design. */}
       <div className="enter relative mt-6 flex flex-col gap-3 px-5 sm:px-7 lg:absolute lg:right-8 lg:top-[8.5rem] lg:mt-0 lg:w-[22.5rem] lg:px-0 xl:right-12">
-        <div className="card overflow-hidden bg-surface/95 backdrop-blur transition-transform duration-500 hover:-translate-y-1">
-          <div className="flex items-center gap-2 border-b border-border px-4 py-2.5">
-            <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
-            <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
-            <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
-            <span className="ml-auto font-mono text-[0.625rem] text-muted">
-              developer.js
-            </span>
-          </div>
-          <pre className="overflow-x-auto px-4 py-3 font-mono text-[0.6875rem] leading-[1.7]">
-            <code>
-              {codeLines.map((line, index) => (
-                <div key={line.text} className="flex gap-3">
-                  <span className="select-none text-muted/50">{index + 1}</span>
-                  <span className={line.accent ? "text-accent" : ""}>
-                    {line.text}
-                  </span>
-                </div>
-              ))}
-            </code>
-          </pre>
-        </div>
+        <CodeWindow filename="developer.js" lines={developerSnippet} />
 
-        <div className="card flex items-center gap-3 bg-surface/95 px-4 py-3 backdrop-blur transition-transform duration-500 hover:-translate-y-1">
+        <div className="card flex items-center gap-3 bg-surface/95 px-4 py-3 backdrop-blur">
           <span className="relative flex h-2.5 w-2.5 shrink-0">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
             <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400" />

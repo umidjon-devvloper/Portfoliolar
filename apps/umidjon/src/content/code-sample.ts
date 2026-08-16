@@ -1,5 +1,60 @@
 import type { CodeLine } from "@/components/ui/code-window";
 
+type AboutValues = {
+  birth: string;
+  education: string;
+  location: string;
+  languages: string[];
+  focus: string[];
+};
+
+/**
+ * The About panel as a code block, built from the same profile data the
+ * rest of the page uses so the two can never drift apart.
+ */
+export function buildAboutSnippet(values: AboutValues): CodeLine[] {
+  const list = (items: string[]): CodeLine => {
+    const line: CodeLine = [{ text: "[", tone: "pn" }];
+
+    items.forEach((item, index) => {
+      line.push({ text: `'${item}'`, tone: "st" });
+      if (index < items.length - 1) line.push({ text: ", ", tone: "pn" });
+    });
+
+    line.push({ text: "],", tone: "pn" });
+    return line;
+  };
+
+  const entry = (key: string, value: string): CodeLine => [
+    { text: `  ${key}`, tone: "pr" },
+    { text: ": ", tone: "pn" },
+    { text: `'${value}'`, tone: "st" },
+    { text: ",", tone: "pn" },
+  ];
+
+  return [
+    [
+      { text: "const", tone: "kw" },
+      { text: " umidjon", tone: "fn" },
+      { text: " = {", tone: "pn" },
+    ],
+    entry("birth", values.birth),
+    entry("education", values.education),
+    entry("location", values.location),
+    [
+      { text: "  languages", tone: "pr" },
+      { text: ": ", tone: "pn" },
+      ...list(values.languages),
+    ],
+    [
+      { text: "  focus", tone: "pr" },
+      { text: ": ", tone: "pn" },
+      ...list(values.focus),
+    ],
+    [{ text: "};", tone: "pn" }],
+  ];
+}
+
 export const developerSnippet: CodeLine[] = [
   [
     { text: "const", tone: "kw" },
