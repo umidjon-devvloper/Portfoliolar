@@ -1,6 +1,6 @@
 "use client";
 
-import { CheckCircle2, Lock, Send, TriangleAlert } from "lucide-react";
+import { ArrowRight, CheckCircle2, Lock, TriangleAlert } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useActionState, useEffect, useRef } from "react";
 import { useFormStatus } from "react-dom";
@@ -10,18 +10,21 @@ import { Button } from "@/components/ui/button";
 const initialState: ContactState = { status: "idle", message: null };
 
 const fieldClass =
-  "w-full rounded-[var(--radius-btn)] border border-border bg-background px-4 py-3 text-sm outline-none transition-colors duration-300 placeholder:text-muted focus:border-accent";
-
-const labelClass = "text-xs font-medium tracking-wide text-muted";
+  "w-full rounded-[var(--radius-btn)] border border-border bg-background px-4 py-3.5 text-sm outline-none transition-colors duration-300 placeholder:text-muted focus:border-accent";
 
 function SubmitButton() {
   const t = useTranslations("contact");
   const { pending } = useFormStatus();
 
   return (
-    <Button type="submit" size="lg" disabled={pending} className="w-full">
+    <Button
+      type="submit"
+      size="lg"
+      disabled={pending}
+      className="mt-2 w-full text-xs font-semibold uppercase tracking-[0.14em]"
+    >
       {pending ? t("sending") : t("submit")}
-      <Send className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
+      <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
     </Button>
   );
 }
@@ -38,56 +41,44 @@ export function ContactForm() {
   return (
     <form ref={formRef} action={formAction} className="flex flex-col gap-4">
       <div className="grid gap-4 sm:grid-cols-2">
-        <label className="flex flex-col gap-2">
-          <span className={labelClass}>{t("nameLabel")}</span>
-          <input
-            name="name"
-            type="text"
-            required
-            minLength={2}
-            autoComplete="name"
-            placeholder={t("namePlaceholder")}
-            className={fieldClass}
-          />
-        </label>
-
-        <label className="flex flex-col gap-2">
-          <span className={labelClass}>{t("emailLabel")}</span>
-          <input
-            name="email"
-            type="email"
-            required
-            autoComplete="email"
-            placeholder={t("emailPlaceholder")}
-            className={fieldClass}
-          />
-        </label>
-      </div>
-
-      <label className="flex flex-col gap-2">
-        <span className={labelClass}>
-          {t("subjectLabel")}{" "}
-          <span className="text-muted/70">({t("optional")})</span>
-        </span>
         <input
-          name="subject"
+          name="name"
           type="text"
-          placeholder={t("subjectPlaceholder")}
+          required
+          minLength={2}
+          autoComplete="name"
+          aria-label={t("nameLabel")}
+          placeholder={t("namePlaceholder")}
           className={fieldClass}
         />
-      </label>
-
-      <label className="flex flex-col gap-2">
-        <span className={labelClass}>{t("messageLabel")}</span>
-        <textarea
-          name="message"
+        <input
+          name="email"
+          type="email"
           required
-          minLength={10}
-          rows={7}
-          placeholder={t("messagePlaceholder")}
-          className={`${fieldClass} resize-y`}
+          autoComplete="email"
+          aria-label={t("emailLabel")}
+          placeholder={t("emailPlaceholder")}
+          className={fieldClass}
         />
-      </label>
+      </div>
+
+      <input
+        name="subject"
+        type="text"
+        aria-label={t("subjectLabel")}
+        placeholder={t("subjectPlaceholder")}
+        className={fieldClass}
+      />
+
+      <textarea
+        name="message"
+        required
+        minLength={10}
+        rows={7}
+        aria-label={t("messageLabel")}
+        placeholder={t("messagePlaceholder")}
+        className={`${fieldClass} resize-y`}
+      />
 
       <input
         type="text"

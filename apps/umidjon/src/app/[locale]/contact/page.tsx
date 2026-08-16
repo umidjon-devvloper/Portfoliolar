@@ -1,29 +1,18 @@
 import type { Metadata } from "next";
-import {
-  Clock,
-  Github,
-  Globe,
-  Instagram,
-  Linkedin,
-  Mail,
-  MapPin,
-  Phone,
-  Send,
-  Zap,
-  type LucideIcon,
-} from "lucide-react";
+import { ArrowRight, Globe, Target, UserRound, Zap } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { useTranslations } from "next-intl";
 import { Container } from "@/components/ui/container";
 import { PageHeader } from "@/components/ui/page-header";
-import { PageVisual } from "@/components/ui/page-visual";
-import { CodeVisual } from "@/components/ui/code-visual";
 import { Card } from "@/components/ui/card";
+import { buttonVariants } from "@/components/ui/button";
 import { ContactForm } from "@/components/sections/contact-form";
+import {
+  ContactChannels,
+  type Channel,
+} from "@/components/sections/contact-channels";
 import { WorldMap } from "@/components/sections/world-map";
-import { Reveal, Stagger, StaggerItem } from "@/components/motion/reveal";
-import { buildContactSnippet } from "@/content/code-sample";
-import { metrics, profile } from "@/content/profile";
+import { Reveal } from "@/components/motion/reveal";
+import { profile } from "@/content/profile";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -35,259 +24,217 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return { title: t("pageTitle"), description: t("pageSubtitle") };
 }
 
-type Channel = {
-  id: string;
-  icon: LucideIcon;
-  value: string;
-  href: string | null;
-  external: boolean;
-};
-
-const channels: Channel[] = [
-  {
-    id: "email",
-    icon: Mail,
-    value: contact.email,
-    href: `mailto:${contact.email}`,
-    external: false,
-  },
-  contact.phone
-    ? {
-        id: "phone",
-        icon: Phone,
-        value: contact.phoneDisplay ?? contact.phone,
-        href: `tel:${contact.phone}`,
-        external: false,
-      }
-    : null,
-  contact.telegram
-    ? {
-        id: "telegram",
-        icon: Send,
-        value: contact.telegramHandle ?? "Telegram",
-        href: contact.telegram,
-        external: true,
-      }
-    : null,
-  location
-    ? {
-        id: "location",
-        icon: MapPin,
-        value: `${location.city}, ${location.country}`,
-        href: null,
-        external: false,
-      }
-    : null,
-].filter((item): item is Channel => item !== null);
-
-const availability = [
+const highlights = [
   { id: "fast", icon: Zap },
-  { id: "open", icon: Globe },
-  { id: "hours", icon: Clock },
+  { id: "open", icon: Target },
+  { id: "global", icon: Globe },
 ] as const;
 
-const socials = [
-  { id: "github", icon: Github, href: contact.github },
-  { id: "linkedin", icon: Linkedin, href: contact.linkedin },
-  { id: "instagram", icon: Instagram, href: contact.instagram },
-  { id: "telegram", icon: Send, href: contact.telegram },
-].filter((item): item is { id: string; icon: LucideIcon; href: string } =>
-  Boolean(item.href),
-);
-
-function Channels() {
-  const t = useTranslations("contact");
-
-  return (
-    <Stagger>
-      <div className="grid gap-4 sm:grid-cols-2">
-        {channels.map((channel, index) => {
-          const Icon = channel.icon;
-
-          const body = (
-            <Card className="group flex h-full flex-col gap-4 bg-surface-2 p-5 sm:p-6">
-              <div className="flex items-start justify-between gap-3">
-                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-[var(--radius-btn)] bg-accent-soft text-accent transition-transform duration-300 group-hover:scale-110">
-                  <Icon className="h-[1.125rem] w-[1.125rem]" strokeWidth={1.6} />
-                </span>
-                <span className="font-mono text-[0.6875rem] text-muted">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-              </div>
-
-              <div className="flex flex-col gap-1.5">
-                <span className="text-[0.9375rem] font-semibold transition-colors group-hover:text-accent">
-                  {t(channel.id)}
-                </span>
-                <span className="break-all text-[0.8125rem] text-accent">
-                  {channel.value}
-                </span>
-                <span className="text-xs leading-[1.7] text-muted">
-                  {t(`${channel.id}Note`)}
-                </span>
-              </div>
-            </Card>
-          );
-
-          return (
-            <StaggerItem key={channel.id} index={index} className="flex">
-              {channel.href ? (
-                <a
-                  href={channel.href}
-                  className="w-full"
-                  {...(channel.external
-                    ? { target: "_blank", rel: "noreferrer noopener" }
-                    : {})}
-                >
-                  {body}
-                </a>
-              ) : (
-                <div className="w-full">{body}</div>
-              )}
-            </StaggerItem>
-          );
-        })}
-      </div>
-    </Stagger>
-  );
-}
-
-function Availability() {
-  const t = useTranslations("contact");
-
-  return (
-    <Card hover={false} className="flex flex-col divide-y divide-border p-0">
-      {availability.map((item) => (
-        <div key={item.id} className="flex items-start gap-4 p-5">
-          <span className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-full border border-accent/40 text-accent">
-            <item.icon className="h-4 w-4" strokeWidth={1.6} />
-          </span>
-          <div className="flex flex-col gap-1">
-            <span className="text-[0.875rem] font-semibold">
-              {t(`${item.id}.title`)}
-            </span>
-            <span className="text-xs leading-[1.7] text-muted">
-              {t(`${item.id}.description`)}
-            </span>
-          </div>
-        </div>
-      ))}
-    </Card>
-  );
-}
-
-function Socials() {
-  const t = useTranslations("contact");
-
-  return (
-    <div className="flex flex-col gap-3">
-      <span className="eyebrow">{t("socialsTitle")}</span>
-      <div className="flex flex-wrap gap-3">
-        {socials.map((social) => (
-          <a
-            key={social.id}
-            href={social.href}
-            target="_blank"
-            rel="noreferrer noopener"
-            aria-label={social.id}
-            className="tile grid h-11 w-11 place-items-center rounded-[var(--radius-btn)] border border-border bg-surface text-muted hover:text-accent"
-          >
-            <social.icon className="h-[1.0625rem] w-[1.0625rem]" strokeWidth={1.6} />
-          </a>
-        ))}
-      </div>
-    </div>
-  );
-}
+const legendKeys = ["remote", "worldwide", "flexible", "results"] as const;
 
 export default async function ContactPage({ params }: PageProps) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "contact" });
 
-  const response = metrics.find((metric) => metric.id === "response");
-  const homeLabel = location ? `${location.city}, ${location.country}` : null;
+  const channels: Channel[] = [
+    {
+      id: "email",
+      icon: "mail",
+      label: t("email"),
+      value: contact.email,
+      href: `mailto:${contact.email}`,
+      copy: contact.email,
+    },
+    contact.phone
+      ? {
+          id: "phone",
+          icon: "phone",
+          label: t("phone"),
+          value: contact.phoneDisplay ?? contact.phone,
+          href: `tel:${contact.phone}`,
+          copy: contact.phone,
+        }
+      : null,
+    contact.telegram
+      ? {
+          id: "telegram",
+          icon: "telegram",
+          label: t("telegram"),
+          value: contact.telegramHandle ?? "Telegram",
+          href: contact.telegram,
+          copy: contact.telegramHandle,
+        }
+      : null,
+    location
+      ? {
+          id: "location",
+          icon: "location",
+          label: t("location"),
+          value: `${location.city}, ${location.country}`,
+          href: null,
+          copy: `${location.city}, ${location.country}`,
+        }
+      : null,
+    {
+      id: "availability",
+      icon: "clock",
+      label: t("availabilityLabel"),
+      value: t("hours.description"),
+      href: null,
+      copy: null,
+    },
+  ].filter((item): item is Channel => item !== null);
 
   return (
     <>
-      <Container className="border-b border-border py-10 sm:py-12">
-        <PageHeader
-          breadcrumb={t("breadcrumb")}
-          index="07"
-          lead={t("headingLead")}
-          accent={t("headingAccent")}
-          description={t("pageSubtitle")}
-          visual={
-            <PageVisual
-              page="contact"
-              alt={t("pageTitle")}
-              fallback={
-                <CodeVisual
-                  filename="contact.js"
-                  lines={buildContactSnippet({
-                    name: profile.firstName,
-                    telegram: contact.telegramHandle,
-                    location: location
-                      ? `${location.city}, ${location.countryCode}`
-                      : null,
-                    replyWithin: response
-                      ? `${response.value}${response.suffix}`
-                      : null,
-                    status: "open",
-                  })}
-                />
-              }
+      <Container className="relative overflow-hidden border-b border-border py-10 sm:py-12">
+        <PlaneDecor />
+
+        <div className="relative grid gap-10 lg:grid-cols-[1fr_minmax(0,28rem)] lg:gap-12">
+          <div className="flex flex-col gap-10">
+            <PageHeader
+              className="lg:grid-cols-1"
+              breadcrumb={t("breadcrumb")}
+              index="07"
+              lead={t("headingLead")}
+              accent={t("headingAccent")}
+              description={t("pageSubtitle")}
             />
-          }
-        />
-      </Container>
 
-      <Container className="grid gap-8 py-10 sm:py-12 lg:grid-cols-[minmax(0,25rem)_1fr] lg:gap-10">
-        <div className="flex flex-col gap-6">
-          <Reveal className="flex flex-col gap-2">
-            <span className="eyebrow">{t("eyebrow")}</span>
-            <h2 className="type-section">{t("channelsTitle")}</h2>
-            <span className="rule-taper mt-2" aria-hidden />
-          </Reveal>
+            <div className="grid gap-8 sm:grid-cols-3 sm:gap-0">
+              {highlights.map((item, index) => (
+                <div
+                  key={item.id}
+                  className={`flex flex-col gap-3 sm:px-6 ${
+                    index === 0 ? "sm:pl-0" : "sm:border-l sm:border-border"
+                  }`}
+                >
+                  <span className="grid h-11 w-11 place-items-center rounded-full border border-accent/40 text-accent">
+                    <item.icon className="h-[1.125rem] w-[1.125rem]" strokeWidth={1.6} />
+                  </span>
+                  <span className="text-[0.875rem] font-semibold text-accent">
+                    {t(`${item.id}.title`)}
+                  </span>
+                  <span className="text-xs leading-[1.75] text-muted">
+                    {t(`${item.id}.description`)}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
 
-          <Channels />
-
-          <Reveal>
-            <Availability />
-          </Reveal>
-
-          <Reveal>
-            <Socials />
+          <Reveal delay={80}>
+            <Card hover={false} className="p-6 sm:p-8">
+              <h2 className="eyebrow mb-6 block">{t("formTitle")}</h2>
+              <ContactForm />
+            </Card>
           </Reveal>
         </div>
+      </Container>
 
-        <Reveal delay={80}>
-          <Card hover={false} className="h-full p-6 sm:p-8">
-            <div className="mb-6 flex flex-col gap-2">
-              <span className="eyebrow">{t("formEyebrow")}</span>
-              <h2 className="type-section">{t("formTitle")}</h2>
-              <p className="text-[0.875rem] leading-[1.75] text-muted">
-                {t("formNote")}
-              </p>
+      <Container className="grid gap-10 border-b border-border py-12 sm:py-14 lg:grid-cols-[minmax(0,23rem)_1fr] lg:gap-12">
+        <Reveal className="flex flex-col gap-5">
+          <h2 className="eyebrow">{t("getInTouchTitle")}</h2>
+          <ContactChannels channels={channels} />
+        </Reveal>
+
+        <Reveal delay={80} className="flex flex-col gap-5">
+          <h2 className="eyebrow">{t("mapTitle")}</h2>
+          {location ? (
+            <WorldMap
+              label={t("mapTitle")}
+              city={location.city}
+              country={location.country}
+              legend={legendKeys.map((key) => t(`legend.${key}`))}
+            />
+          ) : null}
+        </Reveal>
+      </Container>
+
+      <Container className="py-12 sm:py-14">
+        <Reveal>
+          <Card hover={false} className="relative overflow-hidden p-7 sm:p-9">
+            <div className="pointer-events-none absolute inset-0 glow" aria-hidden />
+
+            <div className="relative flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+              <div className="flex items-start gap-5">
+                <span className="hidden h-14 w-14 shrink-0 place-items-center rounded-full border border-accent/40 text-accent sm:grid">
+                  <UserRound className="h-6 w-6" strokeWidth={1.4} />
+                </span>
+
+                <div className="flex flex-col gap-2">
+                  <span className="type-section">{t("ctaTitle")}</span>
+                  <span className="type-section text-accent">{t("ctaAccent")}</span>
+                  <p className="max-w-[46ch] text-[0.875rem] leading-[1.8] text-muted">
+                    {t("ctaText")}
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex flex-col items-start gap-5 lg:items-end">
+                <a
+                  href={`mailto:${contact.email}`}
+                  className={`${buttonVariants({ size: "lg" })} text-xs font-semibold uppercase tracking-[0.14em]`}
+                >
+                  {t("ctaButton")}
+                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
+                </a>
+
+                <span className="signature" aria-hidden>
+                  {profile.firstName}
+                </span>
+              </div>
             </div>
-
-            <ContactForm />
           </Card>
         </Reveal>
       </Container>
-
-      <Container className="flex flex-col gap-5 pb-14 sm:pb-20">
-        <Reveal className="flex flex-col gap-2">
-          <span className="eyebrow">{t("mapEyebrow")}</span>
-          <h2 className="type-section">{t("mapTitle")}</h2>
-        </Reveal>
-
-        {homeLabel ? (
-          <Reveal delay={60}>
-            <WorldMap label={t("mapTitle")} home={homeLabel} note={t("mapNote")} />
-          </Reveal>
-        ) : null}
-      </Container>
     </>
+  );
+}
+
+/* Paper plane and dot field from the design, decoration only. */
+function PlaneDecor() {
+  return (
+    <svg
+      viewBox="0 0 360 200"
+      fill="none"
+      aria-hidden
+      className="pointer-events-none absolute -right-6 -top-8 hidden h-[13rem] w-[22rem] xl:block"
+    >
+      <defs>
+        <pattern id="plane-dots" width="9" height="9" patternUnits="userSpaceOnUse">
+          <circle cx="1.6" cy="1.6" r="1.2" fill="var(--accent)" opacity="0.5" />
+        </pattern>
+
+        <radialGradient id="plane-glow" cx="72%" cy="34%" r="46%">
+          <stop offset="0%" stopColor="var(--accent)" stopOpacity="0.22" />
+          <stop offset="100%" stopColor="var(--accent)" stopOpacity="0" />
+        </radialGradient>
+      </defs>
+
+      <rect width="360" height="200" fill="url(#plane-glow)" />
+      <rect x="10" y="18" width="120" height="66" fill="url(#plane-dots)" opacity="0.7" />
+
+      <path
+        d="M40 168 C 130 150, 210 110, 268 58"
+        stroke="var(--accent)"
+        strokeWidth="1.3"
+        strokeDasharray="5 6"
+        opacity="0.6"
+        strokeLinecap="round"
+      />
+
+      <g
+        stroke="var(--accent)"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+        strokeLinecap="round"
+        fill="none"
+      >
+        <path d="M276 60 L 330 26 L 312 84 L 296 68 Z" />
+        <path d="M276 60 L 296 68 L 330 26" />
+      </g>
+    </svg>
   );
 }

@@ -255,9 +255,9 @@
     "label": "Contact",
     "pageTitle": "Contact",
     "breadcrumb": "Contact",
-    "headingLead": "Let's",
-    "headingAccent": "connect",
-    "pageSubtitle": "Have a project in mind, or just want to say hello? I'd love to hear from you.",
+    "headingLead": "Let's build",
+    "headingAccent": "something great",
+    "pageSubtitle": "I'm always open to discussing new opportunities, exciting projects, or partnerships. Let's create something impactful together.",
     "formTitle": "Send me a message",
     "email": "Email",
     "phone": "Phone",
@@ -284,13 +284,26 @@
       "description": "Mon–Fri, 10:00–19:00 (GMT+5)."
     },
     "eyebrow": "Let's connect",
-    "channelsTitle": "Contact channels",
-    "socialsTitle": "Social profiles",
-    "formEyebrow": "Message",
-    "formNote": "Fill in the form — it lands straight in my Telegram.",
     "mapEyebrow": "Location",
-    "mapNote": "I work remotely — time zone GMT+5.",
-    "optional": "optional"
+    "optional": "optional",
+    "global": {
+      "title": "Global collaboration",
+      "description": "Comfortable working across time zones."
+    },
+    "getInTouchTitle": "Get in touch",
+    "availabilityLabel": "Availability",
+    "copy": "Copy",
+    "copied": "Copied",
+    "legend": {
+      "remote": "Remote first",
+      "worldwide": "Available worldwide",
+      "flexible": "Flexible hours",
+      "results": "Result focused"
+    },
+    "ctaTitle": "Have a project in mind?",
+    "ctaAccent": "I'd love to hear about it.",
+    "ctaText": "Whether you have a clear idea or just want to explore possibilities, I'm here to help you turn it into reality.",
+    "ctaButton": "Let's start a conversation"
   },
   "resume": {
     "title": "Resume",

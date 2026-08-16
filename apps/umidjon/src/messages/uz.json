@@ -256,8 +256,8 @@
     "pageTitle": "Aloqa",
     "breadcrumb": "Aloqa",
     "headingLead": "Keling,",
-    "headingAccent": "bog'lanamiz",
-    "pageSubtitle": "Loyiha g'oyangiz bormi yoki shunchaki salom aytmoqchimisiz? Yozing.",
+    "headingAccent": "zo'r narsa quramiz",
+    "pageSubtitle": "Yangi imkoniyatlar, qiziqarli loyihalar yoki hamkorlikni muhokama qilishga doim ochiqman. Keling, ta'sirli narsa yarataylik.",
     "formTitle": "Xabar yuborish",
     "email": "Email",
     "phone": "Telefon",
@@ -284,13 +284,26 @@
       "description": "Dushanba–Juma, 10:00–19:00 (GMT+5)."
     },
     "eyebrow": "Bog'lanamiz",
-    "channelsTitle": "Aloqa kanallari",
-    "socialsTitle": "Ijtimoiy tarmoqlar",
-    "formEyebrow": "Xabar",
-    "formNote": "Formani to'ldiring — xabar to'g'ridan-to'g'ri Telegramga tushadi.",
     "mapEyebrow": "Joylashuv",
-    "mapNote": "Masofadan ishlayman — vaqt mintaqasi GMT+5.",
-    "optional": "ixtiyoriy"
+    "optional": "ixtiyoriy",
+    "global": {
+      "title": "Global hamkorlik",
+      "description": "Turli vaqt mintaqalarida ishlashga o'rganganman."
+    },
+    "getInTouchTitle": "Bog'lanish uchun",
+    "availabilityLabel": "Ish vaqti",
+    "copy": "Nusxa olish",
+    "copied": "Nusxa olindi",
+    "legend": {
+      "remote": "Masofadan ishlayman",
+      "worldwide": "Butun dunyo bo'ylab",
+      "flexible": "Moslashuvchan vaqt",
+      "results": "Natijaga yo'naltirilgan"
+    },
+    "ctaTitle": "Loyiha g'oyangiz bormi?",
+    "ctaAccent": "Eshitishni istardim.",
+    "ctaText": "Aniq g'oya bo'lsa ham, shunchaki imkoniyatlarni ko'rmoqchi bo'lsangiz ham — uni haqiqatga aylantirishga yordam beraman.",
+    "ctaButton": "Suhbatni boshlaymiz"
   },
   "resume": {
     "title": "Rezyume",
