@@ -8,7 +8,7 @@ export const projects: Project[] = [
     year: null,
     client: null,
     featured: true,
-    cover: null,
+    cover: "/images/projects/thehotelsaas.webp",
     gallery: [],
     links: [
       {
@@ -124,7 +124,7 @@ export const projects: Project[] = [
     year: null,
     client: "Kichik Biznesga Ko'maklashish Markazi",
     featured: false,
-    cover: null,
+    cover: "/images/projects/kbkm.webp",
     gallery: [],
     links: [{ label: "kbkm.uz", href: "https://www.kbkm.uz", kind: "live" }],
     stack: ["Vite", "React", "TypeScript"],
@@ -158,7 +158,7 @@ export const projects: Project[] = [
     year: null,
     client: "ArtSuzani",
     featured: true,
-    cover: null,
+    cover: "/images/projects/artsuzani.webp",
     gallery: [],
     links: [{ label: "artsuzani.com", href: "https://artsuzani.com", kind: "live" }],
     stack: ["Next.js 14", "TypeScript", "Stripe", "Sanity CMS"],
