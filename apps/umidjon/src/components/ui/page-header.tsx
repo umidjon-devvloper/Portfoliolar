@@ -32,18 +32,21 @@ export function PageHeader({
   return (
     <div
       className={cn(
-        "grid items-center gap-8 lg:grid-cols-[minmax(0,32rem)_1fr]",
+        "grid items-center gap-8 lg:grid-cols-[minmax(0,30rem)_1fr]",
         className,
       )}
     >
       <div className="flex flex-col">
         <Breadcrumb current={breadcrumb} />
 
-        {eyebrow ? (
-          <span className="eyebrow mt-5">{eyebrow}</span>
-        ) : index ? (
-          <span className="mt-5 font-mono text-xs tracking-[0.2em] text-accent">
-            [ {index} ]
+        {index || eyebrow ? (
+          <span className="mt-5 flex items-center gap-3">
+            {index ? (
+              <span className="font-mono text-xs tracking-[0.2em] text-accent">
+                [ {index} ]
+              </span>
+            ) : null}
+            {eyebrow ? <span className="eyebrow">{eyebrow}</span> : null}
           </span>
         ) : null}
 
@@ -67,7 +70,7 @@ export function PageHeader({
       </div>
 
       {visual ? (
-        <div className="hidden h-[15rem] justify-self-end lg:block lg:w-[30rem]">
+        <div className="hidden h-[16.5rem] justify-self-end lg:block lg:w-[34rem]">
           {visual}
         </div>
       ) : null}

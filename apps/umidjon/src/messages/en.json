@@ -112,7 +112,7 @@
     "breadcrumb": "Skills",
     "headingLead": "My",
     "headingAccent": "Skills",
-    "pageSubtitle": "The technologies I use to build fast, scalable digital products.",
+    "pageSubtitle": "I work with modern technologies and best practices to build scalable, high-performance and user-friendly digital products.",
     "stripTitle": "Technologies I work with",
     "allSkills": "All Skills",
     "toolsTitle": "Skills & tools",
@@ -231,7 +231,8 @@
     "seo": {
       "title": "Performance & SEO",
       "description": "Speed, performance and search visibility."
-    }
+    },
+    "eyebrow": "What I offer"
   },
   "contact": {
     "title": "Contact",
@@ -281,7 +282,8 @@
     "hours": {
       "title": "Working hours",
       "description": "Mon–Fri, 10:00–19:00 (GMT+5)."
-    }
+    },
+    "eyebrow": "Let's connect"
   },
   "resume": {
     "title": "Resume",
@@ -446,6 +448,7 @@
       "title": "Junior Developer",
       "description": "Started out in development and learned the fundamentals of the web.",
       "shortPeriod": "2021 – 2022"
-    }
+    },
+    "eyebrow": "My journey"
   }
 }

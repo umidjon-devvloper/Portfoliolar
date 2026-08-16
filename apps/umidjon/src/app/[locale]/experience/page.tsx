@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
 import { Container } from "@/components/ui/container";
-import { Breadcrumb } from "@/components/ui/breadcrumb";
-import { PageHeading } from "@/components/ui/section-header";
+import { PageHeader } from "@/components/ui/page-header";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { TechTag } from "@/components/ui/tech-tag";
@@ -84,10 +83,15 @@ export default async function ExperiencePage({ params }: PageProps) {
 
   return (
     <>
-      <Container className="flex flex-col gap-3.5 py-8 sm:py-10">
-        <Breadcrumb current={t("breadcrumb")} />
-        <PageHeading lead={t("headingLead")} accent={t("headingAccent")} />
-        <p className="max-w-xl leading-relaxed text-muted">{t("pageSubtitle")}</p>
+      <Container className="border-b border-border py-8 sm:py-10">
+        <PageHeader
+          breadcrumb={t("breadcrumb")}
+          index="05"
+          eyebrow={t("eyebrow")}
+          lead={t("headingLead")}
+          accent={t("headingAccent")}
+          description={t("pageSubtitle")}
+        />
       </Container>
 
       <Container className="grid gap-3 pb-10 sm:grid-cols-2 lg:grid-cols-4">

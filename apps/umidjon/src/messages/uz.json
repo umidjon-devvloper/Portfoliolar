@@ -112,7 +112,7 @@
     "breadcrumb": "Ko'nikmalar",
     "headingLead": "Mening",
     "headingAccent": "Ko'nikmalarim",
-    "pageSubtitle": "Kengayadigan va tez raqamli mahsulotlar qurish uchun ishlatadigan texnologiyalarim.",
+    "pageSubtitle": "Zamonaviy texnologiyalar va yaxshi amaliyotlar bilan ishlayman — kengayadigan, tez va foydalanuvchi uchun qulay raqamli mahsulotlar quraman.",
     "stripTitle": "Ishlatadigan texnologiyalarim",
     "allSkills": "Barchasi",
     "toolsTitle": "Ko'nikma va vositalar",
@@ -231,7 +231,8 @@
     "seo": {
       "title": "Unumdorlik va SEO",
       "description": "Tezlik, unumdorlik va qidiruvda ko'rinishni yaxshilash."
-    }
+    },
+    "eyebrow": "Nima taklif qilaman"
   },
   "contact": {
     "title": "Bog'lanish",
@@ -281,7 +282,8 @@
     "hours": {
       "title": "Ish vaqti",
       "description": "Dushanba–Juma, 10:00–19:00 (GMT+5)."
-    }
+    },
+    "eyebrow": "Bog'lanamiz"
   },
   "resume": {
     "title": "Rezyume",
@@ -446,6 +448,7 @@
       "title": "Junior Developer",
       "description": "Dasturlash yo'lini boshlab, web development asoslarini o'zlashtirdim.",
       "shortPeriod": "2021 – 2022"
-    }
+    },
+    "eyebrow": "Mening yo'lim"
   }
 }

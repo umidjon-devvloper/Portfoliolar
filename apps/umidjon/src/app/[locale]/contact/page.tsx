@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { Clock, Globe, Mail, MapPin, Phone, Send, Zap } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Container } from "@/components/ui/container";
-import { Breadcrumb } from "@/components/ui/breadcrumb";
-import { PageHeading } from "@/components/ui/section-header";
+import { PageHeader } from "@/components/ui/page-header";
 import { Card } from "@/components/ui/card";
 import { ContactForm } from "@/components/sections/contact-form";
 import { WorldMap } from "@/components/sections/world-map";
@@ -70,10 +69,15 @@ export default async function ContactPage({ params }: PageProps) {
 
   return (
     <>
-      <Container className="flex flex-col gap-3.5 py-8 sm:py-10">
-        <Breadcrumb current={t("breadcrumb")} />
-        <PageHeading lead={t("headingLead")} accent={t("headingAccent")} />
-        <p className="max-w-xl leading-relaxed text-muted">{t("pageSubtitle")}</p>
+      <Container className="border-b border-border py-8 sm:py-10">
+        <PageHeader
+          breadcrumb={t("breadcrumb")}
+          index="07"
+          eyebrow={t("eyebrow")}
+          lead={t("headingLead")}
+          accent={t("headingAccent")}
+          description={t("pageSubtitle")}
+        />
       </Container>
 
       <Container className="grid gap-6 lg:grid-cols-[1fr_1.1fr] lg:gap-10">

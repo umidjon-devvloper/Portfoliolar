@@ -20,6 +20,7 @@ import { useTranslations } from "next-intl";
 import { useMemo, useState } from "react";
 import { Link } from "@/i18n/navigation";
 import { Card } from "@/components/ui/card";
+import { Principles } from "@/components/ui/principles";
 import { TechIcon } from "@/components/ui/tech-icon";
 import { Counter } from "@/components/motion/counter";
 import { buttonVariants } from "@/components/ui/button";
@@ -120,31 +121,14 @@ export function SkillsBoard() {
   return (
     <div className="flex flex-col gap-5">
       {/* Four principles */}
-      <Card hover={false} className="grid divide-y divide-border sm:grid-cols-2 sm:divide-y-0 lg:grid-cols-4">
-        {pillars.map((pillar, index) => (
-          <div
-            key={pillar.id}
-            className={cn(
-              "flex items-start gap-3 p-5",
-              index > 0 && "lg:border-l lg:border-border",
-              index === 1 && "sm:border-l sm:border-border",
-              index === 3 && "sm:border-l sm:border-border",
-              index === 2 && "sm:border-t sm:border-border lg:border-t-0",
-              index === 3 && "sm:border-t sm:border-border lg:border-t-0",
-            )}
-          >
-            <pillar.icon className="h-6 w-6 shrink-0 text-accent" strokeWidth={1.4} />
-            <div className="flex flex-col gap-1">
-              <h3 className="text-[0.8125rem] font-semibold">
-                {t(`pillars.${pillar.id}.title`)}
-              </h3>
-              <p className="text-[0.6875rem] leading-relaxed text-muted">
-                {t(`pillars.${pillar.id}.description`)}
-              </p>
-            </div>
-          </div>
-        ))}
-      </Card>
+      <Principles
+        items={pillars.map((pillar) => ({
+          id: pillar.id,
+          icon: pillar.icon,
+          title: t(`pillars.${pillar.id}.title`),
+          description: t(`pillars.${pillar.id}.description`),
+        }))}
+      />
 
       {/* Technical skills — one frame around filters and every category */}
       <Card hover={false} className="flex flex-col gap-5 p-5 sm:p-6">
@@ -186,11 +170,11 @@ export function SkillsBoard() {
             return (
               <div
                 key={category.id}
-                className="flex flex-col gap-4 rounded-[var(--radius-card)] border border-border bg-background/40 p-5"
+                className="group flex flex-col gap-4 rounded-[var(--radius-card)] border border-border bg-background/40 p-5 transition-colors duration-300 hover:border-accent/50"
               >
                 <div className="flex items-center gap-2.5">
                   <Icon className="h-5 w-5 text-accent" strokeWidth={1.5} />
-                  <h3 className="text-[0.8125rem] font-bold uppercase tracking-[0.1em]">
+                  <h3 className="text-[0.8125rem] font-bold uppercase tracking-[0.1em] transition-colors group-hover:text-accent">
                     {t(category.id)}
                   </h3>
                 </div>
