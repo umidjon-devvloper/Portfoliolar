@@ -72,7 +72,7 @@ export function CodeWindow({
     return () => cancelAnimationFrame(frame.current);
   }, [inView, run]);
 
-  let budget = typed;
+  let remaining = typed;
 
   return (
     <div
@@ -97,16 +97,16 @@ export function CodeWindow({
       <pre className="overflow-hidden px-4 py-3.5 font-mono text-[0.6875rem] leading-[1.8]">
         <code>
           {lines.map((line, index) => {
-            const rendered: Token[] = [];
-
-            for (const token of line) {
-              if (budget <= 0) break;
-              const slice = token.text.slice(0, budget);
-              budget -= slice.length;
-              rendered.push({ text: slice, tone: token.tone });
-            }
-
-            const done = budget > 0 || typed >= total;
+            /*
+             * Untyped characters are still rendered, just transparent, so
+             * the box keeps its full size from the first frame. Revealing
+             * text into an empty box made it grow, and because it is
+             * vertically centred that growth moved it up the page.
+             */
+            const caretHere =
+              remaining > 0 &&
+              remaining <=
+                line.reduce((sum, token) => sum + token.text.length, 0);
 
             return (
               <div key={index} className="flex gap-3">
@@ -114,13 +114,29 @@ export function CodeWindow({
                   {index + 1}
                 </span>
                 <span className="whitespace-pre">
-                  {rendered.map((token, tokenIndex) => (
-                    <span key={tokenIndex} className={toneClass[token.tone]}>
-                      {token.text}
-                    </span>
-                  ))}
-                  {!done && rendered.length > 0 ? (
-                    <span className="ml-0.5 inline-block h-[0.9em] w-[0.45em] translate-y-[0.12em] bg-accent" />
+                  {line.map((token, tokenIndex) => {
+                    const take = Math.max(
+                      0,
+                      Math.min(token.text.length, remaining),
+                    );
+                    remaining -= take;
+
+                    return (
+                      <span key={tokenIndex} className={toneClass[token.tone]}>
+                        {token.text.slice(0, take)}
+                        {take < token.text.length ? (
+                          <span className="opacity-0">
+                            {token.text.slice(take)}
+                          </span>
+                        ) : null}
+                      </span>
+                    );
+                  })}
+                  {caretHere && typed < total ? (
+                    <span
+                      aria-hidden
+                      className="pointer-events-none absolute -ml-[0.1em] inline-block h-[0.95em] w-[0.4em] translate-y-[0.15em] bg-accent"
+                    />
                   ) : null}
                 </span>
               </div>
