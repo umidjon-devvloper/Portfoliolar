@@ -41,9 +41,22 @@ export function CodeVisual() {
               opacity="0.16"
             />
           </pattern>
+
+          <radialGradient id="cv-fade" cx="50%" cy="50%" r="58%">
+            <stop offset="0%" stopColor="#fff" />
+            <stop offset="55%" stopColor="#fff" />
+            <stop offset="78%" stopColor="#888" />
+            <stop offset="100%" stopColor="#000" />
+          </radialGradient>
+
+          <mask id="cv-mask">
+            <rect width="600" height="320" fill="url(#cv-fade)" />
+          </mask>
         </defs>
 
         <rect width="600" height="320" fill="url(#cv-glow)" />
+
+        <g mask="url(#cv-mask)">
         <rect x="0" y="0" width="600" height="320" fill="url(#cv-grid)" opacity="0.5" />
 
         <rect x="6" y="12" width="110" height="88" fill="url(#cv-dots)" />
@@ -84,20 +97,22 @@ export function CodeVisual() {
           ))}
         </g>
 
+        </g>
+
         <ellipse cx="300" cy="296" rx="180" ry="14" fill="var(--accent)" opacity="0.1" />
       </svg>
 
       {/* floating chips */}
-      <span className="absolute left-[8%] top-[28%] hidden rounded-[var(--radius-sm)] border border-border-strong bg-surface px-2.5 py-1.5 font-mono text-[0.625rem] text-accent shadow-[var(--shadow-card)] xl:block">
+      <span className="absolute left-[8%] top-[28%] hidden rounded-[var(--radius-sm)] border border-border bg-surface/80 px-2.5 py-1.5 backdrop-blur-sm font-mono text-[0.625rem] text-accent shadow-[var(--shadow-card)] xl:block">
         {"</>"}
       </span>
-      <span className="absolute bottom-[16%] left-[13%] hidden rounded-[var(--radius-sm)] border border-border-strong bg-surface px-2.5 py-1.5 font-mono text-[0.625rem] text-accent shadow-[var(--shadow-card)] xl:block">
+      <span className="absolute bottom-[16%] left-[13%] hidden rounded-[var(--radius-sm)] border border-border bg-surface/80 px-2.5 py-1.5 backdrop-blur-sm font-mono text-[0.625rem] text-accent shadow-[var(--shadow-card)] xl:block">
         {"{ }"}
       </span>
-      <span className="absolute right-[6%] top-[18%] hidden rounded-[var(--radius-sm)] border border-border-strong bg-surface px-2.5 py-1.5 font-mono text-[0.625rem] font-bold text-accent shadow-[var(--shadow-card)] xl:block">
+      <span className="absolute right-[6%] top-[18%] hidden rounded-[var(--radius-sm)] border border-border bg-surface/80 px-2.5 py-1.5 backdrop-blur-sm font-mono text-[0.625rem] font-bold text-accent shadow-[var(--shadow-card)] xl:block">
         TS
       </span>
-      <span className="absolute bottom-[22%] right-[9%] hidden rounded-[var(--radius-sm)] border border-border-strong bg-surface px-2.5 py-1.5 font-mono text-[0.625rem] text-accent shadow-[var(--shadow-card)] xl:block">
+      <span className="absolute bottom-[22%] right-[9%] hidden rounded-[var(--radius-sm)] border border-border bg-surface/80 px-2.5 py-1.5 backdrop-blur-sm font-mono text-[0.625rem] text-accent shadow-[var(--shadow-card)] xl:block">
         {"( )"}
       </span>
 
