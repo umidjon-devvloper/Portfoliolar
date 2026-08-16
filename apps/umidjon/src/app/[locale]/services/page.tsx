@@ -107,7 +107,6 @@ export default async function ServicesPage({ params }: PageProps) {
         <PageHeader
           breadcrumb={t("breadcrumb")}
           index="06"
-          eyebrow={t("eyebrow")}
           lead={t("headingLead")}
           accent={t("headingAccent")}
           description={t("pageSubtitle")}

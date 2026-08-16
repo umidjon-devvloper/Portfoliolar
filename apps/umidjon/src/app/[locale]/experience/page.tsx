@@ -87,7 +87,6 @@ export default async function ExperiencePage({ params }: PageProps) {
         <PageHeader
           breadcrumb={t("breadcrumb")}
           index="05"
-          eyebrow={t("eyebrow")}
           lead={t("headingLead")}
           accent={t("headingAccent")}
           description={t("pageSubtitle")}

@@ -21,7 +21,7 @@ export const developerSnippet: CodeLine[] = [
   [
     { text: "  passion", tone: "pr" },
     { text: ": ", tone: "pn" },
-    { text: "'Building digital products'", tone: "st" },
+    { text: "'Digital products'", tone: "st" },
     { text: ",", tone: "pn" },
   ],
   [
@@ -30,13 +30,11 @@ export const developerSnippet: CodeLine[] = [
     { text: "'Next.js'", tone: "st" },
     { text: ", ", tone: "pn" },
     { text: "'React'", tone: "st" },
-    { text: ", ", tone: "pn" },
-    { text: "'Node.js'", tone: "st" },
     { text: ",", tone: "pn" },
   ],
   [
     { text: "           ", tone: "pn" },
-    { text: "'TypeScript'", tone: "st" },
+    { text: "'Node.js'", tone: "st" },
     { text: ", ", tone: "pn" },
     { text: "'MongoDB'", tone: "st" },
     { text: "],", tone: "pn" },
@@ -44,7 +42,7 @@ export const developerSnippet: CodeLine[] = [
   [
     { text: "  focus", tone: "pr" },
     { text: ": ", tone: "pn" },
-    { text: "'Performance & User Experience'", tone: "st" },
+    { text: "'Performance & UX'", tone: "st" },
   ],
   [{ text: "};", tone: "pn" }],
 ];

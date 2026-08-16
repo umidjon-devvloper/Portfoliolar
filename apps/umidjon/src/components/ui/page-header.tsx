@@ -8,7 +8,6 @@ import { cn } from "@/lib/utils";
  */
 export function PageHeader({
   breadcrumb,
-  eyebrow,
   index,
   lead,
   accent,
@@ -19,7 +18,6 @@ export function PageHeader({
   className,
 }: {
   breadcrumb: string;
-  eyebrow?: string;
   index?: string;
   lead: string;
   accent: string;
@@ -39,14 +37,9 @@ export function PageHeader({
       <div className="flex flex-col">
         <Breadcrumb current={breadcrumb} />
 
-        {index || eyebrow ? (
-          <span className="mt-5 flex items-center gap-3">
-            {index ? (
-              <span className="font-mono text-xs tracking-[0.2em] text-accent">
-                [ {index} ]
-              </span>
-            ) : null}
-            {eyebrow ? <span className="eyebrow">{eyebrow}</span> : null}
+        {index ? (
+          <span className="mt-5 font-mono text-xs tracking-[0.2em] text-accent">
+            [ {index} ]
           </span>
         ) : null}
 
@@ -70,7 +63,7 @@ export function PageHeader({
       </div>
 
       {visual ? (
-        <div className="hidden h-[17.5rem] justify-self-end lg:block lg:w-[36rem]">
+        <div className="hidden h-[16rem] justify-self-end lg:block lg:w-[31rem]">
           {visual}
         </div>
       ) : null}

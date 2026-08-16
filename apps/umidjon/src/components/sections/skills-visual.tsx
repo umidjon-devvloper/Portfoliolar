@@ -27,15 +27,15 @@ export function SkillsVisual() {
         <g stroke="var(--accent)" strokeWidth="1.1" opacity="0.4" fill="none">
           <path d="M14 196 H 92 L 118 224 H 172" strokeLinecap="round" />
           <path d="M14 238 H 72 L 96 264 H 160" strokeLinecap="round" />
-          <path d="M566 54 H 606 L 616 70 V 128" strokeLinecap="round" />
-          <path d="M580 206 H 616 V 258" strokeLinecap="round" />
+          <path d="M540 44 H 596 L 606 60 V 118" strokeLinecap="round" />
+          <path d="M556 216 H 606 V 268" strokeLinecap="round" />
         </g>
         <g fill="var(--accent)" opacity="0.65">
           {[
             [172, 224],
             [160, 264],
-            [616, 128],
-            [616, 258],
+            [606, 118],
+            [606, 268],
             [14, 196],
             [14, 238],
           ].map(([x, y]) => (
@@ -46,7 +46,7 @@ export function SkillsVisual() {
 
       <CodeWindow
         lines={developerSnippet}
-        className="absolute left-1/2 top-1/2 w-[85%] -translate-x-1/2 -translate-y-1/2"
+        className="absolute left-[46%] top-1/2 w-[74%] -translate-x-1/2 -translate-y-1/2"
       />
     </div>
   );

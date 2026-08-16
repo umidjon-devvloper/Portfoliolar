@@ -25,7 +25,6 @@ export default async function SkillsPage({ params }: PageProps) {
         <PageHeader
           breadcrumb={t("breadcrumb")}
           index="04"
-          eyebrow={t("eyebrow")}
           lead={t("headingLead")}
           accent={t("headingAccent")}
           description={t("pageSubtitle")}

@@ -38,11 +38,8 @@ export function AboutHero() {
         <div className="flex flex-col">
           <Breadcrumb current={t("breadcrumb")} />
 
-          <span className="mt-5 flex items-center gap-3">
-            <span className="font-mono text-xs tracking-[0.2em] text-accent">
-              [ 02 ]
-            </span>
-            <span className="eyebrow">{t("eyebrow")}</span>
+          <span className="mt-5 font-mono text-xs tracking-[0.2em] text-accent">
+            [ 02 ]
           </span>
 
           <h1 className="type-page mt-2.5">
