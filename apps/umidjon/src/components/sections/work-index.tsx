@@ -100,7 +100,7 @@ export function WorkIndex() {
                 "shrink-0 rounded-[var(--radius-btn)] px-4 py-2 text-[0.8125rem] font-medium transition-colors",
                 filter === kind
                   ? "bg-accent text-accent-foreground"
-                  : "border border-border text-muted hover:border-accent hover:text-accent",
+                  : "text-muted hover:bg-surface-2 hover:text-foreground",
               )}
             >
               {kind === "all" ? t("filterAll") : t(`kind.${kind}`)}

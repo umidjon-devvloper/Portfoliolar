@@ -63,10 +63,10 @@ export function SkillsBoard() {
             aria-selected={filter === id}
             onClick={() => setFilter(id)}
             className={cn(
-              "shrink-0 rounded-[var(--radius-btn)] border px-4 py-2 text-sm transition-colors",
+              "shrink-0 rounded-[var(--radius-btn)] px-4 py-2 text-[0.8125rem] font-medium transition-colors",
               filter === id
-                ? "border-accent bg-accent text-accent-foreground"
-                : "border-border bg-surface text-muted hover:border-accent hover:text-accent",
+                ? "bg-accent text-accent-foreground"
+                : "text-muted hover:bg-surface-2 hover:text-foreground",
             )}
           >
             {id === "all" ? t("allSkills") : t(id)}
