@@ -440,7 +440,8 @@
         "Integrating payment gateways, analytics and third-party APIs",
         "Optimising for performance, SEO and best practices",
         "Working directly with clients to turn requirements into products"
-      ]
+      ],
+      "summary": "Building scalable web and mobile applications for clients."
     },
     "freelance": {
       "period": "May 2023 — April 2025",
@@ -452,7 +453,8 @@
         "Built interfaces and API integrations with React and Next.js",
         "Built the backend on Express and MongoDB",
         "Owned deployment and ongoing technical support"
-      ]
+      ],
+      "summary": "Worked with clients on web and mobile projects."
     },
     "frontend": {
       "period": "January 2022 — April 2023",
@@ -463,7 +465,8 @@
         "Built responsive interfaces with modern technologies",
         "Worked with a component library and design system",
         "Improved page speed and user experience"
-      ]
+      ],
+      "summary": "Built responsive and interactive interfaces."
     },
     "junior": {
       "period": "June 2021 — December 2021",
@@ -474,7 +477,8 @@
         "Learned the fundamentals of JavaScript, HTML and CSS in practice",
         "Wrote interface pieces for smaller projects",
         "Picked up Git and working inside a team"
-      ]
+      ],
+      "summary": "Started my journey in development and learned every day."
     },
     "eyebrow": "My journey",
     "aboutRole": "About the role",

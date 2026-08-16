@@ -101,3 +101,52 @@ export const developerSnippet: CodeLine[] = [
   ],
   [{ text: "};", tone: "pn" }],
 ];
+
+type ExperienceValues = {
+  since: string;
+  roles: number;
+  current: string;
+  stack: string[];
+};
+
+/** Experience header block, assembled from the roles data. */
+export function buildExperienceSnippet(values: ExperienceValues): CodeLine[] {
+  const stack: CodeLine = [
+    { text: "  stack", tone: "pr" },
+    { text: ": [", tone: "pn" },
+  ];
+
+  values.stack.forEach((item, index) => {
+    stack.push({ text: `'${item}'`, tone: "st" });
+    if (index < values.stack.length - 1) stack.push({ text: ", ", tone: "pn" });
+  });
+  stack.push({ text: "],", tone: "pn" });
+
+  return [
+    [
+      { text: "const", tone: "kw" },
+      { text: " experience", tone: "fn" },
+      { text: " = {", tone: "pn" },
+    ],
+    [
+      { text: "  since", tone: "pr" },
+      { text: ": ", tone: "pn" },
+      { text: values.since, tone: "st" },
+      { text: ",", tone: "pn" },
+    ],
+    [
+      { text: "  roles", tone: "pr" },
+      { text: ": ", tone: "pn" },
+      { text: String(values.roles), tone: "st" },
+      { text: ",", tone: "pn" },
+    ],
+    [
+      { text: "  current", tone: "pr" },
+      { text: ": ", tone: "pn" },
+      { text: `'${values.current}'`, tone: "st" },
+      { text: ",", tone: "pn" },
+    ],
+    stack,
+    [{ text: "};", tone: "pn" }],
+  ];
+}

@@ -440,7 +440,8 @@
         "To'lov tizimlari, analitika va uchinchi tomon API'larini ulayman",
         "Unumdorlik, SEO va yaxshi amaliyotlar bo'yicha optimallashtiraman",
         "Mijoz bilan bevosita ishlab, talabni mahsulotga aylantiraman"
-      ]
+      ],
+      "summary": "Mijozlar uchun kengayadigan web va mobil ilovalar quraman."
     },
     "freelance": {
       "period": "2023-may — 2025-aprel",
@@ -452,7 +453,8 @@
         "React va Next.js asosida interfeys va API integratsiyalarini yozdim",
         "Express va MongoDB bilan backend qismini qurdim",
         "Deploy va texnik qo'llab-quvvatlashni o'z zimmamga oldim"
-      ]
+      ],
+      "summary": "Mijozlar bilan web va mobil loyihalarda ishladim."
     },
     "frontend": {
       "period": "2022-yanvar — 2023-aprel",
@@ -463,7 +465,8 @@
         "Zamonaviy texnologiyalar bilan moslashuvchan interfeyslar yaratdim",
         "Komponent kutubxonasi va dizayn tizimi bilan ishladim",
         "Sahifa tezligi va foydalanuvchi tajribasini yaxshiladim"
-      ]
+      ],
+      "summary": "Moslashuvchan va interaktiv interfeyslar yaratdim."
     },
     "junior": {
       "period": "2021-iyun — 2021-dekabr",
@@ -474,7 +477,8 @@
         "JavaScript, HTML va CSS asoslarini amaliyotda o'zlashtirdim",
         "Kichik loyihalarda interfeys qismlarini yozdim",
         "Git va jamoada ishlash jarayonini o'rgandim"
-      ]
+      ],
+      "summary": "Dasturlash yo'limni boshlab, har kuni o'rgandim."
     },
     "eyebrow": "Mening yo'lim",
     "aboutRole": "Rol haqida",

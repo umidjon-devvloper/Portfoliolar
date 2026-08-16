@@ -1,4 +1,4 @@
-import { CodeWindow } from "./code-window";
+import { CodeWindow, type CodeLine } from "./code-window";
 import { developerSnippet } from "@/content/code-sample";
 
 /**
@@ -6,7 +6,13 @@ import { developerSnippet } from "@/content/code-sample";
  * with solder points, a wide arc and floating chips. Shared by the pages
  * that open with a code panel.
  */
-export function CodeVisual() {
+export function CodeVisual({
+  lines = developerSnippet,
+  filename,
+}: {
+  lines?: CodeLine[];
+  filename?: string;
+} = {}) {
   return (
     <div className="relative h-full w-full">
       <svg
@@ -117,7 +123,8 @@ export function CodeVisual() {
       </span>
 
       <CodeWindow
-        lines={developerSnippet}
+        lines={lines}
+        filename={filename}
         className="absolute left-1/2 top-1/2 w-[68%] -translate-x-1/2 -translate-y-1/2"
       />
     </div>

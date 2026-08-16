@@ -5,7 +5,9 @@ import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/container";
 import { PageHeader } from "@/components/ui/page-header";
 import { PageVisual } from "@/components/ui/page-visual";
-import { BriefcaseVisual } from "@/components/ui/briefcase-visual";
+import { CodeVisual } from "@/components/ui/code-visual";
+import { buildExperienceSnippet } from "@/content/code-sample";
+import { roles } from "@/content/experience";
 import { Card } from "@/components/ui/card";
 import { CtaBanner } from "@/components/ui/cta-banner";
 import { Counter } from "@/components/motion/counter";
@@ -51,7 +53,17 @@ export default async function ExperiencePage({ params }: PageProps) {
             <PageVisual
               page="experience"
               alt={t("pageTitle")}
-              fallback={<BriefcaseVisual />}
+              fallback={
+                <CodeVisual
+                  filename="experience.js"
+                  lines={buildExperienceSnippet({
+                    since: "2021",
+                    roles: roles.length,
+                    current: t("fullstack.title"),
+                    stack: ["Next.js", "React", "Node.js"],
+                  })}
+                />
+              }
             />
           }
         />
