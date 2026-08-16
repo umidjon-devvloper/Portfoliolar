@@ -3,7 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Container } from "@/components/ui/container";
 import { PageHeader } from "@/components/ui/page-header";
 import { PageVisual } from "@/components/ui/page-visual";
-import { SkillsVisual } from "@/components/sections/skills-visual";
+import { CodeVisual } from "@/components/ui/code-visual";
 import { SkillsBoard } from "@/components/sections/skills-board";
 
 type PageProps = { params: Promise<{ locale: string }> };
@@ -32,7 +32,7 @@ export default async function SkillsPage({ params }: PageProps) {
             <PageVisual
               page="skills"
               alt={t("pageTitle")}
-              fallback={<SkillsVisual />}
+              fallback={<CodeVisual />}
             />
           }
         />

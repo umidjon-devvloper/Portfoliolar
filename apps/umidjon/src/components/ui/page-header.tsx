@@ -30,7 +30,7 @@ export function PageHeader({
   return (
     <div
       className={cn(
-        "grid items-center gap-10 lg:grid-cols-[minmax(0,30rem)_1fr] lg:gap-14",
+        "grid items-center gap-10 lg:grid-cols-[minmax(0,26rem)_1fr] lg:gap-10",
         className,
       )}
     >
@@ -63,7 +63,7 @@ export function PageHeader({
       </div>
 
       {visual ? (
-        <div className="hidden h-[16rem] justify-self-end lg:block lg:w-[31rem]">
+        <div className="hidden h-[17rem] w-full justify-self-center lg:block lg:max-w-[34rem]">
           {visual}
         </div>
       ) : null}

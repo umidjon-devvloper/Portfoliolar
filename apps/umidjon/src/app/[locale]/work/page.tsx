@@ -4,7 +4,7 @@ import { Container } from "@/components/ui/container";
 import { PageHeader } from "@/components/ui/page-header";
 import { CtaBanner } from "@/components/ui/cta-banner";
 import { PageVisual } from "@/components/ui/page-visual";
-import { WorkVisual } from "@/components/sections/work-visual";
+import { CodeVisual } from "@/components/ui/code-visual";
 import { WorkIndex } from "@/components/sections/work-index";
 
 type PageProps = { params: Promise<{ locale: string }> };
@@ -34,7 +34,7 @@ export default async function WorkPage({ params }: PageProps) {
             <PageVisual
               page="work"
               alt={t("title")}
-              fallback={<WorkVisual />}
+              fallback={<CodeVisual />}
             />
           }
         />
