@@ -21,6 +21,10 @@ const CHARS_PER_FRAME = 3;
  * Types itself out when it first scrolls into view, and again on hover.
  * The loop only runs while typing — roughly a second — then stops, so
  * there is nothing ticking in the background.
+ *
+ * The window itself never moves: hover retypes the code and nothing else.
+ * This is the rule for every code window on the site, so it lives here
+ * rather than at each call site.
  */
 export function CodeWindow({
   lines,
@@ -75,7 +79,7 @@ export function CodeWindow({
       ref={ref}
       onMouseEnter={run}
       className={cn(
-        "overflow-hidden rounded-[var(--radius-card)] border border-border-strong bg-surface shadow-[var(--shadow-card)] transition-transform duration-500 hover:-translate-y-1",
+        "overflow-hidden rounded-[var(--radius-card)] border border-border-strong bg-surface shadow-[var(--shadow-card)]",
         className,
       )}
     >
