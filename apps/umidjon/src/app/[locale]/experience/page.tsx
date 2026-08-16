@@ -1,15 +1,18 @@
 import type { Metadata } from "next";
+import { ArrowRight, Award, Clock, Code, Smile } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/container";
 import { PageHeader } from "@/components/ui/page-header";
+import { PageVisual } from "@/components/ui/page-visual";
+import { BriefcaseVisual } from "@/components/ui/briefcase-visual";
 import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { TechTag } from "@/components/ui/tech-tag";
-import { StatsCard } from "@/components/ui/stats-card";
 import { CtaBanner } from "@/components/ui/cta-banner";
+import { Counter } from "@/components/motion/counter";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/reveal";
-import { roles } from "@/content/experience";
+import { ExperienceBoard } from "@/components/sections/experience-board";
+import { ProjectCard } from "@/components/sections/project-card";
+import { featuredProjects } from "@/content/projects";
 import { metrics } from "@/content/profile";
 
 type PageProps = { params: Promise<{ locale: string }> };
@@ -20,100 +23,110 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return { title: t("pageTitle"), description: t("pageSubtitle") };
 }
 
-const iconFor: Record<string, string> = {
-  projects: "Code",
-  clients: "Smile",
-  experience: "Trophy",
-  response: "Clock",
-};
-
-function Timeline() {
-  const t = useTranslations("experience");
-
-  return (
-    <Stagger>
-      <ol className="relative flex flex-col gap-4 border-l border-border pl-6">
-        {roles.map((role, index) => (
-          <StaggerItem key={role.id} index={index}>
-            <li className="relative">
-              <span
-                className="absolute -left-[1.9rem] top-5 h-2.5 w-2.5 rounded-full border-2 border-accent bg-background"
-                aria-hidden
-              />
-              <Card className="flex flex-col gap-3 p-5">
-                <div className="flex flex-wrap items-center justify-between gap-2">
-                  <span className="text-sm font-medium text-accent">
-                    {t(`${role.id}.period`)}
-                  </span>
-                  {role.current ? <Badge tone="live">{t("current")}</Badge> : null}
-                </div>
-
-                <div className="flex flex-col gap-0.5">
-                  <h2 className="font-bold">{t(`${role.id}.title`)}</h2>
-                  {role.company ? (
-                    <p className="text-sm text-accent">{role.company}</p>
-                  ) : (
-                    <p className="text-sm text-muted">{t("independent")}</p>
-                  )}
-                </div>
-
-                <p className="text-sm leading-relaxed text-muted">
-                  {t(`${role.id}.description`)}
-                </p>
-
-                <div className="flex flex-wrap gap-1.5">
-                  {role.stack.map((item) => (
-                    <TechTag key={item} name={item} />
-                  ))}
-                </div>
-              </Card>
-            </li>
-          </StaggerItem>
-        ))}
-      </ol>
-    </Stagger>
-  );
-}
+const statIcon = {
+  projects: Code,
+  clients: Smile,
+  experience: Award,
+  response: Clock,
+} as const;
 
 export default async function ExperiencePage({ params }: PageProps) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "experience" });
   const tm = await getTranslations({ locale, namespace: "metrics" });
+  const tp = await getTranslations({ locale, namespace: "projects" });
+  const tc = await getTranslations({ locale, namespace: "common" });
 
   return (
     <>
-      <Container className="border-b border-border py-8 sm:py-10">
+      <Container className="border-b border-border py-10 sm:py-12">
         <PageHeader
           breadcrumb={t("breadcrumb")}
           index="05"
           lead={t("headingLead")}
           accent={t("headingAccent")}
           description={t("pageSubtitle")}
+          visual={
+            <PageVisual
+              page="experience"
+              alt={t("pageTitle")}
+              fallback={<BriefcaseVisual />}
+            />
+          }
         />
       </Container>
 
-      <Container className="grid gap-3 pb-10 sm:grid-cols-2 lg:grid-cols-4">
-        {metrics.map((metric) => (
-          <StatsCard
-            key={metric.id}
-            icon={iconFor[metric.id] ?? "Code"}
-            value={metric.value}
-            suffix={metric.suffix}
-            label={tm(metric.id)}
-          />
-        ))}
-      </Container>
-
-      <Container className="flex flex-col gap-6">
+      <Container className="flex flex-col gap-8 py-10 sm:py-12">
         <Reveal>
-          <h2 className="type-section">{t("timelineTitle")}</h2>
+          <ExperienceBoard />
         </Reveal>
-        <Timeline />
-      </Container>
 
-      <Container className="py-10 sm:py-14">
-        <CtaBanner />
+        <section className="flex flex-col gap-5">
+          <Reveal>
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <h2 className="text-[0.8125rem] font-bold uppercase tracking-[0.14em]">
+                {t("contributedTitle")}
+              </h2>
+              <Link
+                href="/work"
+                className="group inline-flex items-center gap-2 text-[0.6875rem] uppercase tracking-[0.1em] text-muted transition-colors hover:text-accent"
+              >
+                {tc("viewAll")}
+                <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1.5" />
+              </Link>
+            </div>
+          </Reveal>
+
+          <Stagger>
+            <ul className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+              {featuredProjects.map((project, index) => (
+                <ProjectCard key={project.slug} project={project} index={index} />
+              ))}
+            </ul>
+          </Stagger>
+        </section>
+
+        <section className="flex flex-col gap-5">
+          <Reveal>
+            <h2 className="text-[0.8125rem] font-bold uppercase tracking-[0.14em]">
+              {t("achievementsTitle")}
+            </h2>
+          </Reveal>
+
+          <Stagger>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {metrics.map((metric, index) => {
+                const Icon = statIcon[metric.id as keyof typeof statIcon] ?? Code;
+
+                return (
+                  <StaggerItem key={metric.id} index={index}>
+                    <Card className="flex h-full items-start gap-4 p-5">
+                      <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-accent-soft text-accent">
+                        <Icon className="h-5 w-5" strokeWidth={1.5} />
+                      </span>
+                      <div className="flex flex-col gap-0.5">
+                        <span className="text-2xl font-extrabold tracking-tight">
+                          <Counter value={metric.value} suffix={metric.suffix} />
+                        </span>
+                        <span className="text-[0.8125rem] font-medium">
+                          {tm(metric.id)}
+                        </span>
+                        <span className="text-[0.6875rem] leading-snug text-muted">
+                          {tm(`${metric.id}Note`)}
+                        </span>
+                      </div>
+                    </Card>
+                  </StaggerItem>
+                );
+              })}
+            </div>
+          </Stagger>
+        </section>
+
+        <Reveal>
+          <CtaBanner />
+        </Reveal>
       </Container>
     </>
   );

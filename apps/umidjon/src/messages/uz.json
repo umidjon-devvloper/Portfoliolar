@@ -333,7 +333,11 @@
     "projects": "Tugallangan loyiha",
     "clients": "Mijoz loyihasi",
     "experience": "Yil tajriba",
-    "response": "Ichida javob"
+    "response": "Ichida javob",
+    "projectsNote": "Muvaffaqiyatli topshirilgan",
+    "clientsNote": "Turli yo'nalishlarda",
+    "experienceNote": "Web va mobil development",
+    "responseNote": "Odatdagi javob vaqti"
   },
   "process": {
     "title": "Oddiy. Shaffof. Samarali.",
@@ -429,26 +433,54 @@
       "period": "2025-may — hozir",
       "title": "Full-Stack Developer",
       "description": "Mijozlar uchun kengayadigan web va mobil ilovalar quraman.",
-      "shortPeriod": "2025 – hozir"
+      "shortPeriod": "2025 – hozir",
+      "duties": [
+        "Next.js, Node.js va MongoDB bilan kengayadigan web ilovalar quraman",
+        "React Native va Expo bilan cross-platform mobil ilovalar chiqaraman",
+        "To'lov tizimlari, analitika va uchinchi tomon API'larini ulayman",
+        "Unumdorlik, SEO va yaxshi amaliyotlar bo'yicha optimallashtiraman",
+        "Mijoz bilan bevosita ishlab, talabni mahsulotga aylantiraman"
+      ]
     },
     "freelance": {
       "period": "2023-may — 2025-aprel",
       "title": "Freelance Developer",
       "description": "Turli mijozlar bilan web va mobil loyihalarda ishladim.",
-      "shortPeriod": "2023 – 2025"
+      "shortPeriod": "2023 – 2025",
+      "duties": [
+        "Mijozlar uchun web va mobil loyihalarni boshidan oxirigacha olib bordim",
+        "React va Next.js asosida interfeys va API integratsiyalarini yozdim",
+        "Express va MongoDB bilan backend qismini qurdim",
+        "Deploy va texnik qo'llab-quvvatlashni o'z zimmamga oldim"
+      ]
     },
     "frontend": {
       "period": "2022-yanvar — 2023-aprel",
       "title": "Frontend Developer",
       "description": "Zamonaviy texnologiyalar bilan moslashuvchan interfeyslar yaratdim.",
-      "shortPeriod": "2022 – 2023"
+      "shortPeriod": "2022 – 2023",
+      "duties": [
+        "Zamonaviy texnologiyalar bilan moslashuvchan interfeyslar yaratdim",
+        "Komponent kutubxonasi va dizayn tizimi bilan ishladim",
+        "Sahifa tezligi va foydalanuvchi tajribasini yaxshiladim"
+      ]
     },
     "junior": {
       "period": "2021-iyun — 2021-dekabr",
       "title": "Junior Developer",
       "description": "Dasturlash yo'lini boshlab, web development asoslarini o'zlashtirdim.",
-      "shortPeriod": "2021 – 2022"
+      "shortPeriod": "2021 – 2022",
+      "duties": [
+        "JavaScript, HTML va CSS asoslarini amaliyotda o'zlashtirdim",
+        "Kichik loyihalarda interfeys qismlarini yozdim",
+        "Git va jamoada ishlash jarayonini o'rgandim"
+      ]
     },
-    "eyebrow": "Mening yo'lim"
+    "eyebrow": "Mening yo'lim",
+    "aboutRole": "Rol haqida",
+    "responsibilities": "Asosiy vazifalar",
+    "technologies": "Ishlatilgan texnologiyalar",
+    "contributedTitle": "Hissa qo'shgan loyihalarim",
+    "achievementsTitle": "Yutuqlar va natija"
   }
 }

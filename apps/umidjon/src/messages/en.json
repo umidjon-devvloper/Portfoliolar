@@ -333,7 +333,11 @@
     "projects": "Completed projects",
     "clients": "Client projects",
     "experience": "Years of experience",
-    "response": "Hours to reply"
+    "response": "Hours to reply",
+    "projectsNote": "Successfully delivered",
+    "clientsNote": "Across different sectors",
+    "experienceNote": "Web and mobile development",
+    "responseNote": "Typical reply time"
   },
   "process": {
     "title": "Simple. Transparent. Effective.",
@@ -429,26 +433,54 @@
       "period": "May 2025 — present",
       "title": "Full-Stack Developer",
       "description": "Building scalable web and mobile applications for clients.",
-      "shortPeriod": "2025 – Present"
+      "shortPeriod": "2025 – Present",
+      "duties": [
+        "Building scalable web applications with Next.js, Node.js and MongoDB",
+        "Shipping cross-platform mobile apps with React Native and Expo",
+        "Integrating payment gateways, analytics and third-party APIs",
+        "Optimising for performance, SEO and best practices",
+        "Working directly with clients to turn requirements into products"
+      ]
     },
     "freelance": {
       "period": "May 2023 — April 2025",
       "title": "Freelance Developer",
       "description": "Worked with clients on web and mobile projects.",
-      "shortPeriod": "2023 – 2025"
+      "shortPeriod": "2023 – 2025",
+      "duties": [
+        "Ran client web and mobile projects end to end",
+        "Built interfaces and API integrations with React and Next.js",
+        "Built the backend on Express and MongoDB",
+        "Owned deployment and ongoing technical support"
+      ]
     },
     "frontend": {
       "period": "January 2022 — April 2023",
       "title": "Frontend Developer",
       "description": "Built responsive interfaces with modern technologies.",
-      "shortPeriod": "2022 – 2023"
+      "shortPeriod": "2022 – 2023",
+      "duties": [
+        "Built responsive interfaces with modern technologies",
+        "Worked with a component library and design system",
+        "Improved page speed and user experience"
+      ]
     },
     "junior": {
       "period": "June 2021 — December 2021",
       "title": "Junior Developer",
       "description": "Started out in development and learned the fundamentals of the web.",
-      "shortPeriod": "2021 – 2022"
+      "shortPeriod": "2021 – 2022",
+      "duties": [
+        "Learned the fundamentals of JavaScript, HTML and CSS in practice",
+        "Wrote interface pieces for smaller projects",
+        "Picked up Git and working inside a team"
+      ]
     },
-    "eyebrow": "My journey"
+    "eyebrow": "My journey",
+    "aboutRole": "About the role",
+    "responsibilities": "Key responsibilities",
+    "technologies": "Technologies used",
+    "contributedTitle": "Projects I contributed to",
+    "achievementsTitle": "Achievements & impact"
   }
 }

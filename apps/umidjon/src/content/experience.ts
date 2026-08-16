@@ -5,6 +5,8 @@ export type Role = {
   to: string | null;
   current: boolean;
   stack: string[];
+  /** Number of bullet points held in messages under `<id>.duties`. */
+  duties: number;
 };
 
 /**
@@ -18,7 +20,8 @@ export const roles: Role[] = [
     from: "2025-05",
     to: null,
     current: true,
-    stack: ["Next.js", "React", "Node.js", "MongoDB", "React Native"],
+    stack: ["Next.js", "React", "Node.js", "MongoDB", "React Native", "TypeScript"],
+    duties: 5,
   },
   {
     id: "freelance",
@@ -26,7 +29,8 @@ export const roles: Role[] = [
     from: "2023-05",
     to: "2025-04",
     current: false,
-    stack: ["React", "Next.js", "TypeScript", "Express.js"],
+    stack: ["React", "Next.js", "TypeScript", "Express.js", "MongoDB"],
+    duties: 4,
   },
   {
     id: "frontend",
@@ -35,6 +39,7 @@ export const roles: Role[] = [
     to: "2023-04",
     current: false,
     stack: ["React", "TypeScript", "Tailwind CSS"],
+    duties: 3,
   },
   {
     id: "junior",
@@ -43,5 +48,6 @@ export const roles: Role[] = [
     to: "2021-12",
     current: false,
     stack: ["JavaScript", "HTML", "CSS"],
+    duties: 3,
   },
 ];
