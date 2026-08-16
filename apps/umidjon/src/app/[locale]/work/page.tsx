@@ -5,7 +5,9 @@ import { PageHeader } from "@/components/ui/page-header";
 import { CtaBanner } from "@/components/ui/cta-banner";
 import { PageVisual } from "@/components/ui/page-visual";
 import { CodeVisual } from "@/components/ui/code-visual";
+import { buildObjectSnippet } from "@/content/code-sample";
 import { WorkIndex } from "@/components/sections/work-index";
+import { featuredProjects, projects } from "@/content/projects";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -14,6 +16,25 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const t = await getTranslations({ locale, namespace: "projects" });
   return { title: t("title"), description: t("subtitle") };
 }
+
+/* Counted from the project list so the window can never overstate it. */
+const liveProjects = projects.filter((project) =>
+  project.links.some((link) => link.kind === "live"),
+).length;
+
+const projectKinds = [...new Set(projects.map((project) => project.kind))];
+
+const topStack = Object.entries(
+  projects
+    .flatMap((project) => project.stack)
+    .reduce<Record<string, number>>((counts, item) => {
+      counts[item] = (counts[item] ?? 0) + 1;
+      return counts;
+    }, {}),
+)
+  .sort(([, a], [, b]) => b - a)
+  .slice(0, 4)
+  .map(([item]) => item);
 
 export default async function WorkPage({ params }: PageProps) {
   const { locale } = await params;
@@ -34,7 +55,18 @@ export default async function WorkPage({ params }: PageProps) {
             <PageVisual
               page="work"
               alt={t("title")}
-              fallback={<CodeVisual />}
+              fallback={
+                <CodeVisual
+                  filename="work.js"
+                  lines={buildObjectSnippet("work", [
+                    ["projects", projects.length],
+                    ["featured", featuredProjects.length],
+                    ["live", liveProjects],
+                    ["kinds", projectKinds],
+                    ["stack", topStack],
+                  ])}
+                />
+              }
             />
           }
         />

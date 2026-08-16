@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { CodeWindow } from "@/components/ui/code-window";
 import { buildAboutSnippet } from "@/content/code-sample";
-import { profile } from "@/content/profile";
+import { metrics, profile } from "@/content/profile";
 import { HeroBackdrop } from "./hero-backdrop";
 
 export function AboutHero() {
@@ -87,12 +87,14 @@ export function AboutHero() {
           filename="umidjon.js"
           lines={buildAboutSnippet({
             birth: t("birthValue"),
+            role: profile.role,
             education: t("educationValue"),
             location: profile.location
               ? `${profile.location.city}, ${profile.location.country}`
               : "",
             languages: t("languagesValue").split(" · "),
             focus: t("focusValue").split(" · "),
+            projects: metrics.find((metric) => metric.id === "projects")?.value ?? 0,
           })}
         />
       </div>

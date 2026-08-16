@@ -2,8 +2,10 @@ import type { CodeLine } from "@/components/ui/code-window";
 
 type AboutValues = {
   birth: string;
+  role: string;
   education: string;
   location: string;
+  projects: number;
   languages: string[];
   focus: string[];
 };
@@ -39,6 +41,7 @@ export function buildAboutSnippet(values: AboutValues): CodeLine[] {
       { text: " = {", tone: "pn" },
     ],
     entry("birth", values.birth),
+    entry("role", values.role),
     entry("education", values.education),
     entry("location", values.location),
     [
@@ -50,6 +53,12 @@ export function buildAboutSnippet(values: AboutValues): CodeLine[] {
       { text: "  focus", tone: "pr" },
       { text: ": ", tone: "pn" },
       ...list(values.focus),
+    ],
+    [
+      { text: "  projects", tone: "pr" },
+      { text: ": ", tone: "pn" },
+      { text: String(values.projects), tone: "st" },
+      { text: ",", tone: "pn" },
     ],
     [{ text: "};", tone: "pn" }],
   ];
@@ -74,6 +83,12 @@ export const developerSnippet: CodeLine[] = [
     { text: ",", tone: "pn" },
   ],
   [
+    { text: "  location", tone: "pr" },
+    { text: ": ", tone: "pn" },
+    { text: "'Buxoro, UZ'", tone: "st" },
+    { text: ",", tone: "pn" },
+  ],
+  [
     { text: "  passion", tone: "pr" },
     { text: ": ", tone: "pn" },
     { text: "'Digital products'", tone: "st" },
@@ -89,6 +104,13 @@ export const developerSnippet: CodeLine[] = [
   ],
   [
     { text: "           ", tone: "pn" },
+    { text: "'React Native'", tone: "st" },
+    { text: ", ", tone: "pn" },
+    { text: "'Expo'", tone: "st" },
+    { text: ",", tone: "pn" },
+  ],
+  [
+    { text: "           ", tone: "pn" },
     { text: "'Node.js'", tone: "st" },
     { text: ", ", tone: "pn" },
     { text: "'MongoDB'", tone: "st" },
@@ -98,9 +120,82 @@ export const developerSnippet: CodeLine[] = [
     { text: "  focus", tone: "pr" },
     { text: ": ", tone: "pn" },
     { text: "'Performance & UX'", tone: "st" },
+    { text: ",", tone: "pn" },
+  ],
+  [
+    { text: "  available", tone: "pr" },
+    { text: ": ", tone: "pn" },
+    { text: "true", tone: "kw" },
+    { text: ",", tone: "pn" },
   ],
   [{ text: "};", tone: "pn" }],
 ];
+
+
+type SnippetValue = string | number | string[] | null;
+
+/**
+ * Generic object block: strings quoted, numbers and booleans bare, arrays
+ * wrapped every `perRow` items so a window never has to scroll sideways.
+ * Null values are skipped — an unknown field is left out, not faked.
+ */
+export function buildObjectSnippet(
+  name: string,
+  entries: [string, SnippetValue][],
+  perRow = 2,
+): CodeLine[] {
+  const rows: CodeLine[] = [];
+
+  entries.forEach(([key, value]) => {
+    if (value === null || (Array.isArray(value) && value.length === 0)) return;
+
+    if (Array.isArray(value)) {
+      const pad = " ".repeat(key.length + 5);
+
+      for (let start = 0; start < value.length; start += perRow) {
+        const chunk = value.slice(start, start + perRow);
+        const row: CodeLine =
+          start === 0
+            ? [
+                { text: `  ${key}`, tone: "pr" },
+                { text: ": [", tone: "pn" },
+              ]
+            : [{ text: pad, tone: "pn" }];
+
+        chunk.forEach((item, index) => {
+          row.push({ text: `'${item}'`, tone: "st" });
+          if (start + index < value.length - 1) {
+            row.push({ text: ", ", tone: "pn" });
+          }
+        });
+
+        if (start + perRow >= value.length) row.push({ text: "],", tone: "pn" });
+        rows.push(row);
+      }
+
+      return;
+    }
+
+    rows.push([
+      { text: `  ${key}`, tone: "pr" },
+      { text: ": ", tone: "pn" },
+      typeof value === "number"
+        ? { text: String(value), tone: "st" }
+        : { text: `'${value}'`, tone: "st" },
+      { text: ",", tone: "pn" },
+    ]);
+  });
+
+  return [
+    [
+      { text: "const", tone: "kw" },
+      { text: ` ${name}`, tone: "fn" },
+      { text: " = {", tone: "pn" },
+    ],
+    ...rows,
+    [{ text: "};", tone: "pn" }],
+  ];
+}
 
 /** Contact header block, built from the same profile data the cards use. */
 export function buildContactSnippet(values: {
@@ -146,6 +241,8 @@ type ExperienceValues = {
   since: string;
   roles: number;
   current: string;
+  agency: string;
+  projects: number;
   stack: string[];
 };
 
@@ -186,6 +283,18 @@ export function buildExperienceSnippet(values: ExperienceValues): CodeLine[] {
       { text: `'${values.current}'`, tone: "st" },
       { text: ",", tone: "pn" },
     ],
+    [
+      { text: "  agency", tone: "pr" },
+      { text: ": ", tone: "pn" },
+      { text: `'${values.agency}'`, tone: "st" },
+      { text: ",", tone: "pn" },
+    ],
+    [
+      { text: "  projects", tone: "pr" },
+      { text: ": ", tone: "pn" },
+      { text: String(values.projects), tone: "st" },
+      { text: ",", tone: "pn" },
+    ],
     stack,
     [{ text: "};", tone: "pn" }],
   ];
@@ -196,6 +305,8 @@ export function buildServicesSnippet(values: {
   offers: string[];
   from: string;
   delivery: string;
+  clients: number;
+  replyWithin: string;
 }): CodeLine[] {
   /* Three per line so the window stays narrow. */
   const rows: CodeLine[] = [];
@@ -242,6 +353,18 @@ export function buildServicesSnippet(values: {
       { text: "  delivery", tone: "pr" },
       { text: ": ", tone: "pn" },
       { text: `'${values.delivery}'`, tone: "st" },
+      { text: ",", tone: "pn" },
+    ],
+    [
+      { text: "  clients", tone: "pr" },
+      { text: ": ", tone: "pn" },
+      { text: String(values.clients), tone: "st" },
+      { text: ",", tone: "pn" },
+    ],
+    [
+      { text: "  replyWithin", tone: "pr" },
+      { text: ": ", tone: "pn" },
+      { text: `'${values.replyWithin}'`, tone: "st" },
       { text: ",", tone: "pn" },
     ],
     [{ text: "};", tone: "pn" }],

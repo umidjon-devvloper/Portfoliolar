@@ -13,7 +13,7 @@ import { CtaBanner } from "@/components/ui/cta-banner";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/reveal";
 import { buildServicesSnippet } from "@/content/code-sample";
 import { processSteps, services } from "@/content/services";
-import { profile } from "@/content/profile";
+import { metrics, profile } from "@/content/profile";
 
 type PageProps = { params: Promise<{ locale: string }> };
 type IconName = keyof typeof icons;
@@ -169,6 +169,8 @@ export default async function ServicesPage({ params }: PageProps) {
                     offers: services.map((service) => service.id),
                     from: "Next.js + Node.js",
                     delivery: "Idea to launch",
+                    clients: metrics.find((m) => m.id === "clients")?.value ?? 0,
+                    replyWithin: "24h",
                   })}
                 />
               }

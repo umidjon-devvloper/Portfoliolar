@@ -4,7 +4,8 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Container } from "@/components/ui/container";
 import { PageHeader } from "@/components/ui/page-header";
 import { Card } from "@/components/ui/card";
-import { CodeWindow } from "@/components/ui/code-window";
+import { PageVisual } from "@/components/ui/page-visual";
+import { CodeVisual } from "@/components/ui/code-visual";
 import { buttonVariants } from "@/components/ui/button";
 import { ContactForm } from "@/components/sections/contact-form";
 import {
@@ -92,65 +93,67 @@ export default async function ContactPage({ params }: PageProps) {
   return (
     <>
       <Container className="border-b border-border py-10 sm:py-12">
-        <div className="grid gap-10 lg:grid-cols-[1fr_minmax(0,28rem)] lg:gap-12">
-          <div className="flex max-w-[38rem] flex-col gap-10">
-            <PageHeader
-              className="max-w-[32rem] lg:grid-cols-1"
-              breadcrumb={t("breadcrumb")}
-              index="07"
-              lead={t("headingLead")}
-              accent={t("headingAccent")}
-              suffix=""
-              description={t("pageSubtitle")}
+        <PageHeader
+          breadcrumb={t("breadcrumb")}
+          index="07"
+          lead={t("headingLead")}
+          accent={t("headingAccent")}
+          suffix=""
+          description={t("pageSubtitle")}
+          visual={
+            <PageVisual
+              page="contact"
+              alt={t("pageTitle")}
+              fallback={
+                <CodeVisual
+                  filename="contact.js"
+                  lines={buildContactSnippet({
+                    name: profile.firstName,
+                    telegram: contact.telegramHandle,
+                    location: location
+                      ? `${location.city}, ${location.countryCode}`
+                      : null,
+                    replyWithin: response
+                      ? `${response.value}${response.suffix}`
+                      : null,
+                    status: "open",
+                  })}
+                />
+              }
             />
+          }
+        />
+      </Container>
 
-            <div className="grid gap-8 sm:grid-cols-3 sm:gap-0">
-              {highlights.map((item, index) => (
-                <div
-                  key={item.id}
-                  className={`flex flex-col gap-3 sm:px-6 ${
-                    index === 0 ? "sm:pl-0" : "sm:border-l sm:border-border"
-                  }`}
-                >
-                  <span className="grid h-11 w-11 place-items-center rounded-full border border-accent/40 text-accent">
-                    <item.icon className="h-[1.125rem] w-[1.125rem]" strokeWidth={1.6} />
-                  </span>
-                  <span className="text-[0.875rem] font-semibold text-accent">
-                    {t(`${item.id}.title`)}
-                  </span>
-                  <span className="text-xs leading-[1.75] text-muted">
-                    {t(`${item.id}.description`)}
-                  </span>
-                </div>
-              ))}
+      <Container className="grid gap-8 border-b border-border py-12 sm:py-14 lg:grid-cols-[1fr_minmax(0,28rem)] lg:gap-12">
+        <div className="flex flex-col justify-center gap-4">
+          {highlights.map((item) => (
+            <div
+              key={item.id}
+              className="tile flex items-start gap-5 rounded-[var(--radius-card)] border border-border bg-surface p-5 sm:p-6"
+            >
+              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-accent/40 text-accent">
+                <item.icon className="h-5 w-5" strokeWidth={1.6} />
+              </span>
+
+              <div className="flex flex-col gap-1.5">
+                <span className="text-[0.9375rem] font-semibold text-accent">
+                  {t(`${item.id}.title`)}
+                </span>
+                <span className="text-[0.8125rem] leading-[1.75] text-muted">
+                  {t(`${item.id}.description`)}
+                </span>
+              </div>
             </div>
-
-            <Reveal className="hidden lg:block">
-              <CodeWindow
-                filename="contact.js"
-                className="max-w-[26rem]"
-                lines={buildContactSnippet({
-                  name: profile.firstName,
-                  telegram: contact.telegramHandle,
-                  location: location
-                    ? `${location.city}, ${location.countryCode}`
-                    : null,
-                  replyWithin: response
-                    ? `${response.value}${response.suffix}`
-                    : null,
-                  status: "open",
-                })}
-              />
-            </Reveal>
-          </div>
-
-          <Reveal delay={80}>
-            <Card hover={false} className="p-6 sm:p-8">
-              <h2 className="eyebrow mb-6 block">{t("formTitle")}</h2>
-              <ContactForm />
-            </Card>
-          </Reveal>
+          ))}
         </div>
+
+        <Reveal delay={80}>
+          <Card hover={false} className="p-6 sm:p-8">
+            <h2 className="eyebrow mb-6 block">{t("formTitle")}</h2>
+            <ContactForm />
+          </Card>
+        </Reveal>
       </Container>
 
       <Container className="grid gap-10 border-b border-border py-12 sm:py-14 lg:grid-cols-[minmax(0,23rem)_1fr] lg:gap-12">

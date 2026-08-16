@@ -149,7 +149,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
             <Sidebar />
             <div className="flex min-h-dvh flex-col lg:pl-[var(--sidebar)]">
               <TopBar />
-              <main className="flex-1 pb-20 lg:pb-0">{children}</main>
+              <main className="flex-1 pb-20 lg:pb-0 lg:pt-10">{children}</main>
               <Footer />
             </div>
             <BottomNav />

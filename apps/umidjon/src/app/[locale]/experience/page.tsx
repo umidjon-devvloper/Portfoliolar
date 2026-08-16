@@ -14,7 +14,7 @@ import { Counter } from "@/components/motion/counter";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/reveal";
 import { ExperienceBoard } from "@/components/sections/experience-board";
 import { ProjectCard } from "@/components/sections/project-card";
-import { featuredProjects } from "@/content/projects";
+import { featuredProjects, projects } from "@/content/projects";
 import { metrics } from "@/content/profile";
 
 type PageProps = { params: Promise<{ locale: string }> };
@@ -60,6 +60,8 @@ export default async function ExperiencePage({ params }: PageProps) {
                     since: "2021",
                     roles: roles.length,
                     current: t("fullstack.title"),
+                    agency: "Umidjon Agency",
+                    projects: projects.length,
                     stack: ["Next.js", "React", "Node.js"],
                   })}
                 />

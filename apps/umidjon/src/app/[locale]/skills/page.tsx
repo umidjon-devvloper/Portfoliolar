@@ -4,6 +4,8 @@ import { Container } from "@/components/ui/container";
 import { PageHeader } from "@/components/ui/page-header";
 import { PageVisual } from "@/components/ui/page-visual";
 import { CodeVisual } from "@/components/ui/code-visual";
+import { buildObjectSnippet } from "@/content/code-sample";
+import { skillGroups } from "@/content/profile";
 import { SkillsBoard } from "@/components/sections/skills-board";
 
 type PageProps = { params: Promise<{ locale: string }> };
@@ -12,6 +14,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "skills" });
   return { title: t("pageTitle"), description: t("pageSubtitle") };
+}
+
+/* Only names that really appear in the group are shown. */
+function pick(groupId: string, wanted: string[]): string[] {
+  const group = skillGroups.find((item) => item.id === groupId);
+  return wanted.filter((name) => group?.items.includes(name));
 }
 
 export default async function SkillsPage({ params }: PageProps) {
@@ -32,7 +40,18 @@ export default async function SkillsPage({ params }: PageProps) {
             <PageVisual
               page="skills"
               alt={t("pageTitle")}
-              fallback={<CodeVisual />}
+              fallback={
+                <CodeVisual
+                  filename="skills.js"
+                  lines={buildObjectSnippet("skills", [
+                    ["groups", skillGroups.length],
+                    ["frontend", pick("frontend", ["React.js", "Next.js"])],
+                    ["mobile", pick("mobile", ["React Native", "Expo"])],
+                    ["backend", pick("backend", ["Node.js", "MongoDB"])],
+                    ["design", pick("design", ["Figma", "UI/UX"])],
+                  ])}
+                />
+              }
             />
           }
         />
