@@ -150,3 +150,43 @@ export function buildExperienceSnippet(values: ExperienceValues): CodeLine[] {
     [{ text: "};", tone: "pn" }],
   ];
 }
+
+/** Services header block. */
+export function buildServicesSnippet(values: {
+  offers: string[];
+  from: string;
+  delivery: string;
+}): CodeLine[] {
+  const list: CodeLine = [
+    { text: "  offers", tone: "pr" },
+    { text: ": [", tone: "pn" },
+  ];
+
+  values.offers.forEach((item, index) => {
+    list.push({ text: `'${item}'`, tone: "st" });
+    if (index < values.offers.length - 1) list.push({ text: ", ", tone: "pn" });
+  });
+  list.push({ text: "],", tone: "pn" });
+
+  return [
+    [
+      { text: "const", tone: "kw" },
+      { text: " services", tone: "fn" },
+      { text: " = {", tone: "pn" },
+    ],
+    list,
+    [
+      { text: "  stack", tone: "pr" },
+      { text: ": ", tone: "pn" },
+      { text: `'${values.from}'`, tone: "st" },
+      { text: ",", tone: "pn" },
+    ],
+    [
+      { text: "  delivery", tone: "pr" },
+      { text: ": ", tone: "pn" },
+      { text: `'${values.delivery}'`, tone: "st" },
+      { text: ",", tone: "pn" },
+    ],
+    [{ text: "};", tone: "pn" }],
+  ];
+}

@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
 import * as icons from "lucide-react";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/container";
 import { PageHeader } from "@/components/ui/page-header";
+import { PageVisual } from "@/components/ui/page-visual";
+import { CodeVisual } from "@/components/ui/code-visual";
 import { Card } from "@/components/ui/card";
 import { CtaBanner } from "@/components/ui/cta-banner";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/reveal";
+import { buildServicesSnippet } from "@/content/code-sample";
 import { processSteps, services } from "@/content/services";
 import { profile } from "@/content/profile";
 
@@ -26,39 +29,48 @@ function ServiceGrid() {
 
   return (
     <Stagger>
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
         {services.map((service, index) => {
           const Icon = icons[service.icon as IconName] as icons.LucideIcon;
 
           return (
-            <StaggerItem key={service.id} index={index}>
-              <Card className="flex h-full flex-col gap-4 p-5 sm:p-6">
-                <span className="grid h-10 w-10 place-items-center rounded-[var(--radius-sm)] bg-accent-soft text-accent">
-                  <Icon className="h-5 w-5" />
-                </span>
+            <StaggerItem key={service.id} index={index} className="flex">
+              <Card className="group flex w-full flex-col gap-5 bg-surface-2 p-6 sm:p-7">
+                <div className="flex items-start justify-between gap-4">
+                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-[var(--radius-btn)] bg-accent-soft text-accent transition-transform duration-300 group-hover:scale-110">
+                    <Icon className="h-5 w-5" strokeWidth={1.6} />
+                  </span>
+                  <span className="font-mono text-[0.6875rem] text-muted">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                </div>
 
-                <div className="flex flex-col gap-1.5">
-                  <h2 className="font-bold">{t(`${service.id}.title`)}</h2>
-                  <p className="text-sm leading-relaxed text-muted">
+                <div className="flex flex-col gap-2">
+                  <h2 className="text-[1.0625rem] font-bold tracking-tight transition-colors group-hover:text-accent">
+                    {t(`${service.id}.title`)}
+                  </h2>
+                  <p className="text-sm leading-[1.75] text-muted">
                     {t(`${service.id}.description`)}
                   </p>
                 </div>
 
-                <ul className="flex flex-col gap-1.5 border-t border-border pt-4">
+                <ul className="flex flex-col gap-2.5 border-t border-border pt-5">
                   {service.points.map((point) => (
-                    <li key={point} className="flex items-start gap-2 text-xs text-muted">
-                      <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-accent" />
-                      {point}
+                    <li key={point} className="flex items-start gap-2.5 text-[0.8125rem]">
+                      <span className="mt-0.5 grid h-4 w-4 shrink-0 place-items-center rounded-full bg-accent-soft text-accent">
+                        <Check className="h-2.5 w-2.5" strokeWidth={3} />
+                      </span>
+                      <span className="text-muted">{point}</span>
                     </li>
                   ))}
                 </ul>
 
                 <Link
                   href="/contact"
-                  className="mt-auto inline-flex items-center gap-1.5 pt-2 text-sm font-medium text-accent"
+                  className="group/link mt-auto inline-flex items-center gap-2 pt-2 text-[0.8125rem] font-medium text-accent"
                 >
                   {t("learnMore")}
-                  <ArrowRight className="h-3.5 w-3.5" />
+                  <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover/link:translate-x-1.5" />
                 </Link>
               </Card>
             </StaggerItem>
@@ -69,29 +81,65 @@ function ServiceGrid() {
   );
 }
 
+const stepIcon: Record<string, IconName> = {
+  discuss: "MessagesSquare",
+  plan: "FileText",
+  build: "Code",
+  deliver: "Rocket",
+  support: "ChartNoAxesColumn",
+};
+
 function Process() {
   const t = useTranslations("process");
 
   return (
-    <Card hover={false} className="flex flex-col gap-8 p-6 sm:p-8">
-      <div className="flex flex-col gap-1.5">
-        <span className="eyebrow">{t("eyebrow")}</span>
-        <h2 className="type-section">{t("title")}</h2>
+    <Card hover={false} className="flex flex-col gap-9 p-6 sm:p-8">
+      <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+        <div className="flex flex-col gap-2">
+          <span className="eyebrow">{t("eyebrow")}</span>
+          <h2 className="type-section">{t("title")}</h2>
+        </div>
+        <p className="max-w-sm text-sm leading-[1.75] text-muted">
+          {t("subtitle")}
+        </p>
       </div>
 
-      <ol className="grid gap-6 sm:grid-cols-3 lg:grid-cols-5">
-        {processSteps.map((step, index) => (
-          <li key={step} className="flex flex-col gap-2">
-            <span className="text-xs font-mono text-accent">
-              {String(index + 1).padStart(2, "0")}
-            </span>
-            <h3 className="text-sm font-semibold">{t(`${step}.title`)}</h3>
-            <p className="text-xs leading-relaxed text-muted">
-              {t(`${step}.description`)}
-            </p>
-          </li>
-        ))}
-      </ol>
+      <div className="relative">
+        {/* dotted rail behind the markers */}
+        <span
+          className="absolute left-[10%] right-[10%] top-8 hidden border-t border-dashed border-accent/40 lg:block"
+          aria-hidden
+        />
+
+        <ol className="grid gap-8 sm:grid-cols-3 lg:grid-cols-5 lg:gap-4">
+          {processSteps.map((step, index) => {
+            const Icon = icons[stepIcon[step] ?? "Code"] as icons.LucideIcon;
+
+            return (
+              <li
+                key={step}
+                className="group relative flex flex-col items-center gap-3 text-center"
+              >
+                <span className="grid h-16 w-16 place-items-center rounded-full border border-accent/50 bg-background text-accent transition-all duration-300 group-hover:scale-110 group-hover:border-accent group-hover:bg-accent-soft">
+                  <Icon className="h-6 w-6" strokeWidth={1.4} />
+                </span>
+
+                <span className="font-mono text-[0.6875rem] text-muted">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+
+                <h3 className="text-[0.9375rem] font-semibold transition-colors group-hover:text-accent">
+                  {t(`${step}.title`)}
+                </h3>
+
+                <p className="max-w-[15rem] text-xs leading-[1.7] text-muted">
+                  {t(`${step}.description`)}
+                </p>
+              </li>
+            );
+          })}
+        </ol>
+      </div>
     </Card>
   );
 }
@@ -103,18 +151,35 @@ export default async function ServicesPage({ params }: PageProps) {
 
   return (
     <>
-      <Container className="border-b border-border py-8 sm:py-10">
+      <Container className="border-b border-border py-10 sm:py-12">
         <PageHeader
           breadcrumb={t("breadcrumb")}
           index="06"
           lead={t("headingLead")}
           accent={t("headingAccent")}
           description={t("pageSubtitle")}
+          visual={
+            <PageVisual
+              page="services"
+              alt={t("pageTitle")}
+              fallback={
+                <CodeVisual
+                  filename="services.js"
+                  lines={buildServicesSnippet({
+                    offers: ["web", "mobile", "saas"],
+                    from: "Next.js + Node.js",
+                    delivery: "Idea to launch",
+                  })}
+                />
+              }
+            />
+          }
         />
       </Container>
 
-      <Container className="flex flex-col gap-10">
+      <Container className="flex flex-col gap-10 py-10 sm:py-12">
         <ServiceGrid />
+
         <Reveal>
           <Process />
         </Reveal>
@@ -127,18 +192,18 @@ export default async function ServicesPage({ params }: PageProps) {
               rel="noreferrer noopener"
               className="card card-hover flex items-center justify-between gap-4 p-5"
             >
-              <span className="text-sm">
+              <span className="flex flex-col">
                 <span className="font-semibold">{t("agencyTitle")}</span>
-                <span className="block text-muted">{t("agencySubtitle")}</span>
+                <span className="text-sm text-muted">{t("agencySubtitle")}</span>
               </span>
-              <icons.ArrowUpRight className="h-4 w-4 shrink-0 text-accent" />
+              <ArrowUpRight className="h-5 w-5 shrink-0 text-accent" />
             </a>
           </Reveal>
         ) : null}
-      </Container>
 
-      <Container className="py-10 sm:py-14">
-        <CtaBanner />
+        <Reveal>
+          <CtaBanner />
+        </Reveal>
       </Container>
     </>
   );
