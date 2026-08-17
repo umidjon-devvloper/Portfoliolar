@@ -160,7 +160,9 @@
       "web": "Web sayt",
       "ecommerce": "Onlayn do'kon",
       "mobile": "Mobil ilova",
-      "business": "Biznes"
+      "business": "Biznes",
+      "bot": "Telegram bot",
+      "game": "O'yin"
     },
     "breadcrumb": "Ishlar",
     "headingLead": "Mening",

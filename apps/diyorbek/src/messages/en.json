@@ -160,7 +160,9 @@
       "web": "Website",
       "ecommerce": "E-commerce",
       "mobile": "Mobile app",
-      "business": "Business"
+      "business": "Business",
+      "bot": "Telegram bot",
+      "game": "Game"
     },
     "breadcrumb": "Work",
     "headingLead": "My",

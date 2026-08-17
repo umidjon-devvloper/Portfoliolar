@@ -160,7 +160,9 @@
       "web": "Веб-сайт",
       "ecommerce": "Интернет-магазин",
       "mobile": "Мобильное приложение",
-      "business": "Бизнес"
+      "business": "Бизнес",
+      "bot": "Telegram-бот",
+      "game": "Игра"
     },
     "breadcrumb": "Работы",
     "headingLead": "Мои",

@@ -375,6 +375,8 @@ export const projectKinds = [
   "web",
   "ecommerce",
   "mobile",
+  "bot",
+  "game",
   "business",
 ] as const;
 

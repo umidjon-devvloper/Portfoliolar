@@ -48,7 +48,8 @@ export function ProjectCard({
             <h3 className="text-sm font-bold tracking-tight transition-colors group-hover:text-accent">{project.name}</h3>
 
             <p className="line-clamp-3 text-[0.6875rem] leading-relaxed text-muted">
-              {project.tagline[locale]} — {project.solution[locale]}
+              {project.tagline[locale]}
+              {project.solution ? ` — ${project.solution[locale]}` : ""}
             </p>
 
             {project.stack.length > 0 ? (

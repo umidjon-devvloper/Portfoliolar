@@ -9,7 +9,9 @@ export type ProjectKind =
   | "mobile"
   | "web"
   | "ecommerce"
-  | "business";
+  | "business"
+  | "bot"
+  | "game";
 
 export type ProjectLink = {
   label: string;
@@ -24,8 +26,8 @@ export type Project = {
   year: string | null;
   featured: boolean;
   tagline: LocalizedText;
-  problem: LocalizedText;
-  solution: LocalizedText;
+  problem: LocalizedText | null;
+  solution: LocalizedText | null;
   result: LocalizedText | null;
   stack: string[];
   integrations: string[];

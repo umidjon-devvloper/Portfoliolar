@@ -159,7 +159,7 @@ export function WorkIndex() {
             </div>
 
             <p className="text-sm leading-[1.75] text-muted">
-              {lead.solution[locale]}
+              {lead.solution?.[locale] ?? lead.tagline[locale]}
             </p>
 
             <div className="flex flex-wrap gap-1.5">
@@ -232,9 +232,11 @@ export function WorkIndex() {
                       <p className="text-[0.8125rem] text-accent">
                         {project.tagline[locale]}
                       </p>
-                      <p className="line-clamp-3 text-[0.8125rem] leading-[1.7] text-muted">
-                        {project.solution[locale]}
-                      </p>
+                      {project.solution ? (
+                        <p className="line-clamp-3 text-[0.8125rem] leading-[1.7] text-muted">
+                          {project.solution[locale]}
+                        </p>
+                      ) : null}
 
                       <div className="mt-auto flex flex-wrap gap-1.5 pt-2">
                         {project.stack.slice(0, 3).map((item) => (
@@ -266,9 +268,11 @@ export function WorkIndex() {
                           {project.tagline[locale]}
                         </span>
                       </div>
-                      <p className="line-clamp-2 text-[0.8125rem] leading-[1.7] text-muted">
-                        {project.solution[locale]}
-                      </p>
+                      {project.solution ? (
+                        <p className="line-clamp-2 text-[0.8125rem] leading-[1.7] text-muted">
+                          {project.solution[locale]}
+                        </p>
+                      ) : null}
                       <div className="flex flex-wrap gap-1.5">
                         {project.stack.slice(0, 4).map((item) => (
                           <Tag key={item} name={item} />

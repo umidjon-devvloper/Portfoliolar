@@ -56,8 +56,8 @@ export default async function ProjectPage({ params }: PageProps) {
   const lang = locale as Locale;
 
   const blocks = [
-    { key: "problem", value: project.problem[lang] },
-    { key: "solution", value: project.solution[lang] },
+    { key: "problem", value: project.problem?.[lang] ?? null },
+    { key: "solution", value: project.solution?.[lang] ?? null },
     { key: "result", value: project.result?.[lang] ?? null },
   ];
 
