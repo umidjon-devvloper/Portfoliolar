@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { CodeWindow } from "@/components/ui/code-window";
-import { buildAboutSnippet } from "@/content/code-sample";
+import { buildObjectSnippet } from "@/content/code-sample";
 import { metrics, profile } from "@/content/profile";
 import { HeroBackdrop } from "./hero-backdrop";
 
@@ -84,18 +84,20 @@ export function AboutHero() {
         ) : null}
 
         <CodeWindow
-          filename="umidjon.js"
-          lines={buildAboutSnippet({
-            birth: t("birthValue"),
-            role: profile.role,
-            education: t("educationValue"),
-            location: profile.location
+          filename={`${profile.firstName.toLowerCase()}.js`}
+          lines={buildObjectSnippet(profile.firstName.toLowerCase(), [
+            ["birth", profile.birthDate ? t("birthValue") : null],
+            ["role", profile.role],
+            ["education", profile.education
+              ? `${profile.education.institution} (${profile.education.from}–${profile.education.to})`
+              : null],
+            ["location", profile.location
               ? `${profile.location.city}, ${profile.location.country}`
-              : "",
-            languages: t("languagesValue").split(" · "),
-            focus: t("focusValue").split(" · "),
-            projects: metrics.find((metric) => metric.id === "projects")?.value ?? 0,
-          })}
+              : null],
+            ["languages", t("languagesValue").split(" · ")],
+            ["values", t("focusValue").split(" · ")],
+            ["projects", metrics.find((metric) => metric.id === "projects")?.value ?? null],
+          ])}
         />
       </div>
     </section>

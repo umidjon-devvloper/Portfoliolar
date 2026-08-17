@@ -14,7 +14,7 @@ import {
 } from "@/components/sections/contact-channels";
 import { WorldMap } from "@/components/sections/world-map";
 import { Reveal } from "@/components/motion/reveal";
-import { buildContactSnippet } from "@/content/code-sample";
+import { buildObjectSnippet } from "@/content/code-sample";
 import { metrics, profile } from "@/content/profile";
 import { alternates, openGraph } from "@/lib/seo";
 
@@ -118,17 +118,17 @@ export default async function ContactPage({ params }: PageProps) {
               fallback={
                 <CodeVisual
                   filename="contact.js"
-                  lines={buildContactSnippet({
-                    name: profile.firstName,
-                    telegram: contact.telegramHandle,
-                    location: location
+                  lines={buildObjectSnippet("contact", [
+                    ["name", profile.fullName ?? profile.firstName],
+                    ["telegram", contact.telegramHandle],
+                    ["location", location
                       ? `${location.city}, ${location.countryCode}`
-                      : null,
-                    replyWithin: response
+                      : null],
+                    ["replyWithin", response
                       ? `${response.value}${response.suffix}`
-                      : null,
-                    status: "open",
-                  })}
+                      : null],
+                    ["status", "open"],
+                  ])}
                 />
               }
             />

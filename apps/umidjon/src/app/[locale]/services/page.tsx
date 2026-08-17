@@ -10,7 +10,7 @@ import { CodeVisual } from "@/components/ui/code-visual";
 import { Card } from "@/components/ui/card";
 import { CtaBanner } from "@/components/ui/cta-banner";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/reveal";
-import { buildServicesSnippet } from "@/content/code-sample";
+import { buildObjectSnippet } from "@/content/code-sample";
 import { processSteps, services } from "@/content/services";
 import { metrics, profile } from "@/content/profile";
 import { alternates, openGraph } from "@/lib/seo";
@@ -157,6 +157,7 @@ export default async function ServicesPage({ params }: PageProps) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "services" });
+  const reply = metrics.find((metric) => metric.id === "response");
 
   return (
     <>
@@ -174,13 +175,13 @@ export default async function ServicesPage({ params }: PageProps) {
               fallback={
                 <CodeVisual
                   filename="services.js"
-                  lines={buildServicesSnippet({
-                    offers: services.map((service) => service.id),
-                    from: "Next.js + Node.js",
-                    delivery: "Idea to launch",
-                    clients: metrics.find((m) => m.id === "clients")?.value ?? 0,
-                    replyWithin: "24h",
-                  })}
+                  lines={buildObjectSnippet("services", [
+                    ["offers", services.map((service) => service.id)],
+                    ["stack", "Next.js + Node.js"],
+                    ["delivery", "Idea to launch"],
+                    ["clients", metrics.find((m) => m.id === "clients")?.value ?? null],
+                    ["replyWithin", reply ? `${reply.value}${reply.suffix}` : null],
+                  ])}
                 />
               }
             />

@@ -6,8 +6,13 @@ import { Container } from "@/components/ui/container";
 import { PageHeader } from "@/components/ui/page-header";
 import { PageVisual } from "@/components/ui/page-visual";
 import { CodeVisual } from "@/components/ui/code-visual";
-import { buildExperienceSnippet } from "@/content/code-sample";
-import { roles } from "@/content/experience";
+import { buildObjectSnippet } from "@/content/code-sample";
+import {
+  careerStack,
+  careerStart,
+  currentRole,
+  roles,
+} from "@/content/experience";
 import { Card } from "@/components/ui/card";
 import { CtaBanner } from "@/components/ui/cta-banner";
 import { Counter } from "@/components/motion/counter";
@@ -67,14 +72,14 @@ export default async function ExperiencePage({ params }: PageProps) {
               fallback={
                 <CodeVisual
                   filename="experience.js"
-                  lines={buildExperienceSnippet({
-                    since: "2021",
-                    roles: roles.length,
-                    current: t("fullstack.title"),
-                    agency: "Umidjon Agency",
-                    projects: projects.length,
-                    stack: ["Next.js", "React", "Node.js"],
-                  })}
+                  lines={buildObjectSnippet("experience", [
+                    ["since", careerStart],
+                    ["roles", roles.length],
+                    ["current", currentRole ? t(`${currentRole.id}.title`) : null],
+                    ["agency", currentRole?.company ?? null],
+                    ["projects", projects.length],
+                    ["stack", careerStack],
+                  ])}
                 />
               }
             />
