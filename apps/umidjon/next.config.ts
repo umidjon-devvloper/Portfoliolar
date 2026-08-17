@@ -7,20 +7,12 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   images: {
     formats: ["image/avif", "image/webp"],
+    /* Covers are content-addressed by path and never change in place. */
+    minimumCacheTTL: 2678400,
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "avatars.githubusercontent.com",
-        pathname: "/**",
-      },
-      {
-        protocol: "https",
         hostname: "vjuubkjgs6.ufs.sh",
-        pathname: "/**",
-      },
-      {
-        protocol: "https",
-        hostname: "wsrv.nl",
         pathname: "/**",
       },
     ],

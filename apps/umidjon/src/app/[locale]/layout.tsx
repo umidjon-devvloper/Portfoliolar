@@ -73,7 +73,7 @@ export async function generateMetadata({
       title: t("title"),
       description: t("description"),
       url: site.url,
-      locale,
+      locale: locale === "uz" ? "uz_UZ" : locale === "ru" ? "ru_RU" : "en_US",
       images: [{ url: site.ogImage, width: 1200, height: 630 }],
     },
     twitter: {

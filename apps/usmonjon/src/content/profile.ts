@@ -24,7 +24,7 @@ export const profile: Profile = {
     country: "O'zbekiston",
     countryCode: "UZ",
   },
-  avatar: "/images/profile/portrait.webp",
+  avatar: null, // TODO: portrait
   resumeFile: null,
   contact: {
     email: "umidjongafforov844@gmail.com",

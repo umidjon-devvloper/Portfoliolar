@@ -1,5 +1,13 @@
 import { routing } from "@/i18n/routing";
 import { site } from "@/content/site";
+import { profile } from "@/content/profile";
+
+/* Open Graph wants a full locale, not a bare language code. */
+const ogLocale: Record<string, string> = {
+  uz: "uz_UZ",
+  ru: "ru_RU",
+  en: "en_US",
+};
 
 /**
  * Canonical + hreflang for one page. Set on every page: a canonical
@@ -35,10 +43,13 @@ export function openGraph(values: {
   return {
     type: "website" as const,
     siteName: site.domain,
-    title: values.title,
+    title: `${values.title} — ${profile.firstName}`,
     description: values.description,
     url: alternates(values.path, values.locale).canonical,
-    locale: values.locale,
+    locale: ogLocale[values.locale] ?? values.locale,
+    alternateLocale: routing.locales
+      .filter((code) => code !== values.locale)
+      .map((code) => ogLocale[code] ?? code),
     images: [{ url: values.image ?? site.ogImage, width: 1200, height: 630 }],
   };
 }
