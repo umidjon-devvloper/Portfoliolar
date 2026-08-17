@@ -61,7 +61,7 @@ export async function sendMessage(
   }
 
   const text = [
-    "<b>umidjon.site — new message</b>",
+    "<b>usmonjon.site — new message</b>",
     "",
     `<b>Name:</b> ${escapeHtml(payload.name)}`,
     `<b>Email:</b> ${escapeHtml(payload.email)}`,
