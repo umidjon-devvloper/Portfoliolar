@@ -16,6 +16,7 @@ import { WorldMap } from "@/components/sections/world-map";
 import { Reveal } from "@/components/motion/reveal";
 import { buildContactSnippet } from "@/content/code-sample";
 import { metrics, profile } from "@/content/profile";
+import { alternates, openGraph } from "@/lib/seo";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -24,7 +25,17 @@ const { contact, location } = profile;
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "contact" });
-  return { title: t("pageTitle"), description: t("pageSubtitle") };
+  return {
+    title: t("pageTitle"),
+    description: t("pageSubtitle"),
+    alternates: alternates("/contact", locale),
+    openGraph: openGraph({
+      title: t("pageTitle"),
+      description: t("pageSubtitle"),
+      path: "/contact",
+      locale,
+    }),
+  };
 }
 
 const highlights = [

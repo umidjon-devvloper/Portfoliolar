@@ -16,13 +16,24 @@ import { ExperienceBoard } from "@/components/sections/experience-board";
 import { ProjectCard } from "@/components/sections/project-card";
 import { featuredProjects, projects } from "@/content/projects";
 import { metrics } from "@/content/profile";
+import { alternates, openGraph } from "@/lib/seo";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "experience" });
-  return { title: t("pageTitle"), description: t("pageSubtitle") };
+  return {
+    title: t("pageTitle"),
+    description: t("pageSubtitle"),
+    alternates: alternates("/experience", locale),
+    openGraph: openGraph({
+      title: t("pageTitle"),
+      description: t("pageSubtitle"),
+      path: "/experience",
+      locale,
+    }),
+  };
 }
 
 const statIcon = {

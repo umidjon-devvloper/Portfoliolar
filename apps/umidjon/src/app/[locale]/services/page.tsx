@@ -14,6 +14,7 @@ import { Reveal, Stagger, StaggerItem } from "@/components/motion/reveal";
 import { buildServicesSnippet } from "@/content/code-sample";
 import { processSteps, services } from "@/content/services";
 import { metrics, profile } from "@/content/profile";
+import { alternates, openGraph } from "@/lib/seo";
 
 type PageProps = { params: Promise<{ locale: string }> };
 type IconName = keyof typeof icons;
@@ -21,7 +22,17 @@ type IconName = keyof typeof icons;
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "services" });
-  return { title: t("pageTitle"), description: t("pageSubtitle") };
+  return {
+    title: t("pageTitle"),
+    description: t("pageSubtitle"),
+    alternates: alternates("/services", locale),
+    openGraph: openGraph({
+      title: t("pageTitle"),
+      description: t("pageSubtitle"),
+      path: "/services",
+      locale,
+    }),
+  };
 }
 
 function ServiceGrid() {

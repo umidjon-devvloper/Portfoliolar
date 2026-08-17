@@ -14,31 +14,36 @@ const staticPaths = [
   "/contact",
 ];
 
+const prefix = (locale: string) =>
+  locale === routing.defaultLocale ? "" : `/${locale}`;
+
+/** Every entry lists its translations, so Google pairs the locales up. */
+function languages(path: string) {
+  return Object.fromEntries(
+    routing.locales.map((locale) => [
+      locale,
+      `${site.url}${prefix(locale)}${path}`,
+    ]),
+  );
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const entries: MetadataRoute.Sitemap = [];
   const now = new Date();
+  const paths = [
+    ...staticPaths.map((path) => ({ path, priority: path === "" ? 1 : 0.7 })),
+    ...projects.map((project) => ({
+      path: `/work/${project.slug}`,
+      priority: 0.6,
+    })),
+  ];
 
-  for (const locale of routing.locales) {
-    const prefix = locale === routing.defaultLocale ? "" : `/${locale}`;
-
-    for (const path of staticPaths) {
-      entries.push({
-        url: `${site.url}${prefix}${path}`,
-        lastModified: now,
-        changeFrequency: "monthly",
-        priority: path === "" ? 1 : 0.7,
-      });
-    }
-
-    for (const project of projects) {
-      entries.push({
-        url: `${site.url}${prefix}/work/${project.slug}`,
-        lastModified: now,
-        changeFrequency: "monthly",
-        priority: 0.6,
-      });
-    }
-  }
-
-  return entries;
+  return routing.locales.flatMap((locale) =>
+    paths.map(({ path, priority }) => ({
+      url: `${site.url}${prefix(locale)}${path}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority,
+      alternates: { languages: languages(path) },
+    })),
+  );
 }

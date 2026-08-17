@@ -7,13 +7,24 @@ import { CodeVisual } from "@/components/ui/code-visual";
 import { buildObjectSnippet } from "@/content/code-sample";
 import { skillGroups } from "@/content/profile";
 import { SkillsBoard } from "@/components/sections/skills-board";
+import { alternates, openGraph } from "@/lib/seo";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "skills" });
-  return { title: t("pageTitle"), description: t("pageSubtitle") };
+  return {
+    title: t("pageTitle"),
+    description: t("pageSubtitle"),
+    alternates: alternates("/skills", locale),
+    openGraph: openGraph({
+      title: t("pageTitle"),
+      description: t("pageSubtitle"),
+      path: "/skills",
+      locale,
+    }),
+  };
 }
 
 /* Only names that really appear in the group are shown. */

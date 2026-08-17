@@ -180,7 +180,7 @@ export function SkillsBoard() {
         <h2 className="text-[0.8125rem] font-bold uppercase tracking-[0.14em]">
           {t("toolStripTitle")}
         </h2>
-        <ul className="grid grid-cols-5 gap-4 sm:grid-cols-10">
+        <ul className="grid grid-cols-4 gap-4 sm:grid-cols-5 lg:grid-cols-10">
           {toolStrip.map((name) => (
             <li key={name} className="group flex flex-col items-center gap-2">
               <TechIcon

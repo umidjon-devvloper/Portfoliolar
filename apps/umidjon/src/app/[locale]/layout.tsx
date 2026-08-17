@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Great_Vibes, Inter, JetBrains_Mono } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -12,6 +12,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { profile } from "@/content/profile";
 import { site } from "@/content/site";
 import { routing } from "@/i18n/routing";
+import { alternates } from "@/lib/seo";
 import "../globals.css";
 
 const inter = Inter({
@@ -38,6 +39,14 @@ type LayoutProps = {
   params: Promise<{ locale: string }>;
 };
 
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0d0d0d" },
+  ],
+  colorScheme: "dark light",
+};
+
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
@@ -57,14 +66,7 @@ export async function generateMetadata({
     description: t("description"),
     authors: [{ name: profile.fullName ?? profile.firstName, url: site.url }],
     creator: profile.fullName ?? profile.firstName,
-    alternates: {
-      canonical: "/",
-      languages: {
-        uz: "/",
-        ru: "/ru",
-        en: "/en",
-      },
-    },
+    alternates: alternates("/", locale),
     openGraph: {
       type: "website",
       siteName: site.domain,

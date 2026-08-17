@@ -13,6 +13,8 @@ import { CtaBanner } from "@/components/ui/cta-banner";
 import { buttonVariants } from "@/components/ui/button";
 import { getProjectBySlug, projects } from "@/content/projects";
 import { site } from "@/content/site";
+import { alternates, openGraph } from "@/lib/seo";
+import { profile } from "@/content/profile";
 
 type PageProps = { params: Promise<{ locale: string; slug: string }> };
 
@@ -27,14 +29,19 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const project = getProjectBySlug(slug);
   if (!project) return {};
 
+  const description = project.tagline[locale as Locale];
+
   return {
     title: project.name,
-    description: project.tagline[locale as Locale],
-    openGraph: {
+    description,
+    alternates: alternates(`/work/${project.slug}`, locale),
+    openGraph: openGraph({
       title: project.name,
-      description: project.tagline[locale as Locale],
-      url: `${site.url}/work/${project.slug}`,
-    },
+      description,
+      path: `/work/${project.slug}`,
+      locale,
+      image: project.cover,
+    }),
   };
 }
 
@@ -54,8 +61,28 @@ export default async function ProjectPage({ params }: PageProps) {
     { key: "result", value: project.result?.[lang] ?? null },
   ];
 
+  /* Search engines get the case study as a structured work item. */
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: project.name,
+    headline: project.name,
+    description: project.tagline[lang],
+    url: `${site.url}/work/${project.slug}`,
+    image: project.cover ? `${site.url}${project.cover}` : undefined,
+    inLanguage: lang,
+    keywords: project.stack.join(", "),
+    dateCreated: project.year ? String(project.year) : undefined,
+    author: { "@type": "Person", name: profile.fullName ?? profile.firstName },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       <Container className="flex flex-col gap-5 py-8 sm:py-12">
         <Breadcrumb current={t("breadcrumb")} />
 

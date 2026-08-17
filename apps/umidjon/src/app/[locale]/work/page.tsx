@@ -8,13 +8,24 @@ import { CodeVisual } from "@/components/ui/code-visual";
 import { buildObjectSnippet } from "@/content/code-sample";
 import { WorkIndex } from "@/components/sections/work-index";
 import { featuredProjects, projects } from "@/content/projects";
+import { alternates, openGraph } from "@/lib/seo";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "projects" });
-  return { title: t("title"), description: t("subtitle") };
+  return {
+    title: t("title"),
+    description: t("subtitle"),
+    alternates: alternates("/work", locale),
+    openGraph: openGraph({
+      title: t("title"),
+      description: t("subtitle"),
+      path: "/work",
+      locale,
+    }),
+  };
 }
 
 /* Counted from the project list so the window can never overstate it. */

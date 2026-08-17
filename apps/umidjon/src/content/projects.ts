@@ -192,7 +192,7 @@ export const projects: Project[] = [
     year: null,
     client: "Bukhara Suzana",
     featured: false,
-    cover: null,
+    cover: "/images/projects/bukhara-suzana.webp",
     gallery: [],
     links: [
       {

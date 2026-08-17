@@ -11,6 +11,7 @@ import { skillCategories } from "@/content/skills";
 import { projects } from "@/content/projects";
 import type { Locale } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
+import { alternates, openGraph } from "@/lib/seo";
 
 type PageProps = {
   params: Promise<{ locale: string }>;
@@ -22,7 +23,17 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "resume" });
 
-  return { title: t("title"), description: t("subtitle") };
+  return {
+    title: t("title"),
+    description: t("subtitle"),
+    alternates: alternates("/resume", locale),
+    openGraph: openGraph({
+      title: t("title"),
+      description: t("subtitle"),
+      path: "/resume",
+      locale,
+    }),
+  };
 }
 
 export default async function ResumePage({ params }: PageProps) {
