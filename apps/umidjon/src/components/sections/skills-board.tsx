@@ -69,7 +69,7 @@ const toolStrip = [
 
 function SkillRow({ skill }: { skill: Skill }) {
   return (
-    <li className="stagger-item flex items-center gap-2.5 rounded-[var(--radius-btn)] border border-border bg-surface px-3 py-2 transition-colors duration-300 hover:border-accent/50">
+    <li className="stagger-item flex items-center justify-center gap-2.5 rounded-[var(--radius-btn)] border border-border bg-surface px-3 py-2.5 transition-colors duration-300 hover:border-accent/50">
       <TechIcon
         slug={skill.icon}
         fallback={skill.name}
@@ -164,7 +164,7 @@ export function SkillsBoard() {
                   </h3>
                 </div>
 
-                <ul className="flex flex-wrap gap-2">
+                <ul className="grid grid-cols-2 gap-2">
                   {category.skills.map((skill) => (
                     <SkillRow key={`${category.id}-${skill.name}`} skill={skill} />
                   ))}

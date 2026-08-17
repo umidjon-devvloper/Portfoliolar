@@ -41,14 +41,11 @@ export function WorldMap({
   legend: string[];
 }) {
   return (
-    <div className="overflow-hidden rounded-[var(--radius-card)] border border-border bg-surface-2">
-      <div className="p-4 sm:p-6">
-        <div
-          className="relative w-full"
-          style={{ aspectRatio: `${VIEW.w} / ${VIEW.h}` }}
-        >
+    <div className="flex h-full flex-col overflow-hidden rounded-[var(--radius-card)] border border-border bg-surface-2">
+      <div className="flex flex-1 p-4 sm:p-6">
+        <div className="relative min-h-[15rem] w-full flex-1">
           <span
-            className="world-dots absolute inset-0 bg-foreground/25"
+            className="world-dots absolute inset-0 bg-foreground/40"
             role="img"
             aria-label={label}
           />
@@ -57,6 +54,7 @@ export function WorldMap({
             viewBox={`0 0 ${VIEW.w} ${VIEW.h}`}
             fill="none"
             aria-hidden
+            preserveAspectRatio="xMidYMid meet"
             className="absolute inset-0 h-full w-full"
           >
             <defs>
@@ -92,33 +90,61 @@ export function WorldMap({
                     key={index}
                     d={`M ${home.x} ${home.y} Q ${midX} ${midY}, ${point.x} ${point.y}`}
                     stroke="var(--accent)"
-                    strokeWidth="1.3"
-                    strokeDasharray="5 6"
+                    strokeWidth="1.6"
+                    strokeDasharray="5 7"
                     strokeLinecap="round"
-                    opacity="0.75"
+                    opacity="0.9"
                   />
                 );
               })}
             </g>
 
-            <circle cx={home.x} cy={home.y} r="26" fill="url(#home-glow)" />
+            <circle cx={home.x} cy={home.y} r="34" fill="url(#home-glow)" />
+            <circle
+              cx={home.x}
+              cy={home.y}
+              r="11"
+              fill="none"
+              stroke="var(--accent)"
+              strokeWidth="1.2"
+              opacity="0.5"
+            />
             <circle cx={home.x} cy={home.y} r="7" fill="var(--accent)" opacity="0.35" />
-            <circle cx={home.x} cy={home.y} r="3.6" fill="var(--accent)" />
+            <circle cx={home.x} cy={home.y} r="4" fill="var(--accent)" />
           </svg>
 
-          <span
-            style={{
-              left: `${(home.x / VIEW.w) * 100}%`,
-              top: `${(home.y / VIEW.h) * 100}%`,
-            }}
-            className="pointer-events-none absolute hidden -translate-y-[135%] translate-x-4 flex-col rounded-[var(--radius-sm)] border border-border bg-surface/90 px-3 py-2 shadow-[var(--shadow-card)] backdrop-blur-sm sm:flex"
+          <svg
+            viewBox={`0 0 ${VIEW.w} ${VIEW.h}`}
+            aria-hidden
+            preserveAspectRatio="xMidYMid meet"
+            className="pointer-events-none absolute inset-0 hidden h-full w-full sm:block"
           >
-            <span className="flex items-center gap-2 text-xs font-semibold">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden />
-              {city}
-            </span>
-            <span className="pl-3.5 text-[0.6875rem] text-muted">{country}</span>
-          </span>
+            {/* Drawn inside the same frame so the card tracks the marker
+                however the box is letterboxed. */}
+            <g transform={`translate(${home.x + 16} ${home.y - 54})`}>
+              <rect
+                width="128"
+                height="42"
+                rx="8"
+                fill="var(--surface)"
+                stroke="var(--border)"
+                opacity="0.95"
+              />
+              <circle cx="14" cy="16" r="3" fill="var(--accent)" />
+              <text
+                x="24"
+                y="20"
+                fill="var(--foreground)"
+                fontSize="12"
+                fontWeight="600"
+              >
+                {city}
+              </text>
+              <text x="24" y="34" fill="var(--muted)" fontSize="10">
+                {country}
+              </text>
+            </g>
+          </svg>
         </div>
       </div>
 

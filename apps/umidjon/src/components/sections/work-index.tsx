@@ -135,7 +135,7 @@ export function WorkIndex() {
       </div>
 
       {lead ? (
-        <Card hover={false} className="group grid overflow-hidden lg:grid-cols-[minmax(0,26rem)_1fr]">
+        <Card hover={false} className="group grid overflow-hidden lg:grid-cols-[1fr_minmax(0,46rem)]">
           <div className="flex flex-col gap-4 p-6 sm:p-7">
             <span className="inline-flex w-fit items-center gap-2 rounded-full bg-accent-soft px-3 py-1 text-[0.6875rem] font-medium text-accent">
               <span className="h-1.5 w-1.5 rounded-full bg-accent" />
@@ -203,7 +203,7 @@ export function WorkIndex() {
             </div>
           </div>
 
-          <div className="relative order-first aspect-[16/10] bg-surface-2 lg:order-last lg:aspect-auto lg:min-h-[27rem] xl:min-h-[30rem]">
+          <div className="relative order-first aspect-[16/10] bg-surface-2 lg:order-last lg:aspect-auto lg:min-h-[30rem]">
             <Cover project={lead} priority sizes="(min-width: 1024px) 55vw, 100vw" />
           </div>
         </Card>

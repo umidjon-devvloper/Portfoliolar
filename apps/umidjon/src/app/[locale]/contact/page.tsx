@@ -165,12 +165,14 @@ export default async function ContactPage({ params }: PageProps) {
         <Reveal delay={80} className="flex flex-col gap-5">
           <h2 className="eyebrow">{t("mapTitle")}</h2>
           {location ? (
-            <WorldMap
-              label={t("mapTitle")}
-              city={location.city}
-              country={location.country}
-              legend={legendKeys.map((key) => t(`legend.${key}`))}
-            />
+            <div className="flex-1">
+              <WorldMap
+                label={t("mapTitle")}
+                city={location.city}
+                country={location.country}
+                legend={legendKeys.map((key) => t(`legend.${key}`))}
+              />
+            </div>
           ) : null}
         </Reveal>
       </Container>

@@ -17,36 +17,15 @@ const statIcon = {
   response: Clock,
 } as const;
 
+/* Five names per group keeps this column level with its neighbours. */
 const toolGroups = [
   {
     id: "frontend",
-    names: [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "JavaScript",
-      "Tailwind CSS",
-      "HTML5 / CSS3",
-      "shadcn/ui",
-      "Vite",
-      "Framer Motion",
-      "Material UI",
-    ],
+    names: ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS"],
   },
   {
     id: "backend",
-    names: [
-      "Node.js",
-      "Express.js",
-      "REST API",
-      "GraphQL",
-      "Auth / JWT",
-      "MongoDB",
-      "Mongoose",
-      "Firebase",
-      "Firestore",
-      "Redis",
-    ],
+    names: ["Node.js", "Express.js", "REST API", "MongoDB", "Firebase"],
   },
   {
     id: "mobile",
@@ -54,18 +33,7 @@ const toolGroups = [
   },
   {
     id: "tools",
-    names: [
-      "Git",
-      "GitHub",
-      "Vercel",
-      "Netlify",
-      "Cloudflare",
-      "Firebase Hosting",
-      "GitLab",
-      "Figma",
-      "Adobe XD",
-      "UI/UX",
-    ],
+    names: ["Git", "GitHub", "Vercel", "Cloudflare", "Figma"],
   },
   {
     id: "payments",
