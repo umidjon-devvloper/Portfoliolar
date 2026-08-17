@@ -444,10 +444,10 @@
     "current": "Hozir",
     "independent": "Mustaqil",
     "fullstack": {
-      "period": "2025-may — hozir",
+      "period": "2026 — hozir",
       "title": "Full-Stack Developer",
       "description": "Mijozlar uchun kengayadigan web va mobil ilovalar quraman.",
-      "shortPeriod": "2025 – hozir",
+      "shortPeriod": "2026 – hozir",
       "duties": [
         "Next.js, Node.js va MongoDB bilan kengayadigan web ilovalar quraman",
         "React Native va Expo bilan cross-platform mobil ilovalar chiqaraman",
@@ -458,10 +458,10 @@
       "summary": "Mijozlar uchun kengayadigan web va mobil ilovalar quraman."
     },
     "freelance": {
-      "period": "2023-may — 2025-aprel",
+      "period": "2021 — 2024",
       "title": "Freelance Developer",
       "description": "Turli mijozlar bilan web va mobil loyihalarda ishladim.",
-      "shortPeriod": "2023 – 2025",
+      "shortPeriod": "2021 – 2024",
       "duties": [
         "Mijozlar uchun web va mobil loyihalarni boshidan oxirigacha olib bordim",
         "React va Next.js asosida interfeys va API integratsiyalarini yozdim",
@@ -470,35 +470,27 @@
       ],
       "summary": "Mijozlar bilan web va mobil loyihalarda ishladim."
     },
-    "frontend": {
-      "period": "2022-yanvar — 2023-aprel",
-      "title": "Frontend Developer",
-      "description": "Zamonaviy texnologiyalar bilan moslashuvchan interfeyslar yaratdim.",
-      "shortPeriod": "2022 – 2023",
-      "duties": [
-        "Zamonaviy texnologiyalar bilan moslashuvchan interfeyslar yaratdim",
-        "Komponent kutubxonasi va dizayn tizimi bilan ishladim",
-        "Sahifa tezligi va foydalanuvchi tajribasini yaxshiladim"
-      ],
-      "summary": "Moslashuvchan va interaktiv interfeyslar yaratdim."
-    },
-    "junior": {
-      "period": "2021-iyun — 2021-dekabr",
-      "title": "Junior Developer",
-      "description": "Dasturlash yo'lini boshlab, web development asoslarini o'zlashtirdim.",
-      "shortPeriod": "2021 – 2022",
-      "duties": [
-        "JavaScript, HTML va CSS asoslarini amaliyotda o'zlashtirdim",
-        "Kichik loyihalarda interfeys qismlarini yozdim",
-        "Git va jamoada ishlash jarayonini o'rgandim"
-      ],
-      "summary": "Dasturlash yo'limni boshlab, har kuni o'rgandim."
-    },
     "eyebrow": "Mening yo'lim",
     "aboutRole": "Rol haqida",
     "responsibilities": "Asosiy vazifalar",
     "technologies": "Ishlatilgan texnologiyalar",
     "contributedTitle": "Hissa qo'shgan loyihalarim",
-    "achievementsTitle": "Yutuqlar va natija"
+    "achievementsTitle": "Yutuqlar va natija",
+    "kbk": {
+      "period": "2025 — 2026",
+      "shortPeriod": "2025 – 2026",
+      "title": "Developer",
+      "description": "Rol tafsilotlari hali to'ldirilmagan.",
+      "summary": "Rol tafsilotlari hali to'ldirilmagan.",
+      "duties": []
+    },
+    "agrocluster": {
+      "period": "2024 — 2025",
+      "shortPeriod": "2024 – 2025",
+      "title": "Developer",
+      "description": "Rol tafsilotlari hali to'ldirilmagan.",
+      "summary": "Rol tafsilotlari hali to'ldirilmagan.",
+      "duties": []
+    }
   }
 }

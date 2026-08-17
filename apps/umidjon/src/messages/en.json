@@ -444,10 +444,10 @@
     "current": "Current",
     "independent": "Independent",
     "fullstack": {
-      "period": "May 2025 — present",
+      "period": "2026 — present",
       "title": "Full-Stack Developer",
       "description": "Building scalable web and mobile applications for clients.",
-      "shortPeriod": "2025 – Present",
+      "shortPeriod": "2026 – present",
       "duties": [
         "Building scalable web applications with Next.js, Node.js and MongoDB",
         "Shipping cross-platform mobile apps with React Native and Expo",
@@ -458,10 +458,10 @@
       "summary": "Building scalable web and mobile applications for clients."
     },
     "freelance": {
-      "period": "May 2023 — April 2025",
+      "period": "2021 — 2024",
       "title": "Freelance Developer",
       "description": "Worked with clients on web and mobile projects.",
-      "shortPeriod": "2023 – 2025",
+      "shortPeriod": "2021 – 2024",
       "duties": [
         "Ran client web and mobile projects end to end",
         "Built interfaces and API integrations with React and Next.js",
@@ -470,35 +470,27 @@
       ],
       "summary": "Worked with clients on web and mobile projects."
     },
-    "frontend": {
-      "period": "January 2022 — April 2023",
-      "title": "Frontend Developer",
-      "description": "Built responsive interfaces with modern technologies.",
-      "shortPeriod": "2022 – 2023",
-      "duties": [
-        "Built responsive interfaces with modern technologies",
-        "Worked with a component library and design system",
-        "Improved page speed and user experience"
-      ],
-      "summary": "Built responsive and interactive interfaces."
-    },
-    "junior": {
-      "period": "June 2021 — December 2021",
-      "title": "Junior Developer",
-      "description": "Started out in development and learned the fundamentals of the web.",
-      "shortPeriod": "2021 – 2022",
-      "duties": [
-        "Learned the fundamentals of JavaScript, HTML and CSS in practice",
-        "Wrote interface pieces for smaller projects",
-        "Picked up Git and working inside a team"
-      ],
-      "summary": "Started my journey in development and learned every day."
-    },
     "eyebrow": "My journey",
     "aboutRole": "About the role",
     "responsibilities": "Key responsibilities",
     "technologies": "Technologies used",
     "contributedTitle": "Projects I contributed to",
-    "achievementsTitle": "Achievements & impact"
+    "achievementsTitle": "Achievements & impact",
+    "kbk": {
+      "period": "2025 — 2026",
+      "shortPeriod": "2025 – 2026",
+      "title": "Developer",
+      "description": "Role details are not filled in yet.",
+      "summary": "Role details are not filled in yet.",
+      "duties": []
+    },
+    "agrocluster": {
+      "period": "2024 — 2025",
+      "shortPeriod": "2024 – 2025",
+      "title": "Developer",
+      "description": "Role details are not filled in yet.",
+      "summary": "Role details are not filled in yet.",
+      "duties": []
+    }
   }
 }

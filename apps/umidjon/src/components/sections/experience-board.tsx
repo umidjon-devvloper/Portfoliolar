@@ -130,6 +130,7 @@ export function ExperienceBoard() {
             </p>
           </div>
 
+          {role.duties > 0 ? (
           <div className="flex flex-col gap-3 border-t border-border py-5">
             <h3 className="text-[0.875rem] font-semibold text-accent">
               {t("responsibilities")}
@@ -148,7 +149,9 @@ export function ExperienceBoard() {
               ))}
             </ul>
           </div>
+          ) : null}
 
+          {role.stack.length > 0 ? (
           <div className="mt-auto flex flex-col gap-3.5 border-t border-border pt-5">
             <h3 className="text-[0.875rem] font-semibold text-accent">
               {t("technologies")}
@@ -169,6 +172,7 @@ export function ExperienceBoard() {
               ))}
             </div>
           </div>
+          ) : null}
         </Card>
       </Reveal>
     </div>
