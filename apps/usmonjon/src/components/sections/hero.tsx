@@ -1,4 +1,4 @@
-import { ArrowRight, CircleCheck, Send, MapPin } from "lucide-react";
+import { ArrowRight, CircleCheck, Download, MapPin } from "lucide-react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
@@ -56,11 +56,11 @@ export function Hero() {
             <ArrowRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
           </Link>
           <Link
-            href="/contact"
+            href="/resume"
             className={buttonVariants({ variant: "secondary", size: "lg" })}
           >
-            <Send className="h-4 w-4" />
-            {t("contactCta")}
+            <Download className="h-4 w-4" />
+            {t("secondaryCta")}
           </Link>
         </div>
 
@@ -93,7 +93,7 @@ export function Hero() {
 
       {/* Floats over the portrait, as in the design. */}
       <div className="enter relative mt-6 flex flex-col gap-3 px-5 sm:px-7 lg:absolute lg:right-8 lg:top-[8.5rem] lg:mt-0 lg:w-[22.5rem] lg:px-0 xl:right-12">
-        <CodeWindow filename="usmonjon.js" lines={developerSnippet} />
+        <CodeWindow filename="developer.js" lines={developerSnippet} />
 
         <div className="card flex items-center gap-3 bg-surface/95 px-4 py-3 backdrop-blur">
           <span className="relative flex h-2.5 w-2.5 shrink-0">

@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Usmonjon — Frontend Developer & UI/UX Designer",
     short_name: "Usmonjon",
-    description: "Portfolio of Usmonjon, frontend developer and UI/UX designer.",
+    description: "Portfolio of Usmonjon, frontend developer & ui/ux designer.",
     start_url: "/",
     display: "standalone",
     background_color: "#0d0d0d",

@@ -82,9 +82,10 @@ export async function generateMetadata({
       description: t("description"),
       images: [site.ogImage],
     },
+    /* TODO: flip these to true once the placeholder content is replaced. */
     robots: {
-      index: true,
-      follow: true,
+      index: false,
+      follow: false,
     },
   };
 }

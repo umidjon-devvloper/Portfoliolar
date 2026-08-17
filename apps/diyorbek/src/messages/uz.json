@@ -1,17 +1,20 @@
 {
   "meta": {
     "title": "Diyorbek — Full Stack Web Developer",
-    "description": "Full Stack Web Developer. React, Next.js va Node.js bilan veb mahsulotlar quraman."
+    "description": "Full Stack Web & Mobile Developer. React, Next.js, React Native, Expo va Node.js bilan real biznes muammolarini hal qiladigan mahsulotlar yarataman."
   },
   "nav": {
     "home": "Bosh sahifa",
     "about": "Men haqimda",
     "projects": "Loyihalar",
+    "services": "Xizmatlar",
+    "resume": "Rezyume",
     "contact": "Aloqa",
     "openMenu": "Menyuni ochish",
     "closeMenu": "Menyuni yopish",
     "work": "Ishlar",
-    "skills": "Ko'nikmalar"
+    "skills": "Ko'nikmalar",
+    "experience": "Tajriba"
   },
   "common": {
     "toggleTheme": "Mavzuni almashtirish",
@@ -26,11 +29,12 @@
   },
   "hero": {
     "eyebrow": "Full Stack Web Developer",
-    "subtitle": "React, Next.js va Node.js bilan veb mahsulotlar quraman.",
+    "subtitle": "Tez, kengayadigan va qulay web hamda mobil mahsulotlar quraman.",
     "primaryCta": "Ishlarimni ko'rish",
-    "titleLead": "Veb uchun",
-    "titleAccent": "to'liq stack",
-    "titleTail": "yechimlar quraman",
+    "secondaryCta": "CV yuklab olish",
+    "titleLead": "Kod emas —",
+    "titleAccent": "biznesga natija",
+    "titleTail": "beradigan mahsulot quraman",
     "railStatus": "Holat",
     "railAvailable": "Loyihalarga ochiq",
     "railTime": "Mahalliy vaqt",
@@ -39,13 +43,12 @@
     "greeting": "Salom, men",
     "available": "Freelance ishlarga ochiq",
     "availableBadge": "Yangi imkoniyatlarga ochiq",
-    "availableNote": "Keling, birga zo'r narsa quramiz!",
-    "contactCta": "Bog'lanish"
+    "availableNote": "Keling, birga zo'r narsa quramiz!"
   },
   "about": {
     "title": "Men haqimda",
-    "shortBio": "Full Stack veb dasturchiman — frontend va backend tomonini birga olib boraman.",
-    "longBio": "Bu sayt hozir to'ldirilmoqda: loyihalar, tajriba va bog'lanish ma'lumotlari qo'shilgach yangilanadi.",
+    "shortBio": "Men Diyorbek — g'oyani real raqamli mahsulotga aylantirishni yoqtiradigan Full-Stack Developer.",
+    "longBio": "Web-saytlar, mobil ilovalar, backend tizimlar va SaaS mahsulotlar yarataman. Frontend, backend va mobile — uchalasida ham ishlayman.",
     "workStyleTitle": "Ish uslubim",
     "workStyle": "Loyihani faqat frontend yoki backend sifatida ko'rmayman. G'oyadan store'ga chiqarishgacha bo'lgan butun zanjirni o'zim yopaman.",
     "strengthsTitle": "Kuchli tomonlarim",
@@ -63,16 +66,35 @@
     "birth": "Tug'ilgan sana",
     "education": "Ta'lim",
     "languages": "Tillar",
+    "languagesValue": "O'zbek (ona tili) · Rus · Ingliz",
     "location": "Joylashuv",
     "focus": "Yo'nalish",
+    "focusValue": "Mahsulot qurish · Muammo yechish · O'rganish",
     "eyebrow": "Tanishib olaylik",
     "availability": "Butun dunyo bo'ylab freelance ishlarga ochiq",
     "journeyTitle": "Mening yo'lim",
     "numbersTitle": "Raqamlarda",
     "quote": "Kelajakni bashorat qilishning eng yaxshi yo'li — uni qurish.",
     "quoteAuthor": "Alan Kay",
+    "birthValue": "1-yanvar, 2005",
+    "educationValue": "Buxoro Davlat Universiteti (2022–2026)",
     "toolsTitle": "Ko'nikma va vositalar",
     "agencyNote": "Agentlik saytim"
+  },
+  "strengths": {
+    "fullStackThinking": "Full-stack fikrlash — frontend, backend, database va deploymentni birgalikda tushunaman",
+    "productThinking": "Product thinking — mahsulot biznesga qanday foyda berishini o'ylayman",
+    "independence": "Mustaqil ishlash — yangi texnologiya yoki APIni o'rganib, amalda qo'llayman",
+    "fastLearning": "Tez o'rganish — yangi framework va platformalarni loyihalar davomida o'zlashtiraman",
+    "entrepreneurial": "Entrepreneurial mindset — texnologiyani xizmat yoki mahsulotga aylantiraman"
+  },
+  "goals": {
+    "international": "Xalqaro IT bozorida ishlash va xalqaro kompaniyalar bilan loyihalar",
+    "senior": "Senior Developer darajasiga chiqish",
+    "ownSaas": "O'z SaaS mahsulotlarini yaratish",
+    "agency": "Diyorbek Agency'ni rivojlantirish",
+    "digitalProducts": "Digital products va templates sotish",
+    "passiveIncome": "Passiv daromad manbalarini shakllantirish"
   },
   "skills": {
     "title": "Ishlatadigan vositalarim",
@@ -154,6 +176,60 @@
       "list": "Ro'yxat ko'rinishi"
     }
   },
+  "services": {
+    "title": "Xizmatlar",
+    "subtitle": "G'oyadan ishga tushirishgacha",
+    "landing": {
+      "title": "Landing page",
+      "description": "Konversiya uchun optimallashtirilgan, tez yuklanadigan bir sahifali sayt."
+    },
+    "corporate": {
+      "title": "Korporativ sayt",
+      "description": "Kompaniyangiz uchun ko'p sahifali, CMS bilan boshqariladigan yechim."
+    },
+    "ecommerce": {
+      "title": "Onlayn do'kon",
+      "description": "To'lov, savat, admin panel — sotuvni to'liq boshqariladigan e-commerce."
+    },
+    "mobile": {
+      "title": "Mobil ilovalar",
+      "description": "iOS va Android uchun cross-platform ilovalar."
+    },
+    "backend": {
+      "title": "Backend development",
+      "description": "Xavfsiz, kengayadigan backend tizimlar va API'lar."
+    },
+    "uiux": {
+      "title": "UI/UX dizayn",
+      "description": "Toza, zamonaviy va foydalanuvchini o'ylab qilingan dizayn."
+    },
+    "saas": {
+      "title": "SaaS development",
+      "description": "Obuna, billing va ko'p ijarachi arxitekturali SaaS yechimlar."
+    },
+    "bots": {
+      "title": "Telegram botlar",
+      "description": "Buyurtma, xabarnoma va avtomatlashtirish uchun botlar."
+    },
+    "label": "Xizmat va narx",
+    "agencyTitle": "Narxlarni ko'rish",
+    "agencySubtitle": "To'liq narxnoma agentlik saytida",
+    "pageTitle": "Xizmatlar",
+    "breadcrumb": "Xizmatlar",
+    "headingLead": "Men taklif qiladigan",
+    "headingAccent": "xizmatlar",
+    "pageSubtitle": "Startaplar va bizneslarga g'oyani kengayadigan raqamli mahsulotga aylantirishda yordam beraman.",
+    "learnMore": "Batafsil",
+    "web": {
+      "title": "Web development",
+      "description": "Zamonaviy, moslashuvchan va tez saytlar hamda web ilovalar."
+    },
+    "seo": {
+      "title": "Unumdorlik va SEO",
+      "description": "Tezlik, unumdorlik va qidiruvda ko'rinishni yaxshilash."
+    },
+    "eyebrow": "Nima taklif qilaman"
+  },
   "contact": {
     "title": "Bog'lanish",
     "subtitle": "Loyiha g'oyangizni yozing — javob beraman",
@@ -226,6 +302,16 @@
     "ctaButton": "Suhbatni boshlaymiz",
     "availabilityValue": "Du–Ju, 10:00–19:00 (GMT+5)"
   },
+  "resume": {
+    "title": "Rezyume",
+    "subtitle": "Tajriba, texnologiyalar va ta'lim",
+    "download": "PDF yuklab olish",
+    "downloadUnavailable": "PDF hozircha tayyor emas",
+    "educationTitle": "Ta'lim",
+    "experienceTitle": "Tajriba",
+    "printHint": "Brauzerda Ctrl+P bilan PDF qilib saqlashingiz mumkin",
+    "label": "Rezyume"
+  },
   "cta": {
     "title": "Loyiha g'oyangiz bormi?",
     "subtitle": "Keling, birga zo'r narsa quramiz.",
@@ -240,10 +326,10 @@
   },
   "footer": {
     "rights": "Barcha huquqlar himoyalangan.",
-    "builtWith": "Next.js",
+    "builtWith": "Next.js — Buxoroda yozilgan",
     "pages": "Sahifalar",
     "elsewhere": "Boshqa joylarda",
-    "tagline": "Veb mahsulotlar quraman."
+    "tagline": "Real muammolarni hal qiladigan raqamli mahsulotlar quraman."
   },
   "notFound": {
     "description": "Bu manzilda hech narsa yo'q — sahifa o'chirilgan yoki havola noto'g'ri yozilgan bo'lishi mumkin.",
@@ -267,6 +353,72 @@
     "experienceNote": "Web va mobil development",
     "responseNote": "Odatdagi javob vaqti"
   },
+  "process": {
+    "title": "Oddiy. Shaffof. Samarali.",
+    "subtitle": "Aniq jarayon — loyihangiz o'z vaqtida va sifatli topshirilishini kafolatlaydi.",
+    "brief": {
+      "title": "Brief va tahlil",
+      "description": "Biznesingizni, maqsad va raqobatchilarni o'rganamiz."
+    },
+    "design": {
+      "title": "Dizayn va prototip",
+      "description": "UI/UX prototip — kod yozishdan oldin ko'rasiz va tasdiqlaysiz."
+    },
+    "development": {
+      "title": "Ishlab chiqish",
+      "description": "Toza kod, haftalik demo va real vaqtdagi progress."
+    },
+    "launch": {
+      "title": "Ishga tushirish",
+      "description": "Test, deploy va 1 oy bepul texnik yordam."
+    },
+    "eyebrow": "Ish jarayonim",
+    "discuss": {
+      "title": "Muhokama",
+      "description": "G'oya, talab va maqsadlarni muhokama qilamiz."
+    },
+    "plan": {
+      "title": "Reja",
+      "description": "Funksiyalar, muddat va texnologiyalarni rejalashtiraman."
+    },
+    "build": {
+      "title": "Qurish",
+      "description": "Toza va kengayadigan kod bilan mahsulotni quraman."
+    },
+    "deliver": {
+      "title": "Yetkazish",
+      "description": "Test qilinib, optimallashtirilib topshiriladi."
+    },
+    "support": {
+      "title": "Qo'llab-quvvatlash",
+      "description": "Ishga tushgandan keyingi yordam va yangilanishlar."
+    }
+  },
+  "stack": {
+    "label": "Qamrov",
+    "title": "Bitta zanjir, bitta odam",
+    "subtitle": "Loyihani bo'lib bermayman. Har bir qatlam o'zimda — shuning uchun oraliqda hech narsa yo'qolmaydi.",
+    "design": {
+      "title": "Dizayn",
+      "description": "Figma'da prototip. Kod yozilgunga qadar ko'rasiz va tasdiqlaysiz."
+    },
+    "frontend": {
+      "title": "Frontend",
+      "description": "Tez yuklanadigan, mobilda ham buzilmaydigan interfeys."
+    },
+    "backend": {
+      "title": "Backend",
+      "description": "API, ma'lumotlar bazasi, autentifikatsiya va biznes mantiq."
+    },
+    "mobile": {
+      "title": "Mobil",
+      "description": "iOS va Android uchun bitta kod bazasidan ilova."
+    },
+    "release": {
+      "title": "Ishga tushirish",
+      "description": "Deploy, domen, SSL, store'ga chiqarish va keyingi qo'llab-quvvatlash."
+    }
+  },
   "whatIDo": {
     "title": "Nima qilaman",
     "build": {
@@ -281,5 +433,72 @@
       "title": "Yetkazaman",
       "description": "Unumdorlik, foydalanuvchi tajribasi va real natijaga e'tibor."
     }
+  },
+  "experience": {
+    "pageTitle": "Tajriba",
+    "breadcrumb": "Tajriba",
+    "headingLead": "Mening",
+    "headingAccent": "tajribam",
+    "pageSubtitle": "O'sish, mahsulot qurish va real natija yetkazish yo'li.",
+    "timelineTitle": "Ish tajribasi",
+    "current": "Hozir",
+    "independent": "Mustaqil",
+    "fullstack": {
+      "period": "2025-may — hozir",
+      "title": "Full-Stack Developer",
+      "description": "Mijozlar uchun kengayadigan web va mobil ilovalar quraman.",
+      "shortPeriod": "2025 – hozir",
+      "duties": [
+        "Next.js, Node.js va MongoDB bilan kengayadigan web ilovalar quraman",
+        "React Native va Expo bilan cross-platform mobil ilovalar chiqaraman",
+        "To'lov tizimlari, analitika va uchinchi tomon API'larini ulayman",
+        "Unumdorlik, SEO va yaxshi amaliyotlar bo'yicha optimallashtiraman",
+        "Mijoz bilan bevosita ishlab, talabni mahsulotga aylantiraman"
+      ],
+      "summary": "Mijozlar uchun kengayadigan web va mobil ilovalar quraman."
+    },
+    "freelance": {
+      "period": "2023-may — 2025-aprel",
+      "title": "Freelance Developer",
+      "description": "Turli mijozlar bilan web va mobil loyihalarda ishladim.",
+      "shortPeriod": "2023 – 2025",
+      "duties": [
+        "Mijozlar uchun web va mobil loyihalarni boshidan oxirigacha olib bordim",
+        "React va Next.js asosida interfeys va API integratsiyalarini yozdim",
+        "Express va MongoDB bilan backend qismini qurdim",
+        "Deploy va texnik qo'llab-quvvatlashni o'z zimmamga oldim"
+      ],
+      "summary": "Mijozlar bilan web va mobil loyihalarda ishladim."
+    },
+    "frontend": {
+      "period": "2022-yanvar — 2023-aprel",
+      "title": "Frontend Developer",
+      "description": "Zamonaviy texnologiyalar bilan moslashuvchan interfeyslar yaratdim.",
+      "shortPeriod": "2022 – 2023",
+      "duties": [
+        "Zamonaviy texnologiyalar bilan moslashuvchan interfeyslar yaratdim",
+        "Komponent kutubxonasi va dizayn tizimi bilan ishladim",
+        "Sahifa tezligi va foydalanuvchi tajribasini yaxshiladim"
+      ],
+      "summary": "Moslashuvchan va interaktiv interfeyslar yaratdim."
+    },
+    "junior": {
+      "period": "2021-iyun — 2021-dekabr",
+      "title": "Junior Developer",
+      "description": "Dasturlash yo'lini boshlab, web development asoslarini o'zlashtirdim.",
+      "shortPeriod": "2021 – 2022",
+      "duties": [
+        "JavaScript, HTML va CSS asoslarini amaliyotda o'zlashtirdim",
+        "Kichik loyihalarda interfeys qismlarini yozdim",
+        "Git va jamoada ishlash jarayonini o'rgandim"
+      ],
+      "summary": "Dasturlash yo'limni boshlab, har kuni o'rgandim."
+    },
+    "eyebrow": "Mening yo'lim",
+    "aboutRole": "Rol haqida",
+    "responsibilities": "Asosiy vazifalar",
+    "technologies": "Ishlatilgan texnologiyalar",
+    "contributedTitle": "Hissa qo'shgan loyihalarim",
+    "achievementsTitle": "Yutuqlar va natija"
   }
 }

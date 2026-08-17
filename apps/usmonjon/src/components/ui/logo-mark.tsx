@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-/** Text mark until a drawn logo exists. TODO: swap for the real file. */
+/** Text mark. TODO: swap for a drawn logo once one exists. */
 export function LogoMark({
   className,
   label = "Usmonjon",
@@ -13,7 +13,7 @@ export function LogoMark({
       role="img"
       aria-label={label}
       className={cn(
-        "grid shrink-0 place-items-center font-extrabold leading-none tracking-tight",
+        "grid shrink-0 place-items-center text-[1.5rem] font-extrabold leading-none tracking-tight",
         className,
       )}
     >

@@ -12,7 +12,7 @@ const project = (lon: number, lat: number) => ({
   y: ((78 - lat) / 134) * VIEW.h,
 });
 
-/* TODO: set the real coordinates once the location is confirmed. */
+/* Buxoro — the only place on this map that is a claim about me. */
 const home = project(64.4286, 39.7747);
 
 /**

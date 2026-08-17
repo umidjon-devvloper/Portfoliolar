@@ -1,17 +1,20 @@
 {
   "meta": {
     "title": "Diyorbek — Full Stack Web Developer",
-    "description": "Full Stack Web Developer. I build web products with React, Next.js and Node.js."
+    "description": "Full Stack Web & Mobile Developer building products with React, Next.js, React Native, Expo and Node.js that solve real business problems."
   },
   "nav": {
     "home": "Home",
     "about": "About",
     "projects": "Projects",
+    "services": "Services",
+    "resume": "Resume",
     "contact": "Contact",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "work": "Work",
-    "skills": "Skills"
+    "skills": "Skills",
+    "experience": "Experience"
   },
   "common": {
     "toggleTheme": "Toggle theme",
@@ -26,11 +29,12 @@
   },
   "hero": {
     "eyebrow": "Full Stack Web Developer",
-    "subtitle": "I build web products with React, Next.js and Node.js.",
+    "subtitle": "I build modern web and mobile products that are fast, scalable and user-friendly.",
     "primaryCta": "View my work",
-    "titleLead": "I build the web",
-    "titleAccent": "end to end",
-    "titleTail": "— interface to server",
+    "secondaryCta": "Download CV",
+    "titleLead": "Not just code —",
+    "titleAccent": "products that move",
+    "titleTail": "the business",
     "railStatus": "Status",
     "railAvailable": "Open to projects",
     "railTime": "Local time",
@@ -39,13 +43,12 @@
     "greeting": "Hello, I'm",
     "available": "Available for freelance work",
     "availableBadge": "Available for new opportunities",
-    "availableNote": "Let's build something together!",
-    "contactCta": "Get in touch"
+    "availableNote": "Let's build something together!"
   },
   "about": {
     "title": "About",
-    "shortBio": "Full stack web developer — I carry both the front end and the back end.",
-    "longBio": "This site is still being filled in: projects, experience and contact details are on the way.",
+    "shortBio": "I'm Diyorbek, a Full-Stack Developer who enjoys turning ideas into real digital products.",
+    "longBio": "I build websites, mobile apps, backend systems and SaaS products, working across frontend, backend and mobile.",
     "workStyleTitle": "How I work",
     "workStyle": "I don't treat a project as only frontend or only backend. I cover the whole chain, from idea through to the app stores.",
     "strengthsTitle": "Strengths",
@@ -63,16 +66,35 @@
     "birth": "Birth",
     "education": "Education",
     "languages": "Languages",
+    "languagesValue": "Uzbek (native) · Russian · English",
     "location": "Location",
     "focus": "Focus",
+    "focusValue": "Building products · Solving problems · Learning",
     "eyebrow": "Get to know me",
     "availability": "Available for freelance work worldwide",
     "journeyTitle": "My journey",
     "numbersTitle": "Some numbers",
     "quote": "The best way to predict the future is to build it.",
     "quoteAuthor": "Alan Kay",
+    "birthValue": "1 January 2005",
+    "educationValue": "Bukhara State University (2022–2026)",
     "toolsTitle": "Skills & tools",
     "agencyNote": "My agency site"
+  },
+  "strengths": {
+    "fullStackThinking": "Full-stack thinking — I understand frontend, backend, database and deployment as one system",
+    "productThinking": "Product thinking — I consider how a product actually benefits the business",
+    "independence": "Independence — I learn a new technology or API and apply it in production",
+    "fastLearning": "Fast learning — I pick up new frameworks and platforms while shipping projects",
+    "entrepreneurial": "Entrepreneurial mindset — I turn technology into a service or a product"
+  },
+  "goals": {
+    "international": "Work in the international IT market and on projects with global companies",
+    "senior": "Reach Senior Developer level",
+    "ownSaas": "Build my own SaaS products",
+    "agency": "Grow Diyorbek Agency",
+    "digitalProducts": "Sell digital products and templates",
+    "passiveIncome": "Build passive income streams"
   },
   "skills": {
     "title": "The tools I build with",
@@ -154,6 +176,60 @@
       "list": "List view"
     }
   },
+  "services": {
+    "title": "Services",
+    "subtitle": "From idea to launch",
+    "landing": {
+      "title": "Landing page",
+      "description": "A single-page site optimised for conversion and fast loading."
+    },
+    "corporate": {
+      "title": "Corporate website",
+      "description": "A multi-page, CMS-driven solution for your company."
+    },
+    "ecommerce": {
+      "title": "Online store",
+      "description": "Payments, cart and admin panel — full control over sales."
+    },
+    "mobile": {
+      "title": "Mobile app development",
+      "description": "Cross-platform apps for iOS and Android."
+    },
+    "backend": {
+      "title": "Backend development",
+      "description": "Secure, scalable backend systems and APIs."
+    },
+    "uiux": {
+      "title": "UI/UX design",
+      "description": "Clean, modern and user-centred product design."
+    },
+    "saas": {
+      "title": "SaaS development",
+      "description": "End-to-end SaaS with subscription, billing and multi-tenancy."
+    },
+    "bots": {
+      "title": "Telegram bots",
+      "description": "Bots for orders, notifications and automation."
+    },
+    "label": "Services & pricing",
+    "agencyTitle": "See pricing",
+    "agencySubtitle": "Full price list on the agency site",
+    "pageTitle": "Services",
+    "breadcrumb": "Services",
+    "headingLead": "Services I",
+    "headingAccent": "provide",
+    "pageSubtitle": "I help startups and businesses turn ideas into scalable digital products.",
+    "learnMore": "Learn more",
+    "web": {
+      "title": "Web development",
+      "description": "Modern, responsive and fast websites and web applications."
+    },
+    "seo": {
+      "title": "Performance & SEO",
+      "description": "Speed, performance and search visibility."
+    },
+    "eyebrow": "What I offer"
+  },
   "contact": {
     "title": "Contact",
     "subtitle": "Tell me about your project — I'll reply",
@@ -226,6 +302,16 @@
     "ctaButton": "Let's start a conversation",
     "availabilityValue": "Mon–Fri, 10:00–19:00 (GMT+5)"
   },
+  "resume": {
+    "title": "Resume",
+    "subtitle": "Experience, technologies and education",
+    "download": "Download PDF",
+    "downloadUnavailable": "PDF is not ready yet",
+    "educationTitle": "Education",
+    "experienceTitle": "Experience",
+    "printHint": "You can save this as a PDF with Ctrl+P in your browser",
+    "label": "Resume"
+  },
   "cta": {
     "title": "Have a project in mind?",
     "subtitle": "Let's work together and build something great.",
@@ -240,10 +326,10 @@
   },
   "footer": {
     "rights": "All rights reserved.",
-    "builtWith": "Next.js",
+    "builtWith": "Next.js — built in Bukhara",
     "pages": "Pages",
     "elsewhere": "Elsewhere",
-    "tagline": "I build web products."
+    "tagline": "Building digital products that solve real problems."
   },
   "notFound": {
     "description": "There's nothing at this address — the page was removed, or the link has a typo.",
@@ -267,6 +353,72 @@
     "experienceNote": "Web and mobile development",
     "responseNote": "Typical reply time"
   },
+  "process": {
+    "title": "Simple. Transparent. Effective.",
+    "subtitle": "A clear process that ensures your project is delivered on time and with the best quality.",
+    "brief": {
+      "title": "Brief and analysis",
+      "description": "We study your business, goals and competitors."
+    },
+    "design": {
+      "title": "Design and prototype",
+      "description": "A UI/UX prototype you review and approve before any code is written."
+    },
+    "development": {
+      "title": "Development",
+      "description": "Clean code, weekly demos and progress you can see in real time."
+    },
+    "launch": {
+      "title": "Launch",
+      "description": "Testing, deployment and one month of free technical support."
+    },
+    "eyebrow": "My process",
+    "discuss": {
+      "title": "Discuss",
+      "description": "We discuss your idea, requirements and goals."
+    },
+    "plan": {
+      "title": "Plan",
+      "description": "I plan the features, timeline and technology stack."
+    },
+    "build": {
+      "title": "Build",
+      "description": "I build your product with clean, scalable code."
+    },
+    "deliver": {
+      "title": "Deliver",
+      "description": "Tested, optimised and delivered to you."
+    },
+    "support": {
+      "title": "Support",
+      "description": "Ongoing support and future improvements."
+    }
+  },
+  "stack": {
+    "label": "Scope",
+    "title": "One chain, one person",
+    "subtitle": "I don't hand a project off in pieces. Every layer is mine, so nothing gets lost between them.",
+    "design": {
+      "title": "Design",
+      "description": "A Figma prototype you see and approve before any code is written."
+    },
+    "frontend": {
+      "title": "Frontend",
+      "description": "An interface that loads fast and holds up on a phone."
+    },
+    "backend": {
+      "title": "Backend",
+      "description": "APIs, database, authentication and business logic."
+    },
+    "mobile": {
+      "title": "Mobile",
+      "description": "iOS and Android apps from a single codebase."
+    },
+    "release": {
+      "title": "Release",
+      "description": "Deployment, domain, SSL, store submission and support afterwards."
+    }
+  },
   "whatIDo": {
     "title": "What I do",
     "build": {
@@ -281,5 +433,72 @@
       "title": "Deliver",
       "description": "Focused on performance, user experience and real value."
     }
+  },
+  "experience": {
+    "pageTitle": "Experience",
+    "breadcrumb": "Experience",
+    "headingLead": "My",
+    "headingAccent": "experience",
+    "pageSubtitle": "A path of growth, building products and delivering real value.",
+    "timelineTitle": "Work experience",
+    "current": "Current",
+    "independent": "Independent",
+    "fullstack": {
+      "period": "May 2025 — present",
+      "title": "Full-Stack Developer",
+      "description": "Building scalable web and mobile applications for clients.",
+      "shortPeriod": "2025 – Present",
+      "duties": [
+        "Building scalable web applications with Next.js, Node.js and MongoDB",
+        "Shipping cross-platform mobile apps with React Native and Expo",
+        "Integrating payment gateways, analytics and third-party APIs",
+        "Optimising for performance, SEO and best practices",
+        "Working directly with clients to turn requirements into products"
+      ],
+      "summary": "Building scalable web and mobile applications for clients."
+    },
+    "freelance": {
+      "period": "May 2023 — April 2025",
+      "title": "Freelance Developer",
+      "description": "Worked with clients on web and mobile projects.",
+      "shortPeriod": "2023 – 2025",
+      "duties": [
+        "Ran client web and mobile projects end to end",
+        "Built interfaces and API integrations with React and Next.js",
+        "Built the backend on Express and MongoDB",
+        "Owned deployment and ongoing technical support"
+      ],
+      "summary": "Worked with clients on web and mobile projects."
+    },
+    "frontend": {
+      "period": "January 2022 — April 2023",
+      "title": "Frontend Developer",
+      "description": "Built responsive interfaces with modern technologies.",
+      "shortPeriod": "2022 – 2023",
+      "duties": [
+        "Built responsive interfaces with modern technologies",
+        "Worked with a component library and design system",
+        "Improved page speed and user experience"
+      ],
+      "summary": "Built responsive and interactive interfaces."
+    },
+    "junior": {
+      "period": "June 2021 — December 2021",
+      "title": "Junior Developer",
+      "description": "Started out in development and learned the fundamentals of the web.",
+      "shortPeriod": "2021 – 2022",
+      "duties": [
+        "Learned the fundamentals of JavaScript, HTML and CSS in practice",
+        "Wrote interface pieces for smaller projects",
+        "Picked up Git and working inside a team"
+      ],
+      "summary": "Started my journey in development and learned every day."
+    },
+    "eyebrow": "My journey",
+    "aboutRole": "About the role",
+    "responsibilities": "Key responsibilities",
+    "technologies": "Technologies used",
+    "contributedTitle": "Projects I contributed to",
+    "achievementsTitle": "Achievements & impact"
   }
 }

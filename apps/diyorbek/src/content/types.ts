@@ -68,7 +68,7 @@ export type Location = {
 };
 
 export type Contact = {
-  email: string | null;
+  email: string;
   emailSecondary: string | null;
   telegram: string | null;
   telegramHandle: string | null;

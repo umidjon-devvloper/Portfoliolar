@@ -3,8 +3,8 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { CodeWindow } from "@/components/ui/code-window";
-import { buildObjectSnippet } from "@/content/code-sample";
-import { profile } from "@/content/profile";
+import { buildAboutSnippet } from "@/content/code-sample";
+import { metrics, profile } from "@/content/profile";
 import { HeroBackdrop } from "./hero-backdrop";
 
 export function AboutHero() {
@@ -84,16 +84,18 @@ export function AboutHero() {
         ) : null}
 
         <CodeWindow
-          filename="diyorbek.js"
-          lines={buildObjectSnippet("developer", [
-            ["name", profile.fullName ?? profile.firstName],
-            ["role", profile.role],
-            ["location", profile.location
-              ? `${profile.location.city}, ${profile.location.countryCode}`
-              : null],
-            ["education", profile.education?.institution ?? null],
-            ["available", true],
-          ])}
+          filename="umidjon.js"
+          lines={buildAboutSnippet({
+            birth: t("birthValue"),
+            role: profile.role,
+            education: t("educationValue"),
+            location: profile.location
+              ? `${profile.location.city}, ${profile.location.country}`
+              : "",
+            languages: t("languagesValue").split(" · "),
+            focus: t("focusValue").split(" · "),
+            projects: metrics.find((metric) => metric.id === "projects")?.value ?? 0,
+          })}
         />
       </div>
     </section>
