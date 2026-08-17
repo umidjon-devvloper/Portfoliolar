@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { useEffect } from "react";
-import { Section } from "@/components/ui/section";
+import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 
 export default function ErrorPage({
@@ -19,14 +19,14 @@ export default function ErrorPage({
   }, [error]);
 
   return (
-    <Section className="flex min-h-[60vh] items-center">
-      <div className="flex flex-col items-start gap-6">
-        <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-          {t("title")}
-        </h1>
-        <p className="max-w-md text-sm text-muted">{t("description")}</p>
-        <Button onClick={reset}>{t("retry")}</Button>
-      </div>
-    </Section>
+    <Container className="flex min-h-[70svh] flex-col justify-center gap-8 py-28">
+      <h1 className="font-display type-display text-balance">{t("title")}</h1>
+      <p className="type-lead max-w-md leading-relaxed text-muted">
+        {t("description")}
+      </p>
+      <Button size="lg" onClick={reset} className="self-start">
+        {t("retry")}
+      </Button>
+    </Container>
   );
 }

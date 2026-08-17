@@ -1,14 +1,18 @@
-import type { Metadata } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Great_Vibes, Inter, JetBrains_Mono } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
-import { Header } from "@/components/layout/header";
+import { Sidebar } from "@/components/layout/sidebar";
+import { TopBar } from "@/components/layout/top-bar";
+import { BottomNav } from "@/components/layout/bottom-nav";
 import { Footer } from "@/components/layout/footer";
 import { ThemeProvider } from "@/components/theme-provider";
-import { profile, site } from "@/content/profile";
+import { profile } from "@/content/profile";
+import { site } from "@/content/site";
 import { routing } from "@/i18n/routing";
+import { alternates } from "@/lib/seo";
 import "../globals.css";
 
 const inter = Inter({
@@ -17,15 +21,30 @@ const inter = Inter({
   display: "swap",
 });
 
-const display = Fraunces({
+const signature = Great_Vibes({
   subsets: ["latin"],
-  variable: "--font-display",
+  weight: ["400"],
+  variable: "--font-signature",
+  display: "swap",
+});
+
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
   display: "swap",
 });
 
 type LayoutProps = {
   children: ReactNode;
   params: Promise<{ locale: string }>;
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0d0d0d" },
+  ],
+  colorScheme: "dark light",
 };
 
 export function generateStaticParams() {
@@ -40,18 +59,21 @@ export async function generateMetadata({
 
   return {
     metadataBase: new URL(site.url),
-    title: { default: t("title"), template: `%s — ${profile.firstName}` },
-    description: t("description"),
-    alternates: {
-      canonical: "/",
-      languages: { uz: "/", ru: "/ru", en: "/en" },
+    title: {
+      default: t("title"),
+      template: `%s — ${profile.firstName}`,
     },
+    description: t("description"),
+    authors: [{ name: profile.fullName ?? profile.firstName, url: site.url }],
+    creator: profile.fullName ?? profile.firstName,
+    alternates: alternates("/", locale),
     openGraph: {
       type: "website",
       siteName: site.domain,
       title: t("title"),
       description: t("description"),
       url: site.url,
+      locale,
       images: [{ url: site.ogImage, width: 1200, height: 630 }],
     },
     twitter: {
@@ -60,7 +82,10 @@ export async function generateMetadata({
       description: t("description"),
       images: [site.ogImage],
     },
-    robots: { index: true, follow: true },
+    robots: {
+      index: true,
+      follow: true,
+    },
   };
 }
 
@@ -72,19 +97,40 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
   }
 
   setRequestLocale(locale);
+
   const t = await getTranslations({ locale, namespace: "meta" });
+  const { contact, location, education } = profile;
 
   const personJsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
     name: profile.fullName ?? profile.firstName,
+    givenName: profile.firstName,
     jobTitle: profile.role,
     description: t("description"),
     url: site.url,
+    image: profile.avatar,
+    email: contact.email,
+    telephone: contact.phone,
+    birthDate: profile.birthDate,
+    address: location
+      ? {
+          "@type": "PostalAddress",
+          addressLocality: location.city,
+          addressRegion: location.region,
+          addressCountry: location.countryCode,
+        }
+      : undefined,
+    alumniOf: education
+      ? { "@type": "CollegeOrUniversity", name: education.institution }
+      : undefined,
+    knowsLanguage: ["uz", "ru", "en"],
     sameAs: [
-      profile.contact.github,
-      profile.contact.behance,
-      profile.contact.dribbble,
+      contact.github,
+      contact.linkedin,
+      contact.telegram,
+      contact.instagram,
+      contact.agency,
     ].filter((item) => item !== null),
   };
 
@@ -92,19 +138,23 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
     <html
       lang={locale}
       suppressHydrationWarning
-      className={`${inter.variable} ${display.variable}`}
+      className={`${inter.variable} ${signature.variable} ${mono.variable}`}
     >
-      <body className="flex min-h-dvh flex-col">
+      <body className="min-h-dvh">
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
           <NextIntlClientProvider>
-            <Header />
-            <main className="flex-1">{children}</main>
-            <Footer />
+            <Sidebar />
+            <div className="flex min-h-dvh flex-col lg:pl-[var(--sidebar)]">
+              <TopBar />
+              <main className="flex-1 pb-20 lg:pb-0 lg:pt-10">{children}</main>
+              <Footer />
+            </div>
+            <BottomNav />
           </NextIntlClientProvider>
         </ThemeProvider>
         <script

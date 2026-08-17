@@ -1,73 +1,286 @@
 {
   "meta": {
-    "title": "Усмонжон — Frontend Developer & UI/UX Designer",
-    "description": "Frontend-разработчик и UI/UX дизайнер, специализирующийся на современных и удобных веб-интерфейсах."
+    "title": "Usmonjon — Frontend Developer & UI/UX Designer",
+    "description": "Frontend-разработчик и UI/UX-дизайнер. Дизайн в Figma, интерфейс на React."
   },
   "nav": {
+    "home": "Главная",
     "about": "Обо мне",
-    "skills": "Навыки",
-    "work": "Работы",
+    "projects": "Проекты",
     "contact": "Контакты",
     "openMenu": "Открыть меню",
-    "closeMenu": "Закрыть меню"
+    "closeMenu": "Закрыть меню",
+    "work": "Работы",
+    "skills": "Навыки"
   },
   "common": {
     "toggleTheme": "Сменить тему",
     "language": "Язык",
-    "comingSoon": "Скоро"
+    "readMore": "Подробнее",
+    "viewAll": "Смотреть все",
+    "backToProjects": "Назад к проектам",
+    "loading": "Загрузка",
+    "comingSoon": "Скоро",
+    "letsTalk": "Обсудим",
+    "sidebarNote": "Давайте создадим что-то классное вместе."
   },
   "hero": {
-    "role": "Frontend Developer & UI/UX Designer",
-    "titleLine1": "Интерфейс —",
-    "titleLine2": "это первое впечатление",
-    "subtitle": "Создаю современные и удобные веб-интерфейсы. В партнёрстве с Умиджоном работаю над разными веб-проектами.",
-    "cta": "Смотреть работы"
+    "eyebrow": "Frontend Developer & UI/UX Designer",
+    "subtitle": "Проектирую в Figma и собираю интерфейс на React.",
+    "primaryCta": "Смотреть работы",
+    "titleLead": "От макета",
+    "titleAccent": "к рабочему",
+    "titleTail": "интерфейсу",
+    "railStatus": "Статус",
+    "railAvailable": "Открыт к проектам",
+    "railTime": "Местное время",
+    "railBase": "Локация",
+    "scrollHint": "Вниз",
+    "greeting": "Привет, я",
+    "available": "Открыт для фриланса",
+    "availableBadge": "Открыт к новым проектам",
+    "availableNote": "Давайте создадим что-то классное!",
+    "contactCta": "Связаться"
   },
   "about": {
     "title": "Обо мне",
-    "bio": "Frontend-разработчик и UI/UX дизайнер, специализирующийся на современных и удобных веб-интерфейсах. В партнёрстве с Умиджоном работаю над разными веб-проектами.",
-    "experienceTitle": "Опыт",
-    "experience": "В сотрудничестве с Умиджоном работаю над сайтами и веб-приложениями, участвую в frontend-разработке, UI/UX дизайне и создании пользовательских интерфейсов.",
-    "goalTitle": "Цель",
-    "goal": "Создавать красивые, удобные и современные интерфейсы и развивать профессиональный опыт через реальные проекты.",
-    "partnersTitle": "Команда"
+    "shortBio": "Frontend-разработчик и UI/UX-дизайнер — делаю и макет, и код.",
+    "longBio": "Сайт пока наполняется: работы, опыт и контакты появятся позже.",
+    "workStyleTitle": "Мой подход",
+    "workStyle": "Я не смотрю на проект только как на frontend или backend. Закрываю всю цепочку — от идеи до публикации в сторах.",
+    "strengthsTitle": "Сильные стороны",
+    "goalsTitle": "Цели",
+    "partnersTitle": "Партнёры",
+    "partnersSubtitle": "Команда, с которой я работаю над проектами",
+    "educationTitle": "Образование",
+    "locationLabel": "Локация",
+    "label": "Кто",
+    "roleLabel": "Роль",
+    "pageTitle": "Обо мне",
+    "breadcrumb": "Обо мне",
+    "headingLead": "Обо",
+    "headingAccent": "мне",
+    "birth": "Дата рождения",
+    "education": "Образование",
+    "languages": "Языки",
+    "location": "Локация",
+    "focus": "Фокус",
+    "eyebrow": "Познакомимся",
+    "availability": "Открыт для фриланса по всему миру",
+    "journeyTitle": "Мой путь",
+    "numbersTitle": "В цифрах",
+    "quote": "Лучший способ предсказать будущее — построить его.",
+    "quoteAuthor": "Алан Кэй",
+    "toolsTitle": "Навыки и инструменты",
+    "agencyNote": "Сайт моего агентства"
   },
   "skills": {
-    "title": "Навыки",
+    "title": "Инструменты, с которыми работаю",
     "frontend": "Frontend",
-    "design": "Дизайн",
-    "tools": "Tools"
+    "mobile": "Mobile",
+    "backend": "Backend",
+    "devops": "DevOps и инструменты",
+    "label": "Технологии",
+    "pageTitle": "Навыки",
+    "breadcrumb": "Навыки",
+    "headingLead": "Мои",
+    "headingAccent": "навыки",
+    "pageSubtitle": "Работаю с современными технологиями и лучшими практиками, создавая масштабируемые, быстрые и удобные цифровые продукты.",
+    "stripTitle": "Технологии, с которыми работаю",
+    "allSkills": "Все",
+    "toolsTitle": "Навыки и инструменты",
+    "tools": "Инструменты",
+    "eyebrow": "Моя экспертиза",
+    "technicalTitle": "Технические навыки",
+    "toolStripTitle": "Инструменты, с которыми работаю",
+    "pillars": {
+      "stack": {
+        "title": "Современный tech stack",
+        "description": "Использую актуальные технологии и лучшие практики"
+      },
+      "architecture": {
+        "title": "Чистая архитектура",
+        "description": "Пишу поддерживаемый и масштабируемый код"
+      },
+      "performance": {
+        "title": "Фокус на производительности",
+        "description": "Создаю быстрые, оптимизированные и надёжные приложения"
+      },
+      "learning": {
+        "title": "Постоянное обучение",
+        "description": "Учусь и совершенствуюсь каждый день"
+      }
+    },
+    "database": "База данных",
+    "others": "Другое",
+    "payments": "Платёжные системы",
+    "design": "Дизайн"
   },
-  "work": {
+  "projects": {
     "title": "Работы",
-    "subtitle": "Дизайн и интерфейсные проекты",
-    "empty": "Работы скоро появятся."
+    "subtitle": "Каждый проект сделан для решения реальной задачи.",
+    "featuredTitle": "Последние проекты",
+    "filterAll": "Все",
+    "empty": "В этом разделе пока нет проектов",
+    "problem": "Проблема",
+    "solution": "Решение",
+    "stack": "Стек",
+    "result": "Результат",
+    "integrations": "Интеграции",
+    "components": "Компоненты",
+    "notFound": "Проект не найден",
+    "links": "Ссылки",
+    "year": "Год",
+    "openSite": "Открыть сайт",
+    "label": "Работы",
+    "openProject": "Открыть проект",
+    "kind": {
+      "saas": "SaaS",
+      "web": "Веб-сайт",
+      "ecommerce": "Интернет-магазин",
+      "mobile": "Мобильное приложение",
+      "business": "Бизнес"
+    },
+    "breadcrumb": "Работы",
+    "headingLead": "Мои",
+    "headingAccent": "работы",
+    "featuredEyebrow": "Избранное",
+    "client": "Клиент",
+    "caseStudy": "Подробнее",
+    "liveDemo": "Открыть сайт",
+    "backToWork": "Назад к работам",
+    "featuredBadge": "Избранный проект",
+    "view": {
+      "grid": "Сетка",
+      "list": "Список"
+    }
   },
   "contact": {
     "title": "Связаться",
-    "subtitle": "Напишите по проекту или сотрудничеству",
+    "subtitle": "Напишите идею проекта — я отвечу",
     "nameLabel": "Имя",
     "namePlaceholder": "Ваше имя",
     "emailLabel": "Email",
     "emailPlaceholder": "email@example.com",
     "messageLabel": "Сообщение",
-    "messagePlaceholder": "Ваше сообщение",
+    "messagePlaceholder": "Кратко опишите ваш проект",
     "submit": "Отправить",
     "sending": "Отправка...",
-    "success": "Сообщение отправлено.",
-    "error": "Не удалось отправить. Попробуйте позже."
+    "success": "Сообщение отправлено. Скоро свяжусь с вами.",
+    "error": "Не удалось отправить. Попробуйте позже.",
+    "validation": {
+      "nameRequired": "Введите имя",
+      "emailInvalid": "Введите корректный email",
+      "messageShort": "Сообщение должно содержать минимум 10 символов"
+    },
+    "label": "Контакты",
+    "pageTitle": "Контакты",
+    "breadcrumb": "Контакты",
+    "headingLead": "Давайте создадим",
+    "headingAccent": "что-то стоящее",
+    "pageSubtitle": "Я всегда открыт к обсуждению новых возможностей, интересных проектов и партнёрства. Давайте сделаем что-то значимое.",
+    "formTitle": "Отправить сообщение",
+    "email": "Email",
+    "phone": "Телефон",
+    "telegram": "Telegram",
+    "location": "Локация",
+    "emailNote": "Напишите на почту",
+    "phoneNote": "Пн–Пт, 10:00–19:00",
+    "telegramNote": "Быстрый ответ",
+    "locationNote": "Работаю по всему миру",
+    "mapTitle": "Где я работаю",
+    "privacy": "Ваши данные в безопасности.",
+    "subjectLabel": "Тема",
+    "subjectPlaceholder": "Тема",
+    "fast": {
+      "title": "Быстрый ответ",
+      "description": "Обычно отвечаю в течение 24 часов."
+    },
+    "open": {
+      "title": "Открыт",
+      "description": "Открыт к фрилансу и полной занятости."
+    },
+    "hours": {
+      "title": "Часы работы",
+      "description": "Пн–Пт, 10:00–19:00 (GMT+5)."
+    },
+    "eyebrow": "Свяжемся",
+    "mapEyebrow": "Локация",
+    "optional": "необязательно",
+    "global": {
+      "title": "Глобальное сотрудничество",
+      "description": "Комфортно работаю в разных часовых поясах."
+    },
+    "getInTouchTitle": "Как связаться",
+    "availabilityLabel": "Часы работы",
+    "copy": "Копировать",
+    "copied": "Скопировано",
+    "legend": {
+      "remote": "Удалённая работа",
+      "worldwide": "По всему миру",
+      "flexible": "Гибкий график",
+      "results": "Фокус на результат"
+    },
+    "ctaTitle": "Есть идея проекта?",
+    "ctaAccent": "Буду рад услышать.",
+    "ctaText": "Есть чёткая идея или хотите просто обсудить возможности — помогу довести её до реального продукта.",
+    "ctaButton": "Начать разговор",
+    "availabilityValue": "Пн–Пт, 10:00–19:00 (GMT+5)"
+  },
+  "cta": {
+    "title": "Есть идея проекта?",
+    "subtitle": "Давайте создадим что-то классное.",
+    "button": "Начать разговор",
+    "railTitle": "Поработаем вместе",
+    "railSubtitle": "Есть идея проекта? Готов помочь.",
+    "railButton": "Связаться",
+    "aboutTitle": "Давайте создадим что-то классное!",
+    "skillsTitle": "Давайте создадим что-то классное!",
+    "skillsSubtitle": "Открыт к новым возможностям и интересным проектам.",
+    "skillsButton": "Поработаем вместе"
   },
   "footer": {
-    "rights": "Все права защищены"
+    "rights": "Все права защищены.",
+    "builtWith": "Next.js",
+    "pages": "Страницы",
+    "elsewhere": "Ещё",
+    "tagline": "Дизайн и фронтенд."
   },
   "notFound": {
-    "title": "Страница не найдена",
-    "description": "Страница не существует.",
-    "back": "На главную"
+    "description": "По этому адресу ничего нет — страница удалена или ссылка написана с ошибкой.",
+    "home": "На главную",
+    "work": "Мои работы",
+    "headingLead": "Страница",
+    "headingAccent": "не найдена"
   },
   "error": {
     "title": "Произошла ошибка",
     "description": "Непредвиденная ошибка. Попробуйте ещё раз.",
     "retry": "Повторить"
+  },
+  "metrics": {
+    "projects": "Завершённых проектов",
+    "clients": "Клиентских проектов",
+    "experience": "Года опыта",
+    "response": "Часов на ответ",
+    "projectsNote": "Успешно сданы",
+    "clientsNote": "В разных сферах",
+    "experienceNote": "Web и мобильная разработка",
+    "responseNote": "Обычное время ответа"
+  },
+  "whatIDo": {
+    "title": "Чем занимаюсь",
+    "build": {
+      "title": "Создаю",
+      "description": "Чистые и масштабируемые решения на современных технологиях."
+    },
+    "solve": {
+      "title": "Решаю",
+      "description": "Решаю реальные задачи и превращаю идеи в работающие продукты."
+    },
+    "deliver": {
+      "title": "Доставляю",
+      "description": "Фокус на производительности, UX и реальном результате."
+    }
   }
 }

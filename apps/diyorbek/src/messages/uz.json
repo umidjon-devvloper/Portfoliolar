@@ -1,73 +1,285 @@
 {
   "meta": {
     "title": "Diyorbek — Full Stack Web Developer",
-    "description": "Frontend va backend yo'nalishlarida ishlaydigan Full Stack Web Developer. React, Next.js, Node.js, Express va MongoDB."
+    "description": "Full Stack Web Developer. React, Next.js va Node.js bilan veb mahsulotlar quraman."
   },
   "nav": {
-    "about": "Haqida",
-    "skills": "Texnologiyalar",
+    "home": "Bosh sahifa",
+    "about": "Men haqimda",
     "projects": "Loyihalar",
-    "contact": "Kontakt",
+    "contact": "Aloqa",
     "openMenu": "Menyuni ochish",
-    "closeMenu": "Menyuni yopish"
+    "closeMenu": "Menyuni yopish",
+    "work": "Ishlar",
+    "skills": "Ko'nikmalar"
   },
   "common": {
     "toggleTheme": "Mavzuni almashtirish",
     "language": "Til",
-    "comingSoon": "Tez orada"
+    "readMore": "Batafsil",
+    "viewAll": "Barchasini ko'rish",
+    "backToProjects": "Loyihalarga qaytish",
+    "loading": "Yuklanmoqda",
+    "comingSoon": "Tez orada",
+    "letsTalk": "Gaplashamiz",
+    "sidebarNote": "Keling, birga zo'r narsa quramiz."
   },
   "hero": {
-    "role": "Full Stack Web Developer",
-    "title": "Frontend, backend va API — bitta odam qo'lida",
-    "subtitle": "Frontend va backend yo'nalishlarida ishlayman. Umidjon bilan sheriklik asosida turli web-loyihalarda ishtirok etaman — loyihalarning frontend, backend va API qismlarini ishlab chiqaman.",
-    "cta": "Bog'lanish"
+    "eyebrow": "Full Stack Web Developer",
+    "subtitle": "React, Next.js va Node.js bilan veb mahsulotlar quraman.",
+    "primaryCta": "Ishlarimni ko'rish",
+    "titleLead": "Veb uchun",
+    "titleAccent": "to'liq stack",
+    "titleTail": "yechimlar quraman",
+    "railStatus": "Holat",
+    "railAvailable": "Loyihalarga ochiq",
+    "railTime": "Mahalliy vaqt",
+    "railBase": "Joylashuv",
+    "scrollHint": "Pastga",
+    "greeting": "Salom, men",
+    "available": "Freelance ishlarga ochiq",
+    "availableBadge": "Yangi imkoniyatlarga ochiq",
+    "availableNote": "Keling, birga zo'r narsa quramiz!",
+    "contactCta": "Bog'lanish"
   },
   "about": {
-    "title": "Haqida",
-    "bio": "Frontend va backend yo'nalishlarida ishlaydigan Full Stack Web Developer. Umidjon bilan sheriklik asosida turli web-loyihalarda ishtirok etadi — loyihalarning frontend, backend va API qismlarini ishlab chiqadi.",
-    "experienceTitle": "Tajriba",
-    "experience": "Umidjon bilan hamkorlikda web-saytlar, web-ilovalar va biznes loyihalari ustida ishlayman. Frontend, backend va database integratsiyalarini yaratishda ishtirok etaman.",
-    "goalTitle": "Maqsad",
-    "goal": "Real loyihalarda tajriba oshirish, zamonaviy texnologiyalarni chuqur o'rganish va kuchli Full Stack Developer sifatida rivojlanish.",
-    "partnersTitle": "Jamoa"
+    "title": "Men haqimda",
+    "shortBio": "Full Stack veb dasturchiman — frontend va backend tomonini birga olib boraman.",
+    "longBio": "Bu sayt hozir to'ldirilmoqda: loyihalar, tajriba va bog'lanish ma'lumotlari qo'shilgach yangilanadi.",
+    "workStyleTitle": "Ish uslubim",
+    "workStyle": "Loyihani faqat frontend yoki backend sifatida ko'rmayman. G'oyadan store'ga chiqarishgacha bo'lgan butun zanjirni o'zim yopaman.",
+    "strengthsTitle": "Kuchli tomonlarim",
+    "goalsTitle": "Maqsadlarim",
+    "partnersTitle": "Hamkorlar",
+    "partnersSubtitle": "Loyihalarda birgalikda ishlaydigan jamoam",
+    "educationTitle": "Ta'lim",
+    "locationLabel": "Joylashuv",
+    "label": "Kim",
+    "roleLabel": "Lavozim",
+    "pageTitle": "Men haqimda",
+    "breadcrumb": "Men haqimda",
+    "headingLead": "Men",
+    "headingAccent": "haqimda",
+    "birth": "Tug'ilgan sana",
+    "education": "Ta'lim",
+    "languages": "Tillar",
+    "location": "Joylashuv",
+    "focus": "Yo'nalish",
+    "eyebrow": "Tanishib olaylik",
+    "availability": "Butun dunyo bo'ylab freelance ishlarga ochiq",
+    "journeyTitle": "Mening yo'lim",
+    "numbersTitle": "Raqamlarda",
+    "quote": "Kelajakni bashorat qilishning eng yaxshi yo'li — uni qurish.",
+    "quoteAuthor": "Alan Kay",
+    "toolsTitle": "Ko'nikma va vositalar",
+    "agencyNote": "Agentlik saytim"
   },
   "skills": {
-    "title": "Texnologiyalar",
+    "title": "Ishlatadigan vositalarim",
     "frontend": "Frontend",
+    "mobile": "Mobile",
     "backend": "Backend",
-    "tools": "Tools"
+    "devops": "DevOps va vositalar",
+    "label": "Texnologiyalar",
+    "pageTitle": "Ko'nikmalar",
+    "breadcrumb": "Ko'nikmalar",
+    "headingLead": "Mening",
+    "headingAccent": "Ko'nikmalarim",
+    "pageSubtitle": "Zamonaviy texnologiyalar va yaxshi amaliyotlar bilan ishlayman — kengayadigan, tez va foydalanuvchi uchun qulay raqamli mahsulotlar quraman.",
+    "stripTitle": "Ishlatadigan texnologiyalarim",
+    "allSkills": "Barchasi",
+    "toolsTitle": "Ko'nikma va vositalar",
+    "tools": "Vositalar",
+    "eyebrow": "Mening tajribam",
+    "technicalTitle": "Texnik ko'nikmalar",
+    "toolStripTitle": "Ishlatadigan vositalarim",
+    "pillars": {
+      "stack": {
+        "title": "Zamonaviy tech stack",
+        "description": "Bugungi texnologiyalar va yaxshi amaliyotlardan foydalanaman"
+      },
+      "architecture": {
+        "title": "Toza arxitektura",
+        "description": "Qo'llab-quvvatlanadigan va kengayadigan kod yozaman"
+      },
+      "performance": {
+        "title": "Unumdorlikka e'tibor",
+        "description": "Tez, optimallashtirilgan va ishonchli ilovalar quraman"
+      },
+      "learning": {
+        "title": "Doimiy o'rganish",
+        "description": "Har kuni o'rganib va o'sib boraman"
+      }
+    },
+    "database": "Ma'lumotlar bazasi",
+    "others": "Boshqalar",
+    "payments": "To'lov tizimlari"
   },
   "projects": {
-    "title": "Loyihalar",
-    "empty": "Loyihalar tez orada qo'shiladi.",
-    "role": "Rol",
-    "stack": "Stack"
+    "title": "Ishlar",
+    "subtitle": "Har bir loyiha real muammoni hal qilish uchun qilingan.",
+    "featuredTitle": "So'nggi loyihalar",
+    "filterAll": "Barchasi",
+    "empty": "Bu bo'limda hozircha loyiha yo'q",
+    "problem": "Muammo",
+    "solution": "Yechim",
+    "stack": "Stack",
+    "result": "Natija",
+    "integrations": "Integratsiyalar",
+    "components": "Tarkibiy qismlar",
+    "notFound": "Loyiha topilmadi",
+    "links": "Havolalar",
+    "year": "Yil",
+    "openSite": "Saytni ochish",
+    "label": "Ishlar",
+    "openProject": "Loyihani ochish",
+    "kind": {
+      "saas": "SaaS",
+      "web": "Web sayt",
+      "ecommerce": "Onlayn do'kon",
+      "mobile": "Mobil ilova",
+      "business": "Biznes"
+    },
+    "breadcrumb": "Ishlar",
+    "headingLead": "Mening",
+    "headingAccent": "ishlarim",
+    "featuredEyebrow": "Tanlangan ishlar",
+    "client": "Mijoz",
+    "caseStudy": "Batafsil",
+    "liveDemo": "Saytni ochish",
+    "backToWork": "Ishlarga qaytish",
+    "featuredBadge": "Tanlangan loyiha",
+    "view": {
+      "grid": "Panjara ko'rinishi",
+      "list": "Ro'yxat ko'rinishi"
+    }
   },
   "contact": {
     "title": "Bog'lanish",
-    "subtitle": "Loyiha yoki hamkorlik bo'yicha yozing",
+    "subtitle": "Loyiha g'oyangizni yozing — javob beraman",
     "nameLabel": "Ism",
     "namePlaceholder": "Ismingiz",
     "emailLabel": "Email",
     "emailPlaceholder": "email@example.com",
     "messageLabel": "Xabar",
-    "messagePlaceholder": "Xabaringiz",
+    "messagePlaceholder": "Loyihangiz haqida qisqacha yozing",
     "submit": "Yuborish",
     "sending": "Yuborilmoqda...",
-    "success": "Xabar yuborildi.",
-    "error": "Xabar yuborilmadi. Keyinroq urinib ko'ring."
+    "success": "Xabaringiz yuborildi. Tez orada bog'lanaman.",
+    "error": "Xabar yuborilmadi. Iltimos, keyinroq urinib ko'ring.",
+    "validation": {
+      "nameRequired": "Ismni kiriting",
+      "emailInvalid": "To'g'ri email kiriting",
+      "messageShort": "Xabar kamida 10 ta belgidan iborat bo'lsin"
+    },
+    "label": "Bog'lanish",
+    "pageTitle": "Aloqa",
+    "breadcrumb": "Aloqa",
+    "headingLead": "Keling,",
+    "headingAccent": "zo'r narsa quramiz",
+    "pageSubtitle": "Yangi imkoniyatlar, qiziqarli loyihalar yoki hamkorlikni muhokama qilishga doim ochiqman. Keling, ta'sirli narsa yarataylik.",
+    "formTitle": "Xabar yuborish",
+    "email": "Email",
+    "phone": "Telefon",
+    "telegram": "Telegram",
+    "location": "Joylashuv",
+    "emailNote": "Email yozing",
+    "phoneNote": "Du–Ju, 10:00–19:00",
+    "telegramNote": "Tez javob",
+    "locationNote": "Butun dunyo bo'ylab ishlayman",
+    "mapTitle": "Qayerda ishlayman",
+    "privacy": "Ma'lumotlaringiz xavfsiz saqlanadi.",
+    "subjectLabel": "Mavzu",
+    "subjectPlaceholder": "Mavzu",
+    "fast": {
+      "title": "Tez javob",
+      "description": "Odatda 24 soat ichida javob beraman."
+    },
+    "open": {
+      "title": "Ochiqman",
+      "description": "Freelance va doimiy ish takliflariga ochiqman."
+    },
+    "hours": {
+      "title": "Ish vaqti",
+      "description": "Dushanba–Juma, 10:00–19:00 (GMT+5)."
+    },
+    "eyebrow": "Bog'lanamiz",
+    "mapEyebrow": "Joylashuv",
+    "optional": "ixtiyoriy",
+    "global": {
+      "title": "Global hamkorlik",
+      "description": "Turli vaqt mintaqalarida ishlashga o'rganganman."
+    },
+    "getInTouchTitle": "Bog'lanish uchun",
+    "availabilityLabel": "Ish vaqti",
+    "copy": "Nusxa olish",
+    "copied": "Nusxa olindi",
+    "legend": {
+      "remote": "Masofadan ishlayman",
+      "worldwide": "Butun dunyo bo'ylab",
+      "flexible": "Moslashuvchan vaqt",
+      "results": "Natijaga yo'naltirilgan"
+    },
+    "ctaTitle": "Loyiha g'oyangiz bormi?",
+    "ctaAccent": "Eshitishni istardim.",
+    "ctaText": "Aniq g'oya bo'lsa ham, shunchaki imkoniyatlarni ko'rmoqchi bo'lsangiz ham — uni haqiqatga aylantirishga yordam beraman.",
+    "ctaButton": "Suhbatni boshlaymiz",
+    "availabilityValue": "Du–Ju, 10:00–19:00 (GMT+5)"
+  },
+  "cta": {
+    "title": "Loyiha g'oyangiz bormi?",
+    "subtitle": "Keling, birga zo'r narsa quramiz.",
+    "button": "Suhbatni boshlash",
+    "railTitle": "Birga ishlaymiz",
+    "railSubtitle": "Loyiha g'oyangiz bormi? Yordam berishga tayyorman.",
+    "railButton": "Bog'lanish",
+    "aboutTitle": "Keling, birga zo'r narsa quramiz!",
+    "skillsTitle": "Keling, birga zo'r narsa quramiz!",
+    "skillsSubtitle": "Yangi imkoniyat va qiziqarli loyihalarga ochiqman.",
+    "skillsButton": "Birga ishlaymiz"
   },
   "footer": {
-    "rights": "Barcha huquqlar himoyalangan"
+    "rights": "Barcha huquqlar himoyalangan.",
+    "builtWith": "Next.js",
+    "pages": "Sahifalar",
+    "elsewhere": "Boshqa joylarda",
+    "tagline": "Veb mahsulotlar quraman."
   },
   "notFound": {
-    "title": "Sahifa topilmadi",
-    "description": "Siz izlagan sahifa mavjud emas.",
-    "back": "Bosh sahifaga"
+    "description": "Bu manzilda hech narsa yo'q — sahifa o'chirilgan yoki havola noto'g'ri yozilgan bo'lishi mumkin.",
+    "home": "Bosh sahifa",
+    "work": "Ishlarim",
+    "headingLead": "Sahifa",
+    "headingAccent": "topilmadi"
   },
   "error": {
     "title": "Xatolik yuz berdi",
     "description": "Kutilmagan xatolik. Qayta urinib ko'ring.",
     "retry": "Qayta urinish"
+  },
+  "metrics": {
+    "projects": "Tugallangan loyiha",
+    "clients": "Mijoz loyihasi",
+    "experience": "Yil tajriba",
+    "response": "Ichida javob",
+    "projectsNote": "Muvaffaqiyatli topshirilgan",
+    "clientsNote": "Turli yo'nalishlarda",
+    "experienceNote": "Web va mobil development",
+    "responseNote": "Odatdagi javob vaqti"
+  },
+  "whatIDo": {
+    "title": "Nima qilaman",
+    "build": {
+      "title": "Quraman",
+      "description": "Zamonaviy texnologiyalar bilan toza va kengayadigan yechimlar."
+    },
+    "solve": {
+      "title": "Hal qilaman",
+      "description": "Real muammolarni yechib, g'oyani ishlaydigan mahsulotga aylantiraman."
+    },
+    "deliver": {
+      "title": "Yetkazaman",
+      "description": "Unumdorlik, foydalanuvchi tajribasi va real natijaga e'tibor."
+    }
   }
 }

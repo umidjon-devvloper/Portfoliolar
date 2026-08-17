@@ -1,64 +1,52 @@
-import type { Profile, Project, SkillGroup } from "./types";
+import type { Metric, Profile, SkillGroup } from "./types";
 
-/**
- * NOTE: `null` means the data is genuinely unknown — do not invent it.
- */
+/** `null` means the value is genuinely unknown — it is not invented here. */
 export const profile: Profile = {
   firstName: "Diyorbek",
   fullName: null, // TODO
   role: "Full Stack Web Developer",
+  secondaryRole: null, // TODO
+  birthDate: null, // TODO
   education: null, // TODO
-  avatar: null, // TODO
+  location: null, // TODO
+  avatar: null, // TODO: /images/profile/portrait.webp
+  resumeFile: null, // TODO
   contact: {
     email: null, // TODO
+    emailSecondary: null,
     telegram: null, // TODO
+    telegramHandle: null, // TODO
+    phone: null, // TODO
+    phoneDisplay: null, // TODO
     github: null, // TODO
+    linkedin: null, // TODO
+    instagram: null, // TODO
+    agency: null,
   },
 };
+
+// TODO: counts stay empty until they can be confirmed.
+export const metrics: Metric[] = [];
 
 export const skillGroups: SkillGroup[] = [
   {
     id: "frontend",
-    items: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "React.js",
-      "Next.js",
-      "Tailwind CSS",
-      "Responsive Design",
-    ],
+    items: ["HTML5 / CSS3", "JavaScript", "React.js", "Next.js", "Tailwind CSS", "Responsive Design"],
   },
   {
     id: "backend",
     items: ["Node.js", "Express.js", "REST API", "MongoDB"],
   },
   {
-    id: "tools",
+    id: "devops",
     items: ["Git", "GitHub"],
   },
 ];
 
-// TODO: fill in real projects — name, role, stack, link.
-export const projects: Project[] = [];
+export const marqueeSkills = ["HTML5 / CSS3", "JavaScript", "React.js", "Next.js", "Tailwind CSS", "Responsive Design", "Node.js", "Express.js", "REST API", "MongoDB"];
 
-export const site = {
-  domain: "diyorbek.site",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://diyorbek.site",
-  ogImage: "/og.png",
-};
+export const strengthIds = [] as const;
 
-export const sections = ["about", "skills", "projects", "contact"] as const;
+export const goalIds = [] as const;
 
-export const partners = [
-  {
-    name: "Umidjon",
-    role: "Full Stack Web & Mobile Developer",
-    href: "https://umidjon.site",
-  },
-  {
-    name: "Usmonjon",
-    role: "Frontend Developer & UI/UX Designer",
-    href: "https://usmonjon.site",
-  },
-];
+export const processIds = ["brief", "design", "development", "launch"] as const;

@@ -1,73 +1,286 @@
 {
   "meta": {
     "title": "Usmonjon — Frontend Developer & UI/UX Designer",
-    "description": "Frontend Developer and UI/UX Designer specialising in modern, usable web interfaces."
+    "description": "Frontend developer and UI/UX designer. Design in Figma, interface in React."
   },
   "nav": {
+    "home": "Home",
     "about": "About",
-    "skills": "Skills",
-    "work": "Work",
+    "projects": "Projects",
     "contact": "Contact",
     "openMenu": "Open menu",
-    "closeMenu": "Close menu"
+    "closeMenu": "Close menu",
+    "work": "Work",
+    "skills": "Skills"
   },
   "common": {
     "toggleTheme": "Toggle theme",
     "language": "Language",
-    "comingSoon": "Coming soon"
+    "readMore": "Read more",
+    "viewAll": "View all",
+    "backToProjects": "Back to projects",
+    "loading": "Loading",
+    "comingSoon": "Coming soon",
+    "letsTalk": "Let's talk",
+    "sidebarNote": "Let's build something amazing together."
   },
   "hero": {
-    "role": "Frontend Developer & UI/UX Designer",
-    "titleLine1": "The interface is",
-    "titleLine2": "the first impression",
-    "subtitle": "I build modern, usable web interfaces. In partnership with Umidjon I work across a range of web projects.",
-    "cta": "View work"
+    "eyebrow": "Frontend Developer & UI/UX Designer",
+    "subtitle": "I design in Figma and build the interface in React.",
+    "primaryCta": "View my work",
+    "titleLead": "From the mockup",
+    "titleAccent": "to a working",
+    "titleTail": "interface",
+    "railStatus": "Status",
+    "railAvailable": "Open to projects",
+    "railTime": "Local time",
+    "railBase": "Based in",
+    "scrollHint": "Scroll",
+    "greeting": "Hello, I'm",
+    "available": "Available for freelance work",
+    "availableBadge": "Available for new opportunities",
+    "availableNote": "Let's build something together!",
+    "contactCta": "Get in touch"
   },
   "about": {
     "title": "About",
-    "bio": "Frontend Developer and UI/UX Designer specialising in modern, usable web interfaces. In partnership with Umidjon I work across a range of web projects.",
-    "experienceTitle": "Experience",
-    "experience": "Working with Umidjon on websites and web applications, contributing to frontend development, UI/UX design and user interface work.",
-    "goalTitle": "Goal",
-    "goal": "Design interfaces that are beautiful, usable and modern, and grow professionally through real projects.",
-    "partnersTitle": "Team"
+    "shortBio": "Frontend developer and UI/UX designer — I do both the design and the code.",
+    "longBio": "This site is still being filled in: work, experience and contact details are on the way.",
+    "workStyleTitle": "How I work",
+    "workStyle": "I don't treat a project as only frontend or only backend. I cover the whole chain, from idea through to the app stores.",
+    "strengthsTitle": "Strengths",
+    "goalsTitle": "Goals",
+    "partnersTitle": "Partners",
+    "partnersSubtitle": "The team I build projects with",
+    "educationTitle": "Education",
+    "locationLabel": "Location",
+    "label": "Who",
+    "roleLabel": "Role",
+    "pageTitle": "About",
+    "breadcrumb": "About",
+    "headingLead": "About",
+    "headingAccent": "me",
+    "birth": "Birth",
+    "education": "Education",
+    "languages": "Languages",
+    "location": "Location",
+    "focus": "Focus",
+    "eyebrow": "Get to know me",
+    "availability": "Available for freelance work worldwide",
+    "journeyTitle": "My journey",
+    "numbersTitle": "Some numbers",
+    "quote": "The best way to predict the future is to build it.",
+    "quoteAuthor": "Alan Kay",
+    "toolsTitle": "Skills & tools",
+    "agencyNote": "My agency site"
   },
   "skills": {
-    "title": "Skills",
+    "title": "The tools I build with",
     "frontend": "Frontend",
-    "design": "Design",
-    "tools": "Tools"
+    "mobile": "Mobile",
+    "backend": "Backend",
+    "devops": "DevOps & Tools",
+    "label": "Technologies",
+    "pageTitle": "Skills",
+    "breadcrumb": "Skills",
+    "headingLead": "My",
+    "headingAccent": "Skills",
+    "pageSubtitle": "I work with modern technologies and best practices to build scalable, high-performance and user-friendly digital products.",
+    "stripTitle": "Technologies I work with",
+    "allSkills": "All Skills",
+    "toolsTitle": "Skills & tools",
+    "tools": "Tools",
+    "eyebrow": "My expertise",
+    "technicalTitle": "Technical skills",
+    "toolStripTitle": "Tools & technologies I work with",
+    "pillars": {
+      "stack": {
+        "title": "Modern Tech Stack",
+        "description": "Using up-to-date technologies and best practices"
+      },
+      "architecture": {
+        "title": "Clean Architecture",
+        "description": "Writing maintainable and scalable code"
+      },
+      "performance": {
+        "title": "Performance Focused",
+        "description": "Building fast, optimized and reliable applications"
+      },
+      "learning": {
+        "title": "Continuous Learning",
+        "description": "Always learning and improving every day"
+      }
+    },
+    "database": "Database",
+    "others": "Others",
+    "payments": "Payments",
+    "design": "Design"
   },
-  "work": {
+  "projects": {
     "title": "Work",
-    "subtitle": "Design and interface projects",
-    "empty": "Work is coming soon."
+    "subtitle": "Every project was built to solve a real problem.",
+    "featuredTitle": "Recent projects",
+    "filterAll": "All",
+    "empty": "No projects in this category yet",
+    "problem": "Problem",
+    "solution": "Solution",
+    "stack": "Stack",
+    "result": "Result",
+    "integrations": "Integrations",
+    "components": "Components",
+    "notFound": "Project not found",
+    "links": "Links",
+    "year": "Year",
+    "openSite": "Open site",
+    "label": "Work",
+    "openProject": "Open project",
+    "kind": {
+      "saas": "SaaS",
+      "web": "Website",
+      "ecommerce": "E-commerce",
+      "mobile": "Mobile app",
+      "business": "Business"
+    },
+    "breadcrumb": "Work",
+    "headingLead": "My",
+    "headingAccent": "work",
+    "featuredEyebrow": "Featured work",
+    "client": "Client",
+    "caseStudy": "Case study",
+    "liveDemo": "Live demo",
+    "backToWork": "Back to work",
+    "featuredBadge": "Featured project",
+    "view": {
+      "grid": "Grid view",
+      "list": "List view"
+    }
   },
   "contact": {
     "title": "Contact",
-    "subtitle": "Reach out about a project or collaboration",
+    "subtitle": "Tell me about your project — I'll reply",
     "nameLabel": "Name",
     "namePlaceholder": "Your name",
     "emailLabel": "Email",
     "emailPlaceholder": "email@example.com",
     "messageLabel": "Message",
-    "messagePlaceholder": "Your message",
+    "messagePlaceholder": "Briefly describe your project",
     "submit": "Send",
     "sending": "Sending...",
-    "success": "Message sent.",
-    "error": "Message could not be sent. Please try again later."
+    "success": "Your message was sent. I'll get back to you shortly.",
+    "error": "Message could not be sent. Please try again later.",
+    "validation": {
+      "nameRequired": "Enter your name",
+      "emailInvalid": "Enter a valid email",
+      "messageShort": "Message must be at least 10 characters"
+    },
+    "label": "Contact",
+    "pageTitle": "Contact",
+    "breadcrumb": "Contact",
+    "headingLead": "Let's build",
+    "headingAccent": "something great",
+    "pageSubtitle": "I'm always open to discussing new opportunities, exciting projects, or partnerships. Let's create something impactful together.",
+    "formTitle": "Send me a message",
+    "email": "Email",
+    "phone": "Phone",
+    "telegram": "Telegram",
+    "location": "Location",
+    "emailNote": "Send me an email",
+    "phoneNote": "Mon–Fri, 10:00–19:00",
+    "telegramNote": "Let's chat",
+    "locationNote": "Available worldwide",
+    "mapTitle": "Where I work",
+    "privacy": "Your information is safe with me.",
+    "subjectLabel": "Subject",
+    "subjectPlaceholder": "Subject",
+    "fast": {
+      "title": "Fast response",
+      "description": "I usually reply within 24 hours."
+    },
+    "open": {
+      "title": "Open to opportunities",
+      "description": "Available for freelance and full-time projects."
+    },
+    "hours": {
+      "title": "Working hours",
+      "description": "Mon–Fri, 10:00–19:00 (GMT+5)."
+    },
+    "eyebrow": "Let's connect",
+    "mapEyebrow": "Location",
+    "optional": "optional",
+    "global": {
+      "title": "Global collaboration",
+      "description": "Comfortable working across time zones."
+    },
+    "getInTouchTitle": "Get in touch",
+    "availabilityLabel": "Availability",
+    "copy": "Copy",
+    "copied": "Copied",
+    "legend": {
+      "remote": "Remote first",
+      "worldwide": "Available worldwide",
+      "flexible": "Flexible hours",
+      "results": "Result focused"
+    },
+    "ctaTitle": "Have a project in mind?",
+    "ctaAccent": "I'd love to hear about it.",
+    "ctaText": "Whether you have a clear idea or just want to explore possibilities, I'm here to help you turn it into reality.",
+    "ctaButton": "Let's start a conversation",
+    "availabilityValue": "Mon–Fri, 10:00–19:00 (GMT+5)"
+  },
+  "cta": {
+    "title": "Have a project in mind?",
+    "subtitle": "Let's work together and build something great.",
+    "button": "Start a conversation",
+    "railTitle": "Let's work together",
+    "railSubtitle": "Have a project in mind? I'm ready to help you.",
+    "railButton": "Contact me",
+    "aboutTitle": "Let's build something amazing together!",
+    "skillsTitle": "Let's build something great together!",
+    "skillsSubtitle": "I'm available for new opportunities and exciting projects.",
+    "skillsButton": "Let's work together"
   },
   "footer": {
-    "rights": "All rights reserved"
+    "rights": "All rights reserved.",
+    "builtWith": "Next.js",
+    "pages": "Pages",
+    "elsewhere": "Elsewhere",
+    "tagline": "Design and front end."
   },
   "notFound": {
-    "title": "Page not found",
-    "description": "This page doesn't exist.",
-    "back": "Go home"
+    "description": "There's nothing at this address — the page was removed, or the link has a typo.",
+    "home": "Go home",
+    "work": "View my work",
+    "headingLead": "Page",
+    "headingAccent": "not found"
   },
   "error": {
     "title": "Something went wrong",
     "description": "An unexpected error occurred. Please try again.",
     "retry": "Try again"
+  },
+  "metrics": {
+    "projects": "Completed projects",
+    "clients": "Client projects",
+    "experience": "Years of experience",
+    "response": "Hours to reply",
+    "projectsNote": "Successfully delivered",
+    "clientsNote": "Across different sectors",
+    "experienceNote": "Web and mobile development",
+    "responseNote": "Typical reply time"
+  },
+  "whatIDo": {
+    "title": "What I do",
+    "build": {
+      "title": "Build",
+      "description": "Clean, scalable solutions built with modern technologies."
+    },
+    "solve": {
+      "title": "Solve",
+      "description": "I solve real problems and turn ideas into working products."
+    },
+    "deliver": {
+      "title": "Deliver",
+      "description": "Focused on performance, user experience and real value."
+    }
   }
 }

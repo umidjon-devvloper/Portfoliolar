@@ -1,58 +1,41 @@
-import { Dribbble, Github, Mail, Send } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
+import { navItems } from "@/content/nav";
+import { site } from "@/content/site";
 import { Container } from "@/components/ui/container";
-import { profile, site } from "@/content/profile";
+import { LogoMark } from "@/components/ui/logo-mark";
 
 export function Footer() {
-  const t = useTranslations("footer");
-  const year = new Date().getFullYear();
-  const { contact } = profile;
-
-  const socials = [
-    contact.behance
-      ? { href: contact.behance, icon: Dribbble, label: "Behance" }
-      : null,
-    contact.dribbble
-      ? { href: contact.dribbble, icon: Dribbble, label: "Dribbble" }
-      : null,
-    contact.github
-      ? { href: contact.github, icon: Github, label: "GitHub" }
-      : null,
-    contact.telegram
-      ? { href: contact.telegram, icon: Send, label: "Telegram" }
-      : null,
-    contact.email
-      ? { href: `mailto:${contact.email}`, icon: Mail, label: "Email" }
-      : null,
-  ].filter((item) => item !== null);
+  const t = useTranslations("nav");
+  const tf = useTranslations("footer");
 
   return (
     <footer className="border-t border-border">
-      <Container className="flex flex-col gap-6 py-12 sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex flex-col gap-1">
-          <span className="font-display text-2xl">{profile.firstName}</span>
-          <span className="text-sm text-muted">{profile.role}</span>
-        </div>
-
-        <div className="flex flex-col gap-4 sm:items-end">
-          <div className="flex items-center gap-2">
-            {socials.map((social) => (
-              <a
-                key={social.label}
-                href={social.href}
-                target="_blank"
-                rel="noreferrer noopener"
-                aria-label={social.label}
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border text-muted transition-colors hover:border-accent hover:text-accent"
-              >
-                <social.icon className="h-4 w-4" />
-              </a>
-            ))}
-          </div>
-          <p className="text-xs text-muted">
-            © {year} {site.domain}. {t("rights")}.
+      <Container className="flex flex-col gap-6 py-8 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex items-center gap-4">
+          <LogoMark className="h-7 w-7" />
+          <p className="max-w-[16rem] text-xs leading-relaxed text-muted">
+            {tf("tagline")}
           </p>
         </div>
+
+        <nav className="flex flex-wrap gap-x-5 gap-y-2">
+          {navItems.map((item) => (
+            <Link
+              key={item.id}
+              href={item.href}
+              className="text-xs uppercase tracking-wider text-muted transition-colors hover:text-accent"
+            >
+              {t(item.id)}
+            </Link>
+          ))}
+        </nav>
+      </Container>
+
+      <Container className="border-t border-border py-5">
+        <p className="text-xs text-muted">
+          © {new Date().getFullYear()} {site.domain}. {tf("rights")}
+        </p>
       </Container>
     </footer>
   );
