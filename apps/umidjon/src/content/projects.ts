@@ -228,7 +228,7 @@ export const projects: Project[] = [
     year: null,
     client: "SARA SILVERS",
     featured: false,
-    cover: null,
+    cover: "/images/projects/sara-silvers.webp",
     gallery: [],
     links: [
       { label: "sarasilvers.uz", href: "https://www.sarasilvers.uz", kind: "live" },
@@ -260,7 +260,7 @@ export const projects: Project[] = [
     year: null,
     client: "Bukhara Handcrafted Ceramics",
     featured: false,
-    cover: null,
+    cover: "/images/projects/gijduvan-crafts.webp",
     gallery: [],
     links: [
       {
@@ -296,7 +296,7 @@ export const projects: Project[] = [
     year: null,
     client: "Zarina",
     featured: false,
-    cover: null,
+    cover: "/images/projects/zarina-portfolio.webp",
     gallery: [],
     links: [
       {
@@ -332,7 +332,7 @@ export const projects: Project[] = [
     year: "2026",
     client: null,
     featured: false,
-    cover: null,
+    cover: "/images/projects/umidjon-agency.webp",
     gallery: [],
     links: [
       {

@@ -101,9 +101,10 @@ export function TechIcon({
       <Image
         src={slug}
         alt={fallback}
-        width={24}
+        width={64}
         height={24}
-        className={cn("object-contain", className)}
+        unoptimized
+        className={cn("object-contain", className, "w-auto max-w-[3.25rem]")}
       />
     );
   }

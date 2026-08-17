@@ -83,10 +83,10 @@ export const skillCategories: SkillCategory[] = [
     id: "payments",
     icon: "CreditCard",
     skills: [
-      /* TODO: Payme, Click, Atmos and Uzum have no simple-icons entry.
-         Drop their files in public/images/brands/ and set icon to the
-         path — TechIcon renders a hosted file the same way. */
-      { name: "Payme", icon: null },
+      /* TODO: Click, Atmos and Uzum have no simple-icons entry. Drop
+         their files in public/images/brands/ and set icon to the path —
+         TechIcon renders a hosted file the same way. */
+      { name: "Payme", icon: "/images/brands/payme.svg" },
       { name: "Click", icon: null },
       { name: "Atmos", icon: null },
       { name: "Uzum", icon: null },
