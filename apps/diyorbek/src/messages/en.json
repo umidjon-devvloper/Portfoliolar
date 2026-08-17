@@ -66,7 +66,7 @@
     "birth": "Birth",
     "education": "Education",
     "languages": "Languages",
-    "languagesValue": "Uzbek (native) · Russian · English",
+    "languagesValue": "Uzbek (native) · Russian",
     "location": "Location",
     "focus": "Focus",
     "focusValue": "Building products · Solving problems · Learning",
@@ -76,7 +76,7 @@
     "numbersTitle": "Some numbers",
     "quote": "The best way to predict the future is to build it.",
     "quoteAuthor": "Alan Kay",
-    "birthValue": "1 January 2005",
+    "birthValue": "20 October 2004",
     "educationValue": "Bukhara State University (2022–2026)",
     "toolsTitle": "Skills & tools",
     "agencyNote": "My agency site"

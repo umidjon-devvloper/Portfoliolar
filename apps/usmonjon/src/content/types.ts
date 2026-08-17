@@ -54,8 +54,8 @@ export type ServiceItem = {
 
 export type Education = {
   institution: string;
-  field: string;
-  degree: string;
+  field: string | null;
+  degree: string | null;
   from: string;
   to: string;
 };

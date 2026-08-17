@@ -1,44 +1,44 @@
 import type { Metric, Profile, SkillGroup } from "./types";
 
 export const profile: Profile = {
-  firstName: "Umidjon",
-  fullName: "G'afforov Umidjon",
-  role: "Full Stack Web & Mobile Developer",
-  secondaryRole: "Entrepreneur / Founder of Umidjon Agency",
-  birthDate: "2005-01-01",
+  firstName: "Diyorbek",
+  fullName: "Hikmatullayev Diyorbek",
+  role: "Full Stack Web Developer",
+  secondaryRole: null, // TODO
+  birthDate: "2004-10-20",
   education: {
     institution: "Buxoro Davlat Universiteti",
-    field: "Computer Science and Programming Technologies",
-    degree: "Bakalavr",
+    field: null, // TODO: yo'nalish
+    degree: null, // TODO
     from: "2022",
     to: "2026",
   },
   location: {
-    city: "Buxoro",
+    city: "G'ijduvon",
     region: "Buxoro viloyati",
     country: "O'zbekiston",
     countryCode: "UZ",
   },
-  avatar: "/images/profile/portrait.webp",
-  resumeFile: null,
+  avatar: null, // TODO: /images/profile/portrait.webp
+  resumeFile: null, // TODO
   contact: {
-    email: "umidjongafforov844@gmail.com",
-    emailSecondary: "umidjongafforov175@gmail.com",
-    telegram: "https://t.me/umidjon_dasturchi",
-    telegramHandle: "@umidjon_dasturchi",
-    phone: "+998936558959",
-    phoneDisplay: "+998 93 655 89 59",
-    github: "https://github.com/umidjon-devvloper",
-    linkedin: "https://www.linkedin.com/in/umidjon-gafforov-8b151b325",
-    instagram: "https://instagram.com/umidjon_developer",
-    agency: "https://www.umidjon.agency",
+    email: "diyorbekhikmatullayev3@gmail.com",
+    emailSecondary: null,
+    telegram: "https://t.me/Diyorbek3545",
+    telegramHandle: "@Diyorbek3545",
+    phone: "+998914033545",
+    phoneDisplay: "+998 91 403 35 45",
+    github: "https://github.com/Diyorbek2010-web",
+    linkedin: null, // TODO
+    instagram: "https://instagram.com/_diyorbek2010_",
+    agency: null,
   },
 };
 
 export const metrics: Metric[] = [
-  { id: "projects", value: 12, suffix: "" },
-  { id: "clients", value: 6, suffix: "" },
-  { id: "experience", value: 3, suffix: "+" },
+  // TODO: loyihalar soni hali tasdiqlanmagan.
+  { id: "clients", value: 5, suffix: "" },
+  { id: "experience", value: 2, suffix: "+" },
   { id: "response", value: 24, suffix: "h" },
 ];
 
