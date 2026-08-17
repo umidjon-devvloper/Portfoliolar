@@ -333,12 +333,8 @@
   },
   "notFound": {
     "description": "Bu manzilda hech narsa yo'q — sahifa o'chirilgan yoki havola noto'g'ri yozilgan bo'lishi mumkin.",
-    "back": "Bosh sahifaga",
     "home": "Bosh sahifa",
     "work": "Ishlarim",
-    "hint": "Havolani qo'lda yozgan bo'lsangiz, imloni tekshirib ko'ring.",
-    "quickLinks": "Balki shulardan biri kerakdir",
-    "breadcrumb": "404",
     "headingLead": "Sahifa",
     "headingAccent": "topilmadi"
   },

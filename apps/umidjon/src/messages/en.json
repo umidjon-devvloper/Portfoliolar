@@ -333,12 +333,8 @@
   },
   "notFound": {
     "description": "There's nothing at this address — the page was removed, or the link has a typo.",
-    "back": "Go home",
     "home": "Go home",
     "work": "View my work",
-    "hint": "If you typed the address by hand, check the spelling.",
-    "quickLinks": "You might be looking for",
-    "breadcrumb": "404",
     "headingLead": "Page",
     "headingAccent": "not found"
   },

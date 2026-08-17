@@ -11,5 +11,4 @@ export const pageVisuals: Record<string, string | null> = {
   experience: null,
   services: null,
   contact: null,
-  notFound: null,
 };
