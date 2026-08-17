@@ -1,15 +1,13 @@
 "use client";
 
-import * as icons from "lucide-react";
-import { Github, Linkedin, Mail, Send } from "lucide-react";
+import { ArrowUpRight, Github, Linkedin, Mail, Send } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { navItems } from "@/content/nav";
 import { profile } from "@/content/profile";
 import { cn } from "@/lib/utils";
 import { LogoMark } from "@/components/ui/logo-mark";
-
-type IconName = keyof typeof icons;
+import { getIcon } from "@/components/ui/icon-map";
 
 export function Sidebar() {
   const t = useTranslations("nav");
@@ -33,7 +31,7 @@ export function Sidebar() {
 
         <nav className="flex flex-col gap-0.5">
           {navItems.map((item) => {
-            const Icon = icons[item.icon as IconName] as icons.LucideIcon;
+            const Icon = getIcon(item.icon);
             const active = pathname === item.href;
 
             return (
@@ -67,7 +65,7 @@ export function Sidebar() {
           className="mx-5 inline-flex items-center justify-center gap-2 rounded-[var(--radius-btn)] border border-border px-3 py-2 text-[0.6875rem] font-medium transition-colors hover:border-accent hover:text-accent"
         >
           {tc("letsTalk")}
-          <icons.ArrowUpRight className="h-3.5 w-3.5" />
+          <ArrowUpRight className="h-3.5 w-3.5" />
         </Link>
 
         <div className="flex flex-wrap gap-3.5 px-5">

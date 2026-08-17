@@ -1,6 +1,5 @@
 "use client";
 
-import * as icons from "lucide-react";
 import { Menu, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
@@ -10,8 +9,7 @@ import { LanguageSwitcher } from "./language-switcher";
 import { ThemeToggle } from "./theme-toggle";
 import { cn } from "@/lib/utils";
 import { LogoMark } from "@/components/ui/logo-mark";
-
-type IconName = keyof typeof icons;
+import { getIcon } from "@/components/ui/icon-map";
 
 export function TopBar() {
   const t = useTranslations("nav");
@@ -78,7 +76,7 @@ export function TopBar() {
 
         <ul className="grid grid-cols-2 gap-2 px-5 pb-6 sm:px-8">
           {navItems.map((item) => {
-            const Icon = icons[item.icon as IconName] as icons.LucideIcon;
+            const Icon = getIcon(item.icon);
             const active = pathname === item.href;
 
             return (

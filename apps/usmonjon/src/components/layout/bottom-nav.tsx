@@ -1,12 +1,10 @@
 "use client";
 
-import * as icons from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { bottomNavIds, navItems } from "@/content/nav";
 import { cn } from "@/lib/utils";
-
-type IconName = keyof typeof icons;
+import { getIcon } from "@/components/ui/icon-map";
 
 export function BottomNav() {
   const t = useTranslations("nav");
@@ -24,7 +22,7 @@ export function BottomNav() {
     >
       <ul className="mx-auto flex max-w-lg items-stretch">
         {items.map((item) => {
-          const Icon = icons[item.icon as IconName] as icons.LucideIcon;
+          const Icon = getIcon(item.icon);
           const active = pathname === item.href;
 
           return (

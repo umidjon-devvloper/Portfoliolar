@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import * as icons from "lucide-react";
 import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
@@ -15,10 +14,9 @@ import { buildServicesSnippet } from "@/content/code-sample";
 import { processSteps, services } from "@/content/services";
 import { metrics, profile } from "@/content/profile";
 import { alternates, openGraph } from "@/lib/seo";
+import { getIcon } from "@/components/ui/icon-map";
 
 type PageProps = { params: Promise<{ locale: string }> };
-type IconName = keyof typeof icons;
-
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "services" });
@@ -42,7 +40,7 @@ function ServiceGrid() {
     <Stagger>
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {services.map((service, index) => {
-          const Icon = icons[service.icon as IconName] as icons.LucideIcon;
+          const Icon = getIcon(service.icon);
 
           return (
             <StaggerItem key={service.id} index={index} className="flex">
@@ -92,7 +90,7 @@ function ServiceGrid() {
   );
 }
 
-const stepIcon: Record<string, IconName> = {
+const stepIcon: Record<string, string> = {
   discuss: "MessagesSquare",
   plan: "FileText",
   build: "Code",
@@ -124,7 +122,7 @@ function Process() {
 
         <ol className="grid gap-8 sm:grid-cols-3 lg:grid-cols-5 lg:gap-4">
           {processSteps.map((step, index) => {
-            const Icon = icons[stepIcon[step] ?? "Code"] as icons.LucideIcon;
+            const Icon = getIcon(stepIcon[step] ?? "Code");
 
             return (
               <li

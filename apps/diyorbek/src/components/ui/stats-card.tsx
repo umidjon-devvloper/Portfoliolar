@@ -1,8 +1,6 @@
-import * as icons from "lucide-react";
 import { Counter } from "@/components/motion/counter";
 import { Card } from "./card";
-
-type IconName = keyof typeof icons;
+import { getIcon } from "@/components/ui/icon-map";
 
 export function StatsCard({
   icon,
@@ -15,7 +13,7 @@ export function StatsCard({
   suffix?: string;
   label: string;
 }) {
-  const Icon = icons[icon as IconName] as icons.LucideIcon;
+  const Icon = getIcon(icon);
 
   return (
     <Card className="flex flex-col gap-3 p-5">
