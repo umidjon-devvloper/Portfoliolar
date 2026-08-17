@@ -1,4 +1,4 @@
-import type { CodeLine } from "@/components/ui/code-window";
+import type { CodeLine, Token } from "@/components/ui/code-window";
 
 type AboutValues = {
   birth: string;
@@ -132,7 +132,7 @@ export const developerSnippet: CodeLine[] = [
 ];
 
 
-type SnippetValue = string | number | string[] | null;
+type SnippetValue = string | number | boolean | string[] | null;
 
 /**
  * Generic object block: strings quoted, numbers and booleans bare, arrays
@@ -176,12 +176,17 @@ export function buildObjectSnippet(
       return;
     }
 
+    const literal: Token =
+      typeof value === "number"
+        ? { text: String(value), tone: "st" }
+        : typeof value === "boolean"
+          ? { text: String(value), tone: "kw" }
+          : { text: `'${value}'`, tone: "st" };
+
     rows.push([
       { text: `  ${key}`, tone: "pr" },
       { text: ": ", tone: "pn" },
-      typeof value === "number"
-        ? { text: String(value), tone: "st" }
-        : { text: `'${value}'`, tone: "st" },
+      literal,
       { text: ",", tone: "pn" },
     ]);
   });

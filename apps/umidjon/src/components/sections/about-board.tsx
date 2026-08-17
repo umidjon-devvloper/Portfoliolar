@@ -37,7 +37,7 @@ const toolGroups = [
   },
   {
     id: "payments",
-    names: ["Payme", "Click", "Atmos", "Visa"],
+    names: ["Payme", "Click", "Uzum", "Visa", "MasterCard"],
   },
 ];
 

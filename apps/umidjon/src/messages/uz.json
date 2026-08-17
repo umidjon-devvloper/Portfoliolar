@@ -332,14 +332,15 @@
     "tagline": "Real muammolarni hal qiladigan raqamli mahsulotlar quraman."
   },
   "notFound": {
-    "title": "Sahifa topilmadi",
-    "description": "Kodda noto'g'ri burilish qilgandirsiz. Bu sahifa mavjud emas yoki ko'chirilgan.",
+    "description": "Bu manzilda hech narsa yo'q — sahifa o'chirilgan yoki havola noto'g'ri yozilgan bo'lishi mumkin.",
     "back": "Bosh sahifaga",
-    "oops": "Voy!",
-    "home": "Bosh sahifaga",
-    "work": "Ishlarni ko'rish",
-    "hint": "Xavotir olmang — eng yaxshi dasturchilar ham ba'zan build ichida adashadi. 🚀",
-    "quickLinks": "Balki shu kerakdir"
+    "home": "Bosh sahifa",
+    "work": "Ishlarim",
+    "hint": "Havolani qo'lda yozgan bo'lsangiz, imloni tekshirib ko'ring.",
+    "quickLinks": "Balki shulardan biri kerakdir",
+    "breadcrumb": "404",
+    "headingLead": "Sahifa",
+    "headingAccent": "topilmadi"
   },
   "error": {
     "title": "Xatolik yuz berdi",

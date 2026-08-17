@@ -332,14 +332,15 @@
     "tagline": "Building digital products that solve real problems."
   },
   "notFound": {
-    "title": "Page not found",
-    "description": "Looks like you've taken a wrong turn in the code. This page doesn't exist or has been moved.",
+    "description": "There's nothing at this address — the page was removed, or the link has a typo.",
     "back": "Go home",
-    "oops": "Oops!",
-    "home": "Go back home",
+    "home": "Go home",
     "work": "View my work",
-    "hint": "Don't worry — even the best developers sometimes get lost in the final build. 🚀",
-    "quickLinks": "You might want to go to"
+    "hint": "If you typed the address by hand, check the spelling.",
+    "quickLinks": "You might be looking for",
+    "breadcrumb": "404",
+    "headingLead": "Page",
+    "headingAccent": "not found"
   },
   "error": {
     "title": "Something went wrong",
