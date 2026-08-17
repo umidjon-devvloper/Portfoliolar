@@ -76,20 +76,14 @@ export const skillCategories: SkillCategory[] = [
     ],
   },
   {
-    /* TODO: only the four below are confirmed integrations. Stripe,
-       Apple Pay and Google Pay came from the mock-up — confirm or drop.
-       Payme, Click and Atmos have no simple-icons entry; drop their
-       brand files in public/images/brands/ and point icon at the path. */
     id: "payments",
     icon: "CreditCard",
     skills: [
-      /* TODO: Click, Atmos and Uzum have no simple-icons entry. Drop
-         their files in public/images/brands/ and set icon to the path —
-         TechIcon renders a hosted file the same way. */
+      /* TODO: Click still needs a brand file in public/images/brands/. */
       { name: "Payme", icon: "/images/brands/payme.svg" },
       { name: "Click", icon: null },
-      { name: "Atmos", icon: null },
-      { name: "Uzum", icon: null },
+      { name: "Atmos", icon: "/images/brands/atmos.svg" },
+      { name: "Uzum", icon: "/images/brands/uzum.svg" },
       { name: "Visa", icon: "visa" },
       { name: "MasterCard", icon: "mastercard" },
       { name: "Apple Pay", icon: "applepay" },
