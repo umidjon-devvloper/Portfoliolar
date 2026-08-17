@@ -21,27 +21,23 @@ const statIcon = {
 const toolGroups = [
   {
     id: "frontend",
-    names: ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS"],
+    names: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "Vite"],
   },
   {
     id: "backend",
-    names: ["Node.js", "Express.js", "REST API", "MongoDB", "Firebase"],
-  },
-  {
-    id: "mobile",
-    names: ["React Native", "Expo", "Expo EAS", "App Store", "Google Play"],
+    names: ["Node.js", "Express.js", "Python", "Django", "REST API"],
   },
   {
     id: "database",
-    names: ["MongoDB", "PostgreSQL", "SQL", "Prisma", "Firebase"],
+    names: ["MongoDB", "PostgreSQL", "SQL", "Firebase", "MongoDB Atlas"],
   },
   {
     id: "tools",
-    names: ["Git", "GitHub", "Vercel", "Cloudflare", "Figma"],
+    names: ["Git", "GitHub", "Vercel", "Netlify", "Railway"],
   },
   {
-    id: "payments",
-    names: ["Payme", "Click", "Uzum", "Visa", "MasterCard"],
+    id: "others",
+    names: ["Figma", "UI/UX", "Kotlin", "Android"],
   },
 ];
 

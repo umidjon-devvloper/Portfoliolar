@@ -55,16 +55,16 @@ const statIcon = {
 } as const;
 
 const toolStrip = [
-  "Git",
-  "GitHub",
-  "Vercel",
-  "Figma",
-  "Firebase",
-  "Expo",
-  "Netlify",
-  "Cloudflare",
+  "React.js",
+  "Next.js",
+  "TypeScript",
+  "Node.js",
+  "Express.js",
+  "Python",
+  "Django",
+  "PostgreSQL",
   "MongoDB",
-  "Payme",
+  "Tailwind CSS",
 ];
 
 function SkillRow({ skill }: { skill: Skill }) {

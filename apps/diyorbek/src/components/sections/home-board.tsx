@@ -13,16 +13,16 @@ import { ProjectCard } from "./project-card";
 import { WhatIDo } from "./what-i-do";
 
 const strip = [
+  "React.js",
   "Next.js",
-  "React",
   "TypeScript",
   "Node.js",
+  "Express.js",
+  "Python",
+  "Django",
+  "PostgreSQL",
   "MongoDB",
-  "React Native",
   "Tailwind CSS",
-  "Expo",
-  "Firebase",
-  "Figma",
 ];
 
 const statIcon = {

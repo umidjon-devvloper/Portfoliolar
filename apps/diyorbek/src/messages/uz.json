@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Diyorbek — Full Stack Web Developer",
-    "description": "Full Stack Web & Mobile Developer. React, Next.js, React Native, Expo va Node.js bilan real biznes muammolarini hal qiladigan mahsulotlar yarataman."
+    "description": "Full Stack Web Developer — React, Next.js, Node.js, Django va PostgreSQL bilan veb mahsulotlar va Telegram botlar quraman."
   },
   "nav": {
     "home": "Bosh sahifa",
@@ -134,8 +134,7 @@
       }
     },
     "database": "Ma'lumotlar bazasi",
-    "others": "Boshqalar",
-    "payments": "To'lov tizimlari"
+    "others": "Boshqalar"
   },
   "projects": {
     "title": "Ishlar",
@@ -183,22 +182,6 @@
   "services": {
     "title": "Xizmatlar",
     "subtitle": "G'oyadan ishga tushirishgacha",
-    "landing": {
-      "title": "Landing page",
-      "description": "Konversiya uchun optimallashtirilgan, tez yuklanadigan bir sahifali sayt."
-    },
-    "corporate": {
-      "title": "Korporativ sayt",
-      "description": "Kompaniyangiz uchun ko'p sahifali, CMS bilan boshqariladigan yechim."
-    },
-    "ecommerce": {
-      "title": "Onlayn do'kon",
-      "description": "To'lov, savat, admin panel — sotuvni to'liq boshqariladigan e-commerce."
-    },
-    "mobile": {
-      "title": "Mobil ilovalar",
-      "description": "iOS va Android uchun cross-platform ilovalar."
-    },
     "backend": {
       "title": "Backend development",
       "description": "Xavfsiz, kengayadigan backend tizimlar va API'lar."
@@ -227,10 +210,6 @@
     "web": {
       "title": "Web development",
       "description": "Zamonaviy, moslashuvchan va tez saytlar hamda web ilovalar."
-    },
-    "seo": {
-      "title": "Unumdorlik va SEO",
-      "description": "Tezlik, unumdorlik va qidiruvda ko'rinishni yaxshilash."
     },
     "eyebrow": "Nima taklif qilaman"
   },
@@ -448,49 +427,22 @@
     "current": "Hozir",
     "independent": "Mustaqil",
     "fullstack": {
-      "period": "2026 — hozir",
-      "title": "Full-Stack Developer",
-      "description": "Mijozlar uchun kengayadigan web va mobil ilovalar quraman.",
-      "shortPeriod": "2026 – hozir",
-      "duties": [
-        "Next.js, Node.js va MongoDB bilan kengayadigan web ilovalar quraman",
-        "React Native va Expo bilan cross-platform mobil ilovalar chiqaraman",
-        "To'lov tizimlari, analitika va uchinchi tomon API'larini ulayman",
-        "Unumdorlik, SEO va yaxshi amaliyotlar bo'yicha optimallashtiraman",
-        "Mijoz bilan bevosita ishlab, talabni mahsulotga aylantiraman"
-      ],
-      "summary": "Mijozlar uchun kengayadigan web va mobil ilovalar quraman."
+      "period": "2025-oxiri — hozir",
+      "title": "Full Stack Web Developer",
+      "shortPeriod": "2025 – hozir",
+      "duties": []
     },
     "freelance": {
-      "period": "2021 — 2024",
+      "period": "2023-oxiri — 2025",
       "title": "Freelance Developer",
-      "description": "Turli mijozlar bilan web va mobil loyihalarda ishladim.",
-      "shortPeriod": "2021 – 2024",
-      "duties": [
-        "Mijozlar uchun web va mobil loyihalarni boshidan oxirigacha olib bordim",
-        "React va Next.js asosida interfeys va API integratsiyalarini yozdim",
-        "Express va MongoDB bilan backend qismini qurdim",
-        "Deploy va texnik qo'llab-quvvatlashni o'z zimmamga oldim"
-      ],
-      "summary": "Mijozlar bilan web va mobil loyihalarda ishladim."
+      "shortPeriod": "2023 – 2025",
+      "duties": []
     },
     "eyebrow": "Mening yo'lim",
     "aboutRole": "Rol haqida",
     "responsibilities": "Asosiy vazifalar",
     "technologies": "Ishlatilgan texnologiyalar",
     "contributedTitle": "Hissa qo'shgan loyihalarim",
-    "achievementsTitle": "Yutuqlar va natija",
-    "kbk": {
-      "period": "2025 — 2026",
-      "shortPeriod": "2025 – 2026",
-      "title": "Full-Stack Developer",
-      "duties": []
-    },
-    "agrocluster": {
-      "period": "2024 — 2025",
-      "shortPeriod": "2024 – 2025",
-      "title": "Full-Stack Developer",
-      "duties": []
-    }
+    "achievementsTitle": "Yutuqlar va natija"
   }
 }

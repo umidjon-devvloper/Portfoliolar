@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Diyorbek — Full Stack Web Developer",
-    "description": "Full Stack Web & Mobile Developer building products with React, Next.js, React Native, Expo and Node.js that solve real business problems."
+    "description": "Full Stack Web Developer building web products and Telegram bots with React, Next.js, Node.js, Django and PostgreSQL."
   },
   "nav": {
     "home": "Home",
@@ -134,8 +134,7 @@
       }
     },
     "database": "Database",
-    "others": "Others",
-    "payments": "Payments"
+    "others": "Others"
   },
   "projects": {
     "title": "Work",
@@ -183,22 +182,6 @@
   "services": {
     "title": "Services",
     "subtitle": "From idea to launch",
-    "landing": {
-      "title": "Landing page",
-      "description": "A single-page site optimised for conversion and fast loading."
-    },
-    "corporate": {
-      "title": "Corporate website",
-      "description": "A multi-page, CMS-driven solution for your company."
-    },
-    "ecommerce": {
-      "title": "Online store",
-      "description": "Payments, cart and admin panel — full control over sales."
-    },
-    "mobile": {
-      "title": "Mobile app development",
-      "description": "Cross-platform apps for iOS and Android."
-    },
     "backend": {
       "title": "Backend development",
       "description": "Secure, scalable backend systems and APIs."
@@ -227,10 +210,6 @@
     "web": {
       "title": "Web development",
       "description": "Modern, responsive and fast websites and web applications."
-    },
-    "seo": {
-      "title": "Performance & SEO",
-      "description": "Speed, performance and search visibility."
     },
     "eyebrow": "What I offer"
   },
@@ -448,49 +427,22 @@
     "current": "Current",
     "independent": "Independent",
     "fullstack": {
-      "period": "2026 — present",
-      "title": "Full-Stack Developer",
-      "description": "Building scalable web and mobile applications for clients.",
-      "shortPeriod": "2026 – present",
-      "duties": [
-        "Building scalable web applications with Next.js, Node.js and MongoDB",
-        "Shipping cross-platform mobile apps with React Native and Expo",
-        "Integrating payment gateways, analytics and third-party APIs",
-        "Optimising for performance, SEO and best practices",
-        "Working directly with clients to turn requirements into products"
-      ],
-      "summary": "Building scalable web and mobile applications for clients."
+      "period": "late 2025 — present",
+      "title": "Full Stack Web Developer",
+      "shortPeriod": "2025 – present",
+      "duties": []
     },
     "freelance": {
-      "period": "2021 — 2024",
+      "period": "late 2023 — 2025",
       "title": "Freelance Developer",
-      "description": "Worked with clients on web and mobile projects.",
-      "shortPeriod": "2021 – 2024",
-      "duties": [
-        "Ran client web and mobile projects end to end",
-        "Built interfaces and API integrations with React and Next.js",
-        "Built the backend on Express and MongoDB",
-        "Owned deployment and ongoing technical support"
-      ],
-      "summary": "Worked with clients on web and mobile projects."
+      "shortPeriod": "2023 – 2025",
+      "duties": []
     },
     "eyebrow": "My journey",
     "aboutRole": "About the role",
     "responsibilities": "Key responsibilities",
     "technologies": "Technologies used",
     "contributedTitle": "Projects I contributed to",
-    "achievementsTitle": "Achievements & impact",
-    "kbk": {
-      "period": "2025 — 2026",
-      "shortPeriod": "2025 – 2026",
-      "title": "Full-Stack Developer",
-      "duties": []
-    },
-    "agrocluster": {
-      "period": "2024 — 2025",
-      "shortPeriod": "2024 – 2025",
-      "title": "Full-Stack Developer",
-      "duties": []
-    }
+    "achievementsTitle": "Achievements & impact"
   }
 }

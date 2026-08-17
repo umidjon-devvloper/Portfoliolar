@@ -1,7 +1,7 @@
 export const stackLayers = [
-  { id: "design", tools: ["Figma", "UI/UX", "Prototype"] },
-  { id: "frontend", tools: ["React", "Next.js", "TypeScript", "Tailwind"] },
-  { id: "backend", tools: ["Node.js", "Express", "MongoDB", "REST / GraphQL"] },
-  { id: "mobile", tools: ["React Native", "Expo", "EAS Build"] },
-  { id: "release", tools: ["Vercel", "App Store", "Google Play", "Cloudflare"] },
+  { id: "design", tools: ["Figma", "UI/UX"] },
+  { id: "frontend", tools: ["React.js", "Next.js", "TypeScript", "Tailwind CSS"] },
+  { id: "backend", tools: ["Node.js", "Express.js", "Python", "Django", "REST API"] },
+  { id: "database", tools: ["MongoDB", "PostgreSQL", "SQL", "Firebase"] },
+  { id: "release", tools: ["Vercel", "Netlify", "Railway", "GitHub"] },
 ] as const;

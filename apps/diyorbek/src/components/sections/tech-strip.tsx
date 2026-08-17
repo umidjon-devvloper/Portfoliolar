@@ -5,16 +5,16 @@ import { Reveal, Stagger } from "@/components/motion/reveal";
 import { skillCategories } from "@/content/skills";
 
 const featured = [
+  "React.js",
   "Next.js",
-  "React",
   "TypeScript",
   "Node.js",
+  "Express.js",
+  "Python",
+  "Django",
+  "PostgreSQL",
   "MongoDB",
-  "React Native",
   "Tailwind CSS",
-  "Expo",
-  "Firebase",
-  "Figma",
 ];
 
 export function TechStrip() {
