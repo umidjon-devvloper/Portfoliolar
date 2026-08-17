@@ -33,6 +33,10 @@ export type Project = {
   integrations: string[];
   components: string[];
   links: ProjectLink[];
+  /** Set when the project was built with someone else. */
+  collaborator: string | null;
+  /** What this person did on it, when the work was shared. */
+  contribution: LocalizedText | null;
   cover: string | null;
   client: string | null;
   gallery: string[];

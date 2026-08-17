@@ -59,6 +59,7 @@ export default async function ProjectPage({ params }: PageProps) {
     { key: "problem", value: project.problem?.[lang] ?? null },
     { key: "solution", value: project.solution?.[lang] ?? null },
     { key: "result", value: project.result?.[lang] ?? null },
+    { key: "contribution", value: project.contribution?.[lang] ?? null },
   ];
 
   /* Search engines get the case study as a structured work item. */

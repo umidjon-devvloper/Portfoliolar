@@ -12,6 +12,8 @@ export const projects: Project[] = [
     gallery: [],
     links: [], // TODO: havola chiqqach qo'shiladi
     stack: ["Django", "PostgreSQL", "React"],
+    collaborator: null,
+    contribution: null,
     integrations: [],
     components: [],
     tagline: {
@@ -44,6 +46,8 @@ export const projects: Project[] = [
       },
     ],
     stack: ["Python", "Telegram Bot API"],
+    collaborator: null,
+    contribution: null,
     integrations: ["Telegram"],
     components: [],
     tagline: {
@@ -72,6 +76,8 @@ export const projects: Project[] = [
       },
     ],
     stack: ["Python", "yt-dlp"],
+    collaborator: null,
+    contribution: null,
     integrations: ["Telegram", "Instagram", "YouTube"],
     components: [],
     tagline: {
@@ -100,6 +106,8 @@ export const projects: Project[] = [
       },
     ],
     stack: ["Python", "Wikipedia API"],
+    collaborator: null,
+    contribution: null,
     integrations: ["Telegram", "Wikipedia API"],
     components: [],
     tagline: {
@@ -122,6 +130,8 @@ export const projects: Project[] = [
     gallery: [],
     links: [], // Play Market'ga chiqarilmagan
     stack: ["Kotlin", "Android"],
+    collaborator: null,
+    contribution: null,
     integrations: [],
     components: [],
     tagline: {
@@ -150,6 +160,12 @@ export const projects: Project[] = [
       },
     ],
     stack: ["Next.js", "Node.js", "MongoDB", "SerpAPI", "Tailwind CSS"],
+    collaborator: "Umidjon",
+    contribution: {
+      uz: "Tizimning mijoz va xodim uchun mo'ljallangan qismini yozganman.",
+      ru: "Я написал часть системы, предназначенную для клиента и сотрудника.",
+      en: "I built the client-facing and staff-facing side of the system.",
+    },
     integrations: ["Google Hotels", "Booking", "Expedia", "Agoda", "SerpAPI"],
     components: [],
     tagline: {
@@ -184,6 +200,12 @@ export const projects: Project[] = [
     gallery: [],
     links: [{ label: "artsuzani.com", href: "https://artsuzani.com", kind: "live" }],
     stack: ["Next.js 14", "TypeScript", "Stripe", "Sanity CMS"],
+    collaborator: "Umidjon",
+    contribution: {
+      uz: "Tizimning mijoz va xodim uchun mo'ljallangan qismini yozganman.",
+      ru: "Я написал часть системы, предназначенную для клиента и сотрудника.",
+      en: "I built the client-facing and staff-facing side of the system.",
+    },
     integrations: ["Stripe", "Sanity"],
     components: [],
     tagline: {

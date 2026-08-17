@@ -176,7 +176,9 @@
     "view": {
       "grid": "Panjara ko'rinishi",
       "list": "Ro'yxat ko'rinishi"
-    }
+    },
+    "contribution": "Mening hissam",
+    "collaboration": "Hamkorlikda"
   },
   "services": {
     "title": "Xizmatlar",

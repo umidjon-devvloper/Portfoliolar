@@ -176,7 +176,9 @@
     "view": {
       "grid": "Сетка",
       "list": "Список"
-    }
+    },
+    "contribution": "Мой вклад",
+    "collaboration": "Совместный проект"
   },
   "services": {
     "title": "Услуги",

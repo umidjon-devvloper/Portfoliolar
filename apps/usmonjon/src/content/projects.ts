@@ -18,6 +18,8 @@ export const projects: Project[] = [
       },
     ],
     stack: ["Next.js", "Node.js", "MongoDB", "SerpAPI", "Tailwind CSS"],
+    collaborator: null,
+    contribution: null,
     integrations: ["Google Hotels", "Booking", "Expedia", "Agoda", "SerpAPI"],
     components: [],
     tagline: {
@@ -56,6 +58,8 @@ export const projects: Project[] = [
       { label: "sushitimetr.com", href: "https://sushitimetr.com", kind: "live" },
     ],
     stack: ["Node.js", "Express.js", "MongoDB", "React Native", "Expo", "React"],
+    collaborator: null,
+    contribution: null,
     integrations: [],
     components: ["Backend API", "Admin panel", "Mobile application", "Web client"],
     tagline: {
@@ -94,6 +98,8 @@ export const projects: Project[] = [
       { label: "zapchasty.uz", href: "https://www.zapchasty.uz", kind: "live" },
     ],
     stack: ["React Native", "Expo", "EAS Build", "Node.js"],
+    collaborator: null,
+    contribution: null,
     integrations: [],
     components: ["Mobile application", "Admin panel", "Web frontend"],
     tagline: {
@@ -128,6 +134,8 @@ export const projects: Project[] = [
     gallery: [],
     links: [{ label: "kbkm.uz", href: "https://www.kbkm.uz", kind: "live" }],
     stack: ["Vite", "React", "TypeScript"],
+    collaborator: null,
+    contribution: null,
     integrations: [],
     components: [],
     tagline: {
@@ -162,6 +170,8 @@ export const projects: Project[] = [
     gallery: [],
     links: [{ label: "artsuzani.com", href: "https://artsuzani.com", kind: "live" }],
     stack: ["Next.js 14", "TypeScript", "Stripe", "Sanity CMS"],
+    collaborator: null,
+    contribution: null,
     integrations: ["Stripe", "Sanity"],
     components: [],
     tagline: {
@@ -202,6 +212,8 @@ export const projects: Project[] = [
       },
     ],
     stack: ["React", "Tailwind CSS", "Vite"],
+    collaborator: null,
+    contribution: null,
     integrations: [],
     components: [],
     tagline: {
@@ -234,6 +246,8 @@ export const projects: Project[] = [
       { label: "sarasilvers.uz", href: "https://www.sarasilvers.uz", kind: "live" },
     ],
     stack: ["React", "TypeScript", "Tailwind CSS"],
+    collaborator: null,
+    contribution: null,
     integrations: [],
     components: [],
     tagline: {
@@ -270,6 +284,8 @@ export const projects: Project[] = [
       },
     ],
     stack: ["React", "Tailwind CSS"],
+    collaborator: null,
+    contribution: null,
     integrations: [],
     components: [],
     tagline: {
@@ -306,6 +322,8 @@ export const projects: Project[] = [
       },
     ],
     stack: ["React", "Tailwind CSS"],
+    collaborator: null,
+    contribution: null,
     integrations: [],
     components: [],
     tagline: {
@@ -342,6 +360,8 @@ export const projects: Project[] = [
       },
     ],
     stack: ["Next.js", "TypeScript", "Tailwind CSS"],
+    collaborator: null,
+    contribution: null,
     integrations: [],
     components: [],
     tagline: {

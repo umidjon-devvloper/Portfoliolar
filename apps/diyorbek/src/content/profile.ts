@@ -36,7 +36,7 @@ export const profile: Profile = {
 };
 
 export const metrics: Metric[] = [
-  // TODO: loyihalar soni hali tasdiqlanmagan.
+  { id: "projects", value: 7, suffix: "" },
   { id: "clients", value: 5, suffix: "" },
   { id: "experience", value: 2, suffix: "+" },
   { id: "response", value: 24, suffix: "h" },

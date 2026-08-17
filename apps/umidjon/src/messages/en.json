@@ -176,7 +176,9 @@
     "view": {
       "grid": "Grid view",
       "list": "List view"
-    }
+    },
+    "contribution": "My part",
+    "collaboration": "Built together"
   },
   "services": {
     "title": "Services",
