@@ -45,6 +45,9 @@ export const skillCategories: SkillCategory[] = [
       { name: "MongoDB", icon: "mongodb" },
       { name: "Mongoose", icon: "mongoose" },
       { name: "MongoDB Atlas", icon: "mongodb" },
+      { name: "PostgreSQL", icon: "postgresql" },
+      { name: "SQL", icon: null },
+      { name: "Prisma", icon: "prisma" },
       { name: "Firebase", icon: "firebase" },
       { name: "Firestore", icon: "firebase" },
       { name: "Redis", icon: "redis" },
@@ -79,9 +82,8 @@ export const skillCategories: SkillCategory[] = [
     id: "payments",
     icon: "CreditCard",
     skills: [
-      /* TODO: Click still needs a brand file in public/images/brands/. */
       { name: "Payme", icon: "/images/brands/payme.svg" },
-      { name: "Click", icon: null },
+      { name: "Click", icon: "/images/brands/click.svg" },
       { name: "Atmos", icon: "/images/brands/atmos.svg" },
       { name: "Uzum", icon: "/images/brands/uzum.svg" },
       { name: "Visa", icon: "visa" },

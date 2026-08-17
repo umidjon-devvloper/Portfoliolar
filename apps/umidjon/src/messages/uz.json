@@ -479,17 +479,13 @@
     "kbk": {
       "period": "2025 — 2026",
       "shortPeriod": "2025 – 2026",
-      "title": "Developer",
-      "description": "Rol tafsilotlari hali to'ldirilmagan.",
-      "summary": "Rol tafsilotlari hali to'ldirilmagan.",
+      "title": "Full-Stack Developer",
       "duties": []
     },
     "agrocluster": {
       "period": "2024 — 2025",
       "shortPeriod": "2024 – 2025",
-      "title": "Developer",
-      "description": "Rol tafsilotlari hali to'ldirilmagan.",
-      "summary": "Rol tafsilotlari hali to'ldirilmagan.",
+      "title": "Full-Stack Developer",
       "duties": []
     }
   }

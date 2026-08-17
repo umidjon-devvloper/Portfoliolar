@@ -1,15 +1,10 @@
-/*
- * PLACEHOLDER DATA: everything below the name and role was copied from
- * umidjon.site so the layout can be reviewed. Replace before launch —
- * none of it describes Diyorbek.
- */
 import type { Metric, Profile, SkillGroup } from "./types";
 
 export const profile: Profile = {
-  firstName: "Diyorbek",
-  fullName: null, // TODO
-  role: "Full Stack Web Developer",
-  secondaryRole: null, // TODO
+  firstName: "Umidjon",
+  fullName: "G'afforov Umidjon",
+  role: "Full Stack Web & Mobile Developer",
+  secondaryRole: "Entrepreneur / Founder of Umidjon Agency",
   birthDate: "2005-01-01",
   education: {
     institution: "Buxoro Davlat Universiteti",
@@ -24,7 +19,7 @@ export const profile: Profile = {
     country: "O'zbekiston",
     countryCode: "UZ",
   },
-  avatar: null, // TODO: portrait
+  avatar: "/images/profile/portrait.webp",
   resumeFile: null,
   contact: {
     email: "umidjongafforov844@gmail.com",
@@ -92,6 +87,10 @@ export const skillGroups: SkillGroup[] = [
     ],
   },
   {
+    id: "database",
+    items: ["PostgreSQL", "SQL", "Prisma"],
+  },
+  {
     id: "authDb",
     items: [
       "Firebase Authentication",
@@ -103,7 +102,7 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     id: "payments",
-    items: ["Payme", "Stripe", "Apple Pay", "Google Pay"],
+    items: ["Payme", "Click", "Atmos", "Uzum", "Visa"],
   },
   {
     id: "devops",

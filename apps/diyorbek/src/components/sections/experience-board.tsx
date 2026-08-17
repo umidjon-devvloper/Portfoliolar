@@ -81,9 +81,11 @@ export function ExperienceBoard() {
                   {item.company ?? t("independent")}
                 </span>
 
-                <span className="text-xs leading-relaxed text-muted">
-                  {t(`${item.id}.summary`)}
-                </span>
+                {t.has(`${item.id}.summary`) ? (
+                  <span className="text-xs leading-relaxed text-muted">
+                    {t(`${item.id}.summary`)}
+                  </span>
+                ) : null}
 
                 {item.current ? (
                   <Badge tone="online" className="mt-1.5">
@@ -121,14 +123,16 @@ export function ExperienceBoard() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-2 border-t border-border py-5">
-            <h3 className="text-[0.875rem] font-semibold text-accent">
-              {t("aboutRole")}
-            </h3>
-            <p className="text-sm leading-[1.8] text-muted">
-              {t(`${role.id}.description`)}
-            </p>
-          </div>
+          {t.has(`${role.id}.description`) ? (
+            <div className="flex flex-col gap-2 border-t border-border py-5">
+              <h3 className="text-[0.875rem] font-semibold text-accent">
+                {t("aboutRole")}
+              </h3>
+              <p className="text-sm leading-[1.8] text-muted">
+                {t(`${role.id}.description`)}
+              </p>
+            </div>
+          ) : null}
 
           {role.duties > 0 ? (
           <div className="flex flex-col gap-3 border-t border-border py-5">

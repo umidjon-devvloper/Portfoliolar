@@ -87,6 +87,10 @@ export const skillGroups: SkillGroup[] = [
     ],
   },
   {
+    id: "database",
+    items: ["PostgreSQL", "SQL", "Prisma"],
+  },
+  {
     id: "authDb",
     items: [
       "Firebase Authentication",
@@ -98,7 +102,7 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     id: "payments",
-    items: ["Payme", "Stripe", "Apple Pay", "Google Pay"],
+    items: ["Payme", "Click", "Atmos", "Uzum", "Visa"],
   },
   {
     id: "devops",

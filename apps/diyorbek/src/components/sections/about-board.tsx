@@ -32,6 +32,10 @@ const toolGroups = [
     names: ["React Native", "Expo", "Expo EAS", "App Store", "Google Play"],
   },
   {
+    id: "database",
+    names: ["MongoDB", "PostgreSQL", "SQL", "Prisma", "Firebase"],
+  },
+  {
     id: "tools",
     names: ["Git", "GitHub", "Vercel", "Cloudflare", "Figma"],
   },
@@ -110,7 +114,7 @@ export function AboutBoard() {
                         {te(`${role.id}.title`)}
                       </h3>
                       <p className="text-xs leading-relaxed text-muted">
-                        {te(`${role.id}.description`)}
+                        {te.has(`${role.id}.description`) ? te(`${role.id}.description`) : null}
                       </p>
                     </div>
                   </li>

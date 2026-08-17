@@ -9,15 +9,11 @@ export type Role = {
   duties: number;
 };
 
-/**
- * TODO: verify every entry against the real work history before launch.
- * These came from the design mock-up, not from a confirmed source.
- */
 export const roles: Role[] = [
   {
     id: "fullstack",
     company: "Umidjon Agency",
-    from: "2025-05",
+    from: "2026",
     to: null,
     current: true,
     stack: [
@@ -37,10 +33,30 @@ export const roles: Role[] = [
     duties: 5,
   },
   {
+    // TODO: title, description, duties and stack are not confirmed yet.
+    id: "kbk",
+    company: "KBK",
+    from: "2025",
+    to: "2026",
+    current: false,
+    stack: [],
+    duties: 0,
+  },
+  {
+    // TODO: title, description, duties and stack are not confirmed yet.
+    id: "agrocluster",
+    company: "Bukhara Agrocluster",
+    from: "2024",
+    to: "2025",
+    current: false,
+    stack: [],
+    duties: 0,
+  },
+  {
     id: "freelance",
     company: null,
-    from: "2023-05",
-    to: "2025-04",
+    from: "2021",
+    to: "2024",
     current: false,
     stack: [
       "React",
@@ -53,24 +69,6 @@ export const roles: Role[] = [
       "Vercel",
     ],
     duties: 4,
-  },
-  {
-    id: "frontend",
-    company: null,
-    from: "2022-01",
-    to: "2023-04",
-    current: false,
-    stack: ["React", "TypeScript", "Tailwind CSS", "HTML5 / CSS3", "Git", "Figma"],
-    duties: 3,
-  },
-  {
-    id: "junior",
-    company: null,
-    from: "2021-06",
-    to: "2021-12",
-    current: false,
-    stack: ["JavaScript", "HTML5 / CSS3", "Git", "GitHub"],
-    duties: 3,
   },
 ];
 
