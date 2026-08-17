@@ -225,7 +225,9 @@ export function AboutBoard() {
               className="card card-hover flex items-center justify-between gap-3 p-4 text-sm"
             >
               <span className="flex flex-col">
-                <span className="font-medium">umidjon.agency</span>
+                <span className="font-medium">
+                  {profile.contact.agency.replace(/^https?:\/\/(www\.)?/, "")}
+                </span>
                 <span className="text-xs text-muted">{t("agencyNote")}</span>
               </span>
               <ArrowRight className="h-4 w-4 shrink-0 text-accent" />

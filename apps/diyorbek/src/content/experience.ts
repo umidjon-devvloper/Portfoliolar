@@ -16,9 +16,20 @@ export const roles: Role[] = [
     from: "2025",
     to: null,
     current: true,
-    // TODO: vazifalar va texnologiyalar tasdiqlanmagan.
-    stack: [],
-    duties: 0,
+    /* Stack taken from what the 2025-2026 projects are actually built on. */
+    stack: [
+      "React.js",
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "Express.js",
+      "Django",
+      "PostgreSQL",
+      "MongoDB",
+      "Tailwind CSS",
+      "Git",
+    ],
+    duties: 3,
   },
   {
     id: "freelance",
@@ -26,9 +37,16 @@ export const roles: Role[] = [
     from: "2023",
     to: "2025",
     current: false,
-    // TODO: vazifalar va texnologiyalar tasdiqlanmagan.
-    stack: [],
-    duties: 0,
+    stack: [
+      "React.js",
+      "Next.js",
+      "Python",
+      "aiogram",
+      "Telegram Bot API",
+      "Kotlin",
+      "Git",
+    ],
+    duties: 3,
   },
 ];
 

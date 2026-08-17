@@ -29,30 +29,29 @@
   },
   "hero": {
     "eyebrow": "Full Stack Web Developer",
-    "subtitle": "I build modern web and mobile products that are fast, scalable and user-friendly.",
-    "primaryCta": "View my work",
+    "subtitle": "I build web applications, backend systems and Telegram bots — interface to server.",
+    "primaryCta": "See my work",
     "secondaryCta": "Download CV",
-    "titleLead": "Not just code —",
-    "titleAccent": "products that move",
-    "titleTail": "the business",
+    "titleLead": "From the interface",
+    "titleAccent": "to the server",
+    "titleTail": "— one pair of hands",
     "railStatus": "Status",
     "railAvailable": "Open to projects",
     "railTime": "Local time",
     "railBase": "Based in",
     "scrollHint": "Scroll",
     "greeting": "Hello, I'm",
-    "available": "Available for freelance work",
+    "available": "Open to projects",
     "availableBadge": "Available for new opportunities",
-    "availableNote": "Let's build something together!"
+    "availableNote": "I'd be glad to hear about your project."
   },
   "about": {
     "title": "About",
-    "shortBio": "I'm Diyorbek, a Full-Stack Developer who enjoys turning ideas into real digital products.",
-    "longBio": "I build websites, mobile apps, backend systems and SaaS products, working across frontend, backend and mobile.",
+    "shortBio": "I'm Diyorbek — a full stack developer who writes both the interface and the server side of web applications.",
+    "longBio": "Interfaces in React and Next.js, servers in Node.js and Django, Telegram bots in Python. My work includes a psychological screening system, an online olympiad bot and a SaaS platform for hotels.",
     "workStyleTitle": "How I work",
-    "workStyle": "I don't treat a project as only frontend or only backend. I cover the whole chain, from idea through to the app stores.",
+    "workStyle": "I carry a project whole rather than a slice of it — from the database schema to the screen the user sees. Nothing falls between the layers that way.",
     "strengthsTitle": "Strengths",
-    "goalsTitle": "Goals",
     "partnersTitle": "Partners",
     "partnersSubtitle": "The team I build projects with",
     "educationTitle": "Education",
@@ -69,9 +68,9 @@
     "languagesValue": "Uzbek (native) · Russian",
     "location": "Location",
     "focus": "Focus",
-    "focusValue": "Building products · Solving problems · Learning",
+    "focusValue": "Web apps · Backend · Telegram bots",
     "eyebrow": "Get to know me",
-    "availability": "Available for freelance work worldwide",
+    "availability": "Open to new projects",
     "journeyTitle": "My journey",
     "numbersTitle": "Some numbers",
     "quote": "The best way to predict the future is to build it.",
@@ -82,19 +81,10 @@
     "agencyNote": "My agency site"
   },
   "strengths": {
-    "fullStackThinking": "Full-stack thinking — I understand frontend, backend, database and deployment as one system",
-    "productThinking": "Product thinking — I consider how a product actually benefits the business",
-    "independence": "Independence — I learn a new technology or API and apply it in production",
-    "fastLearning": "Fast learning — I pick up new frameworks and platforms while shipping projects",
-    "entrepreneurial": "Entrepreneurial mindset — I turn technology into a service or a product"
-  },
-  "goals": {
-    "international": "Work in the international IT market and on projects with global companies",
-    "senior": "Reach Senior Developer level",
-    "ownSaas": "Build my own SaaS products",
-    "agency": "Grow Diyorbek Agency",
-    "digitalProducts": "Sell digital products and templates",
-    "passiveIncome": "Build passive income streams"
+    "fullStackThinking": "Full-stack thinking — I see the interface, the server and the database together",
+    "productThinking": "Automation — repetitive work moves into a bot or an admin panel",
+    "independence": "Self-reliant — I pick up a new API or library on my own",
+    "fastLearning": "Fast learner — I picked up Python, Django and Kotlin while shipping projects"
   },
   "skills": {
     "title": "The tools I build with",
@@ -312,7 +302,7 @@
     "builtWith": "Next.js — built in Bukhara",
     "pages": "Pages",
     "elsewhere": "Elsewhere",
-    "tagline": "Building digital products that solve real problems."
+    "tagline": "I build web applications and Telegram bots."
   },
   "notFound": {
     "description": "There's nothing at this address — the page was removed, or the link has a typo.",
@@ -405,16 +395,16 @@
   "whatIDo": {
     "title": "What I do",
     "build": {
-      "title": "Build",
-      "description": "Clean, scalable solutions built with modern technologies."
+      "title": "I build",
+      "description": "Interfaces in React and Next.js, servers in Node.js and Django — one person, one chain."
     },
     "solve": {
-      "title": "Solve",
-      "description": "I solve real problems and turn ideas into working products."
+      "title": "I automate",
+      "description": "Manual work moves into a Telegram bot or an admin panel."
     },
     "deliver": {
-      "title": "Deliver",
-      "description": "Focused on performance, user experience and real value."
+      "title": "I ship",
+      "description": "A working product: database, API and user screens together."
     }
   },
   "experience": {
@@ -430,13 +420,21 @@
       "period": "late 2025 — present",
       "title": "Full Stack Web Developer",
       "shortPeriod": "2025 – present",
-      "duties": []
+      "duties": [
+        "I write the frontend and backend on agency projects.",
+        "On TheHotelSaaS and ArtSuzani I built the client- and staff-facing sides.",
+        "I design the database schema and the REST APIs."
+      ]
     },
     "freelance": {
       "period": "late 2023 — 2025",
       "title": "Freelance Developer",
       "shortPeriod": "2023 – 2025",
-      "duties": []
+      "duties": [
+        "Built websites and web apps for clients.",
+        "Wrote Telegram bots with Python and aiogram.",
+        "Shipped an Android game in Kotlin."
+      ]
     },
     "eyebrow": "My journey",
     "aboutRole": "About the role",

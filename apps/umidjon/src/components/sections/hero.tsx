@@ -41,8 +41,12 @@ export function Hero() {
 
         <div className="enter flex flex-col gap-1">
           <h1 className="type-hero">{profile.firstName}</h1>
+          {/* Split on the last word so the accent lands on it, whatever the role is. */}
           <p className="type-section font-bold">
-            Full-Stack <span className="text-accent">Developer</span>
+            {profile.role.split(" ").slice(0, -1).join(" ")}{" "}
+            <span className="text-accent">
+              {profile.role.split(" ").slice(-1)}
+            </span>
           </p>
         </div>
 

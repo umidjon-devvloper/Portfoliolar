@@ -29,30 +29,29 @@
   },
   "hero": {
     "eyebrow": "Full Stack Web Developer",
-    "subtitle": "Tez, kengayadigan va qulay web hamda mobil mahsulotlar quraman.",
+    "subtitle": "Veb ilovalar, backend tizimlar va Telegram botlar quraman — interfeysdan serverigacha.",
     "primaryCta": "Ishlarimni ko'rish",
     "secondaryCta": "CV yuklab olish",
-    "titleLead": "Kod emas —",
-    "titleAccent": "biznesga natija",
-    "titleTail": "beradigan mahsulot quraman",
+    "titleLead": "Interfeysdan",
+    "titleAccent": "servergacha",
+    "titleTail": "— bir juft qo'lda",
     "railStatus": "Holat",
     "railAvailable": "Loyihalarga ochiq",
     "railTime": "Mahalliy vaqt",
     "railBase": "Joylashuv",
     "scrollHint": "Pastga",
     "greeting": "Salom, men",
-    "available": "Freelance ishlarga ochiq",
+    "available": "Loyihalarga ochiq",
     "availableBadge": "Yangi imkoniyatlarga ochiq",
-    "availableNote": "Keling, birga zo'r narsa quramiz!"
+    "availableNote": "Loyihangiz haqida eshitishdan xursand bo'laman."
   },
   "about": {
     "title": "Men haqimda",
-    "shortBio": "Men Diyorbek — g'oyani real raqamli mahsulotga aylantirishni yoqtiradigan Full-Stack Developer.",
-    "longBio": "Web-saytlar, mobil ilovalar, backend tizimlar va SaaS mahsulotlar yarataman. Frontend, backend va mobile — uchalasida ham ishlayman.",
+    "shortBio": "Men Diyorbek — veb ilovalarning ham interfeysini, ham serverini yozadigan Full Stack dasturchi.",
+    "longBio": "React va Next.js bilan interfeys, Node.js va Django bilan server tomonini quraman. Python'da Telegram botlar yozaman. Ishlarim orasida psixologik skrining tizimi, onlayn olimpiada boti va mehmonxonalar uchun SaaS platformasi bor.",
     "workStyleTitle": "Ish uslubim",
-    "workStyle": "Loyihani faqat frontend yoki backend sifatida ko'rmayman. G'oyadan store'ga chiqarishgacha bo'lgan butun zanjirni o'zim yopaman.",
+    "workStyle": "Loyihaning bir qismini emas, butunini olib boraman: ma'lumotlar bazasi sxemasidan tortib foydalanuvchi ko'radigan ekrangacha. Shu sababli qismlar orasida uzilish bo'lmaydi.",
     "strengthsTitle": "Kuchli tomonlarim",
-    "goalsTitle": "Maqsadlarim",
     "partnersTitle": "Hamkorlar",
     "partnersSubtitle": "Loyihalarda birgalikda ishlaydigan jamoam",
     "educationTitle": "Ta'lim",
@@ -69,9 +68,9 @@
     "languagesValue": "O'zbek (ona tili) · Rus",
     "location": "Joylashuv",
     "focus": "Yo'nalish",
-    "focusValue": "Mahsulot qurish · Muammo yechish · O'rganish",
+    "focusValue": "Veb ilovalar · Backend · Telegram botlar",
     "eyebrow": "Tanishib olaylik",
-    "availability": "Butun dunyo bo'ylab freelance ishlarga ochiq",
+    "availability": "Yangi loyihalarga ochiq",
     "journeyTitle": "Mening yo'lim",
     "numbersTitle": "Raqamlarda",
     "quote": "Kelajakni bashorat qilishning eng yaxshi yo'li — uni qurish.",
@@ -82,19 +81,10 @@
     "agencyNote": "Agentlik saytim"
   },
   "strengths": {
-    "fullStackThinking": "Full-stack fikrlash — frontend, backend, database va deploymentni birgalikda tushunaman",
-    "productThinking": "Product thinking — mahsulot biznesga qanday foyda berishini o'ylayman",
-    "independence": "Mustaqil ishlash — yangi texnologiya yoki APIni o'rganib, amalda qo'llayman",
-    "fastLearning": "Tez o'rganish — yangi framework va platformalarni loyihalar davomida o'zlashtiraman",
-    "entrepreneurial": "Entrepreneurial mindset — texnologiyani xizmat yoki mahsulotga aylantiraman"
-  },
-  "goals": {
-    "international": "Xalqaro IT bozorida ishlash va xalqaro kompaniyalar bilan loyihalar",
-    "senior": "Senior Developer darajasiga chiqish",
-    "ownSaas": "O'z SaaS mahsulotlarini yaratish",
-    "agency": "Diyorbek Agency'ni rivojlantirish",
-    "digitalProducts": "Digital products va templates sotish",
-    "passiveIncome": "Passiv daromad manbalarini shakllantirish"
+    "fullStackThinking": "Full-stack fikrlash — interfeys, server va ma'lumotlar bazasini birga ko'raman",
+    "productThinking": "Avtomatlashtirish — takrorlanuvchi ishni bot yoki admin panelga o'tkazaman",
+    "independence": "Mustaqil ishlash — yangi API yoki kutubxonani o'zim o'rganib qo'llayman",
+    "fastLearning": "Tez o'rganish — Python, Django va Kotlin'ni loyihalar davomida o'zlashtirganman"
   },
   "skills": {
     "title": "Ishlatadigan vositalarim",
@@ -312,7 +302,7 @@
     "builtWith": "Next.js — Buxoroda yozilgan",
     "pages": "Sahifalar",
     "elsewhere": "Boshqa joylarda",
-    "tagline": "Real muammolarni hal qiladigan raqamli mahsulotlar quraman."
+    "tagline": "Veb ilovalar va Telegram botlar quraman."
   },
   "notFound": {
     "description": "Bu manzilda hech narsa yo'q — sahifa o'chirilgan yoki havola noto'g'ri yozilgan bo'lishi mumkin.",
@@ -406,15 +396,15 @@
     "title": "Nima qilaman",
     "build": {
       "title": "Quraman",
-      "description": "Zamonaviy texnologiyalar bilan toza va kengayadigan yechimlar."
+      "description": "React va Next.js'da interfeys, Node.js va Django'da server — bitta odam, bitta zanjir."
     },
     "solve": {
-      "title": "Hal qilaman",
-      "description": "Real muammolarni yechib, g'oyani ishlaydigan mahsulotga aylantiraman."
+      "title": "Avtomatlashtiraman",
+      "description": "Qo'lda bajariladigan ishni Telegram bot yoki admin panelga o'tkazaman."
     },
     "deliver": {
       "title": "Yetkazaman",
-      "description": "Unumdorlik, foydalanuvchi tajribasi va real natijaga e'tibor."
+      "description": "Ishlaydigan mahsulot: ma'lumotlar bazasi, API va foydalanuvchi ekranlari birga."
     }
   },
   "experience": {
@@ -430,13 +420,21 @@
       "period": "2025-oxiri — hozir",
       "title": "Full Stack Web Developer",
       "shortPeriod": "2025 – hozir",
-      "duties": []
+      "duties": [
+        "Agentlik loyihalarida frontend va backend qismlarini yozaman.",
+        "TheHotelSaaS va ArtSuzani'da mijoz va xodim ko'radigan qismlarni qurganman.",
+        "Ma'lumotlar bazasi sxemasi va REST API'larni loyihalayman."
+      ]
     },
     "freelance": {
       "period": "2023-oxiri — 2025",
       "title": "Freelance Developer",
       "shortPeriod": "2023 – 2025",
-      "duties": []
+      "duties": [
+        "Buyurtmachilar uchun veb saytlar va ilovalar yozdim.",
+        "Python va aiogram'da Telegram botlar qurdim.",
+        "Kotlin'da Android o'yin ishlab chiqdim."
+      ]
     },
     "eyebrow": "Mening yo'lim",
     "aboutRole": "Rol haqida",
