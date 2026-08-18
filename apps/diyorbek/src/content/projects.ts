@@ -9,6 +9,7 @@ export const projects: Project[] = [
     client: null,
     featured: true,
     cover: null, // TODO
+    logo: null,
     gallery: [],
     links: [], // TODO: havola chiqqach qo'shiladi
     stack: ["Django", "PostgreSQL", "React"],
@@ -37,6 +38,7 @@ export const projects: Project[] = [
     client: null,
     featured: true,
     cover: null, // TODO
+    logo: null,
     gallery: [],
     links: [
       {
@@ -67,6 +69,7 @@ export const projects: Project[] = [
     client: null,
     featured: false,
     cover: null, // TODO
+    logo: null,
     gallery: [],
     links: [
       {
@@ -97,6 +100,7 @@ export const projects: Project[] = [
     client: null,
     featured: false,
     cover: null, // TODO
+    logo: null,
     gallery: [],
     links: [
       {
@@ -127,6 +131,7 @@ export const projects: Project[] = [
     client: null,
     featured: false,
     cover: null, // TODO
+    logo: null,
     gallery: [],
     links: [], // Play Market'ga chiqarilmagan
     stack: ["Kotlin", "Android"],
@@ -151,6 +156,7 @@ export const projects: Project[] = [
     client: null,
     featured: true,
     cover: "/images/projects/thehotelsaas.webp",
+    logo: null,
     gallery: [],
     links: [
       {
@@ -197,6 +203,7 @@ export const projects: Project[] = [
     client: "ArtSuzani",
     featured: true,
     cover: "/images/projects/artsuzani.webp",
+    logo: null,
     gallery: [],
     links: [{ label: "artsuzani.com", href: "https://artsuzani.com", kind: "live" }],
     stack: ["Next.js 14", "TypeScript", "Stripe", "Sanity CMS"],

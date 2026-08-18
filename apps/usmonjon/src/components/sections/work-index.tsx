@@ -145,7 +145,7 @@ export function WorkIndex() {
             <div className="flex items-start gap-3.5">
               <span className="grid h-11 w-11 shrink-0 place-items-center rounded-[var(--radius-btn)] bg-accent-soft">
                 <TechIcon
-                  slug={iconLookup.get(lead.stack[0] ?? "") ?? null}
+                  slug={lead.logo ?? iconLookup.get(lead.stack[0] ?? "") ?? null}
                   fallback={lead.name}
                   className="h-5 w-5"
                 />

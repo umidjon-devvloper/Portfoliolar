@@ -38,6 +38,8 @@ export type Project = {
   /** What this person did on it, when the work was shared. */
   contribution: LocalizedText | null;
   cover: string | null;
+  /** Hosted brand file, e.g. /images/brands/thehotelsaas.svg */
+  logo: string | null;
   client: string | null;
   gallery: string[];
 };
