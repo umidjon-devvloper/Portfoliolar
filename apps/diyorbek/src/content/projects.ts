@@ -1,4 +1,4 @@
-import type { Project } from "./types";
+import type { Project, ProjectKind } from "./types";
 
 export const projects: Project[] = [
   {
@@ -240,8 +240,8 @@ export const projects: Project[] = [
 
 export const featuredProjects = projects.filter((project) => project.featured);
 
-export const projectKinds = [
-  "all",
+/* Filters follow the list: a kind with no project behind it never shows. */
+const kindOrder: ProjectKind[] = [
   "saas",
   "web",
   "ecommerce",
@@ -249,9 +249,14 @@ export const projectKinds = [
   "bot",
   "game",
   "business",
+];
+
+export const projectKinds = [
+  "all",
+  ...kindOrder.filter((kind) => projects.some((project) => project.kind === kind)),
 ] as const;
 
-export type ProjectFilter = (typeof projectKinds)[number];
+export type ProjectFilter = "all" | ProjectKind;
 
 export function getProjectBySlug(slug: string): Project | undefined {
   return projects.find((project) => project.slug === slug);
