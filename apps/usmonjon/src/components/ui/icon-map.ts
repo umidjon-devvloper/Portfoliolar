@@ -11,10 +11,14 @@ import {
   Database,
   Globe,
   House,
+  KeyRound,
   Layout,
   LayoutDashboard,
   LayoutGrid,
   MonitorSmartphone,
+  Network,
+  Terminal,
+  Workflow,
   PenTool,
   Rocket,
   Send,
@@ -30,6 +34,10 @@ import {
  * half a megabyte) into the first load.
  */
 const iconMap: Record<string, LucideIcon> = {
+  Workflow,
+  Terminal,
+  Network,
+  KeyRound,
   Bot,
   Boxes,
   Briefcase,

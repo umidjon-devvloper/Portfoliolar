@@ -2,6 +2,7 @@ import Image from "next/image";
 import {
   siAndroid,
   siDjango,
+  siJsonwebtokens,
   siKotlin,
   siPython,
   siRailway,
@@ -42,6 +43,7 @@ import {
   siVite,
   siFramer,
 } from "simple-icons";
+import { getIcon } from "@/components/ui/icon-map";
 import { cn } from "@/lib/utils";
 
 type SimpleIcon = { title: string; path: string; hex: string };
@@ -77,6 +79,7 @@ const icons: Record<string, SimpleIcon> = {
   django: siDjango,
   telegram: siTelegram,
   railway: siRailway,
+  jsonwebtoken: siJsonwebtokens,
   kotlin: siKotlin,
   android: siAndroid,
   react: siReact,
@@ -110,6 +113,13 @@ export function TechIcon({
   fallback: string;
   className?: string;
 }) {
+  /* Not everything has a logo: REST API, SQL and the like get a drawn
+     glyph rather than a fake brand mark. */
+  if (slug?.startsWith("lucide:")) {
+    const Glyph = getIcon(slug.slice(7));
+    return <Glyph className={cn(className)} strokeWidth={1.6} />;
+  }
+
   /* A slug that looks like a path is a brand file we host ourselves —
      local payment systems have no entry in simple-icons. */
   if (slug?.startsWith("/")) {
