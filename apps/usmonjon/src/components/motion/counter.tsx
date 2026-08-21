@@ -13,7 +13,9 @@ export function Counter({
   duration?: number;
 }) {
   const { ref, inView } = useInView<HTMLSpanElement>();
-  const [display, setDisplay] = useState(0);
+  /* Starts at the final value so the number is in the HTML itself,
+     not only once the count-up has run. */
+  const [display, setDisplay] = useState(value);
 
   useEffect(() => {
     if (!inView) {

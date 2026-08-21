@@ -14,8 +14,8 @@ export const profile: Profile = {
     to: "2026",
   },
   location: {
-    city: "Buxoro",
-    region: "Buxoro viloyati",
+    city: "Toshkent",
+    region: "Toshkent shahri",
     country: "O'zbekiston",
     countryCode: "UZ",
   },
@@ -36,9 +36,9 @@ export const profile: Profile = {
 };
 
 export const metrics: Metric[] = [
-  { id: "projects", value: 12, suffix: "" },
-  { id: "clients", value: 6, suffix: "" },
-  { id: "experience", value: 3, suffix: "+" },
+  { id: "projects", value: 50, suffix: "+" },
+  { id: "clients", value: 30, suffix: "+" },
+  { id: "experience", value: 4, suffix: "+" },
   { id: "response", value: 24, suffix: "h" },
 ];
 

@@ -12,8 +12,8 @@ const project = (lon: number, lat: number) => ({
   y: ((78 - lat) / 134) * VIEW.h,
 });
 
-/* Buxoro — the only place on this map that is a claim about me. */
-const home = project(64.4286, 39.7747);
+/* Toshkent — the only place on this map that is a claim about me. */
+const home = project(69.24, 41.31);
 
 /**
  * Arc directions only. They fade out before arriving anywhere, because
