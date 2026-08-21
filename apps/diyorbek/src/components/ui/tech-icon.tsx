@@ -130,7 +130,7 @@ export function TechIcon({
         width={64}
         height={24}
         unoptimized
-        className={cn("object-contain", className, "w-auto max-w-[3.25rem]")}
+        className={cn("rounded-[var(--radius-sm)] object-contain", className, "w-auto max-w-[3.25rem]")}
       />
     );
   }

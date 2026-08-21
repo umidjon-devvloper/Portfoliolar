@@ -9,7 +9,7 @@ export const projects: Project[] = [
     client: null,
     featured: true,
     cover: "/images/projects/thehotelsaas.webp",
-    logo: null,
+    logo: "/images/brands/thehotelsaas.webp",
     gallery: [],
     links: [
       {
@@ -58,7 +58,7 @@ export const projects: Project[] = [
     // TODO: swap to "/images/projects/sushi-time.webp" once the file is in public/
     cover:
       "https://vjuubkjgs6.ufs.sh/f/ATnCuPXyY61iGtwWFzCgKshzbFy4nfRVW8wJLrAx6IimUM9e",
-    logo: null,
+    logo: "/images/brands/sushi-time.webp",
     gallery: [],
     links: [
       { label: "sushitimetr.com", href: "https://sushitimetr.com", kind: "live" },
@@ -138,7 +138,7 @@ export const projects: Project[] = [
     client: "Kichik Biznesga Ko'maklashish Markazi",
     featured: false,
     cover: "/images/projects/kbkm.webp",
-    logo: null,
+    logo: "/images/brands/kbkm.webp",
     gallery: [],
     links: [{ label: "kbkm.uz", href: "https://www.kbkm.uz", kind: "live" }],
     stack: ["Vite", "React", "TypeScript"],
@@ -175,7 +175,7 @@ export const projects: Project[] = [
     client: "ArtSuzani",
     featured: true,
     cover: "/images/projects/artsuzani.webp",
-    logo: null,
+    logo: "/images/brands/artsuzani.webp",
     gallery: [],
     links: [{ label: "artsuzani.com", href: "https://artsuzani.com", kind: "live" }],
     stack: ["Next.js 14", "TypeScript", "Stripe", "Sanity CMS"],
@@ -368,7 +368,7 @@ export const projects: Project[] = [
     client: null,
     featured: false,
     cover: "/images/projects/umidjon-agency.webp",
-    logo: null,
+    logo: "/images/brands/umidjon-agency.webp",
     gallery: [],
     links: [
       {

@@ -143,11 +143,15 @@ export function WorkIndex() {
             </span>
 
             <div className="flex items-start gap-3.5">
-              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-[var(--radius-btn)] bg-accent-soft">
+              <span
+                className={`grid h-11 w-11 shrink-0 place-items-center overflow-hidden rounded-[var(--radius-btn)] ${
+                  lead.logo ? "bg-transparent" : "bg-accent-soft"
+                }`}
+              >
                 <TechIcon
                   slug={lead.logo ?? iconLookup.get(lead.stack[0] ?? "") ?? null}
                   fallback={lead.name}
-                  className="h-5 w-5"
+                  className={lead.logo ? "h-11 w-11" : "h-5 w-5"}
                 />
               </span>
               <div className="flex flex-col gap-0.5">
