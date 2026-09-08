@@ -8,7 +8,7 @@ export const projects: Project[] = [
     year: "2026",
     client: null,
     featured: true,
-    cover: null, // TODO
+    cover: "/images/projects/psixologik-skrining.webp",
     logo: null,
     gallery: [],
     links: [], // TODO: havola chiqqach qo'shiladi
@@ -37,7 +37,7 @@ export const projects: Project[] = [
     year: "2025",
     client: null,
     featured: true,
-    cover: null, // TODO
+    cover: "/images/projects/olimpiada-bot.webp",
     logo: null,
     gallery: [],
     links: [
@@ -124,29 +124,42 @@ export const projects: Project[] = [
     result: null,
   },
   {
-    slug: "minesweeper",
-    name: "Minesweeper O'yini",
-    kind: "game",
-    year: "2025",
+    slug: "ishbor",
+    name: "ISH BOR!",
+    kind: "web",
+    year: "2026",
     client: null,
-    featured: false,
-    cover: null, // TODO
+    featured: true,
+    cover: "/images/projects/ishbor.webp",
     logo: null,
-    gallery: [],
-    links: [], // Play Market'ga chiqarilmagan
-    stack: ["Kotlin", "Android"],
     collaborator: null,
     contribution: null,
-    integrations: [],
+    gallery: [],
+    links: [], // TODO: havola chiqqach qo'shiladi
+    stack: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Node.js",
+      "Fastify",
+      "Prisma",
+      "MongoDB",
+      "Tailwind CSS",
+    ],
+    integrations: ["Telegram", "Google", "Payme", "Click", "Meilisearch"],
     components: [],
     tagline: {
-      uz: "Android uchun Minesweeper o'yini",
-      ru: "Игра «Сапёр» для Android",
-      en: "Minesweeper for Android",
+      uz: "O'zbekiston uchun ish qidirish platformasi",
+      ru: "Платформа поиска работы для Узбекистана",
+      en: "A job search platform for Uzbekistan",
     },
-    problem: null,
-    solution: null,
-    result: null,
+    problem: null, // TODO
+    solution: {
+      uz: "Ish izlovchi va ish beruvchini bir joyda: vakansiya qidiruvi, rezyume, ariza, chat, maosh statistikasi va ish beruvchi uchun tariflar. SSR bilan uch tilda ishlaydi.",
+      ru: "Соискатель и работодатель в одном месте: поиск вакансий, резюме, отклики, чат, статистика зарплат и тарифы для работодателя. SSR, три языка.",
+      en: "Job seeker and employer in one place: vacancy search, resumes, applications, chat, salary statistics and employer plans. Server-rendered, in three languages.",
+    },
+    result: null, // TODO
   },
   {
     slug: "thehotelsaas",

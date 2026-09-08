@@ -18,6 +18,10 @@ import { profile } from "@/content/profile";
 
 type PageProps = { params: Promise<{ locale: string; slug: string }> };
 
+/* Every project is known at build time, so an unknown slug is a 404 —
+   not a page to render on demand. */
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
     projects.map((project) => ({ locale, slug: project.slug })),
