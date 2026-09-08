@@ -20,7 +20,7 @@ export const profile: Profile = {
     countryCode: "UZ",
   },
   avatar: null, // TODO: /images/profile/portrait.webp
-  resumeFile: null, // TODO
+  resumeFile: "/cv/diyorbek-hikmatullayev-cv.pdf",
   contact: {
     email: "diyorbekhikmatullayev3@gmail.com",
     emailSecondary: null,
