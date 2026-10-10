@@ -1,105 +1,66 @@
-export type Skill = {
-  name: string;
-  icon: string | null;
-};
+import type { PortEntry, SkillGroup } from "./types";
 
-export type SkillCategory = {
-  id: string;
-  icon: string;
-  skills: Skill[];
-};
+/* Hero scan: each line is a real port number paired with the discipline
+   that lives behind it. Order is ascending, like real scanner output. */
+export const ports: PortEntry[] = [
+  {
+    port: "22/tcp",
+    service: "ssh",
+    label: { uz: "Linux serverlar", ru: "Linux-серверы", en: "Linux servers" },
+  },
+  {
+    port: "53/udp",
+    service: "dns",
+    label: { uz: "Tarmoq infratuzilmasi", ru: "Сетевая инфраструктура", en: "Network infrastructure" },
+  },
+  {
+    port: "443/tcp",
+    service: "https",
+    label: { uz: "Tizim xavfsizligi", ru: "Безопасность систем", en: "System security" },
+  },
+  {
+    port: "2376/tcp",
+    service: "docker",
+    label: { uz: "Konteynerlashtirish", ru: "Контейнеризация", en: "Containerization" },
+  },
+  {
+    port: "3000/tcp",
+    service: "http",
+    label: { uz: "Full stack ilovalar", ru: "Full stack приложения", en: "Full stack apps" },
+  },
+  {
+    port: "8080/tcp",
+    service: "ci",
+    label: { uz: "CI/CD avtomatlashtirish", ru: "Автоматизация CI/CD", en: "CI/CD automation" },
+  },
+];
 
-export const skillCategories: SkillCategory[] = [
+export const skillGroups: SkillGroup[] = [
   {
-    id: "frontend",
-    icon: "MonitorSmartphone",
-    skills: [
-      { name: "React", icon: "react" },
-      { name: "Next.js", icon: "nextdotjs" },
-      { name: "TypeScript", icon: "typescript" },
-      { name: "Tailwind CSS", icon: "tailwindcss" },
-      { name: "HTML5 / CSS3", icon: "html5" },
-      { name: "JavaScript", icon: "javascript" },
-      { name: "Framer Motion", icon: "framer" },
-      { name: "shadcn/ui", icon: "shadcnui" },
-      { name: "Vite", icon: "vite" },
-      { name: "Material UI", icon: "mui" },
+    id: "infra",
+    items: [
+      "Linux",
+      "Containers",
+      "Cloud infrastructure",
+      "CI/CD",
+      "Server administration",
+      "Networking",
+      "Git / GitHub",
     ],
   },
   {
-    id: "backend",
-    icon: "Server",
-    skills: [
-      { name: "Node.js", icon: "nodedotjs" },
-      { name: "Express.js", icon: "express" },
-      { name: "REST API", icon: "lucide:Network" },
-      { name: "Server Actions", icon: "nextdotjs" },
-      { name: "Auth / JWT", icon: "jsonwebtoken" },
-      { name: "GraphQL", icon: "graphql" },
-    ],
+    id: "security",
+    items: ["System security", "Secure CI/CD", "Network administration"],
   },
   {
-    id: "database",
-    icon: "Database",
-    skills: [
-      { name: "MongoDB", icon: "mongodb" },
-      { name: "Mongoose", icon: "mongoose" },
-      { name: "MongoDB Atlas", icon: "mongodb" },
-      { name: "PostgreSQL", icon: "postgresql" },
-      { name: "SQL", icon: "lucide:Database" },
-      { name: "Prisma", icon: "prisma" },
-      { name: "Firebase", icon: "firebase" },
-      { name: "Firestore", icon: "firebase" },
-      { name: "Redis", icon: "redis" },
-    ],
-  },
-  {
-    id: "mobile",
-    icon: "Smartphone",
-    skills: [
-      { name: "React Native", icon: "react" },
-      { name: "Expo", icon: "expo" },
-      { name: "Expo EAS", icon: "expo" },
-      { name: "EAS Build", icon: "expo" },
-      { name: "App Store", icon: "appstore" },
-      { name: "Google Play", icon: "googleplay" },
-    ],
-  },
-  {
-    id: "devops",
-    icon: "Cloud",
-    skills: [
-      { name: "Git", icon: "git" },
-      { name: "GitHub", icon: "github" },
-      { name: "Vercel", icon: "vercel" },
-      { name: "Cloudflare", icon: "cloudflare" },
-      { name: "Netlify", icon: "netlify" },
-      { name: "Firebase Hosting", icon: "firebase" },
-      { name: "GitLab", icon: "gitlab" },
-    ],
-  },
-  {
-    id: "payments",
-    icon: "CreditCard",
-    skills: [
-      { name: "Payme", icon: "/images/brands/payme.svg" },
-      { name: "Click", icon: "/images/brands/click.svg" },
-      { name: "Atmos", icon: "/images/brands/atmos.svg" },
-      { name: "Uzum", icon: "/images/brands/uzum.svg" },
-      { name: "Visa", icon: "visa" },
-      { name: "MasterCard", icon: "mastercard" },
-      { name: "Apple Pay", icon: "applepay" },
-      { name: "Google Pay", icon: "googlepay" },
-      { name: "Stripe", icon: "stripe" },
-    ],
-  },
-  {
-    id: "others",
-    icon: "CircleEllipsis",
-    skills: [
-      { name: "Figma", icon: "figma" },
-      { name: "UI/UX", icon: "lucide:PenTool" },
-      { name: "Adobe XD", icon: null },
+    id: "build",
+    items: [
+      "HTML / CSS",
+      "JavaScript",
+      "React",
+      "Tailwind CSS",
+      "Responsive design",
+      "Figma",
     ],
   },
 ];

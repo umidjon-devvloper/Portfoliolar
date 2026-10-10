@@ -1,18 +1,13 @@
 import type { MetadataRoute } from "next";
-import { site } from "@/content/site";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Usmonjon — Frontend Developer & UI/UX Designer",
+    name: "Usmonjon Abduroziqov",
     short_name: "Usmonjon",
-    description: "Portfolio of Usmonjon, frontend developer & ui/ux designer.",
     start_url: "/",
     display: "standalone",
-    background_color: "#0d0d0d",
-    theme_color: "#0d0d0d",
-    icons: [
-      { src: "/icon.png", sizes: "512x512", type: "image/png" },
-    ],
-    id: site.url,
+    background_color: "#0e1b2b",
+    theme_color: "#0e1b2b",
+    icons: [{ src: "/icon", sizes: "64x64", type: "image/png" }],
   };
 }

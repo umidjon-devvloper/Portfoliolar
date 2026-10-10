@@ -1,101 +1,62 @@
 "use server";
 
-export type ContactState = {
-  status: "idle" | "success" | "error";
-  message: string | null;
-};
-
-type ContactPayload = {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-  honeypot: string;
-};
-
-function parse(formData: FormData): ContactPayload {
-  return {
-    name: String(formData.get("name") ?? "").trim(),
-    email: String(formData.get("email") ?? "").trim(),
-    subject: String(formData.get("subject") ?? "").trim(),
-    message: String(formData.get("message") ?? "").trim(),
-    honeypot: String(formData.get("company") ?? "").trim(),
-  };
-}
-
-function isValidEmail(value: string) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-}
+export type ContactState = { status: "idle" | "success" | "error" };
 
 function escapeHtml(value: string) {
-  return value
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;");
+  return value.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
 }
 
 export async function sendMessage(
   _prev: ContactState,
   formData: FormData,
 ): Promise<ContactState> {
-  const payload = parse(formData);
+  const name = String(formData.get("name") ?? "").trim().slice(0, 200);
+  const email = String(formData.get("email") ?? "").trim().slice(0, 200);
+  const message = String(formData.get("message") ?? "").trim().slice(0, 4000);
+  const honeypot = String(formData.get("company") ?? "").trim();
 
-  if (payload.honeypot.length > 0) {
-    return { status: "success", message: null };
-  }
+  // Bots fill the hidden field; answer as if it worked and drop it.
+  if (honeypot) return { status: "success" };
 
-  if (
-    payload.name.length < 2 ||
-    !isValidEmail(payload.email) ||
-    payload.message.length < 10
-  ) {
-    return { status: "error", message: null };
+  if (name.length < 2 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || message.length < 10) {
+    return { status: "error" };
   }
 
   const token = process.env.TELEGRAM_BOT_TOKEN;
   const chatId = process.env.TELEGRAM_CHAT_ID;
-
   if (!token || !chatId) {
     console.error("Telegram credentials are not configured");
-    return { status: "error", message: null };
+    return { status: "error" };
   }
 
   const text = [
-    "<b>usmonjon.site — new message</b>",
+    "<b>usmonjon.site — yangi xabar</b>",
     "",
-    `<b>Name:</b> ${escapeHtml(payload.name)}`,
-    `<b>Email:</b> ${escapeHtml(payload.email)}`,
-    payload.subject ? `<b>Subject:</b> ${escapeHtml(payload.subject)}` : null,
+    `<b>Ism:</b> ${escapeHtml(name)}`,
+    `<b>Email:</b> ${escapeHtml(email)}`,
     "",
-    escapeHtml(payload.message),
-  ]
-    .filter((line): line is string => line !== null)
-    .join("\n");
+    escapeHtml(message),
+  ].join("\n");
 
   try {
-    const response = await fetch(
-      `https://api.telegram.org/bot${token}/sendMessage`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          chat_id: chatId,
-          text,
-          parse_mode: "HTML",
-          disable_web_page_preview: true,
-        }),
-        cache: "no-store",
-      },
-    );
-
+    const response = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        chat_id: chatId,
+        text,
+        parse_mode: "HTML",
+        disable_web_page_preview: true,
+      }),
+      cache: "no-store",
+    });
     if (!response.ok) {
       console.error("Telegram API error", await response.text());
-      return { status: "error", message: null };
+      return { status: "error" };
     }
-
-    return { status: "success", message: null };
+    return { status: "success" };
   } catch (error) {
     console.error("Failed to send Telegram message", error);
-    return { status: "error", message: null };
+    return { status: "error" };
   }
 }

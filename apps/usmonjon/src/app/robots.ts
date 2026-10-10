@@ -1,13 +1,9 @@
 import type { MetadataRoute } from "next";
-import { site } from "@/content/site";
+import { site } from "@/content/profile";
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    /* TODO: allow crawling once the placeholder content is replaced. */
-    rules: {
-      userAgent: "*",
-      disallow: "/",
-    },
+    rules: { userAgent: "*", allow: "/" },
     sitemap: `${site.url}/sitemap.xml`,
   };
 }

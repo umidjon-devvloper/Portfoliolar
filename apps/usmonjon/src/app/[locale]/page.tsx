@@ -1,17 +1,35 @@
 import { setRequestLocale } from "next-intl/server";
-import { Hero } from "@/components/sections/hero";
-import { HomeBoard } from "@/components/sections/home-board";
+import { About, Contact, Experience, Hero, Skills, Work } from "@/components/sections";
+import { profile, site } from "@/content/profile";
 
-type PageProps = { params: Promise<{ locale: string }> };
-
-export default async function HomePage({ params }: PageProps) {
+export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: site.name,
+    url: site.url,
+    jobTitle: "Cloud & DevSecOps Engineer",
+    email: `mailto:${profile.contact.email}`,
+    address: { "@type": "PostalAddress", addressLocality: "Bukhara", addressCountry: "UZ" },
+    alumniOf: { "@type": "CollegeOrUniversity", name: "Bukhara State University" },
+    sameAs: [profile.contact.linkedin, profile.contact.telegram],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Hero />
-      <HomeBoard />
+      <About />
+      <Experience />
+      <Work />
+      <Skills />
+      <Contact />
     </>
   );
 }
