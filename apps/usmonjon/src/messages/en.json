@@ -1,79 +1,414 @@
 {
   "meta": {
-    "title": "Usmonjon Abduroziqov — Cloud & DevSecOps Engineer",
-    "description": "Secure, scalable cloud infrastructure and automated CI/CD pipelines. Linux, containerization and system security."
+    "title": "Usmonjon — Cloud & DevSecOps Engineer",
+    "description": "Cloud & DevSecOps engineer building secure, scalable cloud infrastructure and automated CI/CD pipelines."
   },
   "nav": {
+    "home": "Home",
     "about": "About",
-    "experience": "Experience",
-    "work": "Projects",
-    "skills": "Skills",
+    "projects": "Projects",
+    "services": "Services",
+    "resume": "Resume",
     "contact": "Contact",
-    "skip": "Skip to main content",
-    "language": "Language"
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "work": "Work",
+    "skills": "Skills",
+    "experience": "Experience"
+  },
+  "common": {
+    "toggleTheme": "Toggle theme",
+    "language": "Language",
+    "readMore": "Read more",
+    "viewAll": "View all",
+    "backToProjects": "Back to projects",
+    "loading": "Loading",
+    "comingSoon": "Coming soon",
+    "letsTalk": "Let's talk",
+    "sidebarNote": "Let's build a secure foundation for your project."
   },
   "hero": {
-    "role": "Cloud & DevSecOps Engineer",
-    "secondary": "Full Stack Developer",
-    "lead": "I build secure cloud infrastructure and automate the deploy pipeline, so a product keeps running — without downtime and without exposure.",
-    "ctaPrimary": "Write about a project",
-    "ctaSecondary": "LinkedIn profile",
-    "scanStart": "Starting scan: usmonjon.site",
-    "scanDone": "Scan done: {projects} projects, {years} years of experience",
-    "scanLabel": "Usmonjon's core areas, shown as port scanner output"
+    "eyebrow": "Cloud & DevSecOps Engineer",
+    "subtitle": "I build secure, scalable cloud infrastructure and automated CI/CD pipelines.",
+    "primaryCta": "View my work",
+    "secondaryCta": "View resume",
+    "titleLead": "Not just servers —",
+    "titleAccent": "a protected",
+    "titleTail": "technical foundation",
+    "railStatus": "Status",
+    "railAvailable": "Open to projects",
+    "railTime": "Local time",
+    "railBase": "Based in",
+    "scrollHint": "Scroll",
+    "greeting": "Hello, I'm",
+    "available": "Open to freelance projects",
+    "availableBadge": "Open to new projects",
+    "availableNote": "Write to me about infrastructure or deploys"
   },
   "about": {
-    "heading": "About",
-    "p1": "I'm a Cloud & DevSecOps engineer. I build secure, scalable cloud infrastructure and automate CI/CD pipelines.",
-    "p2": "My day-to-day is the Linux environment, containerization and system security — practical solutions that work in production.",
-    "p3": "My goal is to give business projects a technical foundation that is continuous, stable and protected.",
-    "location": "Location",
-    "locationValue": "Bukhara, Uzbekistan",
+    "title": "About",
+    "shortBio": "I'm Usmonjon, a Cloud & DevSecOps engineer who builds secure, scalable cloud infrastructure and automated CI/CD pipelines.",
+    "longBio": "I work on practical solutions across the Linux environment, containerization and system security.",
+    "workStyleTitle": "My goal",
+    "workStyle": "To give business projects a technical foundation that is continuous, stable and protected.",
+    "strengthsTitle": "Strengths",
+    "goalsTitle": "Goals",
+    "partnersTitle": "Partners",
+    "partnersSubtitle": "The team I build projects with",
+    "educationTitle": "Education",
+    "locationLabel": "Location",
+    "label": "Who",
+    "roleLabel": "Role",
+    "pageTitle": "About",
+    "breadcrumb": "About",
+    "headingLead": "About",
+    "headingAccent": "me",
+    "birth": "Birth",
     "education": "Education",
+    "languages": "Languages",
+    "languagesValue": "",
+    "location": "Location",
     "focus": "Focus",
-    "focusValue": "Cloud, DevSecOps, full stack",
-    "projects": "Projects",
-    "years": "Experience",
-    "yearsValue": "{years} years"
-  },
-  "experience": {
-    "heading": "Experience",
-    "now": "present",
-    "current": "Current role"
-  },
-  "work": {
-    "heading": "Projects built with the team",
-    "note": "These projects were built as part of the Umidjon Agency team.",
-    "open": "Open site"
+    "focusValue": "Cloud infrastructure · DevSecOps · CI/CD",
+    "eyebrow": "Get to know me",
+    "availability": "Open to freelance projects",
+    "journeyTitle": "My journey",
+    "numbersTitle": "Some numbers",
+    "quote": "Security is a process, not a product.",
+    "quoteAuthor": "Bruce Schneier",
+    "birthValue": "",
+    "educationValue": "Bukhara State University (2022–2026)",
+    "toolsTitle": "Skills & tools",
+    "agencyNote": "Team site"
   },
   "skills": {
-    "heading": "Skills",
-    "infra": "Infrastructure & automation",
+    "title": "The tools I work with",
+    "frontend": "Frontend",
+    "mobile": "Mobile",
+    "backend": "Backend",
+    "devops": "DevOps & CI/CD",
+    "label": "Technologies",
+    "pageTitle": "Skills",
+    "breadcrumb": "Skills",
+    "headingLead": "My",
+    "headingAccent": "Skills",
+    "pageSubtitle": "Linux, containerization, CI/CD and system security — everything a project needs to run stable and protected.",
+    "stripTitle": "Technologies I work with",
+    "allSkills": "All Skills",
+    "toolsTitle": "Skills & tools",
+    "tools": "Tools",
+    "eyebrow": "My expertise",
+    "technicalTitle": "Technical skills",
+    "toolStripTitle": "Tools & technologies I work with",
+    "pillars": {
+      "stack": {
+        "title": "Security first",
+        "description": "Every setting is made with protection in mind"
+      },
+      "architecture": {
+        "title": "Automation",
+        "description": "Repetitive manual work goes into the pipeline"
+      },
+      "performance": {
+        "title": "Stability",
+        "description": "Systems should run continuously and predictably"
+      },
+      "learning": {
+        "title": "Continuous learning",
+        "description": "Growing in cloud and security every day"
+      }
+    },
+    "database": "Database",
+    "others": "Others",
+    "payments": "Payments",
+    "infra": "Infrastructure",
     "security": "Security",
-    "build": "Development & interface"
+    "design": "Design"
+  },
+  "projects": {
+    "title": "Work",
+    "subtitle": "Projects built as part of the Umidjon Agency team.",
+    "featuredTitle": "Recent projects",
+    "filterAll": "All",
+    "empty": "No projects in this category yet",
+    "problem": "Problem",
+    "solution": "Solution",
+    "stack": "Stack",
+    "result": "Result",
+    "integrations": "Integrations",
+    "components": "Components",
+    "notFound": "Project not found",
+    "links": "Links",
+    "year": "Year",
+    "openSite": "Open site",
+    "label": "Work",
+    "openProject": "Open project",
+    "kind": {
+      "saas": "SaaS",
+      "web": "Website",
+      "ecommerce": "E-commerce",
+      "mobile": "Mobile app",
+      "business": "Business",
+      "bot": "Telegram bot",
+      "game": "Game"
+    },
+    "breadcrumb": "Work",
+    "headingLead": "Team",
+    "headingAccent": "projects",
+    "featuredEyebrow": "Team projects",
+    "client": "Client",
+    "caseStudy": "Case study",
+    "liveDemo": "Live demo",
+    "backToWork": "Back to work",
+    "featuredBadge": "Featured project",
+    "view": {
+      "grid": "Grid view",
+      "list": "List view"
+    },
+    "contribution": "Built by",
+    "collaboration": "With the team"
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "From idea to launch",
+    "label": "Services & pricing",
+    "agencyTitle": "See pricing",
+    "agencySubtitle": "Full price list on the agency site",
+    "pageTitle": "Services",
+    "breadcrumb": "Services",
+    "headingLead": "Services I",
+    "headingAccent": "provide",
+    "pageSubtitle": "I build secure infrastructure for your project, automate the deploy and keep servers running reliably.",
+    "learnMore": "Learn more",
+    "web": {
+      "title": "Web development",
+      "description": "Responsive interfaces and full stack web apps with React and Tailwind."
+    },
+    "eyebrow": "What I offer",
+    "cloud": {
+      "title": "Cloud infrastructure",
+      "description": "A secure, scalable server environment ready for the project to grow."
+    },
+    "cicd": {
+      "title": "CI/CD automation",
+      "description": "From code push to live release — an automatic process with no manual steps."
+    },
+    "containers": {
+      "title": "Containerization",
+      "description": "Packaging the app in containers so it runs the same in every environment."
+    },
+    "security": {
+      "title": "System security",
+      "description": "Hardening servers and configuration, closing weak spots."
+    },
+    "servers": {
+      "title": "Server & network administration",
+      "description": "Setting up, monitoring and maintaining Linux servers and networks."
+    }
   },
   "contact": {
-    "heading": "Contact",
-    "lead": "Have a question about infrastructure, deployment or a web project? Write to me. I usually reply within a day.",
+    "title": "Contact",
+    "subtitle": "Write about infrastructure, deploys or a web project",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "email@example.com",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Briefly describe your project",
+    "submit": "Send",
+    "sending": "Sending...",
+    "success": "Your message was sent. I'll get back to you shortly.",
+    "error": "Message could not be sent. Please try again later.",
+    "validation": {
+      "nameRequired": "Enter your name",
+      "emailInvalid": "Enter a valid email",
+      "messageShort": "Message must be at least 10 characters"
+    },
+    "label": "Contact",
+    "pageTitle": "Contact",
+    "breadcrumb": "Contact",
+    "headingLead": "Let's build",
+    "headingAccent": "it securely",
+    "pageSubtitle": "Have a question about infrastructure, CI/CD, server security or a web project? Write to me — I'm open to working together.",
+    "formTitle": "Send me a message",
     "email": "Email",
-    "telegram": "Telegram",
     "phone": "Phone",
-    "linkedin": "LinkedIn",
-    "name": "Your name",
-    "emailField": "Your email",
-    "message": "Message",
-    "messagePlaceholder": "A few lines about the project",
-    "send": "Send message",
-    "sending": "Sending…",
-    "success": "Message sent. I'll reply soon.",
-    "error": "Message not sent. Check the fields or write on Telegram."
+    "telegram": "Telegram",
+    "location": "Location",
+    "emailNote": "Send me an email",
+    "phoneNote": "Call or SMS",
+    "telegramNote": "The fastest way to reach me",
+    "locationNote": "Working remotely",
+    "mapTitle": "Where I work",
+    "privacy": "Your information is safe with me.",
+    "subjectLabel": "Subject",
+    "subjectPlaceholder": "Subject",
+    "fast": {
+      "title": "Telegram is fastest",
+      "description": "For a quick question, message me directly on Telegram."
+    },
+    "open": {
+      "title": "Open to projects",
+      "description": "I'm currently taking on new freelance projects."
+    },
+    "hours": {
+      "title": "Working hours",
+      "description": "Mon–Fri, 10:00–19:00 (GMT+5)."
+    },
+    "eyebrow": "Let's connect",
+    "mapEyebrow": "Location",
+    "optional": "optional",
+    "global": {
+      "title": "Remote work",
+      "description": "Based in Bukhara, working with projects anywhere."
+    },
+    "getInTouchTitle": "Get in touch",
+    "availabilityLabel": "Availability",
+    "copy": "Copy",
+    "copied": "Copied",
+    "legend": {
+      "remote": "Remote",
+      "worldwide": "From anywhere",
+      "flexible": "Flexible hours",
+      "results": "Security-focused"
+    },
+    "ctaTitle": "Need a reliable foundation for your project?",
+    "ctaAccent": "Let's talk.",
+    "ctaText": "A new project or a system already in production — we'll review infrastructure and security together.",
+    "ctaButton": "Let's start a conversation",
+    "availabilityValue": "Open to freelance projects"
+  },
+  "resume": {
+    "title": "Resume",
+    "subtitle": "Experience, skills and education",
+    "download": "Download PDF",
+    "downloadUnavailable": "PDF is not ready yet",
+    "educationTitle": "Education",
+    "experienceTitle": "Experience",
+    "printHint": "You can save this as a PDF with Ctrl+P in your browser",
+    "label": "Resume"
+  },
+  "cta": {
+    "title": "Have a project in mind?",
+    "subtitle": "Let's build a secure foundation for your project.",
+    "button": "Start a conversation",
+    "railTitle": "Let's work together",
+    "railSubtitle": "A question about infrastructure or deploys? Write to me.",
+    "railButton": "Contact me",
+    "aboutTitle": "Let's build a secure foundation for your project!",
+    "skillsTitle": "Let's work together!",
+    "skillsSubtitle": "Open to new projects and collaboration.",
+    "skillsButton": "Let's work together"
   },
   "footer": {
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "builtWith": "Next.js — written in Bukhara",
+    "pages": "Pages",
+    "elsewhere": "Elsewhere",
+    "tagline": "I build secure, stable cloud infrastructure."
   },
   "notFound": {
-    "title": "This page doesn't exist",
-    "body": "The address is wrong or the page was removed.",
-    "home": "Back to home"
+    "description": "There's nothing at this address — the page was removed, or the link has a typo.",
+    "home": "Go home",
+    "work": "View my work",
+    "headingLead": "Page",
+    "headingAccent": "not found"
+  },
+  "error": {
+    "title": "Something went wrong",
+    "description": "An unexpected error occurred. Please try again.",
+    "retry": "Try again"
+  },
+  "metrics": {
+    "projects": "Projects",
+    "experience": "Years of experience",
+    "projectsNote": "Built with the team",
+    "experienceNote": "Infrastructure and web",
+    "roles": "Roles",
+    "tools": "Skills & tools",
+    "rolesNote": "University and freelance",
+    "toolsNote": "From infrastructure to interface"
+  },
+  "process": {
+    "title": "Simple. Transparent. Effective.",
+    "subtitle": "A clear process — the system launches secure and on time.",
+    "eyebrow": "My process",
+    "discuss": {
+      "title": "Discuss",
+      "description": "We go over the project, current infrastructure and requirements."
+    },
+    "plan": {
+      "title": "Plan",
+      "description": "I plan the architecture, security requirements and timeline."
+    },
+    "build": {
+      "title": "Build",
+      "description": "I set up and automate the infrastructure and pipeline."
+    },
+    "deliver": {
+      "title": "Deliver",
+      "description": "Handed over tested and documented."
+    },
+    "support": {
+      "title": "Support",
+      "description": "Monitoring and updates after launch."
+    }
+  },
+  "whatIDo": {
+    "title": "What I do",
+    "build": {
+      "title": "Build",
+      "description": "Secure, scalable cloud infrastructure."
+    },
+    "solve": {
+      "title": "Automate",
+      "description": "Build, test and deploy through CI/CD with no manual steps."
+    },
+    "deliver": {
+      "title": "Protect",
+      "description": "Linux servers, containers and system security."
+    }
+  },
+  "experience": {
+    "pageTitle": "Experience",
+    "breadcrumb": "Experience",
+    "headingLead": "My",
+    "headingAccent": "experience",
+    "pageSubtitle": "From networks and servers to cloud infrastructure and DevSecOps.",
+    "timelineTitle": "Work experience",
+    "current": "Current",
+    "independent": "Independent",
+    "freelance": {
+      "period": "2026 — present",
+      "title": "Full Stack Developer",
+      "description": "I build web applications for clients end to end on a freelance basis — interface, server side and launch included.",
+      "shortPeriod": "2026 – present",
+      "duties": [
+        "Building the frontend and backend of web applications",
+        "Setting up the server environment and the deploy process",
+        "Launching applications with a secure configuration",
+        "Working directly with clients to turn requirements into a finished solution"
+      ],
+      "summary": "Building web applications for clients end to end."
+    },
+    "eyebrow": "My journey",
+    "aboutRole": "About the role",
+    "responsibilities": "Key responsibilities",
+    "technologies": "Technologies used",
+    "contributedTitle": "Projects I contributed to",
+    "achievementsTitle": "Achievements & impact",
+    "buxdu": {
+      "period": "2025 — May 2026",
+      "shortPeriod": "2025 – 2026",
+      "title": "Network & Server Administrator",
+      "description": "At Bukhara State University I was responsible for the network and servers running reliably and securely.",
+      "summary": "Kept the university's network and servers running reliably.",
+      "duties": [
+        "Administering and monitoring Linux servers",
+        "Configuring network infrastructure and resolving faults",
+        "Maintaining access rights and security settings across systems",
+        "Providing technical support to users"
+      ]
+    }
   }
 }

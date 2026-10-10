@@ -1,66 +1,63 @@
-import type { PortEntry, SkillGroup } from "./types";
+export type Skill = {
+  name: string;
+  icon: string | null;
+};
 
-/* Hero scan: each line is a real port number paired with the discipline
-   that lives behind it. Order is ascending, like real scanner output. */
-export const ports: PortEntry[] = [
-  {
-    port: "22/tcp",
-    service: "ssh",
-    label: { uz: "Linux serverlar", ru: "Linux-серверы", en: "Linux servers" },
-  },
-  {
-    port: "53/udp",
-    service: "dns",
-    label: { uz: "Tarmoq infratuzilmasi", ru: "Сетевая инфраструктура", en: "Network infrastructure" },
-  },
-  {
-    port: "443/tcp",
-    service: "https",
-    label: { uz: "Tizim xavfsizligi", ru: "Безопасность систем", en: "System security" },
-  },
-  {
-    port: "2376/tcp",
-    service: "docker",
-    label: { uz: "Konteynerlashtirish", ru: "Контейнеризация", en: "Containerization" },
-  },
-  {
-    port: "3000/tcp",
-    service: "http",
-    label: { uz: "Full stack ilovalar", ru: "Full stack приложения", en: "Full stack apps" },
-  },
-  {
-    port: "8080/tcp",
-    service: "ci",
-    label: { uz: "CI/CD avtomatlashtirish", ru: "Автоматизация CI/CD", en: "CI/CD automation" },
-  },
-];
+export type SkillCategory = {
+  id: string;
+  icon: string;
+  skills: Skill[];
+};
 
-export const skillGroups: SkillGroup[] = [
+export const skillCategories: SkillCategory[] = [
   {
     id: "infra",
-    items: [
-      "Linux",
-      "Containers",
-      "Cloud infrastructure",
-      "CI/CD",
-      "Server administration",
-      "Networking",
-      "Git / GitHub",
+    icon: "Server",
+    skills: [
+      { name: "Linux", icon: "linux" },
+      { name: "Server administration", icon: "lucide:Server" },
+      { name: "Networking", icon: "lucide:Network" },
+      { name: "Cloud infrastructure", icon: "lucide:Cloud" },
+    ],
+  },
+  {
+    id: "devops",
+    icon: "Workflow",
+    skills: [
+      { name: "Docker", icon: "docker" },
+      { name: "Containerization", icon: "lucide:Boxes" },
+      { name: "CI/CD", icon: "lucide:Workflow" },
+      { name: "Git", icon: "git" },
+      { name: "GitHub", icon: "github" },
     ],
   },
   {
     id: "security",
-    items: ["System security", "Secure CI/CD", "Network administration"],
+    icon: "KeyRound",
+    skills: [
+      { name: "System security", icon: "lucide:KeyRound" },
+      { name: "Secure CI/CD", icon: "lucide:Workflow" },
+      { name: "Network security", icon: "lucide:Network" },
+    ],
   },
   {
-    id: "build",
-    items: [
-      "HTML / CSS",
-      "JavaScript",
-      "React",
-      "Tailwind CSS",
-      "Responsive design",
-      "Figma",
+    id: "frontend",
+    icon: "MonitorSmartphone",
+    skills: [
+      { name: "HTML5", icon: "html5" },
+      { name: "CSS3", icon: "css" },
+      { name: "JavaScript", icon: "javascript" },
+      { name: "React", icon: "react" },
+      { name: "Tailwind CSS", icon: "tailwindcss" },
+      { name: "Responsive design", icon: "lucide:MonitorSmartphone" },
+    ],
+  },
+  {
+    id: "design",
+    icon: "PenTool",
+    skills: [
+      { name: "Figma", icon: "figma" },
+      { name: "UI/UX", icon: "lucide:PenTool" },
     ],
   },
 ];

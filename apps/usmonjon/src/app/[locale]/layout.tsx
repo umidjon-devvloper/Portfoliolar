@@ -3,11 +3,18 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
-import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
-import { site } from "@/content/profile";
+import { Sidebar } from "@/components/layout/sidebar";
+import { TopBar } from "@/components/layout/top-bar";
+import { BottomNav } from "@/components/layout/bottom-nav";
+import { Footer } from "@/components/layout/footer";
+import { ThemeProvider } from "@/components/theme-provider";
+import { profile } from "@/content/profile";
+import { site } from "@/content/site";
 import { routing } from "@/i18n/routing";
-import { localeUrl } from "@/lib/locale";
+import { alternates } from "@/lib/seo";
+import "@fontsource-variable/inter/wght.css";
+import "@fontsource-variable/jetbrains-mono/wght.css";
+import "@fontsource/great-vibes/400.css";
 import "../globals.css";
 
 type LayoutProps = {
@@ -16,8 +23,11 @@ type LayoutProps = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0e1b2b",
-  colorScheme: "dark",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0d0d0d" },
+  ],
+  colorScheme: "dark light",
 };
 
 export function generateStaticParams() {
@@ -29,58 +39,111 @@ export async function generateMetadata({
 }: Omit<LayoutProps, "children">): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta" });
-  const canonical = localeUrl(site.url, locale);
 
   return {
     metadataBase: new URL(site.url),
-    title: t("title"),
-    description: t("description"),
-    authors: [{ name: site.name, url: site.url }],
-    alternates: {
-      canonical,
-      languages: {
-        ...Object.fromEntries(
-          routing.locales.map((l) => [l, localeUrl(site.url, l)]),
-        ),
-        "x-default": site.url,
-      },
+    title: {
+      default: t("title"),
+      template: `%s — ${profile.firstName}`,
     },
+    description: t("description"),
+    authors: [{ name: profile.fullName ?? profile.firstName, url: site.url }],
+    creator: profile.fullName ?? profile.firstName,
+    alternates: alternates("/", locale),
     openGraph: {
-      type: "profile",
-      url: canonical,
-      siteName: site.name,
+      type: "website",
+      siteName: site.domain,
       title: t("title"),
       description: t("description"),
-      locale,
+      url: site.url,
+      locale: locale === "uz" ? "uz_UZ" : locale === "ru" ? "ru_RU" : "en_US",
+      images: [{ url: site.ogImage, width: 1200, height: 630 }],
     },
     twitter: {
       card: "summary_large_image",
       title: t("title"),
       description: t("description"),
+      images: [site.ogImage],
+    },
+    robots: {
+      index: true,
+      follow: true,
     },
   };
 }
 
 export default async function LocaleLayout({ children, params }: LayoutProps) {
   const { locale } = await params;
-  if (!hasLocale(routing.locales, locale)) notFound();
+
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+
   setRequestLocale(locale);
-  const t = await getTranslations({ locale, namespace: "nav" });
+
+  const t = await getTranslations({ locale, namespace: "meta" });
+  const { contact, location, education } = profile;
+
+  const personJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: profile.fullName ?? profile.firstName,
+    givenName: profile.firstName,
+    jobTitle: profile.role,
+    description: t("description"),
+    url: site.url,
+    image: profile.avatar,
+    email: contact.email,
+    telephone: contact.phone,
+    birthDate: profile.birthDate,
+    address: location
+      ? {
+          "@type": "PostalAddress",
+          addressLocality: location.city,
+          addressRegion: location.region,
+          addressCountry: location.countryCode,
+        }
+      : undefined,
+    alumniOf: education
+      ? { "@type": "CollegeOrUniversity", name: education.institution }
+      : undefined,
+    knowsLanguage: ["uz", "ru", "en"],
+    sameAs: [
+      contact.github,
+      contact.linkedin,
+      contact.telegram,
+      contact.instagram,
+      contact.agency,
+    ].filter((item) => item !== null),
+  };
 
   return (
-    <html lang={locale}>
+    <html
+      lang={locale}
+      suppressHydrationWarning
+      className="font-vars"
+    >
       <body className="min-h-dvh">
-        <NextIntlClientProvider>
-          <a
-            href="#main"
-            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:bg-signal focus:px-4 focus:py-2 focus:text-signal-ink"
-          >
-            {t("skip")}
-          </a>
-          <Header />
-          <main id="main">{children}</main>
-          <Footer />
-        </NextIntlClientProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <NextIntlClientProvider>
+            <Sidebar />
+            <div className="flex min-h-dvh flex-col lg:pl-[var(--sidebar)]">
+              <TopBar />
+              <main className="flex-1 pb-20 lg:pb-0 lg:pt-10">{children}</main>
+              <Footer />
+            </div>
+            <BottomNav />
+          </NextIntlClientProvider>
+        </ThemeProvider>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
       </body>
     </html>
   );

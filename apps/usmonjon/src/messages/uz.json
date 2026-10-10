@@ -1,79 +1,414 @@
 {
   "meta": {
-    "title": "Usmonjon Abduroziqov — Cloud & DevSecOps muhandisi",
-    "description": "Xavfsiz, masshtablanadigan bulut infratuzilmalari va avtomatlashtirilgan CI/CD jarayonlari. Linux, konteynerlashtirish va tizim xavfsizligi."
+    "title": "Usmonjon — Cloud & DevSecOps Engineer",
+    "description": "Cloud & DevSecOps muhandisi. Xavfsiz, masshtablanadigan bulut infratuzilmalari va avtomatlashtirilgan CI/CD jarayonlarini quraman."
   },
   "nav": {
+    "home": "Bosh sahifa",
     "about": "Men haqimda",
-    "experience": "Tajriba",
-    "work": "Loyihalar",
-    "skills": "Ko'nikmalar",
+    "projects": "Loyihalar",
+    "services": "Xizmatlar",
+    "resume": "Rezyume",
     "contact": "Aloqa",
-    "skip": "Asosiy qismga o'tish",
-    "language": "Til"
+    "openMenu": "Menyuni ochish",
+    "closeMenu": "Menyuni yopish",
+    "work": "Ishlar",
+    "skills": "Ko'nikmalar",
+    "experience": "Tajriba"
+  },
+  "common": {
+    "toggleTheme": "Mavzuni almashtirish",
+    "language": "Til",
+    "readMore": "Batafsil",
+    "viewAll": "Barchasini ko'rish",
+    "backToProjects": "Loyihalarga qaytish",
+    "loading": "Yuklanmoqda",
+    "comingSoon": "Tez orada",
+    "letsTalk": "Gaplashamiz",
+    "sidebarNote": "Keling, loyihangizga xavfsiz poydevor quramiz."
   },
   "hero": {
-    "role": "Cloud & DevSecOps muhandisi",
-    "secondary": "Full Stack dasturchi",
-    "lead": "Bulut infratuzilmasini xavfsiz quraman va deploy jarayonini avtomatlashtiraman — loyiha to'xtovsiz va himoyalangan holda ishlashi uchun.",
-    "ctaPrimary": "Loyiha bo'yicha yozish",
-    "ctaSecondary": "LinkedIn profil",
-    "scanStart": "Skanerlash boshlandi: usmonjon.site",
-    "scanDone": "Skanerlash tugadi: {projects} loyiha, {years} yil tajriba",
-    "scanLabel": "Usmonjonning asosiy yo'nalishlari, port skaneri ko'rinishida"
+    "eyebrow": "Cloud & DevSecOps Engineer",
+    "subtitle": "Xavfsiz, masshtablanadigan bulut infratuzilmalari va avtomatlashtirilgan CI/CD jarayonlarini quraman.",
+    "primaryCta": "Ishlarimni ko'rish",
+    "secondaryCta": "Rezyumeni ko'rish",
+    "titleLead": "Shunchaki server emas —",
+    "titleAccent": "himoyalangan",
+    "titleTail": "texnik poydevor",
+    "railStatus": "Holat",
+    "railAvailable": "Loyihalarga ochiq",
+    "railTime": "Mahalliy vaqt",
+    "railBase": "Joylashuv",
+    "scrollHint": "Pastga",
+    "greeting": "Salom, men",
+    "available": "Frilans loyihalarga ochiq",
+    "availableBadge": "Yangi loyihalarga ochiq",
+    "availableNote": "Infratuzilma yoki deploy bo'yicha yozing"
   },
   "about": {
-    "heading": "Men haqimda",
-    "p1": "Men Cloud va DevSecOps muhandisiman. Xavfsiz, masshtablanadigan bulut infratuzilmalarini quraman va CI/CD jarayonlarini avtomatlashtiraman.",
-    "p2": "Linux muhiti, konteynerlashtirish va tizim xavfsizligi bo'yicha amaliy yechimlar ustida ishlayman.",
-    "p3": "Maqsadim — biznes loyihalariga uzluksiz, barqaror va himoyalangan texnik poydevor berish.",
-    "location": "Joylashuv",
-    "locationValue": "Buxoro, O'zbekiston",
+    "title": "Men haqimda",
+    "shortBio": "Men Usmonjon — xavfsiz, masshtablanadigan bulut infratuzilmalari va avtomatlashtirilgan CI/CD jarayonlarini quradigan Cloud & DevSecOps muhandisiman.",
+    "longBio": "Linux muhiti, konteynerlashtirish va tizim xavfsizligi bo'yicha amaliy yechimlar ustida ishlayman.",
+    "workStyleTitle": "Maqsadim",
+    "workStyle": "Biznes loyihalari uchun uzluksiz, barqaror va himoyalangan texnik poydevor ta'minlash.",
+    "strengthsTitle": "Kuchli tomonlarim",
+    "goalsTitle": "Maqsadlarim",
+    "partnersTitle": "Hamkorlar",
+    "partnersSubtitle": "Loyihalarda birga ishlaydigan jamoa",
+    "educationTitle": "Ta'lim",
+    "locationLabel": "Joylashuv",
+    "label": "Kim",
+    "roleLabel": "Lavozim",
+    "pageTitle": "Men haqimda",
+    "breadcrumb": "Men haqimda",
+    "headingLead": "Men",
+    "headingAccent": "haqimda",
+    "birth": "Tug'ilgan sana",
     "education": "Ta'lim",
+    "languages": "Tillar",
+    "languagesValue": "",
+    "location": "Joylashuv",
     "focus": "Yo'nalish",
-    "focusValue": "Bulut, DevSecOps, full stack",
-    "projects": "Loyihalar",
-    "years": "Tajriba",
-    "yearsValue": "{years} yil"
-  },
-  "experience": {
-    "heading": "Tajriba",
-    "now": "hozir",
-    "current": "Hozirgi ish"
-  },
-  "work": {
-    "heading": "Jamoa bilan qurilgan loyihalar",
-    "note": "Bu loyihalar Umidjon Agency jamoasi tarkibida ishlab chiqilgan.",
-    "open": "Saytni ochish"
+    "focusValue": "Bulut infratuzilmasi · DevSecOps · CI/CD",
+    "eyebrow": "Tanishib olaylik",
+    "availability": "Frilans loyihalarga ochiq",
+    "journeyTitle": "Mening yo'lim",
+    "numbersTitle": "Raqamlarda",
+    "quote": "Xavfsizlik — bu mahsulot emas, jarayon.",
+    "quoteAuthor": "Bruce Schneier",
+    "birthValue": "",
+    "educationValue": "Buxoro Davlat Universiteti (2022–2026)",
+    "toolsTitle": "Ko'nikma va vositalar",
+    "agencyNote": "Jamoa sayti"
   },
   "skills": {
-    "heading": "Ko'nikmalar",
-    "infra": "Infratuzilma va avtomatlashtirish",
+    "title": "Ishlatadigan vositalarim",
+    "frontend": "Frontend",
+    "mobile": "Mobile",
+    "backend": "Backend",
+    "devops": "DevOps va CI/CD",
+    "label": "Texnologiyalar",
+    "pageTitle": "Ko'nikmalar",
+    "breadcrumb": "Ko'nikmalar",
+    "headingLead": "Mening",
+    "headingAccent": "Ko'nikmalarim",
+    "pageSubtitle": "Linux, konteynerlashtirish, CI/CD va tizim xavfsizligi — loyihani barqaror va himoyalangan holda ishga tushirish uchun kerak bo'lgan hamma narsa.",
+    "stripTitle": "Ishlatadigan texnologiyalarim",
+    "allSkills": "Barchasi",
+    "toolsTitle": "Ko'nikma va vositalar",
+    "tools": "Vositalar",
+    "eyebrow": "Mening tajribam",
+    "technicalTitle": "Texnik ko'nikmalar",
+    "toolStripTitle": "Ishlatadigan vositalarim",
+    "pillars": {
+      "stack": {
+        "title": "Xavfsizlik birinchi",
+        "description": "Har bir sozlama himoyani hisobga olib qilinadi"
+      },
+      "architecture": {
+        "title": "Avtomatlashtirish",
+        "description": "Qo'lda takrorlanadigan ishni pipeline'ga topshiraman"
+      },
+      "performance": {
+        "title": "Barqarorlik",
+        "description": "Tizim uzluksiz va oldindan aytib bo'ladigan ishlashi kerak"
+      },
+      "learning": {
+        "title": "Doimiy o'rganish",
+        "description": "Bulut va xavfsizlik sohasida har kuni o'sib boraman"
+      }
+    },
+    "database": "Ma'lumotlar bazasi",
+    "others": "Boshqalar",
+    "payments": "To'lov tizimlari",
+    "infra": "Infratuzilma",
     "security": "Xavfsizlik",
-    "build": "Dasturlash va interfeys"
+    "design": "Dizayn"
+  },
+  "projects": {
+    "title": "Ishlar",
+    "subtitle": "Umidjon Agency jamoasi tarkibida ishlab chiqilgan loyihalar.",
+    "featuredTitle": "So'nggi loyihalar",
+    "filterAll": "Barchasi",
+    "empty": "Bu bo'limda hozircha loyiha yo'q",
+    "problem": "Muammo",
+    "solution": "Yechim",
+    "stack": "Stack",
+    "result": "Natija",
+    "integrations": "Integratsiyalar",
+    "components": "Tarkibiy qismlar",
+    "notFound": "Loyiha topilmadi",
+    "links": "Havolalar",
+    "year": "Yil",
+    "openSite": "Saytni ochish",
+    "label": "Ishlar",
+    "openProject": "Loyihani ochish",
+    "kind": {
+      "saas": "SaaS",
+      "web": "Web sayt",
+      "ecommerce": "Onlayn do'kon",
+      "mobile": "Mobil ilova",
+      "business": "Biznes",
+      "bot": "Telegram bot",
+      "game": "O'yin"
+    },
+    "breadcrumb": "Ishlar",
+    "headingLead": "Jamoaviy",
+    "headingAccent": "loyihalar",
+    "featuredEyebrow": "Jamoa loyihalari",
+    "client": "Mijoz",
+    "caseStudy": "Batafsil",
+    "liveDemo": "Saytni ochish",
+    "backToWork": "Ishlarga qaytish",
+    "featuredBadge": "Tanlangan loyiha",
+    "view": {
+      "grid": "Panjara ko'rinishi",
+      "list": "Ro'yxat ko'rinishi"
+    },
+    "contribution": "Ishlab chiqilgan",
+    "collaboration": "Jamoa bilan"
+  },
+  "services": {
+    "title": "Xizmatlar",
+    "subtitle": "G'oyadan ishga tushirishgacha",
+    "label": "Xizmat va narx",
+    "agencyTitle": "Narxlarni ko'rish",
+    "agencySubtitle": "To'liq narxnoma agentlik saytida",
+    "pageTitle": "Xizmatlar",
+    "breadcrumb": "Xizmatlar",
+    "headingLead": "Men taklif qiladigan",
+    "headingAccent": "xizmatlar",
+    "pageSubtitle": "Loyihangiz uchun xavfsiz infratuzilma quraman, deployni avtomatlashtiraman va serverlarni barqaror ishlashini ta'minlayman.",
+    "learnMore": "Batafsil",
+    "web": {
+      "title": "Web ishlab chiqish",
+      "description": "React va Tailwind bilan moslashuvchan interfeyslar va full stack web ilovalar."
+    },
+    "eyebrow": "Nima taklif qilaman",
+    "cloud": {
+      "title": "Bulut infratuzilmasi",
+      "description": "Loyiha o'sishiga tayyor, xavfsiz va masshtablanadigan server muhiti."
+    },
+    "cicd": {
+      "title": "CI/CD avtomatlashtirish",
+      "description": "Kod push qilinganidan ishga tushishgacha — qo'l mehnatisiz, avtomatik jarayon."
+    },
+    "containers": {
+      "title": "Konteynerlashtirish",
+      "description": "Ilovani konteynerga o'rab, har qanday muhitda bir xil ishlashini ta'minlash."
+    },
+    "security": {
+      "title": "Tizim xavfsizligi",
+      "description": "Serverlar va konfiguratsiyani himoyalash, zaif joylarni yopish."
+    },
+    "servers": {
+      "title": "Server va tarmoq administratorligi",
+      "description": "Linux serverlar va tarmoqni sozlash, kuzatish va texnik qo'llab-quvvatlash."
+    }
   },
   "contact": {
-    "heading": "Aloqa",
-    "lead": "Infratuzilma, deploy yoki web loyiha bo'yicha savolingiz bo'lsa — yozing. Odatda bir kun ichida javob beraman.",
+    "title": "Bog'lanish",
+    "subtitle": "Infratuzilma, deploy yoki web loyiha bo'yicha yozing",
+    "nameLabel": "Ism",
+    "namePlaceholder": "Ismingiz",
+    "emailLabel": "Email",
+    "emailPlaceholder": "email@example.com",
+    "messageLabel": "Xabar",
+    "messagePlaceholder": "Loyihangiz haqida qisqacha yozing",
+    "submit": "Yuborish",
+    "sending": "Yuborilmoqda...",
+    "success": "Xabaringiz yuborildi. Tez orada bog'lanaman.",
+    "error": "Xabar yuborilmadi. Iltimos, keyinroq urinib ko'ring.",
+    "validation": {
+      "nameRequired": "Ismni kiriting",
+      "emailInvalid": "To'g'ri email kiriting",
+      "messageShort": "Xabar kamida 10 ta belgidan iborat bo'lsin"
+    },
+    "label": "Bog'lanish",
+    "pageTitle": "Aloqa",
+    "breadcrumb": "Aloqa",
+    "headingLead": "Keling,",
+    "headingAccent": "xavfsiz quramiz",
+    "pageSubtitle": "Infratuzilma, CI/CD, server xavfsizligi yoki web loyiha bo'yicha savolingiz bo'lsa — yozing. Birga ishlashga ochiqman.",
+    "formTitle": "Xabar yuborish",
     "email": "Email",
-    "telegram": "Telegram",
     "phone": "Telefon",
-    "linkedin": "LinkedIn",
-    "name": "Ismingiz",
-    "emailField": "Email manzilingiz",
-    "message": "Xabar",
-    "messagePlaceholder": "Loyiha haqida qisqacha yozing",
-    "send": "Xabarni yuborish",
-    "sending": "Yuborilmoqda…",
-    "success": "Xabar yuborildi. Tez orada javob beraman.",
-    "error": "Xabar yuborilmadi. Maydonlarni tekshiring yoki Telegram orqali yozing."
+    "telegram": "Telegram",
+    "location": "Joylashuv",
+    "emailNote": "Email yozing",
+    "phoneNote": "Qo'ng'iroq yoki SMS",
+    "telegramNote": "Eng tez aloqa yo'li",
+    "locationNote": "Masofadan ishlayman",
+    "mapTitle": "Qayerda ishlayman",
+    "privacy": "Ma'lumotlaringiz xavfsiz saqlanadi.",
+    "subjectLabel": "Mavzu",
+    "subjectPlaceholder": "Mavzu",
+    "fast": {
+      "title": "Telegram — eng tez yo'l",
+      "description": "Qisqa savol bo'lsa, to'g'ridan-to'g'ri Telegram'ga yozing."
+    },
+    "open": {
+      "title": "Loyihalarga ochiqman",
+      "description": "Hozir frilans asosida yangi loyihalarni qabul qilaman."
+    },
+    "hours": {
+      "title": "Ish vaqti",
+      "description": "Dushanba–Juma, 10:00–19:00 (GMT+5)."
+    },
+    "eyebrow": "Bog'lanamiz",
+    "mapEyebrow": "Joylashuv",
+    "optional": "ixtiyoriy",
+    "global": {
+      "title": "Masofadan ishlash",
+      "description": "Buxorodan turib istalgan joydagi loyiha bilan ishlayman."
+    },
+    "getInTouchTitle": "Bog'lanish uchun",
+    "availabilityLabel": "Ish vaqti",
+    "copy": "Nusxa olish",
+    "copied": "Nusxa olindi",
+    "legend": {
+      "remote": "Masofadan ishlayman",
+      "worldwide": "Istalgan joydan",
+      "flexible": "Moslashuvchan vaqt",
+      "results": "Xavfsizlikka yo'naltirilgan"
+    },
+    "ctaTitle": "Loyihangizga ishonchli poydevor kerakmi?",
+    "ctaAccent": "Keling, gaplashamiz.",
+    "ctaText": "Yangi loyiha bo'lsin yoki ishlab turgan tizim — infratuzilma va xavfsizlikni birga ko'rib chiqamiz.",
+    "ctaButton": "Suhbatni boshlaymiz",
+    "availabilityValue": "Frilans loyihalarga ochiq"
+  },
+  "resume": {
+    "title": "Rezyume",
+    "subtitle": "Tajriba, ko'nikmalar va ta'lim",
+    "download": "PDF yuklab olish",
+    "downloadUnavailable": "PDF hozircha tayyor emas",
+    "educationTitle": "Ta'lim",
+    "experienceTitle": "Tajriba",
+    "printHint": "Brauzerda Ctrl+P bilan PDF qilib saqlashingiz mumkin",
+    "label": "Rezyume"
+  },
+  "cta": {
+    "title": "Loyiha g'oyangiz bormi?",
+    "subtitle": "Keling, loyihangizga xavfsiz poydevor quramiz.",
+    "button": "Suhbatni boshlash",
+    "railTitle": "Birga ishlaymiz",
+    "railSubtitle": "Infratuzilma yoki deploy bo'yicha savolingiz bormi? Yozing.",
+    "railButton": "Bog'lanish",
+    "aboutTitle": "Keling, loyihangizga xavfsiz poydevor quramiz!",
+    "skillsTitle": "Keling, birga ishlaymiz!",
+    "skillsSubtitle": "Yangi loyihalar va hamkorlikka ochiqman.",
+    "skillsButton": "Birga ishlaymiz"
   },
   "footer": {
-    "rights": "Barcha huquqlar himoyalangan."
+    "rights": "Barcha huquqlar himoyalangan.",
+    "builtWith": "Next.js — Buxoroda yozilgan",
+    "pages": "Sahifalar",
+    "elsewhere": "Boshqa joylarda",
+    "tagline": "Xavfsiz va barqaror bulut infratuzilmalari quraman."
   },
   "notFound": {
-    "title": "Bu sahifa topilmadi",
-    "body": "Manzil noto'g'ri yoki sahifa o'chirilgan.",
-    "home": "Bosh sahifaga qaytish"
+    "description": "Bu manzilda hech narsa yo'q — sahifa o'chirilgan yoki havola noto'g'ri yozilgan bo'lishi mumkin.",
+    "home": "Bosh sahifa",
+    "work": "Ishlarim",
+    "headingLead": "Sahifa",
+    "headingAccent": "topilmadi"
+  },
+  "error": {
+    "title": "Xatolik yuz berdi",
+    "description": "Kutilmagan xatolik. Qayta urinib ko'ring.",
+    "retry": "Qayta urinish"
+  },
+  "metrics": {
+    "projects": "Loyiha",
+    "experience": "Yil tajriba",
+    "projectsNote": "Jamoa bilan ishlab chiqilgan",
+    "experienceNote": "Infratuzilma va web",
+    "roles": "Lavozim",
+    "tools": "Ko'nikma va vosita",
+    "rolesNote": "Universitet va frilans",
+    "toolsNote": "Infratuzilmadan interfeysgacha"
+  },
+  "process": {
+    "title": "Oddiy. Shaffof. Samarali.",
+    "subtitle": "Aniq jarayon — tizim xavfsiz va o'z vaqtida ishga tushadi.",
+    "eyebrow": "Ish jarayonim",
+    "discuss": {
+      "title": "Muhokama",
+      "description": "Loyiha, joriy infratuzilma va talablarni muhokama qilamiz."
+    },
+    "plan": {
+      "title": "Reja",
+      "description": "Arxitektura, xavfsizlik talablari va muddatni rejalashtiraman."
+    },
+    "build": {
+      "title": "Qurish",
+      "description": "Infratuzilma va pipeline'ni sozlab, avtomatlashtiraman."
+    },
+    "deliver": {
+      "title": "Topshirish",
+      "description": "Tekshirilgan va hujjatlashtirilgan holda topshiraman."
+    },
+    "support": {
+      "title": "Qo'llab-quvvatlash",
+      "description": "Ishga tushgandan keyin kuzatish va yangilash."
+    }
+  },
+  "whatIDo": {
+    "title": "Nima qilaman",
+    "build": {
+      "title": "Quraman",
+      "description": "Xavfsiz va masshtablanadigan bulut infratuzilmasi."
+    },
+    "solve": {
+      "title": "Avtomatlashtiraman",
+      "description": "CI/CD orqali build, test va deployni qo'l mehnatisiz qilaman."
+    },
+    "deliver": {
+      "title": "Himoyalayman",
+      "description": "Linux serverlar, konteynerlar va tizim xavfsizligi."
+    }
+  },
+  "experience": {
+    "pageTitle": "Tajriba",
+    "breadcrumb": "Tajriba",
+    "headingLead": "Mening",
+    "headingAccent": "tajribam",
+    "pageSubtitle": "Tarmoq va serverlardan bulut infratuzilmasi va DevSecOps'gacha bo'lgan yo'l.",
+    "timelineTitle": "Ish tajribasi",
+    "current": "Hozir",
+    "independent": "Mustaqil",
+    "freelance": {
+      "period": "2026 — hozir",
+      "title": "Full Stack Developer",
+      "description": "Frilans asosida mijozlar uchun web ilovalarni boshidan oxirigacha quraman — interfeys, server qismi va ishga tushirish bilan birga.",
+      "shortPeriod": "2026 – hozir",
+      "duties": [
+        "Web ilovalarning frontend va backend qismlarini quraman",
+        "Server muhitini sozlab, deploy jarayonini yo'lga qo'yaman",
+        "Ilovalarni xavfsiz konfiguratsiya bilan ishga tushiraman",
+        "Mijoz bilan bevosita ishlab, talabni tayyor yechimga aylantiraman"
+      ],
+      "summary": "Mijozlar uchun web ilovalarni boshidan oxirigacha quraman."
+    },
+    "eyebrow": "Mening yo'lim",
+    "aboutRole": "Rol haqida",
+    "responsibilities": "Asosiy vazifalar",
+    "technologies": "Ishlatilgan texnologiyalar",
+    "contributedTitle": "Hissa qo'shgan loyihalarim",
+    "achievementsTitle": "Yutuqlar va natija",
+    "buxdu": {
+      "period": "2025 — 2026, may",
+      "shortPeriod": "2025 – 2026",
+      "title": "Tarmoq va server administratori",
+      "description": "Buxoro Davlat Universitetida tarmoq va serverlarning uzluksiz, xavfsiz ishlashi uchun javob berdim.",
+      "summary": "Universitet tarmog'i va serverlarining barqaror ishlashini ta'minladim.",
+      "duties": [
+        "Linux serverlarni boshqarish va kuzatish",
+        "Tarmoq infratuzilmasini sozlash va nosozliklarni bartaraf etish",
+        "Tizimlarga kirish huquqlari va xavfsizlik sozlamalarini qo'llab-quvvatlash",
+        "Foydalanuvchilarga texnik yordam ko'rsatish"
+      ]
+    }
   }
 }
