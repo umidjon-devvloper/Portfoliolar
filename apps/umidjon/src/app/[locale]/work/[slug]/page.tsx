@@ -13,8 +13,9 @@ import { CtaBanner } from "@/components/ui/cta-banner";
 import { buttonVariants } from "@/components/ui/button";
 import { getProjectBySlug, projects } from "@/content/projects";
 import { site } from "@/content/site";
-import { alternates, openGraph } from "@/lib/seo";
+import { alternates, breadcrumbJsonLd, openGraph } from "@/lib/seo";
 import { profile } from "@/content/profile";
+import type { ProjectKind } from "@/content/types";
 
 type PageProps = { params: Promise<{ locale: string; slug: string }> };
 
@@ -66,20 +67,80 @@ export default async function ProjectPage({ params }: PageProps) {
     { key: "contribution", value: project.contribution?.[lang] ?? null },
   ];
 
-  /* Search engines get the case study as a structured work item. */
-  const jsonLd = {
+  /* Richer type by project kind — SoftwareApplication gets rich results
+     Google won't show on a plain CreativeWork. */
+  const applicationCategory: Record<ProjectKind, string | null> = {
+    saas: "BusinessApplication",
+    mobile: "MobileApplication",
+    web: "WebApplication",
+    ecommerce: "BusinessApplication",
+    business: null,
+    bot: "UtilitiesApplication",
+    game: "GameApplication",
+  };
+  const opSystem: Record<ProjectKind, string | undefined> = {
+    saas: "Web",
+    mobile: "iOS, Android",
+    web: "Web",
+    ecommerce: "Web",
+    business: "Web",
+    bot: "Web",
+    game: "Web",
+  };
+  const schemaType = applicationCategory[project.kind]
+    ? "SoftwareApplication"
+    : "CreativeWork";
+  const coverUrl = project.cover
+    ? project.cover.startsWith("http")
+      ? project.cover
+      : `${site.url}${project.cover}`
+    : undefined;
+
+  const workJsonLd = {
     "@context": "https://schema.org",
-    "@type": "CreativeWork",
+    "@type": schemaType,
+    "@id": `${site.url}/work/${project.slug}#work`,
     name: project.name,
     headline: project.name,
     description: project.tagline[lang],
     url: `${site.url}/work/${project.slug}`,
-    image: project.cover ? `${site.url}${project.cover}` : undefined,
+    image: coverUrl,
+    thumbnailUrl: coverUrl,
     inLanguage: lang,
     keywords: project.stack.join(", "),
-    dateCreated: project.year ? String(project.year) : undefined,
-    author: { "@type": "Person", name: profile.fullName ?? profile.firstName },
+    dateCreated: project.year ? `${project.year}-01-01` : undefined,
+    datePublished: project.year ? `${project.year}-01-01` : undefined,
+    applicationCategory: applicationCategory[project.kind] ?? undefined,
+    operatingSystem:
+      schemaType === "SoftwareApplication" ? opSystem[project.kind] : undefined,
+    ...(schemaType === "SoftwareApplication"
+      ? {
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        }
+      : {}),
+    author: {
+      "@type": "Person",
+      "@id": `${site.url}#person`,
+      name: profile.fullName ?? profile.firstName,
+      url: site.url,
+    },
+    creator: { "@id": `${site.url}#person` },
+    publisher: { "@id": `${site.url}#person` },
+    sameAs: project.links
+      .filter((link) => link.kind === "live")
+      .map((link) => link.href),
   };
+
+  const crumbs = breadcrumbJsonLd(
+    [
+      { name: "Home", path: "/" },
+      { name: t("breadcrumb"), path: "/work" },
+      { name: project.name, path: `/work/${project.slug}` },
+    ],
+    locale,
+  );
+
+  const jsonLd = { "@context": "https://schema.org", "@graph": [workJsonLd, crumbs] };
 
   return (
     <>

@@ -27,21 +27,54 @@ function languages(path: string) {
   );
 }
 
+/** Honest lastModified: project's own updatedAt, else year-end, else build time. */
+function projectLastMod(year: string | null, updatedAt?: string): Date {
+  if (updatedAt) return new Date(updatedAt);
+  if (year) return new Date(`${year}-12-31`);
+  return new Date();
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-  const paths = [
-    ...staticPaths.map((path) => ({ path, priority: path === "" ? 1 : 0.7 })),
-    ...projects.map((project) => ({
-      path: `/work/${project.slug}`,
-      priority: 0.6,
-    })),
+  const projectLastMods = projects.map((p) => projectLastMod(p.year, p.updatedAt));
+  const workIndexLastMod = projectLastMods.reduce(
+    (acc, date) => (date > acc ? date : acc),
+    new Date(0),
+  );
+
+  type Entry = {
+    path: string;
+    priority: number;
+    lastModified: Date;
+    changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"];
+  };
+
+  const entries: Entry[] = [
+    ...staticPaths.map((path): Entry => {
+      const isHome = path === "";
+      const isWork = path === "/work";
+      return {
+        path,
+        priority: isHome ? 1 : isWork ? 0.9 : 0.7,
+        lastModified: isWork && workIndexLastMod.getTime() > 0 ? workIndexLastMod : now,
+        changeFrequency: isHome || isWork ? "weekly" : "monthly",
+      };
+    }),
+    ...projects.map(
+      (project): Entry => ({
+        path: `/work/${project.slug}`,
+        priority: project.featured ? 0.8 : 0.6,
+        lastModified: projectLastMod(project.year, project.updatedAt),
+        changeFrequency: "yearly",
+      }),
+    ),
   ];
 
   return routing.locales.flatMap((locale) =>
-    paths.map(({ path, priority }) => ({
+    entries.map(({ path, priority, lastModified, changeFrequency }) => ({
       url: `${site.url}${prefix(locale)}${path}`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
+      lastModified,
+      changeFrequency,
       priority,
       alternates: { languages: languages(path) },
     })),

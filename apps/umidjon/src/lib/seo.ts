@@ -32,6 +32,27 @@ export function alternates(path: string, locale: string) {
   };
 }
 
+/**
+ * BreadcrumbList JSON-LD for the current page. Google turns it into the
+ * crumb trail shown under the result link.
+ */
+export function breadcrumbJsonLd(
+  trail: Array<{ name: string; path: string }>,
+  locale: string,
+) {
+  const prefix = locale === routing.defaultLocale ? "" : `/${locale}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: trail.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: `${site.url}${prefix}${item.path === "/" ? "" : item.path}` || site.url,
+    })),
+  };
+}
+
 /** Page-level Open Graph, so shares show the page rather than the site. */
 export function openGraph(values: {
   title: string;

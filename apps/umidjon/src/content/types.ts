@@ -42,6 +42,8 @@ export type Project = {
   logo: string | null;
   client: string | null;
   gallery: string[];
+  /** ISO date (YYYY-MM-DD) of the last meaningful change; drives sitemap lastModified. */
+  updatedAt?: string;
 };
 
 export type SkillGroup = {
