@@ -74,13 +74,13 @@ export async function generateMetadata({
       description: t("description"),
       url: site.url,
       locale: locale === "uz" ? "uz_UZ" : locale === "ru" ? "ru_RU" : "en_US",
-      images: [{ url: site.ogImage, width: 1200, height: 630 }],
+      /* images intentionally omitted — [locale]/opengraph-image.tsx renders them per route */
     },
     twitter: {
       card: "summary_large_image",
       title: t("title"),
       description: t("description"),
-      images: [site.ogImage],
+      /* images intentionally omitted — Next.js emits twitter:image from opengraph-image.tsx */
     },
     robots: {
       index: true,

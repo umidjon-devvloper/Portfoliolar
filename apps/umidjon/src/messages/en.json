@@ -14,7 +14,8 @@
     "closeMenu": "Close menu",
     "work": "Work",
     "skills": "Skills",
-    "experience": "Experience"
+    "experience": "Experience",
+    "blog": "Blog"
   },
   "common": {
     "toggleTheme": "Toggle theme",
@@ -492,5 +493,12 @@
       "title": "Full-Stack Developer",
       "duties": []
     }
+  },
+  "blog": {
+    "title": "Blog",
+    "description": "Notes on web and mobile development, Next.js, React Native, and shipping products.",
+    "empty": "No posts yet. Something is coming soon.",
+    "minRead": "min read",
+    "backToBlog": "Back to blog"
   }
 }

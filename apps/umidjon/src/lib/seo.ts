@@ -53,7 +53,11 @@ export function breadcrumbJsonLd(
   };
 }
 
-/** Page-level Open Graph, so shares show the page rather than the site. */
+/**
+ * Page-level Open Graph, so shares show the page rather than the site.
+ * `images` is left unset so Next.js can use the route's opengraph-image.tsx;
+ * pass `image` explicitly to override with a specific URL (e.g. a project cover).
+ */
 export function openGraph(values: {
   title: string;
   description: string;
@@ -71,6 +75,8 @@ export function openGraph(values: {
     alternateLocale: routing.locales
       .filter((code) => code !== values.locale)
       .map((code) => ogLocale[code] ?? code),
-    images: [{ url: values.image ?? site.ogImage, width: 1200, height: 630 }],
+    ...(values.image
+      ? { images: [{ url: values.image, width: 1200, height: 630 }] }
+      : {}),
   };
 }

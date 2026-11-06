@@ -1,0 +1,76 @@
+---
+title: "Создание портфолио-сайта на Next.js 15 — практическое руководство"
+description: "Многоязычное, оптимизированное под SEO портфолио на Next.js 15 App Router, next-intl и Tailwind CSS v4."
+date: "2026-11-06"
+tags: ["Next.js", "SEO", "TypeScript"]
+---
+
+Сайт-портфолио — визитка разработчика. Но сегодня его уже нельзя оставить обычным HTML-файлом. Он должен быть **быстрым**, **многоязычным**, **mobile-first** и, главное, **находиться в Google**.
+
+Ниже — ключевые решения, которые я применил при создании `umidjon.site`.
+
+## Почему именно Next.js 15
+
+Next.js 15 App Router даёт в одном пакете:
+
+- **Static Site Generation** — каждая страница рендерится в HTML на этапе `build`
+- **Metadata API** — `generateMetadata` задаёт title, description, OG и hreflang для каждой страницы
+- **`opengraph-image.tsx`** — динамические OG-картинки кодом, под каждую страницу
+- **Sitemap и robots** — пишутся как TypeScript-функции, а не текстовые файлы
+
+На Vite + React всё это пришлось бы собирать вручную.
+
+## Многоязычие: `next-intl`
+
+Я работаю с тремя языками: узбекский (по умолчанию), русский и английский. `next-intl` — самое простое решение:
+
+```ts
+export const routing = defineRouting({
+  locales: ["uz", "ru", "en"],
+  defaultLocale: "uz",
+  localePrefix: "as-needed",
+});
+```
+
+`as-needed` — язык по умолчанию без префикса (`/about`), остальные — с префиксом (`/ru/about`). Самая чистая структура URL для SEO.
+
+## SEO — это не метаданные, это архитектура
+
+Многие разработчики думают, что SEO — это "задать title и description". На деле он разлит по всему сайту:
+
+1. **`alternates`** — на каждой странице `hreflang` указывает её варианты на трёх языках
+2. **JSON-LD `@graph`** — `Person`, `WebSite`, `Organization` и `ProfessionalService` вместе строят граф бренда
+3. **`BreadcrumbList`** на каждой странице — Google показывает путь под результатом
+4. **`SoftwareApplication` schema** — на страницах проектов даёт больше возможностей rich-results, чем `CreativeWork`
+5. **Честный `lastModified`** — реальная дата изменения для каждого URL в sitemap
+
+## Динамические OG-картинки
+
+Статический `/og.png` один и тот же для всех страниц. С `opengraph-image.tsx` Next.js — у каждой страницы своя брендированная картинка с текстом:
+
+```tsx
+import { ImageResponse } from "next/og";
+export default function OgImage({ params }) {
+  return new ImageResponse(
+    <div>...</div>,
+    { width: 1200, height: 630 }
+  );
+}
+```
+
+При шаринге в Telegram, LinkedIn, Twitter — каждая страница выглядит уникально. CTR заметно растёт.
+
+## Performance — Core Web Vitals как фактор ранжирования
+
+- Hero-изображение с prop `priority`
+- Шрифты через `display: swap`
+- `next/image` везде, удалённые домены — через `remotePatterns`
+- Минимум клиентского JavaScript — все страницы Server Components
+
+Итог: LCP ниже 1,5 с, CLS около нуля.
+
+## Вывод
+
+Портфолио — это не только дизайн. Это демонстрация вашего технического подхода. Каждое решение — статическая генерация, локализация, структурированные данные — говорит клиенту: "этот человек знает, как работает его дело".
+
+Следующий пост: **"Как я выпустил приложение в App Store с React Native + Expo"**.

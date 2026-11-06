@@ -1,0 +1,76 @@
+---
+title: "Building a Portfolio Site with Next.js 15 — a Practical Guide"
+description: "A multilingual, SEO-optimized portfolio built on Next.js 15 App Router, next-intl, and Tailwind CSS v4."
+date: "2026-11-06"
+tags: ["Next.js", "SEO", "TypeScript"]
+---
+
+A portfolio site is a developer's calling card. But today you can't leave it as a plain HTML file. It has to be **fast**, **multilingual**, **mobile-first**, and — most importantly — **findable on Google**.
+
+Here are the key decisions I made building `umidjon.site`.
+
+## Why Next.js 15
+
+Next.js 15 App Router gives you in one box:
+
+- **Static Site Generation** — every page is rendered as HTML at `build` time
+- **Metadata API** — `generateMetadata` sets title, description, OG, and hreflang per page
+- **`opengraph-image.tsx`** — dynamic OG images in code, per route
+- **Sitemap and robots** — written as TypeScript functions, not text files
+
+With Vite + React you'd be assembling all of this by hand.
+
+## Multilingual: `next-intl`
+
+I ship in three languages: Uzbek (default), Russian, and English. `next-intl` is the simplest fit:
+
+```ts
+export const routing = defineRouting({
+  locales: ["uz", "ru", "en"],
+  defaultLocale: "uz",
+  localePrefix: "as-needed",
+});
+```
+
+`as-needed` — the default locale has no prefix (`/about`), the others do (`/ru/about`). The cleanest URL structure for SEO.
+
+## SEO isn't metadata — it's architecture
+
+Many developers think SEO means "set a title and description." It actually spreads across the whole site:
+
+1. **`alternates`** — every page's `hreflang` names its variants in all three languages
+2. **JSON-LD `@graph`** — `Person`, `WebSite`, `Organization`, `ProfessionalService` together build a brand graph
+3. **`BreadcrumbList`** on every page — Google shows the path under the result
+4. **`SoftwareApplication` schema** — project pages get more rich-result options than `CreativeWork`
+5. **Honest `lastModified`** — a real change date for every URL in the sitemap
+
+## Dynamic OG images
+
+A static `/og.png` is a single image — the same for every page. With Next.js `opengraph-image.tsx` you get a branded, text-filled image per route:
+
+```tsx
+import { ImageResponse } from "next/og";
+export default function OgImage({ params }) {
+  return new ImageResponse(
+    <div>...</div>,
+    { width: 1200, height: 630 }
+  );
+}
+```
+
+Shared on Telegram, LinkedIn, Twitter, each page looks distinct. CTR goes up noticeably.
+
+## Performance — Core Web Vitals as a ranking factor
+
+- Hero image with `priority`
+- Fonts with `display: swap`
+- `next/image` everywhere, remote domains gated by `remotePatterns`
+- Minimal client JavaScript — every page is a Server Component
+
+LCP under 1.5s, CLS near zero.
+
+## Takeaway
+
+A portfolio isn't only design. It's a demo of your technical approach. Every decision — static generation, localization, structured data — tells a client: "this person knows how their craft works."
+
+Next post: **"How I shipped to the App Store with React Native + Expo."**

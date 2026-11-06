@@ -1,5 +1,6 @@
 import type { LucideIcon } from "lucide-react";
 import {
+  BookOpen,
   Bot,
   Boxes,
   Briefcase,
@@ -38,6 +39,7 @@ const iconMap: Record<string, LucideIcon> = {
   Terminal,
   Network,
   KeyRound,
+  BookOpen,
   Bot,
   Boxes,
   Briefcase,

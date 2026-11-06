@@ -1,0 +1,76 @@
+---
+title: "Next.js 15 bilan portfolio sayt yaratish — amaliy qo'llanma"
+description: "Next.js 15 App Router, next-intl va Tailwind CSS v4 asosida ko'p tilli, SEO-optimallashtirilgan portfolio sayt qurish."
+date: "2026-11-06"
+tags: ["Next.js", "SEO", "TypeScript"]
+---
+
+Portfolio sayt — bu dasturchining tashrif qog'ozi. Lekin bugungi kunda uni oddiygina HTML fayldan iborat qilib qoldirib bo'lmaydi. U **tez**, **ko'p tilli**, **mobil-first** va eng muhimi — **Google'da topiladigan** bo'lishi kerak.
+
+Men `umidjon.site`ni qurishda ishlatgan asosiy qarorlarni shu yerda jamlab yozdim.
+
+## Nega aynan Next.js 15
+
+Next.js 15 App Router quyidagilarni bir qutichada beradi:
+
+- **Static Site Generation** — har bir sahifa `build` paytida HTML sifatida renderlanadi
+- **Metadata API** — `generateMetadata` orqali har sahifa uchun title, description, OG, hreflang
+- **`opengraph-image.tsx`** — har sahifa uchun dinamik OG rasm, kod bilan
+- **Sitemap va robots** — TypeScript funksiya bo'lib yoziladi, matn fayl emas
+
+Vite + React asosida bularning hammasini qo'lda qurishga to'g'ri kelardi.
+
+## Ko'p tillilik: `next-intl`
+
+Men uch til bilan ishlayman: o'zbek (default), rus va ingliz. `next-intl` eng sodda yechim:
+
+```ts
+export const routing = defineRouting({
+  locales: ["uz", "ru", "en"],
+  defaultLocale: "uz",
+  localePrefix: "as-needed",
+});
+```
+
+`as-needed` — default til prefikssiz (`/about`), qolganlari prefiks bilan (`/ru/about`). SEO uchun eng toza URL tuzilishi.
+
+## SEO — bu metadata emas, bu arxitektura
+
+Ko'p dasturchi SEOni "title va description qo'yish" deb tushunadi. Aslida u butun saytga sochilib yotadi:
+
+1. **`alternates`** — har sahifa o'zining uch tildagi variantiga `hreflang` beradi
+2. **JSON-LD `@graph`** — `Person`, `WebSite`, `Organization`, `ProfessionalService` birgalikda brend grafikasini quradi
+3. **`BreadcrumbList`** har sahifada — Google natijada sahifa yo'lini ko'rsatadi
+4. **`SoftwareApplication` schema** — project sahifalarida `CreativeWork`dan ko'ra ko'proq rich-result imkoniyatini beradi
+5. **Honest `lastModified`** — sitemap'da har URL uchun haqiqiy o'zgarish sanasi
+
+## Dinamik OG rasmlar
+
+Statik `/og.png` bitta — har sahifa uchun bir xil. Next.js `opengraph-image.tsx` bilan har sahifa uchun matnli, brendlangan rasm:
+
+```tsx
+import { ImageResponse } from "next/og";
+export default function OgImage({ params }) {
+  return new ImageResponse(
+    <div>...</div>,
+    { width: 1200, height: 630 }
+  );
+}
+```
+
+Telegram, LinkedIn, Twitter'da ulashganda — har sahifa o'ziga xos ko'rinadi. CTR sezilarli oshadi.
+
+## Performance — Core Web Vitals ranking omili
+
+- Hero rasm `priority` prop bilan
+- Shriftlar `display: swap`
+- `next/image` har joyda, remote `remotePatterns`da allowlist
+- Minimal client JavaScript — barcha sahifa Server Component
+
+Natijada LCP 1.5s dan past, CLS 0ga yaqin.
+
+## Xulosa
+
+Portfolio sayt — bu nafaqat dizayn. U sizning texnik yondashuvingizning namunasi. Har bir qaror — statik generatsiya, lokalizatsiya, strukturali data — mijozga "bu odam o'zini qanday ishlashini biladi" degan signal beradi.
+
+Keyingi post: **"React Native + Expo'da App Store'ga qanday chiqdim"**.

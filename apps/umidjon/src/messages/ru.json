@@ -14,7 +14,8 @@
     "closeMenu": "Закрыть меню",
     "work": "Работы",
     "skills": "Навыки",
-    "experience": "Опыт"
+    "experience": "Опыт",
+    "blog": "Блог"
   },
   "common": {
     "toggleTheme": "Сменить тему",
@@ -492,5 +493,12 @@
       "title": "Full-Stack Developer",
       "duties": []
     }
+  },
+  "blog": {
+    "title": "Блог",
+    "description": "Записи о веб и мобильной разработке, Next.js, React Native и построении продуктов.",
+    "empty": "Записей пока нет. Скоро появятся.",
+    "minRead": "мин чтения",
+    "backToBlog": "К блогу"
   }
 }

@@ -408,3 +408,16 @@
     transform: none;
   }
 }
+
+
+/* Blog post reading width — keep text to a comfortable column. */
+.prose-blog {
+  max-width: 68ch;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+
+.prose-blog :where(h2, h3, h4) {
+  scroll-margin-top: 6rem;
+}
+

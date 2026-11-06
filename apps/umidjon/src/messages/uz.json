@@ -14,7 +14,8 @@
     "closeMenu": "Menyuni yopish",
     "work": "Ishlar",
     "skills": "Ko'nikmalar",
-    "experience": "Tajriba"
+    "experience": "Tajriba",
+    "blog": "Blog"
   },
   "common": {
     "toggleTheme": "Mavzuni almashtirish",
@@ -492,5 +493,12 @@
       "title": "Full-Stack Developer",
       "duties": []
     }
+  },
+  "blog": {
+    "title": "Blog",
+    "description": "Veb va mobil ishlab chiqish, Next.js, React Native va mahsulot qurish bo'yicha yozuvlar.",
+    "empty": "Hozircha yozuvlar yo'q. Tez orada paydo bo'ladi.",
+    "minRead": "daqiqa o'qish",
+    "backToBlog": "Blogga qaytish"
   }
 }
